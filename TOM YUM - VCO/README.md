@@ -1,6 +1,10 @@
 # Tom Yum
 ## Eurorack DIY VCO
 
+<p align="center">
+  <img src="https://github.com/musicdevghost/eurorack/blob/main/TOM%20YUM%20-%20VCO/Images/real_faceplate.png" width="450">
+</p>
+
 Sound Demo: https://www.youtube.com/watch?v=9EASDBu1MWQ
 
 "Tom Yum" is a saw core voltage controlled oscillator based on old analogue synth designs, it produces four waveforms, Sine, Saw, Square and Triangle.
