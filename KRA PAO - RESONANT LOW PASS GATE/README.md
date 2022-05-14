@@ -5,7 +5,7 @@
   <img src="https://github.com/musicdevghost/eurorack/blob/main/KRA%20PAO%20-%20RESONANT%20LOW%20PASS%20GATE/Images/real_faceplate.png" width="450">
 </p>
 
-Sound Demo: TBD
+Sound Demo: https://www.youtube.com/watch?v=gdqPUZgIWGM&ab_channel=Voxmachina
 
 "Kra Pao" is a resonant low pass gate at is core, though it can function in three different modes, as a VCA, a LPG or a VCF (Low Pass).
 
