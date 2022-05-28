@@ -16,8 +16,6 @@ Open the BOM file to see all required components alongside some notes as well, t
 
 On the guide you will find how to calibrate the waves and the pitch (v/oct).
 
-Feel free to also contact me if you're interested in buying the PCB sets or buy a fully assembled one as well.
-
 ### Specs
 
 * 12HP
