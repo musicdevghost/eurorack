@@ -8,3 +8,5 @@
   * Matrix Sequencer based on the original Serge Programmer, core design used with permission
 * [Kra Pao - Resonant Low Pass Gate](https://github.com/musicdevghost/eurorack/tree/main/KRA%20PAO%20-%20RESONANT%20LOW%20PASS%20GATE)
   * Buttery resonant LPG/VCA/VCF based on the original design from Thomas White, core design used with permission
+* [Cha Cha - VCLFO](https://github.com/musicdevghost/eurorack/tree/main/Cha%20Cha%20-%20VCLFO)
+  * 6HP Voltage Controlled LFO with 4 wave outputs and reset input
