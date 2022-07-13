@@ -1,8 +1,0 @@
-{
-	"recommendations": [
-        "ms-vscode.cpptools",
-		"xaver.clang-format",
-        "davidschuldenfrei.gtest-adapter",
-        "vadimcn.vscode-lldb"
-	]
-}

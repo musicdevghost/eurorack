@@ -1,3 +1,0 @@
-build/core/startup_stm32h750xx.o: core/startup_stm32h750xx.c \
- c\:\users\pedro\desktop\dev\daisytools\windows\lib\gcc\arm-none-eabi\10.2.1\include\stddef.h
-c\:\users\pedro\desktop\dev\daisytools\windows\lib\gcc\arm-none-eabi\10.2.1\include\stddef.h:
