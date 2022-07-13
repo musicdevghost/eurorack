@@ -13,7 +13,10 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/libDaisy/**",
                 "${workspaceFolder}/DaisySP/**",
-                "${workspaceFolder}/eurorack/**"
+                "${workspaceFolder}/eurorack/**",
+                "${workspaceFolder}/eurorack/clouds/**",
+                "${workspaceFolder}/eurorack/clouds/dsp/**",
+                "${workspaceFolder}/eurorack/rings/**"
             ],
             "name": "Win32",
             "windowsSdkVersion": "10.0.17763.0"
