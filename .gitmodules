@@ -7,3 +7,6 @@
 [submodule "LOM PRAN - REVERB/eurorack"]
 	path = LOM PRAN - REVERB/eurorack
 	url = https://github.com/pichenettes/eurorack
+[submodule "DaisySP"]
+	path = LOM PRAN - REVERB/DaisySP
+	url = https://github.com/electro-smith/DaisySP
