@@ -1,0 +1,39 @@
+name: Style
+
+on: 
+  push:
+    branches: [ master ]
+    paths:
+    - '.github/workflows/**'
+    - 'ci/**'
+    - 'cmake/**'
+    - 'core/**'
+    - 'Drivers/**'
+    - 'src/**'
+    - 'tests/**'
+    - 'CMakeLists.txt'
+    - 'Makefile'
+  pull_request:
+    branches: [ master ]
+    paths:
+    - '.github/workflows/**'
+    - 'ci/**'
+    - 'cmake/**'
+    - 'core/**'
+    - 'Drivers/**'
+    - 'src/**'
+    - 'tests/**'
+    - 'CMakeLists.txt'
+    - 'Makefile'
+
+jobs:
+  clang-format:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: DoozyX/clang-format-lint-action@v0.11
+      with:
+        source: 'src'
+        extensions: 'h,cpp'
+        clangFormatVersion: 10
+
