@@ -30,8 +30,8 @@ void AudioCallback(AudioHandle::InputBuffer  in,
 
     for(size_t i = 0; i < size; i++)
     {
-        float dryl  = IN_L[i] * in_level;
-        float dryr  = IN_R[i] * in_level;
+        float dryl  = IN_L[i] * in_level + 1;
+        float dryr  = IN_R[i] * in_level + 1;
         float sendl = IN_L[i] * send_level;
         float sendr = IN_R[i] * send_level;
         float wetl, wetr;

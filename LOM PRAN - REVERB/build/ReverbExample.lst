@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   27:libDaisy/src/daisy_patch_sm.h ****         CV_8,
   28:libDaisy/src/daisy_patch_sm.h ****         ADC_9,
   29:libDaisy/src/daisy_patch_sm.h ****         ADC_10,
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 2
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 2
 
 
   30:libDaisy/src/daisy_patch_sm.h ****         ADC_11,
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   11:libDaisy/src/hid/gatein.h ****    @date    March 2020
   12:libDaisy/src/hid/gatein.h ****    @ingroup controls
   13:libDaisy/src/hid/gatein.h **** */
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 3
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 3
 
 
   14:libDaisy/src/hid/gatein.h **** class GateIn
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   52              	.LBB211:
   53              	.LBI211:
   54              		.file 4 "libDaisy/src/hid/usb.h"
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 4
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 4
 
 
    1:libDaisy/src/hid/usb.h **** #pragma once
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
    7:libDaisy/src/per/adc.h **** #include "per/gpio.h"
    8:libDaisy/src/per/adc.h **** 
    9:libDaisy/src/per/adc.h **** #define DSY_ADC_MAX_CHANNELS 16 /**< Maximum number of ADC channels */
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 5
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 5
 
 
   10:libDaisy/src/per/adc.h **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   64:libDaisy/src/per/adc.h **** 
   65:libDaisy/src/per/adc.h ****     dsy_gpio pin_;                   /**< & */
   66:libDaisy/src/per/adc.h ****     dsy_gpio mux_pin_[MUX_SEL_LAST]; /**< & */
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 6
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 6
 
 
   67:libDaisy/src/per/adc.h ****     uint8_t  mux_channels_;          /**< & */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   22:libDaisy/src/hid/audio.h **** class AudioHandle
   23:libDaisy/src/hid/audio.h **** {
   24:libDaisy/src/hid/audio.h ****   public:
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 7
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 7
 
 
   25:libDaisy/src/hid/audio.h ****     /** Manually configurable details about the Audio Engine */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   79:libDaisy/src/hid/audio.h ****      ** this is const, as the user shouldn't modify it
   80:libDaisy/src/hid/audio.h ****     */
   81:libDaisy/src/hid/audio.h ****     typedef const float* InterleavingInputBuffer;
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 8
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 8
 
 
   82:libDaisy/src/hid/audio.h **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   34:libDaisy/src/sys/system.h ****          ** */
   35:libDaisy/src/sys/system.h ****         void Defaults()
   36:libDaisy/src/sys/system.h ****         {
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 9
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 9
 
 
   37:libDaisy/src/sys/system.h ****             cpu_freq    = SysClkFreq::FREQ_400MHZ;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   86              		.weak	_ZN7daisysp8ReverbScD2Ev
   87              		.syntax unified
   88              		.thumb
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 10
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 10
 
 
   89              		.thumb_func
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  103              		.cfi_endproc
  104              	.LFE4425:
  106              		.weak	_ZN7daisysp8ReverbScD1Ev
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 11
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 11
 
 
  107              		.thumb_set _ZN7daisysp8ReverbScD1Ev,_ZN7daisysp8ReverbScD2Ev
@@ -647,7 +647,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  135              		.cfi_offset 14, -4
  136 0004 0546     		mov	r5, r0
  137              		.loc 9 15 32 view .LVU21
- 138 0006 3E48     		ldr	r0, .L12
+ 138 0006 4448     		ldr	r0, .L12
  139              	.LVL3:
   14:ReverbExample.cpp ****     patch.ProcessAnalogControls();
  140              		.loc 9 14 1 view .LVU22
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  145              		.cfi_offset 80, -44
  146              		.cfi_offset 81, -40
  147              		.cfi_offset 82, -36
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 12
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 12
 
 
  148              		.cfi_offset 83, -32
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   51:DaisySP/Source/Utility/dsp.h ****     return r;
   52:DaisySP/Source/Utility/dsp.h **** }
   53:DaisySP/Source/Utility/dsp.h **** 
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 13
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 13
 
 
   54:DaisySP/Source/Utility/dsp.h **** /** quick fp clamp
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  108:DaisySP/Source/Utility/dsp.h ****     f *= frac;
  109:DaisySP/Source/Utility/dsp.h ****     f += 6.02197014179219f;
  110:DaisySP/Source/Utility/dsp.h ****     f *= frac;
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 14
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 14
 
 
  111:DaisySP/Source/Utility/dsp.h ****     f += -3.13396450166353f;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  165:DaisySP/Source/Utility/dsp.h ****         case Mapping::EXP:
  166:DaisySP/Source/Utility/dsp.h ****             return fclamp(min + (in * in) * (max - min), min, max);
  167:DaisySP/Source/Utility/dsp.h ****         case Mapping::LOG:
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 15
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 15
 
 
  168:DaisySP/Source/Utility/dsp.h ****         {
@@ -848,7 +848,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  172:DaisySP/Source/Utility/dsp.h ****         case Mapping::LINEAR:
  173:DaisySP/Source/Utility/dsp.h ****         default: return fclamp(min + in * (max - min), min, max);
  152              		.loc 10 173 31 view .LVU23
- 153 0010 DFED3C9A 		vldr.32	s19, .L12+4
+ 153 0010 DFED429A 		vldr.32	s19, .L12+4
  154              	.LBE251:
  155              	.LBE250:
   14:ReverbExample.cpp ****     patch.ProcessAnalogControls();
@@ -864,7 +864,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  162              		.loc 9 18 5 is_stmt 1 view .LVU26
  163              		.loc 9 18 40 is_stmt 0 view .LVU27
  164 001a 0021     		movs	r1, #0
- 165 001c 3848     		ldr	r0, .L12
+ 165 001c 3E48     		ldr	r0, .L12
  166 001e FFF7FEFF 		bl	_ZN5daisy8patch_sm12DaisyPatchSM11GetAdcValueEi
  167              	.LVL5:
   19:ReverbExample.cpp ****     float time      = fmap(time_knob, 0.3f, 0.99f);
@@ -884,21 +884,21 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  178              		.loc 10 173 18 view .LVU33
  179              		.loc 10 173 31 is_stmt 0 view .LVU34
  180 0022 F0EE697A 		vmov.f32	s15, s19
- 181 0026 DFED386A 		vldr.32	s13, .L12+8
+ 181 0026 DFED3E6A 		vldr.32	s13, .L12+8
  182              	.LBE262:
  183              	.LBE266:
   20:ReverbExample.cpp **** 
   21:ReverbExample.cpp ****     float damp_knob = patch.GetAdcValue(CV_2);
  184              		.loc 9 21 40 view .LVU35
  185 002a 0121     		movs	r1, #1
- 186 002c 3448     		ldr	r0, .L12
+ 186 002c 3A48     		ldr	r0, .L12
  187              	.LBB267:
  188              	.LBB263:
  189              		.loc 10 173 31 view .LVU36
  190 002e E0EE267A 		vfma.f32	s15, s0, s13
  191              	.LVL6:
  192              	.LBB252:
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 16
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 16
 
 
  193              	.LBI252:
@@ -927,7 +927,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  211              	.LBB257:
   47:DaisySP/Source/Utility/dsp.h **** #else
  212              		.loc 10 47 5 is_stmt 0 view .LVU42
- 213 0032 9FED367A 		vldr.32	s14, .L12+12
+ 213 0032 9FED3C7A 		vldr.32	s14, .L12+12
  214              	.LBE257:
  215              	.LBE256:
  216              	.LBB259:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  235              		.loc 10 47 5 view .LVU48
  236              		.syntax unified
  237              	@ 47 "DaisySP/Source/Utility/dsp.h" 1
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 17
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 17
 
 
  238 003a C7FEC79A 		vminnm.f32 s19, s15, s14
@@ -1013,15 +1013,15 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  276              		.loc 10 170 13 view .LVU62
  170:DaisySP/Source/Utility/dsp.h ****         }
  277              		.loc 10 170 37 is_stmt 0 view .LVU63
- 278 0046 DFED327A 		vldr.32	s15, .L12+16
+ 278 0046 DFED387A 		vldr.32	s15, .L12+16
  279 004a B2EE040A 		vmov.f32	s0, #1.0e+1
  280              	.LVL11:
  170:DaisySP/Source/Utility/dsp.h ****         }
  281              		.loc 10 170 26 view .LVU64
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 18
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 18
 
 
- 282 004e 9FED318A 		vldr.32	s16, .L12+20
+ 282 004e 9FED378A 		vldr.32	s16, .L12+20
  170:DaisySP/Source/Utility/dsp.h ****         }
  283              		.loc 10 170 37 view .LVU65
  284 0052 C0EEA70A 		vdiv.f32	s1, s1, s15
@@ -1063,7 +1063,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   24:ReverbExample.cpp ****     float in_level = patch.GetAdcValue(CV_3);
  313              		.loc 9 24 39 is_stmt 0 view .LVU72
  314 005a 0221     		movs	r1, #2
- 315 005c 2848     		ldr	r0, .L12
+ 315 005c 2E48     		ldr	r0, .L12
  316              	.LBB292:
  317              	.LBB288:
  318              	.LBB285:
@@ -1072,13 +1072,13 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  321              	.LBB277:
   47:DaisySP/Source/Utility/dsp.h **** #else
  322              		.loc 10 47 5 view .LVU73
- 323 005e DFED2E7A 		vldr.32	s15, .L12+24
+ 323 005e DFED347A 		vldr.32	s15, .L12+24
  324              	.LBE277:
  325              	.LBE276:
  326              	.LBE282:
  170:DaisySP/Source/Utility/dsp.h ****         }
  327              		.loc 10 170 26 view .LVU74
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 19
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 19
 
 
  328 0062 20EE080A 		vmul.f32	s0, s0, s16
@@ -1135,10 +1135,10 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   26:ReverbExample.cpp ****     float send_level = patch.GetAdcValue(CV_4);
  370              		.loc 9 26 41 view .LVU85
  371 0072 0321     		movs	r1, #3
- 372 0074 2248     		ldr	r0, .L12
+ 372 0074 2848     		ldr	r0, .L12
   24:ReverbExample.cpp **** 
  373              		.loc 9 24 39 view .LVU86
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 20
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 20
 
 
  374 0076 F0EE408A 		vmov.f32	s17, s0
@@ -1163,7 +1163,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   53:DaisySP/Source/Effects/reverbsc.h ****     */
   54:DaisySP/Source/Effects/reverbsc.h ****     inline void SetFeedback(const float &fb) { feedback_ = fb; }
  382              		.loc 8 54 58 view .LVU89
- 383 007e 274B     		ldr	r3, .L12+28
+ 383 007e 2D4B     		ldr	r3, .L12+28
  384              	.LVL20:
  385              		.loc 8 54 58 view .LVU90
  386              	.LBE294:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  408              	.LVL22:
  409              		.loc 8 58 56 view .LVU100
  410              	.LBE298:
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 21
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 21
 
 
  411              	.LBE297:
@@ -1207,258 +1207,274 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  412              		.loc 9 31 5 is_stmt 1 view .LVU101
  413              	.LBB299:
  414              		.loc 9 31 25 view .LVU102
- 415 0088 AFB3     		cbz	r7, .L4
- 416 008a B0EE409A 		vmov.f32	s18, s0
- 417              		.loc 9 31 16 is_stmt 0 view .LVU103
- 418 008e 0024     		movs	r4, #0
- 419 0090 0DF11408 		add	r8, sp, #20
- 420              	.LVL23:
- 421              	.L6:
- 422              	.LBB300:
+ 415 0088 002F     		cmp	r7, #0
+ 416 008a 3FD0     		beq	.L4
+ 417 008c B0EE409A 		vmov.f32	s18, s0
+ 418              		.loc 9 31 16 is_stmt 0 view .LVU103
+ 419 0090 0024     		movs	r4, #0
+ 420 0092 0DF11408 		add	r8, sp, #20
+ 421              	.LVL23:
+ 422              	.L6:
+ 423              	.LBB300:
   32:ReverbExample.cpp ****     {
-  33:ReverbExample.cpp ****         float dryl  = IN_L[i] * in_level;
- 423              		.loc 9 33 9 is_stmt 1 discriminator 2 view .LVU104
- 424              		.loc 9 33 29 is_stmt 0 discriminator 2 view .LVU105
- 425 0094 2968     		ldr	r1, [r5]
-  34:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level;
+  33:ReverbExample.cpp ****         float dryl  = IN_L[i] * in_level + 1;
+ 424              		.loc 9 33 9 is_stmt 1 discriminator 2 view .LVU104
+ 425              		.loc 9 33 29 is_stmt 0 discriminator 2 view .LVU105
+ 426 0096 2A68     		ldr	r2, [r5]
+ 427              		.loc 9 33 15 discriminator 2 view .LVU106
+ 428 0098 F7EE007A 		vmov.f32	s15, #1.0e+0
+  34:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level + 1;
   35:ReverbExample.cpp ****         float sendl = IN_L[i] * send_level;
   36:ReverbExample.cpp ****         float sendr = IN_R[i] * send_level;
   37:ReverbExample.cpp ****         float wetl, wetr;
   38:ReverbExample.cpp ****         reverb.Process(sendl, sendr, &wetl, &wetr);
- 426              		.loc 9 38 23 discriminator 2 view .LVU106
- 427 0096 04AB     		add	r3, sp, #16
- 428 0098 03AA     		add	r2, sp, #12
- 429 009a 4FEA8409 		lsl	r9, r4, #2
-  33:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level;
- 430              		.loc 9 33 29 discriminator 2 view .LVU107
- 431 009e 01EB8400 		add	r0, r1, r4, lsl #2
-  34:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level;
- 432              		.loc 9 34 29 discriminator 2 view .LVU108
- 433 00a2 6968     		ldr	r1, [r5, #4]
-  33:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level;
- 434              		.loc 9 33 29 discriminator 2 view .LVU109
- 435 00a4 90ED008A 		vldr.32	s16, [r0]
- 436              	.LVL24:
-  34:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level;
- 437              		.loc 9 34 9 is_stmt 1 discriminator 2 view .LVU110
-  34:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level;
- 438              		.loc 9 34 29 is_stmt 0 discriminator 2 view .LVU111
- 439 00a8 01EB840C 		add	ip, r1, r4, lsl #2
- 440              		.loc 9 38 23 discriminator 2 view .LVU112
- 441 00ac 1B48     		ldr	r0, .L12+28
- 442 00ae 02A9     		add	r1, sp, #8
+ 429              		.loc 9 38 23 discriminator 2 view .LVU107
+ 430 009c 04AB     		add	r3, sp, #16
+ 431 009e 02A9     		add	r1, sp, #8
+  33:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level + 1;
+ 432              		.loc 9 33 29 discriminator 2 view .LVU108
+ 433 00a0 02EB8400 		add	r0, r2, r4, lsl #2
+  34:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level + 1;
+ 434              		.loc 9 34 29 discriminator 2 view .LVU109
+ 435 00a4 6A68     		ldr	r2, [r5, #4]
+  33:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level + 1;
+ 436              		.loc 9 33 15 discriminator 2 view .LVU110
+ 437 00a6 F0EE679A 		vmov.f32	s19, s15
+ 438 00aa 4FEA8409 		lsl	r9, r4, #2
+  33:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level + 1;
+ 439              		.loc 9 33 29 discriminator 2 view .LVU111
+ 440 00ae 90ED007A 		vldr.32	s14, [r0]
+  34:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level + 1;
+ 441              		.loc 9 34 29 discriminator 2 view .LVU112
+ 442 00b2 02EB840C 		add	ip, r2, r4, lsl #2
+ 443              		.loc 9 38 23 discriminator 2 view .LVU113
+ 444 00b6 1F48     		ldr	r0, .L12+28
+ 445 00b8 03AA     		add	r2, sp, #12
+  34:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level + 1;
+ 446              		.loc 9 34 15 discriminator 2 view .LVU114
+ 447 00ba 9CED006A 		vldr.32	s12, [ip]
   35:ReverbExample.cpp ****         float sendr = IN_R[i] * send_level;
- 443              		.loc 9 35 31 discriminator 2 view .LVU113
- 444 00b0 68EE097A 		vmul.f32	s15, s16, s18
-  34:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level;
- 445              		.loc 9 34 29 discriminator 2 view .LVU114
- 446 00b4 DCED009A 		vldr.32	s19, [ip]
- 447              	.LVL25:
-  35:ReverbExample.cpp ****         float sendr = IN_R[i] * send_level;
- 448              		.loc 9 35 9 is_stmt 1 discriminator 2 view .LVU115
- 449              	.LBE300:
+ 448              		.loc 9 35 31 discriminator 2 view .LVU115
+ 449 00be 67EE096A 		vmul.f32	s13, s14, s18
+  33:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level + 1;
+ 450              		.loc 9 33 15 discriminator 2 view .LVU116
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 22
+
+
+ 451 00c2 E7EE289A 		vfma.f32	s19, s14, s17
+ 452              	.LVL24:
+  34:ReverbExample.cpp ****         float dryr  = IN_R[i] * in_level + 1;
+ 453              		.loc 9 34 9 is_stmt 1 discriminator 2 view .LVU117
+ 454              	.LBE300:
   31:ReverbExample.cpp ****     {
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 22
-
-
- 450              		.loc 9 31 5 is_stmt 0 discriminator 2 view .LVU116
- 451 00b8 0134     		adds	r4, r4, #1
- 452              	.LVL26:
- 453              	.LBB301:
+ 455              		.loc 9 31 5 is_stmt 0 discriminator 2 view .LVU118
+ 456 00c6 0134     		adds	r4, r4, #1
+ 457              	.LVL25:
+ 458              	.LBB301:
+  34:ReverbExample.cpp ****         float sendl = IN_L[i] * send_level;
+ 459              		.loc 9 34 15 discriminator 2 view .LVU119
+ 460 00c8 E6EE287A 		vfma.f32	s15, s12, s17
   35:ReverbExample.cpp ****         float sendr = IN_R[i] * send_level;
- 454              		.loc 9 35 15 discriminator 2 view .LVU117
- 455 00ba CDED027A 		vstr.32	s15, [sp, #8]
+ 461              		.loc 9 35 15 discriminator 2 view .LVU120
+ 462 00cc CDED026A 		vstr.32	s13, [sp, #8]
   36:ReverbExample.cpp ****         float wetl, wetr;
- 456              		.loc 9 36 9 is_stmt 1 discriminator 2 view .LVU118
+ 463              		.loc 9 36 31 discriminator 2 view .LVU121
+ 464 00d0 9CED007A 		vldr.32	s14, [ip]
+ 465              		.loc 9 38 23 discriminator 2 view .LVU122
+ 466 00d4 CDF80080 		str	r8, [sp]
   36:ReverbExample.cpp ****         float wetl, wetr;
- 457              		.loc 9 36 31 is_stmt 0 discriminator 2 view .LVU119
- 458 00be DCED007A 		vldr.32	s15, [ip]
- 459              		.loc 9 38 23 discriminator 2 view .LVU120
- 460 00c2 CDF80080 		str	r8, [sp]
+ 467              		.loc 9 36 31 discriminator 2 view .LVU123
+ 468 00d8 27EE097A 		vmul.f32	s14, s14, s18
+  34:ReverbExample.cpp ****         float sendl = IN_L[i] * send_level;
+ 469              		.loc 9 34 15 discriminator 2 view .LVU124
+ 470 00dc B0EE678A 		vmov.f32	s16, s15
+ 471              	.LVL26:
+  35:ReverbExample.cpp ****         float sendr = IN_R[i] * send_level;
+ 472              		.loc 9 35 9 is_stmt 1 discriminator 2 view .LVU125
   36:ReverbExample.cpp ****         float wetl, wetr;
- 461              		.loc 9 36 31 discriminator 2 view .LVU121
- 462 00c6 67EE897A 		vmul.f32	s15, s15, s18
+ 473              		.loc 9 36 9 discriminator 2 view .LVU126
   36:ReverbExample.cpp ****         float wetl, wetr;
- 463              		.loc 9 36 15 discriminator 2 view .LVU122
- 464 00ca CDED037A 		vstr.32	s15, [sp, #12]
+ 474              		.loc 9 36 15 is_stmt 0 discriminator 2 view .LVU127
+ 475 00e0 8DED037A 		vstr.32	s14, [sp, #12]
   37:ReverbExample.cpp ****         reverb.Process(sendl, sendr, &wetl, &wetr);
- 465              		.loc 9 37 9 is_stmt 1 discriminator 2 view .LVU123
- 466              		.loc 9 38 9 discriminator 2 view .LVU124
- 467              		.loc 9 38 23 is_stmt 0 discriminator 2 view .LVU125
- 468 00ce FFF7FEFF 		bl	_ZN7daisysp8ReverbSc7ProcessERKfS2_PfS3_
- 469              	.LVL27:
+ 476              		.loc 9 37 9 is_stmt 1 discriminator 2 view .LVU128
+ 477              		.loc 9 38 9 discriminator 2 view .LVU129
+ 478              		.loc 9 38 23 is_stmt 0 discriminator 2 view .LVU130
+ 479 00e4 FFF7FEFF 		bl	_ZN7daisysp8ReverbSc7ProcessERKfS2_PfS3_
+ 480              	.LVL27:
   39:ReverbExample.cpp ****         OUT_L[i] = dryl + wetl;
- 470              		.loc 9 39 9 is_stmt 1 discriminator 2 view .LVU126
- 471              		.loc 9 39 25 is_stmt 0 discriminator 2 view .LVU127
- 472 00d2 DDED047A 		vldr.32	s15, [sp, #16]
- 473              	.LBE301:
+ 481              		.loc 9 39 9 is_stmt 1 discriminator 2 view .LVU131
+ 482              		.loc 9 39 25 is_stmt 0 discriminator 2 view .LVU132
+ 483 00e8 DDED047A 		vldr.32	s15, [sp, #16]
+ 484              	.LBE301:
   31:ReverbExample.cpp ****     {
- 474              		.loc 9 31 25 discriminator 2 view .LVU128
- 475 00d6 A742     		cmp	r7, r4
- 476              	.LBB302:
- 477              		.loc 9 39 25 discriminator 2 view .LVU129
- 478 00d8 E8EE287A 		vfma.f32	s15, s16, s17
+ 485              		.loc 9 31 25 discriminator 2 view .LVU133
+ 486 00ec A742     		cmp	r7, r4
+ 487              	.LBB302:
   40:ReverbExample.cpp ****         OUT_R[i] = dryr + wetr;
- 479              		.loc 9 40 16 discriminator 2 view .LVU130
- 480 00dc D6E90023 		ldrd	r2, r3, [r6]
+ 488              		.loc 9 40 18 discriminator 2 view .LVU134
+ 489 00ee D6E90023 		ldrd	r2, r3, [r6]
   39:ReverbExample.cpp ****         OUT_L[i] = dryl + wetl;
- 481              		.loc 9 39 16 discriminator 2 view .LVU131
- 482 00e0 4A44     		add	r2, r2, r9
- 483              		.loc 9 40 16 discriminator 2 view .LVU132
- 484 00e2 4B44     		add	r3, r3, r9
+ 490              		.loc 9 39 25 discriminator 2 view .LVU135
+ 491 00f2 77EEA97A 		vadd.f32	s15, s15, s19
   39:ReverbExample.cpp ****         OUT_L[i] = dryl + wetl;
- 485              		.loc 9 39 18 discriminator 2 view .LVU133
- 486 00e4 C2ED007A 		vstr.32	s15, [r2]
- 487              		.loc 9 40 9 is_stmt 1 discriminator 2 view .LVU134
- 488              		.loc 9 40 25 is_stmt 0 discriminator 2 view .LVU135
- 489 00e8 DDED057A 		vldr.32	s15, [sp, #20]
- 490 00ec E9EEA87A 		vfma.f32	s15, s19, s17
- 491              		.loc 9 40 18 discriminator 2 view .LVU136
- 492 00f0 C3ED007A 		vstr.32	s15, [r3]
- 493              	.LBE302:
-  31:ReverbExample.cpp ****     {
- 494              		.loc 9 31 5 is_stmt 1 discriminator 2 view .LVU137
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 23
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 23
 
 
- 495              	.LVL28:
+ 492              		.loc 9 39 18 discriminator 2 view .LVU136
+ 493 00f6 4A44     		add	r2, r2, r9
+ 494              		.loc 9 40 18 discriminator 2 view .LVU137
+ 495 00f8 4B44     		add	r3, r3, r9
+  39:ReverbExample.cpp ****         OUT_L[i] = dryl + wetl;
+ 496              		.loc 9 39 18 discriminator 2 view .LVU138
+ 497 00fa C2ED007A 		vstr.32	s15, [r2]
+ 498              		.loc 9 40 9 is_stmt 1 discriminator 2 view .LVU139
+ 499              		.loc 9 40 25 is_stmt 0 discriminator 2 view .LVU140
+ 500 00fe DDED057A 		vldr.32	s15, [sp, #20]
+ 501 0102 77EE887A 		vadd.f32	s15, s15, s16
+ 502              		.loc 9 40 18 discriminator 2 view .LVU141
+ 503 0106 C3ED007A 		vstr.32	s15, [r3]
+ 504              	.LBE302:
   31:ReverbExample.cpp ****     {
- 496              		.loc 9 31 25 discriminator 2 view .LVU138
- 497 00f4 CED1     		bne	.L6
- 498              	.LVL29:
- 499              	.L4:
+ 505              		.loc 9 31 5 is_stmt 1 discriminator 2 view .LVU142
+ 506              	.LVL28:
   31:ReverbExample.cpp ****     {
- 500              		.loc 9 31 25 is_stmt 0 discriminator 2 view .LVU139
- 501              	.LBE299:
+ 507              		.loc 9 31 25 discriminator 2 view .LVU143
+ 508 010a C4D1     		bne	.L6
+ 509              	.LVL29:
+ 510              	.L4:
+  31:ReverbExample.cpp ****     {
+ 511              		.loc 9 31 25 is_stmt 0 discriminator 2 view .LVU144
+ 512              	.LBE299:
   41:ReverbExample.cpp ****     }
   42:ReverbExample.cpp **** }
- 502              		.loc 9 42 1 view .LVU140
- 503 00f6 07B0     		add	sp, sp, #28
- 504              		.cfi_def_cfa_offset 44
- 505              		@ sp needed
- 506 00f8 BDEC048B 		vldm	sp!, {d8-d9}
- 507              		.cfi_restore 82
- 508              		.cfi_restore 83
- 509              		.cfi_restore 80
- 510              		.cfi_restore 81
- 511              		.cfi_def_cfa_offset 28
- 512 00fc BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
- 513              	.LVL30:
- 514              	.L13:
- 515              		.loc 9 42 1 view .LVU141
- 516              		.align	2
- 517              	.L12:
- 518 0100 00000000 		.word	.LANCHOR0
- 519 0104 9A99993E 		.word	1050253722
- 520 0108 D7A3303F 		.word	1060152279
- 521 010c A4707D3F 		.word	1065185444
- 522 0110 E731483F 		.word	1061695975
- 523 0114 00007A44 		.word	1148846080
- 524 0118 00709446 		.word	1184133120
- 525 011c 00000000 		.word	reverb
- 526              		.cfi_endproc
- 527              	.LFE4783:
- 529              		.section	.text.startup.main,"ax",%progbits
- 530              		.align	1
- 531              		.p2align 2,,3
- 532              		.global	main
- 533              		.syntax unified
- 534              		.thumb
- 535              		.thumb_func
- 536              		.fpu fpv5-d16
- 538              	main:
- 539              	.LFB4784:
+ 513              		.loc 9 42 1 view .LVU145
+ 514 010c 07B0     		add	sp, sp, #28
+ 515              		.cfi_def_cfa_offset 44
+ 516              		@ sp needed
+ 517 010e BDEC048B 		vldm	sp!, {d8-d9}
+ 518              		.cfi_restore 82
+ 519              		.cfi_restore 83
+ 520              		.cfi_restore 80
+ 521              		.cfi_restore 81
+ 522              		.cfi_def_cfa_offset 28
+ 523 0112 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 524              	.LVL30:
+ 525              	.L13:
+ 526              		.loc 9 42 1 view .LVU146
+ 527 0116 00BF     		.align	2
+ 528              	.L12:
+ 529 0118 00000000 		.word	.LANCHOR0
+ 530 011c 9A99993E 		.word	1050253722
+ 531 0120 D7A3303F 		.word	1060152279
+ 532 0124 A4707D3F 		.word	1065185444
+ 533 0128 E731483F 		.word	1061695975
+ 534 012c 00007A44 		.word	1148846080
+ 535 0130 00709446 		.word	1184133120
+ 536 0134 00000000 		.word	reverb
+ 537              		.cfi_endproc
+ 538              	.LFE4783:
+ 540              		.section	.text.startup.main,"ax",%progbits
+ 541              		.align	1
+ 542              		.p2align 2,,3
+ 543              		.global	main
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 24
+
+
+ 544              		.syntax unified
+ 545              		.thumb
+ 546              		.thumb_func
+ 547              		.fpu fpv5-d16
+ 549              	main:
+ 550              	.LFB4784:
   43:ReverbExample.cpp **** 
   44:ReverbExample.cpp **** int main(void)
   45:ReverbExample.cpp **** {
- 540              		.loc 9 45 1 is_stmt 1 view -0
- 541              		.cfi_startproc
- 542              		@ Volatile: function does not return.
- 543              		@ args = 0, pretend = 0, frame = 0
- 544              		@ frame_needed = 0, uses_anonymous_args = 0
+ 551              		.loc 9 45 1 is_stmt 1 view -0
+ 552              		.cfi_startproc
+ 553              		@ Volatile: function does not return.
+ 554              		@ args = 0, pretend = 0, frame = 0
+ 555              		@ frame_needed = 0, uses_anonymous_args = 0
   46:ReverbExample.cpp ****     patch.Init();
- 545              		.loc 9 46 5 view .LVU143
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 24
-
-
+ 556              		.loc 9 46 5 view .LVU148
   45:ReverbExample.cpp ****     patch.Init();
- 546              		.loc 9 45 1 is_stmt 0 view .LVU144
- 547 0000 08B5     		push	{r3, lr}
- 548              		.cfi_def_cfa_offset 8
- 549              		.cfi_offset 3, -8
- 550              		.cfi_offset 14, -4
- 551              		.loc 9 46 15 view .LVU145
- 552 0002 0748     		ldr	r0, .L17
- 553 0004 FFF7FEFF 		bl	_ZN5daisy8patch_sm12DaisyPatchSM4InitEv
- 554              	.LVL31:
+ 557              		.loc 9 45 1 is_stmt 0 view .LVU149
+ 558 0000 08B5     		push	{r3, lr}
+ 559              		.cfi_def_cfa_offset 8
+ 560              		.cfi_offset 3, -8
+ 561              		.cfi_offset 14, -4
+ 562              		.loc 9 46 15 view .LVU150
+ 563 0002 0748     		ldr	r0, .L17
+ 564 0004 FFF7FEFF 		bl	_ZN5daisy8patch_sm12DaisyPatchSM4InitEv
+ 565              	.LVL31:
   47:ReverbExample.cpp ****     reverb.Init(patch.AudioSampleRate());
- 555              		.loc 9 47 5 is_stmt 1 view .LVU146
- 556              		.loc 9 47 16 is_stmt 0 view .LVU147
- 557 0008 0548     		ldr	r0, .L17
- 558 000a FFF7FEFF 		bl	_ZN5daisy8patch_sm12DaisyPatchSM15AudioSampleRateEv
- 559              	.LVL32:
- 560 000e 0548     		ldr	r0, .L17+4
- 561 0010 FFF7FEFF 		bl	_ZN7daisysp8ReverbSc4InitEf
- 562              	.LVL33:
+ 566              		.loc 9 47 5 is_stmt 1 view .LVU151
+ 567              		.loc 9 47 16 is_stmt 0 view .LVU152
+ 568 0008 0548     		ldr	r0, .L17
+ 569 000a FFF7FEFF 		bl	_ZN5daisy8patch_sm12DaisyPatchSM15AudioSampleRateEv
+ 570              	.LVL32:
+ 571 000e 0548     		ldr	r0, .L17+4
+ 572 0010 FFF7FEFF 		bl	_ZN7daisysp8ReverbSc4InitEf
+ 573              	.LVL33:
   48:ReverbExample.cpp ****     patch.StartAudio(AudioCallback);
- 563              		.loc 9 48 5 is_stmt 1 view .LVU148
- 564              		.loc 9 48 21 is_stmt 0 view .LVU149
- 565 0014 0449     		ldr	r1, .L17+8
- 566 0016 0248     		ldr	r0, .L17
- 567 0018 FFF7FEFF 		bl	_ZN5daisy8patch_sm12DaisyPatchSM10StartAudioEPFvPKPKfPPfjE
- 568              	.LVL34:
- 569              	.L15:
+ 574              		.loc 9 48 5 is_stmt 1 view .LVU153
+ 575              		.loc 9 48 21 is_stmt 0 view .LVU154
+ 576 0014 0449     		ldr	r1, .L17+8
+ 577 0016 0248     		ldr	r0, .L17
+ 578 0018 FFF7FEFF 		bl	_ZN5daisy8patch_sm12DaisyPatchSM10StartAudioEPFvPKPKfPPfjE
+ 579              	.LVL34:
+ 580              	.L15:
   49:ReverbExample.cpp ****     while(1) {}
- 570              		.loc 9 49 5 is_stmt 1 discriminator 1 view .LVU150
- 571              		.loc 9 49 5 discriminator 1 view .LVU151
- 572              		.loc 9 49 5 discriminator 1 view .LVU152
- 573              		.loc 9 49 5 discriminator 1 view .LVU153
- 574 001c FEE7     		b	.L15
- 575              	.L18:
- 576 001e 00BF     		.align	2
- 577              	.L17:
- 578 0020 00000000 		.word	.LANCHOR0
- 579 0024 00000000 		.word	reverb
- 580 0028 00000000 		.word	_Z13AudioCallbackPKPKfPPfj
- 581              		.cfi_endproc
- 582              	.LFE4784:
- 584              		.section	.text.startup._GLOBAL__sub_I_patch,"ax",%progbits
- 585              		.align	1
- 586              		.p2align 2,,3
- 587              		.syntax unified
- 588              		.thumb
- 589              		.thumb_func
- 590              		.fpu fpv5-d16
- 592              	_GLOBAL__sub_I_patch:
- 593              	.LFB5344:
+ 581              		.loc 9 49 5 is_stmt 1 discriminator 1 view .LVU155
+ 582              		.loc 9 49 5 discriminator 1 view .LVU156
+ 583              		.loc 9 49 5 discriminator 1 view .LVU157
+ 584              		.loc 9 49 5 discriminator 1 view .LVU158
+ 585 001c FEE7     		b	.L15
+ 586              	.L18:
+ 587 001e 00BF     		.align	2
+ 588              	.L17:
+ 589 0020 00000000 		.word	.LANCHOR0
+ 590 0024 00000000 		.word	reverb
+ 591 0028 00000000 		.word	_Z13AudioCallbackPKPKfPPfj
+ 592              		.cfi_endproc
+ 593              	.LFE4784:
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 25
+
+
+ 595              		.section	.text.startup._GLOBAL__sub_I_patch,"ax",%progbits
+ 596              		.align	1
+ 597              		.p2align 2,,3
+ 598              		.syntax unified
+ 599              		.thumb
+ 600              		.thumb_func
+ 601              		.fpu fpv5-d16
+ 603              	_GLOBAL__sub_I_patch:
+ 604              	.LFB5344:
   50:ReverbExample.cpp **** }
- 594              		.loc 9 50 1 view -0
- 595              		.cfi_startproc
- 596              		@ args = 0, pretend = 0, frame = 0
- 597              		@ frame_needed = 0, uses_anonymous_args = 0
- 598              	.LBB333:
- 599              	.LBI333:
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 25
-
-
- 600              		.loc 9 50 1 view .LVU155
- 601              	.LVL35:
- 602              	.LBB334:
- 603              	.LBB335:
- 604              	.LBI335:
+ 605              		.loc 9 50 1 view -0
+ 606              		.cfi_startproc
+ 607              		@ args = 0, pretend = 0, frame = 0
+ 608              		@ frame_needed = 0, uses_anonymous_args = 0
+ 609              	.LBB333:
+ 610              	.LBI333:
+ 611              		.loc 9 50 1 view .LVU160
+ 612              	.LVL35:
+ 613              	.LBB334:
+ 614              	.LBB335:
+ 615              	.LBI335:
   64:libDaisy/src/daisy_patch_sm.h ****         ~DaisyPatchSM() {}
- 605              		.loc 1 64 9 view .LVU156
- 606              	.LBB336:
- 607              	.LBB337:
- 608              	.LBI337:
+ 616              		.loc 1 64 9 view .LVU161
+ 617              	.LBB336:
+ 618              	.LBB337:
+ 619              	.LBI337:
   77:libDaisy/src/sys/system.h ****     ~System() {}
- 609              		.loc 7 77 5 view .LVU157
+ 620              		.loc 7 77 5 view .LVU162
   77:libDaisy/src/sys/system.h ****     ~System() {}
- 610              		.loc 7 77 5 is_stmt 0 view .LVU158
- 611              	.LBE337:
- 612              	.LBB338:
- 613              	.LBI338:
- 614              		.file 11 "libDaisy/src/per/qspi.h"
+ 621              		.loc 7 77 5 is_stmt 0 view .LVU163
+ 622              	.LBE337:
+ 623              	.LBB338:
+ 624              	.LBI338:
+ 625              		.file 11 "libDaisy/src/per/qspi.h"
    1:libDaisy/src/per/qspi.h **** #ifndef DSY_QSPI
    2:libDaisy/src/per/qspi.h **** #define DSY_QSPI /**< Macro */
    3:libDaisy/src/per/qspi.h **** 
@@ -1482,6 +1498,9 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   21:libDaisy/src/per/qspi.h **** /** @addtogroup serial
   22:libDaisy/src/per/qspi.h **** @{
   23:libDaisy/src/per/qspi.h **** */
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 26
+
+
   24:libDaisy/src/per/qspi.h **** 
   25:libDaisy/src/per/qspi.h **** /** 
   26:libDaisy/src/per/qspi.h ****  Driver for QSPI peripheral to interface with external flash memory. \n 
@@ -1498,9 +1517,6 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   37:libDaisy/src/per/qspi.h ****     };
   38:libDaisy/src/per/qspi.h **** 
   39:libDaisy/src/per/qspi.h ****     /** Indicates the current status of the module. 
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 26
-
-
   40:libDaisy/src/per/qspi.h ****          *  Warnings are indicated by a leading W.
   41:libDaisy/src/per/qspi.h ****          *  Errors are indicated by a leading E and cause an immediate exit.
   42:libDaisy/src/per/qspi.h ****          * 
@@ -1542,6 +1558,9 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   78:libDaisy/src/per/qspi.h ****             MODE_LAST,
   79:libDaisy/src/per/qspi.h ****         };
   80:libDaisy/src/per/qspi.h **** 
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 27
+
+
   81:libDaisy/src/per/qspi.h ****         //SCK,  CE# (active low)
   82:libDaisy/src/per/qspi.h ****         struct
   83:libDaisy/src/per/qspi.h ****         {
@@ -1558,9 +1577,6 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   94:libDaisy/src/per/qspi.h ****     };
   95:libDaisy/src/per/qspi.h **** 
   96:libDaisy/src/per/qspi.h ****     /** 
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 27
-
-
   97:libDaisy/src/per/qspi.h ****         Initializes QSPI peripheral, and Resets, and prepares memory for access.
   98:libDaisy/src/per/qspi.h ****         \param config should be populated with the mode, device and pin_config before calling this 
   99:libDaisy/src/per/qspi.h ****         \return Result::OK or Result::ERR
@@ -1602,6 +1618,9 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  135:libDaisy/src/per/qspi.h ****         Erases the area specified on the chip.
  136:libDaisy/src/per/qspi.h ****         Erasures will happen by 4K, 32K or 64K increments.
  137:libDaisy/src/per/qspi.h ****         Smallest erase possible is 4kB at a time. (on IS25LP*)
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 28
+
+
  138:libDaisy/src/per/qspi.h ****         \param start_addr Address to begin erasing from
  139:libDaisy/src/per/qspi.h ****         \param end_addr  Address to stop erasing at
  140:libDaisy/src/per/qspi.h ****         \return Result::OK or Result::ERR
@@ -1618,9 +1637,6 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  151:libDaisy/src/per/qspi.h **** 
  152:libDaisy/src/per/qspi.h ****     /** Returns the current class status. Useful for debugging.
  153:libDaisy/src/per/qspi.h ****      *  \returns Status
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 28
-
-
  154:libDaisy/src/per/qspi.h ****      */
  155:libDaisy/src/per/qspi.h ****     Status GetStatus();
  156:libDaisy/src/per/qspi.h **** 
@@ -1634,53 +1650,53 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
  164:libDaisy/src/per/qspi.h ****     void* GetData(uint32_t offset = 0);
  165:libDaisy/src/per/qspi.h **** 
  166:libDaisy/src/per/qspi.h ****     QSPIHandle() : pimpl_(nullptr) {}
- 615              		.loc 11 166 5 is_stmt 1 view .LVU159
- 616              	.LBE338:
- 617              	.LBE336:
- 618              	.LBE335:
- 619              	.LBE334:
- 620              	.LBE333:
- 621              		.loc 9 50 1 is_stmt 0 view .LVU160
- 622 0000 08B5     		push	{r3, lr}
- 623              		.cfi_def_cfa_offset 8
- 624              		.cfi_offset 3, -8
- 625              		.cfi_offset 14, -4
- 626              	.LBB371:
- 627              	.LBB368:
- 628              	.LBB364:
- 629              	.LBB361:
- 630              	.LBB341:
- 631              	.LBB339:
- 632              	.LBB340:
- 633              		.loc 11 166 34 view .LVU161
- 634 0002 0848     		ldr	r0, .L21
- 635 0004 0023     		movs	r3, #0
- 636              	.LBE340:
- 637              	.LBE339:
- 638              	.LBE341:
- 639              	.LBE361:
- 640              	.LBE364:
+ 626              		.loc 11 166 5 is_stmt 1 view .LVU164
+ 627              	.LBE338:
+ 628              	.LBE336:
+ 629              	.LBE335:
+ 630              	.LBE334:
+ 631              	.LBE333:
+ 632              		.loc 9 50 1 is_stmt 0 view .LVU165
+ 633 0000 08B5     		push	{r3, lr}
+ 634              		.cfi_def_cfa_offset 8
+ 635              		.cfi_offset 3, -8
+ 636              		.cfi_offset 14, -4
+ 637              	.LBB371:
+ 638              	.LBB368:
+ 639              	.LBB364:
+ 640              	.LBB361:
+ 641              	.LBB341:
+ 642              	.LBB339:
+ 643              	.LBB340:
+ 644              		.loc 11 166 34 view .LVU166
+ 645 0002 0848     		ldr	r0, .L21
+ 646 0004 0023     		movs	r3, #0
+ 647              	.LBE340:
+ 648              	.LBE339:
+ 649              	.LBE341:
+ 650              	.LBE361:
+ 651              	.LBE364:
    8:ReverbExample.cpp **** ReverbSc     reverb;
- 641              		.loc 9 8 14 view .LVU162
- 642 0006 084A     		ldr	r2, .L21+4
- 643 0008 0849     		ldr	r1, .L21+8
- 644              	.LBB365:
- 645              	.LBB362:
- 646              	.LBB342:
- 647              	.LBB343:
- 648              	.LBB344:
- 649              	.LBB345:
- 650              	.LBB346:
- 651              		.file 12 "libDaisy/src/per/i2c.h"
+ 652              		.loc 9 8 14 view .LVU167
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 29
+
+
+ 653 0006 084A     		ldr	r2, .L21+4
+ 654 0008 0849     		ldr	r1, .L21+8
+ 655              	.LBB365:
+ 656              	.LBB362:
+ 657              	.LBB342:
+ 658              	.LBB343:
+ 659              	.LBB344:
+ 660              	.LBB345:
+ 661              	.LBB346:
+ 662              		.file 12 "libDaisy/src/per/i2c.h"
    1:libDaisy/src/per/i2c.h **** #pragma once
    2:libDaisy/src/per/i2c.h **** #include "daisy_core.h"
    3:libDaisy/src/per/i2c.h **** 
    4:libDaisy/src/per/i2c.h **** namespace daisy
    5:libDaisy/src/per/i2c.h **** {
    6:libDaisy/src/per/i2c.h **** /** A handle for interacting with an I2C peripheral. This is a dumb
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 29
-
-
    7:libDaisy/src/per/i2c.h ****  *  gateway that internally points to one of the four I2C peripherals
    8:libDaisy/src/per/i2c.h ****  *  after it was initialised. It can then be copied and passed around.
    9:libDaisy/src/per/i2c.h ****  *  Use an I2CHandle like this:
@@ -1722,6 +1738,9 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   45:libDaisy/src/per/i2c.h **** 
   46:libDaisy/src/per/i2c.h ****         /** Rate at which the clock/data will be sent/received. The device being used will have max
   47:libDaisy/src/per/i2c.h ****          *  1MHZ Mode is currently 886kHz
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 30
+
+
   48:libDaisy/src/per/i2c.h ****          */
   49:libDaisy/src/per/i2c.h ****         enum class Speed
   50:libDaisy/src/per/i2c.h ****         {
@@ -1738,9 +1757,6 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   61:libDaisy/src/per/i2c.h ****         } pin_config;         /**< & */
   62:libDaisy/src/per/i2c.h **** 
   63:libDaisy/src/per/i2c.h ****         Speed speed; /**< & */
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 30
-
-
   64:libDaisy/src/per/i2c.h ****         Mode  mode;  /**< & */
   65:libDaisy/src/per/i2c.h ****         // 0x10 is chosen as a default to avoid conflicts with reserved addresses
   66:libDaisy/src/per/i2c.h ****         uint8_t address = 0x10; /**< & */
@@ -1760,17 +1776,17 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   80:libDaisy/src/per/i2c.h ****     };
   81:libDaisy/src/per/i2c.h **** 
   82:libDaisy/src/per/i2c.h ****     I2CHandle() : pimpl_(nullptr) {}
- 652              		.loc 12 82 33 view .LVU163
- 653 000a 0362     		str	r3, [r0, #32]
- 654              	.LBE346:
- 655              	.LBE345:
- 656              	.LBE344:
- 657              	.LBE343:
- 658              	.LBE342:
- 659              	.LBB349:
- 660              	.LBB350:
- 661              	.LBB351:
- 662              		.file 13 "libDaisy/src/per/dac.h"
+ 663              		.loc 12 82 33 view .LVU168
+ 664 000a 0362     		str	r3, [r0, #32]
+ 665              	.LBE346:
+ 666              	.LBE345:
+ 667              	.LBE344:
+ 668              	.LBE343:
+ 669              	.LBE342:
+ 670              	.LBB349:
+ 671              	.LBB350:
+ 672              	.LBB351:
+ 673              		.file 13 "libDaisy/src/per/dac.h"
    1:libDaisy/src/per/dac.h **** #pragma once
    2:libDaisy/src/per/dac.h **** #ifndef DSY_DAC_H
    3:libDaisy/src/per/dac.h **** #define DSY_DAC_H
@@ -1782,6 +1798,9 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
    9:libDaisy/src/per/dac.h **** /** @brief DAC handle for Built-in DAC Peripheral 
   10:libDaisy/src/per/dac.h ****  *  @ingroup per_analog
   11:libDaisy/src/per/dac.h ****  ** 
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 31
+
+
   12:libDaisy/src/per/dac.h ****  ** For now only Normal Mode is supported,
   13:libDaisy/src/per/dac.h ****  ** Sample and hold mode provides reduced power consumption, but requires a bit more setup.
   14:libDaisy/src/per/dac.h ****  **
@@ -1798,9 +1817,6 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   25:libDaisy/src/per/dac.h ****     enum class Result
   26:libDaisy/src/per/dac.h ****     {
   27:libDaisy/src/per/dac.h ****         OK,
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 31
-
-
   28:libDaisy/src/per/dac.h ****         ERR,
   29:libDaisy/src/per/dac.h ****     };
   30:libDaisy/src/per/dac.h **** 
@@ -1842,6 +1858,9 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   66:libDaisy/src/per/dac.h ****         DISABLED,
   67:libDaisy/src/per/dac.h ****     };
   68:libDaisy/src/per/dac.h **** 
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 32
+
+
   69:libDaisy/src/per/dac.h ****     /** Configuration structure for initializing the DAC structure. */
   70:libDaisy/src/per/dac.h ****     struct Config
   71:libDaisy/src/per/dac.h ****     {
@@ -1858,227 +1877,224 @@ ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 1
   82:libDaisy/src/per/dac.h ****     };
   83:libDaisy/src/per/dac.h **** 
   84:libDaisy/src/per/dac.h ****     DacHandle() : pimpl_(nullptr) {}
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 32
-
-
- 663              		.loc 13 84 33 view .LVU164
- 664 000c 8362     		str	r3, [r0, #40]
- 665              	.LBE351:
- 666              	.LBE350:
- 667              	.LBE349:
- 668              	.LBB352:
- 669              	.LBB353:
- 670              	.LBB354:
+ 674              		.loc 13 84 33 view .LVU169
+ 675 000c 8362     		str	r3, [r0, #40]
+ 676              	.LBE351:
+ 677              	.LBE350:
+ 678              	.LBE349:
+ 679              	.LBB352:
+ 680              	.LBB353:
+ 681              	.LBB354:
   95:libDaisy/src/hid/audio.h ****     ~AudioHandle() {}
- 671              		.loc 6 95 35 view .LVU165
- 672 000e C0E90333 		strd	r3, r3, [r0, #12]
- 673              	.LVL36:
+ 682              		.loc 6 95 35 view .LVU170
+ 683 000e C0E90333 		strd	r3, r3, [r0, #12]
+ 684              	.LVL36:
   95:libDaisy/src/hid/audio.h ****     ~AudioHandle() {}
- 674              		.loc 6 95 35 view .LVU166
- 675              	.LBE354:
- 676              	.LBE353:
- 677              	.LBE352:
- 678              	.LBB355:
- 679              	.LBI355:
+ 685              		.loc 6 95 35 view .LVU171
+ 686              	.LBE354:
+ 687              	.LBE353:
+ 688              	.LBE352:
+ 689              	.LBB355:
+ 690              	.LBI355:
   92:libDaisy/src/per/adc.h ****     ~AdcHandle() {}
- 680              		.loc 5 92 5 is_stmt 1 view .LVU167
+ 691              		.loc 5 92 5 is_stmt 1 view .LVU172
   92:libDaisy/src/per/adc.h ****     ~AdcHandle() {}
- 681              		.loc 5 92 5 is_stmt 0 view .LVU168
- 682              	.LBE355:
- 683              	.LBB356:
- 684              	.LBI356:
+ 692              		.loc 5 92 5 is_stmt 0 view .LVU173
+ 693              	.LBE355:
+ 694              	.LBB356:
+ 695              	.LBI356:
   40:libDaisy/src/hid/usb.h **** 
- 685              		.loc 4 40 5 is_stmt 1 view .LVU169
+ 696              		.loc 4 40 5 is_stmt 1 view .LVU174
   40:libDaisy/src/hid/usb.h **** 
- 686              		.loc 4 40 5 is_stmt 0 view .LVU170
- 687              	.LBE356:
- 688              	.LBB357:
- 689              	.LBI342:
+ 697              		.loc 4 40 5 is_stmt 0 view .LVU175
+ 698              	.LBE356:
+ 699              	.LBB357:
+ 700              	.LBI342:
   28:libDaisy/src/dev/codec_pcm3060.h ****     ~Pcm3060() {}
- 690              		.loc 3 28 5 is_stmt 1 view .LVU171
- 691              	.LBB348:
- 692              	.LBB347:
- 693              	.LBI344:
- 694              		.loc 12 82 5 view .LVU172
- 695              		.loc 12 82 5 is_stmt 0 view .LVU173
- 696              	.LBE347:
- 697              	.LBE348:
- 698              	.LBE357:
- 699              	.LBB358:
- 700              	.LBI349:
- 701              		.loc 13 84 5 is_stmt 1 view .LVU174
- 702              		.loc 13 84 5 is_stmt 0 view .LVU175
- 703              	.LBE358:
- 704              	.LBE362:
- 705              	.LBE365:
- 706              	.LBE368:
- 707              	.LBE371:
+ 701              		.loc 3 28 5 is_stmt 1 view .LVU176
+ 702              	.LBB348:
+ 703              	.LBB347:
+ 704              	.LBI344:
+ 705              		.loc 12 82 5 view .LVU177
+ 706              		.loc 12 82 5 is_stmt 0 view .LVU178
+ 707              	.LBE347:
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 33
+
+
+ 708              	.LBE348:
+ 709              	.LBE357:
+ 710              	.LBB358:
+ 711              	.LBI349:
+ 712              		.loc 13 84 5 is_stmt 1 view .LVU179
+ 713              		.loc 13 84 5 is_stmt 0 view .LVU180
+ 714              	.LBE358:
+ 715              	.LBE362:
+ 716              	.LBE365:
+ 717              	.LBE368:
+ 718              	.LBE371:
   64:libDaisy/src/daisy_patch_sm.h ****         ~DaisyPatchSM() {}
- 708              		.loc 1 64 24 is_stmt 1 view .LVU176
- 709              	.LBB372:
- 710              	.LBB369:
- 711              	.LBB366:
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 33
-
-
- 712              	.LBB363:
- 713              	.LBB359:
- 714              	.LBI359:
+ 719              		.loc 1 64 24 is_stmt 1 view .LVU181
+ 720              	.LBB372:
+ 721              	.LBB369:
+ 722              	.LBB366:
+ 723              	.LBB363:
+ 724              	.LBB359:
+ 725              	.LBI359:
   20:libDaisy/src/hid/gatein.h ****     /** GateIn~
- 715              		.loc 2 20 5 view .LVU177
+ 726              		.loc 2 20 5 view .LVU182
   20:libDaisy/src/hid/gatein.h ****     /** GateIn~
- 716              		.loc 2 20 5 is_stmt 0 view .LVU178
- 717              	.LBE359:
- 718              	.LBB360:
- 719              	.LBI360:
+ 727              		.loc 2 20 5 is_stmt 0 view .LVU183
+ 728              	.LBE359:
+ 729              	.LBB360:
+ 730              	.LBI360:
   20:libDaisy/src/hid/gatein.h ****     /** GateIn~
- 720              		.loc 2 20 5 is_stmt 1 view .LVU179
+ 731              		.loc 2 20 5 is_stmt 1 view .LVU184
   20:libDaisy/src/hid/gatein.h ****     /** GateIn~
- 721              		.loc 2 20 5 is_stmt 0 view .LVU180
- 722              	.LBE360:
- 723              	.LBE363:
- 724              	.LBE366:
+ 732              		.loc 2 20 5 is_stmt 0 view .LVU185
+ 733              	.LBE360:
+ 734              	.LBE363:
+ 735              	.LBE366:
    8:ReverbExample.cpp **** ReverbSc     reverb;
- 725              		.loc 9 8 14 view .LVU181
- 726 0012 FFF7FEFF 		bl	__aeabi_atexit
- 727              	.LVL37:
- 728              	.LBB367:
- 729              	.LBI367:
+ 736              		.loc 9 8 14 view .LVU186
+ 737 0012 FFF7FEFF 		bl	__aeabi_atexit
+ 738              	.LVL37:
+ 739              	.LBB367:
+ 740              	.LBI367:
   40:DaisySP/Source/Effects/reverbsc.h ****     ~ReverbSc() {}
- 730              		.loc 8 40 5 is_stmt 1 view .LVU182
+ 741              		.loc 8 40 5 is_stmt 1 view .LVU187
   40:DaisySP/Source/Effects/reverbsc.h ****     ~ReverbSc() {}
- 731              		.loc 8 40 5 is_stmt 0 view .LVU183
- 732              	.LBE367:
+ 742              		.loc 8 40 5 is_stmt 0 view .LVU188
+ 743              	.LBE367:
    9:ReverbExample.cpp **** 
- 733              		.loc 9 9 14 view .LVU184
- 734 0016 044A     		ldr	r2, .L21+4
- 735 0018 0549     		ldr	r1, .L21+12
- 736 001a 0648     		ldr	r0, .L21+16
- 737              	.LBE369:
- 738              	.LBE372:
- 739              		.loc 9 50 1 view .LVU185
- 740 001c BDE80840 		pop	{r3, lr}
- 741              		.cfi_restore 14
- 742              		.cfi_restore 3
- 743              		.cfi_def_cfa_offset 0
- 744              	.LBB373:
- 745              	.LBB370:
+ 744              		.loc 9 9 14 view .LVU189
+ 745 0016 044A     		ldr	r2, .L21+4
+ 746 0018 0549     		ldr	r1, .L21+12
+ 747 001a 0648     		ldr	r0, .L21+16
+ 748              	.LBE369:
+ 749              	.LBE372:
+ 750              		.loc 9 50 1 view .LVU190
+ 751 001c BDE80840 		pop	{r3, lr}
+ 752              		.cfi_restore 14
+ 753              		.cfi_restore 3
+ 754              		.cfi_def_cfa_offset 0
+ 755              	.LBB373:
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 34
+
+
+ 756              	.LBB370:
    9:ReverbExample.cpp **** 
- 746              		.loc 9 9 14 view .LVU186
- 747 0020 FFF7FEBF 		b	__aeabi_atexit
- 748              	.LVL38:
- 749              	.L22:
- 750              		.align	2
- 751              	.L21:
- 752 0024 00000000 		.word	.LANCHOR0
- 753 0028 00000000 		.word	__dso_handle
- 754 002c 00000000 		.word	_ZN5daisy8patch_sm12DaisyPatchSMD1Ev
- 755 0030 00000000 		.word	_ZN7daisysp8ReverbScD1Ev
- 756 0034 00000000 		.word	reverb
- 757              	.LBE370:
- 758              	.LBE373:
- 759              		.cfi_endproc
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 34
+ 757              		.loc 9 9 14 view .LVU191
+ 758 0020 FFF7FEBF 		b	__aeabi_atexit
+ 759              	.LVL38:
+ 760              	.L22:
+ 761              		.align	2
+ 762              	.L21:
+ 763 0024 00000000 		.word	.LANCHOR0
+ 764 0028 00000000 		.word	__dso_handle
+ 765 002c 00000000 		.word	_ZN5daisy8patch_sm12DaisyPatchSMD1Ev
+ 766 0030 00000000 		.word	_ZN7daisysp8ReverbScD1Ev
+ 767 0034 00000000 		.word	reverb
+ 768              	.LBE370:
+ 769              	.LBE373:
+ 770              		.cfi_endproc
+ 771              	.LFE5344:
+ 773              		.section	.init_array,"aw",%init_array
+ 774              		.align	2
+ 775 0000 00000000 		.word	_GLOBAL__sub_I_patch(target1)
+ 776              		.global	reverb
+ 777              		.global	patch
+ 778              		.section	.bss.patch,"aw",%nobits
+ 779              		.align	2
+ 780              		.set	.LANCHOR0,. + 0
+ 783              	patch:
+ 784 0000 00000000 		.space	464
+ 784      00000000 
+ 784      00000000 
+ 784      00000000 
+ 784      00000000 
+ 785              		.section	.bss.reverb,"aw",%nobits
+ 786              		.align	2
+ 789              	reverb:
+ 790 0000 00000000 		.space	396100
+ 790      00000000 
+ 790      00000000 
+ 790      00000000 
+ 790      00000000 
+ 791              		.text
+ 792              	.Letext0:
+ 793              		.file 14 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\machine\\_d
+ 794              		.file 15 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\sys\\_stdin
+ 795              		.file 16 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\stdint.h"
+ 796              		.file 17 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\lib\\gcc\\arm-none-eabi\\10.2.1\\in
+ 797              		.file 18 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 798              		.file 19 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 799              		.file 20 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 800              		.file 21 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 801              		.file 22 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 802              		.file 23 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 803              		.file 24 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 804              		.file 25 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 805              		.file 26 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 806              		.file 27 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 807              		.file 28 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 808              		.file 29 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 35
 
 
- 760              	.LFE5344:
- 762              		.section	.init_array,"aw",%init_array
- 763              		.align	2
- 764 0000 00000000 		.word	_GLOBAL__sub_I_patch(target1)
- 765              		.global	reverb
- 766              		.global	patch
- 767              		.section	.bss.patch,"aw",%nobits
- 768              		.align	2
- 769              		.set	.LANCHOR0,. + 0
- 772              	patch:
- 773 0000 00000000 		.space	464
- 773      00000000 
- 773      00000000 
- 773      00000000 
- 773      00000000 
- 774              		.section	.bss.reverb,"aw",%nobits
- 775              		.align	2
- 778              	reverb:
- 779 0000 00000000 		.space	396100
- 779      00000000 
- 779      00000000 
- 779      00000000 
- 779      00000000 
- 780              		.text
- 781              	.Letext0:
- 782              		.file 14 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\machine\\_d
- 783              		.file 15 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\sys\\_stdin
- 784              		.file 16 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\stdint.h"
- 785              		.file 17 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\lib\\gcc\\arm-none-eabi\\10.2.1\\in
- 786              		.file 18 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 787              		.file 19 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 788              		.file 20 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 789              		.file 21 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 790              		.file 22 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 791              		.file 23 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 792              		.file 24 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 793              		.file 25 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 794              		.file 26 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 795              		.file 27 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 796              		.file 28 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 797              		.file 29 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 798              		.file 30 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 799              		.file 31 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 800              		.file 32 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 801              		.file 33 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 802              		.file 34 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 803              		.file 35 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 804              		.file 36 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\sys\\_types
- 805              		.file 37 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\sys\\reent.
- 806              		.file 38 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\sys\\lock.h
- 807              		.file 39 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\math.h"
- 808              		.file 40 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\stdlib.h"
- 809              		.file 41 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 810              		.file 42 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
- 811              		.file 43 "libDaisy/src/daisy_core.h"
- 812              		.file 44 "libDaisy/src/per/tim.h"
- 813              		.file 45 "libDaisy/src/per/sai.h"
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 35
-
-
- 814              		.file 46 "libDaisy/src/hid/ctrl.h"
- 815              		.file 47 "libDaisy/src/util/wav_format.h"
- 816              		.file 48 "libDaisy/src/dev/max11300.h"
- 817              		.file 49 "libDaisy/src/per/gpio.h"
- 818              		.file 50 "libDaisy/src/dev/sdram.h"
- 819              		.file 51 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\lib\\gcc\\arm-none-eabi\\10.2.1\\in
- 820              		.file 52 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\stdio.h"
- 821              		.file 53 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\string.h"
- 822              		.file 54 "DaisySP/Source/Control/adenv.h"
- 823              		.file 55 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\wchar.h"
- 824              		.file 56 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\locale.h"
- 825              		.file 57 "libDaisy/src/dev/sr_595.h"
- 826              		.file 58 "<built-in>"
-ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s 			page 36
+ 809              		.file 30 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 810              		.file 31 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 811              		.file 32 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 812              		.file 33 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 813              		.file 34 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 814              		.file 35 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 815              		.file 36 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\sys\\_types
+ 816              		.file 37 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\sys\\reent.
+ 817              		.file 38 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\sys\\lock.h
+ 818              		.file 39 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\math.h"
+ 819              		.file 40 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\stdlib.h"
+ 820              		.file 41 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 821              		.file 42 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\c++\\10.2.1
+ 822              		.file 43 "libDaisy/src/daisy_core.h"
+ 823              		.file 44 "libDaisy/src/per/tim.h"
+ 824              		.file 45 "libDaisy/src/per/sai.h"
+ 825              		.file 46 "libDaisy/src/hid/ctrl.h"
+ 826              		.file 47 "libDaisy/src/util/wav_format.h"
+ 827              		.file 48 "libDaisy/src/dev/max11300.h"
+ 828              		.file 49 "libDaisy/src/per/gpio.h"
+ 829              		.file 50 "libDaisy/src/dev/sdram.h"
+ 830              		.file 51 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\lib\\gcc\\arm-none-eabi\\10.2.1\\in
+ 831              		.file 52 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\stdio.h"
+ 832              		.file 53 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\string.h"
+ 833              		.file 54 "DaisySP/Source/Control/adenv.h"
+ 834              		.file 55 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\wchar.h"
+ 835              		.file 56 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\locale.h"
+ 836              		.file 57 "libDaisy/src/dev/sr_595.h"
+ 837              		.file 58 "<built-in>"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s 			page 36
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ReverbExample.cpp
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:17     .text._ZN5daisy8patch_sm12DaisyPatchSMD2Ev:00000000 $t
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:26     .text._ZN5daisy8patch_sm12DaisyPatchSMD2Ev:00000000 _ZN5daisy8patch_sm12DaisyPatchSMD2Ev
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:26     .text._ZN5daisy8patch_sm12DaisyPatchSMD2Ev:00000000 _ZN5daisy8patch_sm12DaisyPatchSMD1Ev
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:84     .text._ZN7daisysp8ReverbScD2Ev:00000000 $t
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:92     .text._ZN7daisysp8ReverbScD2Ev:00000000 _ZN7daisysp8ReverbScD2Ev
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:92     .text._ZN7daisysp8ReverbScD2Ev:00000000 _ZN7daisysp8ReverbScD1Ev
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:109    .text._Z13AudioCallbackPKPKfPPfj:00000000 $t
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:117    .text._Z13AudioCallbackPKPKfPPfj:00000000 _Z13AudioCallbackPKPKfPPfj
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:518    .text._Z13AudioCallbackPKPKfPPfj:00000100 $d
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:778    .bss.reverb:00000000 reverb
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:530    .text.startup.main:00000000 $t
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:538    .text.startup.main:00000000 main
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:578    .text.startup.main:00000020 $d
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:585    .text.startup._GLOBAL__sub_I_patch:00000000 $t
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:592    .text.startup._GLOBAL__sub_I_patch:00000000 _GLOBAL__sub_I_patch
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:752    .text.startup._GLOBAL__sub_I_patch:00000024 $d
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:763    .init_array:00000000 $d
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:772    .bss.patch:00000000 patch
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:768    .bss.patch:00000000 $d
-C:\Users\pedro\AppData\Local\Temp\ccaMlCGv.s:775    .bss.reverb:00000000 $d
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:17     .text._ZN5daisy8patch_sm12DaisyPatchSMD2Ev:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:26     .text._ZN5daisy8patch_sm12DaisyPatchSMD2Ev:00000000 _ZN5daisy8patch_sm12DaisyPatchSMD2Ev
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:26     .text._ZN5daisy8patch_sm12DaisyPatchSMD2Ev:00000000 _ZN5daisy8patch_sm12DaisyPatchSMD1Ev
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:84     .text._ZN7daisysp8ReverbScD2Ev:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:92     .text._ZN7daisysp8ReverbScD2Ev:00000000 _ZN7daisysp8ReverbScD2Ev
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:92     .text._ZN7daisysp8ReverbScD2Ev:00000000 _ZN7daisysp8ReverbScD1Ev
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:109    .text._Z13AudioCallbackPKPKfPPfj:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:117    .text._Z13AudioCallbackPKPKfPPfj:00000000 _Z13AudioCallbackPKPKfPPfj
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:529    .text._Z13AudioCallbackPKPKfPPfj:00000118 $d
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:789    .bss.reverb:00000000 reverb
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:541    .text.startup.main:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:549    .text.startup.main:00000000 main
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:589    .text.startup.main:00000020 $d
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:596    .text.startup._GLOBAL__sub_I_patch:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:603    .text.startup._GLOBAL__sub_I_patch:00000000 _GLOBAL__sub_I_patch
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:763    .text.startup._GLOBAL__sub_I_patch:00000024 $d
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:774    .init_array:00000000 $d
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:783    .bss.patch:00000000 patch
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:779    .bss.patch:00000000 $d
+C:\Users\pedro\AppData\Local\Temp\ccGGRwYa.s:786    .bss.reverb:00000000 $d
                            .group:00000000 _ZN5daisy8patch_sm12DaisyPatchSMD5Ev
                            .group:00000000 _ZN7daisysp8ReverbScD5Ev
 

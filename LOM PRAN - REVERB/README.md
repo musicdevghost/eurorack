@@ -1,14 +1,49 @@
-# ReverbExample
+# Description
+Cloudy Stereo Reverb algorithm.
+Using the reverb algorithm from rings/clouds from
+Copyright 2014 Emilie Gillet
+https://github.com/pichenettes/eurorack/blob/master/clouds/dsp/fx/reverb.h
 
-This example shows how to set up a simple reverb effect.
+# Controls
+| Control | Description | Comment |
+| --- | --- | --- |
+| Ctrl 1 | Dry/Wet | Dry / Wet Control for the Mix outputs |
+| Ctrl 2 | Input Level | How much of the signal to send to the reverb |
+| Ctrl 3 | Feedback / Rev Time | Controls the length of the reverb tail |
+| Ctrl 4 | Lowpass / Color | The higher the brighter |
+| Audio In 1-2 | Reverb In | Stereo: In 1 L, In 2 R |
+| Audio Out 1-2 | Mix Outputs | Stereo: Out 1 L, Out 2 R |
+| Audio Out 3-4 | Wet Outputs | Stereo: Out 3 L, Out 4 R |
 
-## Controls
+# Diagram
+<img src="https://raw.githubusercontent.com/electro-smith/DaisyExamples/master/patch/verb/resources/verb.png" alt="verb.png" style="width: 100%;"/>
 
-| Pin Name | Pin Location | Function | Comment |
-| --- | --- | --- | --- |
-| CV_1 | C5 | Reverb Time | Controls the size of the reverb |
-| CV_2 | C4 | Reverb Dampening Frequency | Range is from 1kHz to 19kHz |
-| CV_3 | C3 | Input Level | Controls the amount of dry signal passing through to the output |
-| CV_4 | C2 | Send amount | Controls the amount of dry signal sent to the reverb |
+# Code Snippet
+```cpp
+// read some controls
+drylevel = patch.GetCtrlValue(patch.CTRL_1);
+send     = patch.GetCtrlValue(patch.CTRL_2);
+verb.SetFeedback(patch.GetCtrlValue(patch.CTRL_3) * .94f);
+verb.SetLpFreq(lpParam.Process());
 
-The _comments.cpp file is identical to the main file, but has detailed comments explaining each piece of the source code.
+// Read Inputs (only stereo in are used)
+dryL = in[0][i];
+dryR = in[1][i];
+
+// Send Signal to Reverb
+sendL = dryL * send;
+sendR = dryR * send;
+verb.Process(sendL, sendR, &wetL, &wetR);
+
+// Dc Block
+wetL = blk[0].Process(wetL);
+wetR = blk[1].Process(wetR);
+
+// Out 1 and 2 are Mixed 
+out[0][i] = (dryL * drylevel) + wetL;
+out[1][i] = (dryR * drylevel) + wetR;
+
+// Out 3 and 4 are just wet
+out[2][i] = wetL;
+out[3][i] = wetR;
+```
