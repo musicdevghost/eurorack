@@ -1,0 +1,9 @@
+[submodule "DaisySP"]
+	path = DaisySP
+	url = https://github.com/electro-smith/DaisySP
+[submodule "libdaisy"]
+	path = libdaisy
+	url = https://github.com/electro-smith/libdaisy
+[submodule "eurorack"]
+	path = eurorack
+	url = https://github.com/pichenettes/eurorack
