@@ -1,8 +1,8 @@
 # Project Name
-TARGET = ReverbExample
+TARGET = Reverb
 
 # Sources
-CPP_SOURCES = ReverbExample.cpp \
+CPP_SOURCES = Reverb.cpp \
 
 # Library Locations
 LIBDAISY_DIR = libDaisy

@@ -4,6 +4,16 @@
 using namespace daisy;
 using namespace daisysp;
 using namespace patch_sm;
+// using namespace clouds;
+
+#include "clouds/dsp/frame.h"
+//#include "clouds/dsp/fx/reverb.h"
+//
+
+// #include "rings/dsp/fx/reverb.h"
+// using namespace rings;
+
+// Reverb clouds_reverb;
 
 DaisyPatchSM patch;
 ReverbSc     reverb;
@@ -21,7 +31,7 @@ void AudioCallback(AudioHandle::InputBuffer  in,
     float damp_knob = patch.GetAdcValue(CV_2);
     float damp      = fmap(damp_knob, 1000.f, 19000.f, Mapping::LOG);
 
-    float in_level = patch.GetAdcValue(CV_3);
+    float in_level = patch.GetAdcValue(CV_3); 
 
     float send_level = patch.GetAdcValue(CV_4);
 
