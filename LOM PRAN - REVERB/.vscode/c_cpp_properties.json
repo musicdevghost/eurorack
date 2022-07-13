@@ -16,7 +16,8 @@
                 "${workspaceFolder}/eurorack/**"
             ],
             "name": "Win32",
-            "windowsSdkVersion": "10.0.17763.0"
+            "windowsSdkVersion": "10.0.17763.0",
+            "configurationProvider": "ms-vscode.makefile-tools"
         },
         {
             "cStandard": "c11",
