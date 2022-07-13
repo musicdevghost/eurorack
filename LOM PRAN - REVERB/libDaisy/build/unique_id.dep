@@ -1,0 +1,46 @@
+build/src/util/unique_id.o: src/util/unique_id.c src/util/unique_id.h \
+ src/daisy_core.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\lib\gcc\arm-none-eabi\10.2.1\include\stdint.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\stdint.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\_default_types.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\features.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_newlib_version.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_intsup.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_stdint.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\stdlib.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\ieeefp.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_ansi.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\newlib.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\config.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\lib\gcc\arm-none-eabi\10.2.1\include\stddef.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\reent.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_ansi.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_types.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\_types.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\lock.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\cdefs.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\stdlib.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\alloca.h
+src/util/unique_id.h:
+src/daisy_core.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\lib\gcc\arm-none-eabi\10.2.1\include\stdint.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\stdint.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\_default_types.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\features.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_newlib_version.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_intsup.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_stdint.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\stdlib.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\ieeefp.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_ansi.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\newlib.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\config.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\lib\gcc\arm-none-eabi\10.2.1\include\stddef.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\reent.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_ansi.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_types.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\_types.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\lock.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\cdefs.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\stdlib.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\alloca.h:

@@ -1,0 +1,345 @@
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"pluck.cpp"
+  13              		.text
+  14              		.section	.text._ZN7daisysp5Pluck6ReinitEv,"ax",%progbits
+  15              		.align	1
+  16              		.p2align 2,,3
+  17              		.global	_ZN7daisysp5Pluck6ReinitEv
+  18              		.arch armv7e-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv5-d16
+  24              	_ZN7daisysp5Pluck6ReinitEv:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 036A     		ldr	r3, [r0, #32]
+  28 0002 F7EE004A 		vmov.f32	s9, #1.0e+0
+  29 0006 90ED0A7A 		vldr.32	s14, [r0, #40]
+  30 000a 403B     		subs	r3, r3, #64
+  31 000c DFED207A 		vldr.32	s15, .L10
+  32 0010 C4EE876A 		vdiv.f32	s13, s9, s14
+  33 0014 90ED025A 		vldr.32	s10, [r0, #8]
+  34 0018 07EE103A 		vmov	s14, r3	@ int
+  35 001c 9FED1D6A 		vldr.32	s12, .L10+4
+  36 0020 DFED1D5A 		vldr.32	s11, .L10+8
+  37 0024 B8EEC77A 		vcvt.f32.s32	s14, s14
+  38 0028 70B5     		push	{r4, r5, r6, lr}
+  39 002a E5EE077A 		vfma.f32	s15, s10, s14
+  40 002e 0646     		mov	r6, r0
+  41 0030 456A     		ldr	r5, [r0, #36]
+  42 0032 2DED048B 		vpush.64	{d8, d9}
+  43 0036 FDEEE77A 		vcvt.s32.f32	s15, s15
+  44 003a B8EEE77A 		vcvt.f32.s32	s14, s15
+  45 003e 17EE904A 		vmov	r4, s15	@ int
+  46 0042 C0ED077A 		vstr.32	s15, [r0, #28]	@ int
+  47 0046 F0EE467A 		vmov.f32	s15, s12
+  48 004a E7EE257A 		vfma.f32	s15, s14, s11
+  49 004e 66EEA77A 		vmul.f32	s15, s13, s15
+  50 0052 C0ED057A 		vstr.32	s15, [r0, #20]
+  51 0056 ACB1     		cbz	r4, .L2
+  52 0058 B0EE009A 		vmov.f32	s18, #2.0e+0
+  53 005c 9FED0F8A 		vldr.32	s16, .L10+12
+  54 0060 FFEE008A 		vmov.f32	s17, #-1.0e+0
+  55              	.L3:
+  56 0064 FFF7FEFF 		bl	rand
+  57 0068 07EE900A 		vmov	s15, r0	@ int
+  58 006c B0EE687A 		vmov.f32	s14, s17
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s 			page 2
+
+
+  59 0070 013C     		subs	r4, r4, #1
+  60 0072 F8EEE77A 		vcvt.f32.s32	s15, s15
+  61 0076 67EE887A 		vmul.f32	s15, s15, s16
+  62 007a A7EE897A 		vfma.f32	s14, s15, s18
+  63 007e A5EC017A 		vstmia.32	r5!, {s14}
+  64 0082 EFD1     		bne	.L3
+  65              	.L2:
+  66 0084 0023     		movs	r3, #0
+  67 0086 BDEC048B 		vldm	sp!, {d8-d9}
+  68 008a B361     		str	r3, [r6, #24]
+  69 008c 70BD     		pop	{r4, r5, r6, pc}
+  70              	.L11:
+  71 008e 00BF     		.align	2
+  72              	.L10:
+  73 0090 00008042 		.word	1115684864
+  74 0094 00000043 		.word	1124073472
+  75 0098 00008043 		.word	1132462080
+  76 009c 00000030 		.word	805306368
+  78              		.section	.text._ZN7daisysp5Pluck4InitEfPfll,"ax",%progbits
+  79              		.align	1
+  80              		.p2align 2,,3
+  81              		.global	_ZN7daisysp5Pluck4InitEfPfll
+  82              		.syntax unified
+  83              		.thumb
+  84              		.thumb_func
+  85              		.fpu fpv5-d16
+  87              	_ZN7daisysp5Pluck4InitEfPfll:
+  88              		@ args = 0, pretend = 0, frame = 0
+  89              		@ frame_needed = 0, uses_anonymous_args = 0
+  90 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  91 0002 1746     		mov	r7, r2
+  92 0004 403A     		subs	r2, r2, #64
+  93 0006 B7EE006A 		vmov.f32	s12, #1.0e+0
+  94 000a 9FED2F5A 		vldr.32	s10, .L20
+  95 000e 07EE902A 		vmov	s15, r2	@ int
+  96 0012 DFED2E5A 		vldr.32	s11, .L20+4
+  97 0016 9FED2E7A 		vldr.32	s14, .L20+8
+  98 001a 0646     		mov	r6, r0
+  99 001c F8EEE77A 		vcvt.f32.s32	s15, s15
+ 100 0020 C6EE006A 		vdiv.f32	s13, s12, s0
+ 101 0024 77EE857A 		vadd.f32	s15, s15, s10
+ 102 0028 2DED048B 		vpush.64	{d8, d9}
+ 103 002c FDEEE77A 		vcvt.s32.f32	s15, s15
+ 104 0030 0363     		str	r3, [r0, #48]
+ 105 0032 4FF07C53 		mov	r3, #1056964608
+ 106 0036 80ED026A 		vstr.32	s12, [r0, #8]
+ 107 003a 80ED0A0A 		vstr.32	s0, [r0, #40]
+ 108 003e 17EE904A 		vmov	r4, s15	@ int
+ 109 0042 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 110 0046 0360     		str	r3, [r0]	@ float
+ 111 0048 224B     		ldr	r3, .L20+12
+ 112 004a A7EEA57A 		vfma.f32	s14, s15, s11
+ 113 004e 0762     		str	r7, [r0, #32]
+ 114 0050 4162     		str	r1, [r0, #36]
+ 115 0052 C461     		str	r4, [r0, #28]
+ 116 0054 4360     		str	r3, [r0, #4]	@ float
+ 117 0056 27EE267A 		vmul.f32	s14, s14, s13
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s 			page 3
+
+
+ 118 005a 80ED057A 		vstr.32	s14, [r0, #20]
+ 119 005e E4B1     		cbz	r4, .L13
+ 120 0060 B0EE009A 		vmov.f32	s18, #2.0e+0
+ 121 0064 0D46     		mov	r5, r1
+ 122 0066 FFEE008A 		vmov.f32	s17, #-1.0e+0
+ 123 006a 9FED1B8A 		vldr.32	s16, .L20+16
+ 124              	.L14:
+ 125 006e FFF7FEFF 		bl	rand
+ 126 0072 07EE900A 		vmov	s15, r0	@ int
+ 127 0076 B0EE687A 		vmov.f32	s14, s17
+ 128 007a 013C     		subs	r4, r4, #1
+ 129 007c F8EEE77A 		vcvt.f32.s32	s15, s15
+ 130 0080 67EE887A 		vmul.f32	s15, s15, s16
+ 131 0084 A7EE897A 		vfma.f32	s14, s15, s18
+ 132 0088 A5EC017A 		vstmia.32	r5!, {s14}
+ 133 008c EFD1     		bne	.L14
+ 134 008e B7EE007A 		vmov.f32	s14, #1.0e+0
+ 135 0092 D6ED0A7A 		vldr.32	s15, [r6, #40]
+ 136 0096 C7EE276A 		vdiv.f32	s13, s14, s15
+ 137              	.L13:
+ 138 009a 07EE907A 		vmov	s15, r7	@ int
+ 139 009e 9FED0B6A 		vldr.32	s12, .L20+4
+ 140 00a2 0123     		movs	r3, #1
+ 141 00a4 0022     		movs	r2, #0
+ 142 00a6 86F82C30 		strb	r3, [r6, #44]
+ 143 00aa B8EEE77A 		vcvt.f32.s32	s14, s15
+ 144 00ae DFED087A 		vldr.32	s15, .L20+8
+ 145 00b2 B261     		str	r2, [r6, #24]
+ 146 00b4 E7EE067A 		vfma.f32	s15, s14, s12
+ 147 00b8 BDEC048B 		vldm	sp!, {d8-d9}
+ 148 00bc 67EEA67A 		vmul.f32	s15, s15, s13
+ 149 00c0 C6ED057A 		vstr.32	s15, [r6, #20]
+ 150 00c4 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 151              	.L21:
+ 152 00c6 00BF     		.align	2
+ 153              	.L20:
+ 154 00c8 00008042 		.word	1115684864
+ 155 00cc 00008043 		.word	1132462080
+ 156 00d0 00000043 		.word	1124073472
+ 157 00d4 00009643 		.word	1133903872
+ 158 00d8 00000030 		.word	805306368
+ 160              		.section	.text._ZN7daisysp5Pluck7ProcessERf,"ax",%progbits
+ 161              		.align	1
+ 162              		.p2align 2,,3
+ 163              		.global	_ZN7daisysp5Pluck7ProcessERf
+ 164              		.syntax unified
+ 165              		.thumb
+ 166              		.thumb_func
+ 167              		.fpu fpv5-d16
+ 169              	_ZN7daisysp5Pluck7ProcessERf:
+ 170              		@ args = 0, pretend = 0, frame = 0
+ 171              		@ frame_needed = 0, uses_anonymous_args = 0
+ 172 0000 D1ED007A 		vldr.32	s15, [r1]
+ 173 0004 F5EE407A 		vcmp.f32	s15, #0
+ 174 0008 70B5     		push	{r4, r5, r6, lr}
+ 175 000a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 176 000e 0446     		mov	r4, r0
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s 			page 4
+
+
+ 177 0010 2DED048B 		vpush.64	{d8, d9}
+ 178 0014 6CD1     		bne	.L23
+ 179 0016 90F82C30 		ldrb	r3, [r0, #44]	@ zero_extendqisi2
+ 180              	.L24:
+ 181 001a 002B     		cmp	r3, #0
+ 182 001c 63D1     		bne	.L37
+ 183 001e 636A     		ldr	r3, [r4, #36]
+ 184              	.L26:
+ 185 0020 216B     		ldr	r1, [r4, #48]
+ 186 0022 0029     		cmp	r1, #0
+ 187 0024 4FD0     		beq	.L29
+ 188 0026 0129     		cmp	r1, #1
+ 189 0028 44D0     		beq	.L30
+ 190 002a B6EE007A 		vmov.f32	s14, #5.0e-1
+ 191              	.L31:
+ 192 002e A069     		ldr	r0, [r4, #24]
+ 193 0030 D4ED056A 		vldr.32	s13, [r4, #20]
+ 194 0034 0512     		asrs	r5, r0, #8
+ 195 0036 D4ED017A 		vldr.32	s15, [r4, #4]
+ 196 003a E269     		ldr	r2, [r4, #28]
+ 197 003c 03EB8505 		add	r5, r3, r5, lsl #2
+ 198 0040 67EEA67A 		vmul.f32	s15, s15, s13
+ 199 0044 D4ED005A 		vldr.32	s11, [r4]
+ 200 0048 95ED000A 		vldr.32	s0, [r5]
+ 201 004c 95ED016A 		vldr.32	s12, [r5, #4]
+ 202 0050 C5B2     		uxtb	r5, r0
+ 203 0052 FDEEE77A 		vcvt.s32.f32	s15, s15
+ 204 0056 06EE905A 		vmov	s13, r5	@ int
+ 205 005a 36EE406A 		vsub.f32	s12, s12, s0
+ 206 005e FAEECC6A 		vcvt.f32.s32	s13, s13, #8
+ 207 0062 17EE905A 		vmov	r5, s15	@ int
+ 208 0066 0544     		add	r5, r5, r0
+ 209 0068 A6EE260A 		vfma.f32	s0, s12, s13
+ 210 006c 2846     		mov	r0, r5
+ 211 006e 1502     		lsls	r5, r2, #8
+ 212 0070 B0EB022F 		cmp	r0, r2, lsl #8
+ 213 0074 20EE250A 		vmul.f32	s0, s0, s11
+ 214 0078 18DB     		blt	.L32
+ 215 007a 401B     		subs	r0, r0, r5
+ 216 007c 03EB8205 		add	r5, r3, r2, lsl #2
+ 217 0080 F7EE005A 		vmov.f32	s11, #1.0e+0
+ 218 0084 D3ED007A 		vldr.32	s15, [r3]
+ 219 0088 2D68     		ldr	r5, [r5]	@ float
+ 220 008a 43F8045B 		str	r5, [r3], #4	@ float
+ 221              	.L36:
+ 222 008e 19B3     		cbz	r1, .L33
+ 223 0090 0129     		cmp	r1, #1
+ 224 0092 07D1     		bne	.L35
+ 225 0094 75EEC76A 		vsub.f32	s13, s11, s14
+ 226 0098 93ED006A 		vldr.32	s12, [r3]
+ 227 009c 66EEA77A 		vmul.f32	s15, s13, s15
+ 228 00a0 E6EE077A 		vfma.f32	s15, s12, s14
+ 229              	.L35:
+ 230 00a4 013A     		subs	r2, r2, #1
+ 231 00a6 E3EC017A 		vstmia.32	r3!, {s15}
+ 232 00aa F0D1     		bne	.L36
+ 233              	.L32:
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s 			page 5
+
+
+ 234 00ac A061     		str	r0, [r4, #24]
+ 235 00ae BDEC048B 		vldm	sp!, {d8-d9}
+ 236 00b2 70BD     		pop	{r4, r5, r6, pc}
+ 237              	.L30:
+ 238 00b4 D4ED036A 		vldr.32	s13, [r4, #12]
+ 239 00b8 DFED317A 		vldr.32	s15, .L42
+ 240 00bc 9FED317A 		vldr.32	s14, .L42+4
+ 241 00c0 A6EEA77A 		vfma.f32	s14, s13, s15
+ 242 00c4 B3E7     		b	.L31
+ 243              	.L29:
+ 244 00c6 D4ED036A 		vldr.32	s13, [r4, #12]
+ 245 00ca DFED2F7A 		vldr.32	s15, .L42+8
+ 246 00ce 9FED2F7A 		vldr.32	s14, .L42+12
+ 247 00d2 A6EEA77A 		vfma.f32	s14, s13, s15
+ 248 00d6 AAE7     		b	.L31
+ 249              	.L33:
+ 250 00d8 D3ED006A 		vldr.32	s13, [r3]
+ 251 00dc 77EEA67A 		vadd.f32	s15, s15, s13
+ 252 00e0 67EE877A 		vmul.f32	s15, s15, s14
+ 253 00e4 DEE7     		b	.L35
+ 254              	.L37:
+ 255 00e6 BDEC048B 		vldm	sp!, {d8-d9}
+ 256 00ea 9FED290A 		vldr.32	s0, .L42+16
+ 257 00ee 70BD     		pop	{r4, r5, r6, pc}
+ 258              	.L23:
+ 259 00f0 036A     		ldr	r3, [r0, #32]
+ 260 00f2 B7EE004A 		vmov.f32	s8, #1.0e+0
+ 261 00f6 90ED025A 		vldr.32	s10, [r0, #8]
+ 262 00fa 0022     		movs	r2, #0
+ 263 00fc 403B     		subs	r3, r3, #64
+ 264 00fe DFED257A 		vldr.32	s15, .L42+20
+ 265 0102 D0ED0A4A 		vldr.32	s9, [r0, #40]
+ 266 0106 07EE103A 		vmov	s14, r3	@ int
+ 267 010a 9FED236A 		vldr.32	s12, .L42+24
+ 268 010e C4EE246A 		vdiv.f32	s13, s8, s9
+ 269 0112 436A     		ldr	r3, [r0, #36]
+ 270 0114 80F82C20 		strb	r2, [r0, #44]
+ 271 0118 DFED205A 		vldr.32	s11, .L42+28
+ 272 011c 1E46     		mov	r6, r3
+ 273 011e B8EEC77A 		vcvt.f32.s32	s14, s14
+ 274 0122 E5EE077A 		vfma.f32	s15, s10, s14
+ 275 0126 FDEEE77A 		vcvt.s32.f32	s15, s15
+ 276 012a B8EEE77A 		vcvt.f32.s32	s14, s15
+ 277 012e C4ED077A 		vstr.32	s15, [r4, #28]	@ int
+ 278 0132 17EE905A 		vmov	r5, s15	@ int
+ 279 0136 F0EE467A 		vmov.f32	s15, s12
+ 280 013a E7EE257A 		vfma.f32	s15, s14, s11
+ 281 013e 66EEA77A 		vmul.f32	s15, s13, s15
+ 282 0142 C0ED057A 		vstr.32	s15, [r0, #20]
+ 283 0146 CDB1     		cbz	r5, .L41
+ 284 0148 B0EE009A 		vmov.f32	s18, #2.0e+0
+ 285 014c 9FED148A 		vldr.32	s16, .L42+32
+ 286 0150 FFEE008A 		vmov.f32	s17, #-1.0e+0
+ 287              	.L27:
+ 288 0154 FFF7FEFF 		bl	rand
+ 289 0158 07EE900A 		vmov	s15, r0	@ int
+ 290 015c B0EE687A 		vmov.f32	s14, s17
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s 			page 6
+
+
+ 291 0160 013D     		subs	r5, r5, #1
+ 292 0162 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 293 0166 67EE887A 		vmul.f32	s15, s15, s16
+ 294 016a A7EE897A 		vfma.f32	s14, s15, s18
+ 295 016e A6EC017A 		vstmia.32	r6!, {s14}
+ 296 0172 EFD1     		bne	.L27
+ 297 0174 94F82C30 		ldrb	r3, [r4, #44]	@ zero_extendqisi2
+ 298 0178 A561     		str	r5, [r4, #24]
+ 299 017a 4EE7     		b	.L24
+ 300              	.L41:
+ 301 017c 8561     		str	r5, [r0, #24]
+ 302 017e 4FE7     		b	.L26
+ 303              	.L43:
+ 304              		.align	2
+ 305              	.L42:
+ 306 0180 6666663F 		.word	1063675494
+ 307 0184 CDCC4C3D 		.word	1028443341
+ 308 0188 0CD7A33D 		.word	1034147596
+ 309 018c 3D0AD73E 		.word	1054280253
+ 310 0190 00000000 		.word	0
+ 311 0194 00008042 		.word	1115684864
+ 312 0198 00000043 		.word	1124073472
+ 313 019c 00008043 		.word	1132462080
+ 314 01a0 00000030 		.word	805306368
+ 316              		.ident	"GCC: (GNU Arm Embedded Toolchain 10-2020-q4-major) 10.2.1 20201103 (release)"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 pluck.cpp
+C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s:15     .text._ZN7daisysp5Pluck6ReinitEv:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s:24     .text._ZN7daisysp5Pluck6ReinitEv:00000000 _ZN7daisysp5Pluck6ReinitEv
+C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s:73     .text._ZN7daisysp5Pluck6ReinitEv:00000090 $d
+C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s:79     .text._ZN7daisysp5Pluck4InitEfPfll:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s:87     .text._ZN7daisysp5Pluck4InitEfPfll:00000000 _ZN7daisysp5Pluck4InitEfPfll
+C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s:154    .text._ZN7daisysp5Pluck4InitEfPfll:000000c8 $d
+C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s:161    .text._ZN7daisysp5Pluck7ProcessERf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s:169    .text._ZN7daisysp5Pluck7ProcessERf:00000000 _ZN7daisysp5Pluck7ProcessERf
+C:\Users\pedro\AppData\Local\Temp\cc8NW2H2.s:306    .text._ZN7daisysp5Pluck7ProcessERf:00000180 $d
+
+UNDEFINED SYMBOLS
+rand

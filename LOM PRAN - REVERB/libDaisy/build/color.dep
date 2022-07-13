@@ -1,0 +1,16 @@
+build/src/util/color.o: src/util/color.cpp src/util/color.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\lib\gcc\arm-none-eabi\10.2.1\include\stdint.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\stdint.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\_default_types.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\features.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_newlib_version.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_intsup.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_stdint.h
+src/util/color.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\lib\gcc\arm-none-eabi\10.2.1\include\stdint.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\stdint.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\_default_types.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\features.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_newlib_version.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_intsup.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_stdint.h:

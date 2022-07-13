@@ -1,0 +1,127 @@
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCUhNNr.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"tone.cpp"
+  13              		.text
+  14              		.section	.text._ZN7daisysp4Tone4InitEf,"ax",%progbits
+  15              		.align	1
+  16              		.p2align 2,,3
+  17              		.global	_ZN7daisysp4Tone4InitEf
+  18              		.arch armv7e-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv5-d16
+  24              	_ZN7daisysp4Tone4InitEf:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 4FF07C53 		mov	r3, #1056964608
+  29 0004 0021     		movs	r1, #0
+  30 0006 044A     		ldr	r2, .L3
+  31 0008 4160     		str	r1, [r0, #4]	@ float
+  32 000a C260     		str	r2, [r0, #12]	@ float
+  33 000c 0361     		str	r3, [r0, #16]	@ float
+  34 000e 4361     		str	r3, [r0, #20]	@ float
+  35 0010 80ED060A 		vstr.32	s0, [r0, #24]
+  36 0014 7047     		bx	lr
+  37              	.L4:
+  38 0016 00BF     		.align	2
+  39              	.L3:
+  40 0018 0000C842 		.word	1120403456
+  42              		.section	.text._ZN7daisysp4Tone7ProcessERf,"ax",%progbits
+  43              		.align	1
+  44              		.p2align 2,,3
+  45              		.global	_ZN7daisysp4Tone7ProcessERf
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  49              		.fpu fpv5-d16
+  51              	_ZN7daisysp4Tone7ProcessERf:
+  52              		@ args = 0, pretend = 0, frame = 0
+  53              		@ frame_needed = 0, uses_anonymous_args = 0
+  54              		@ link register save eliminated.
+  55 0000 D0ED016A 		vldr.32	s13, [r0, #4]
+  56 0004 90ED050A 		vldr.32	s0, [r0, #20]
+  57 0008 D1ED007A 		vldr.32	s15, [r1]
+  58 000c 20EE260A 		vmul.f32	s0, s0, s13
+  59 0010 90ED047A 		vldr.32	s14, [r0, #16]
+  60 0014 A7EE270A 		vfma.f32	s0, s14, s15
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCUhNNr.s 			page 2
+
+
+  61 0018 80ED010A 		vstr.32	s0, [r0, #4]
+  62 001c 7047     		bx	lr
+  64 001e 00BF     		.section	.text._ZN7daisysp4Tone21CalculateCoefficientsEv,"ax",%progbits
+  65              		.align	1
+  66              		.p2align 2,,3
+  67              		.global	_ZN7daisysp4Tone21CalculateCoefficientsEv
+  68              		.syntax unified
+  69              		.thumb
+  70              		.thumb_func
+  71              		.fpu fpv5-d16
+  73              	_ZN7daisysp4Tone21CalculateCoefficientsEv:
+  74              		@ args = 0, pretend = 0, frame = 0
+  75              		@ frame_needed = 0, uses_anonymous_args = 0
+  76 0000 9FED187A 		vldr.32	s14, .L13
+  77 0004 D0ED037A 		vldr.32	s15, [r0, #12]
+  78 0008 90ED060A 		vldr.32	s0, [r0, #24]
+  79 000c 67EE877A 		vmul.f32	s15, s15, s14
+  80 0010 10B5     		push	{r4, lr}
+  81 0012 87EE800A 		vdiv.f32	s0, s15, s0
+  82 0016 0446     		mov	r4, r0
+  83 0018 2DED028B 		vpush.64	{d8}
+  84 001c FFF7FEFF 		bl	cosf
+  85 0020 F0EE007A 		vmov.f32	s15, #2.0e+0
+  86 0024 BFEE007A 		vmov.f32	s14, #-1.0e+0
+  87 0028 37EEC08A 		vsub.f32	s16, s15, s0
+  88 002c A8EE087A 		vfma.f32	s14, s16, s16
+  89 0030 B5EE407A 		vcmp.f32	s14, #0
+  90 0034 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  91 0038 0ED4     		bmi	.L11
+  92 003a B1EEC70A 		vsqrt.f32	s0, s14
+  93              	.L9:
+  94 003e 38EE408A 		vsub.f32	s16, s16, s0
+  95 0042 F7EE007A 		vmov.f32	s15, #1.0e+0
+  96 0046 84ED058A 		vstr.32	s16, [r4, #20]
+  97 004a 77EEC87A 		vsub.f32	s15, s15, s16
+  98 004e BDEC028B 		vldm	sp!, {d8}
+  99 0052 C4ED047A 		vstr.32	s15, [r4, #16]
+ 100 0056 10BD     		pop	{r4, pc}
+ 101              	.L11:
+ 102 0058 B0EE470A 		vmov.f32	s0, s14
+ 103 005c FFF7FEFF 		bl	sqrtf
+ 104 0060 EDE7     		b	.L9
+ 105              	.L14:
+ 106 0062 00BF     		.align	2
+ 107              	.L13:
+ 108 0064 DB0FC940 		.word	1086918619
+ 110              		.ident	"GCC: (GNU Arm Embedded Toolchain 10-2020-q4-major) 10.2.1 20201103 (release)"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCUhNNr.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 tone.cpp
+C:\Users\pedro\AppData\Local\Temp\ccCUhNNr.s:15     .text._ZN7daisysp4Tone4InitEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccCUhNNr.s:24     .text._ZN7daisysp4Tone4InitEf:00000000 _ZN7daisysp4Tone4InitEf
+C:\Users\pedro\AppData\Local\Temp\ccCUhNNr.s:40     .text._ZN7daisysp4Tone4InitEf:00000018 $d
+C:\Users\pedro\AppData\Local\Temp\ccCUhNNr.s:43     .text._ZN7daisysp4Tone7ProcessERf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccCUhNNr.s:51     .text._ZN7daisysp4Tone7ProcessERf:00000000 _ZN7daisysp4Tone7ProcessERf
+C:\Users\pedro\AppData\Local\Temp\ccCUhNNr.s:65     .text._ZN7daisysp4Tone21CalculateCoefficientsEv:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccCUhNNr.s:73     .text._ZN7daisysp4Tone21CalculateCoefficientsEv:00000000 _ZN7daisysp4Tone21CalculateCoefficientsEv
+C:\Users\pedro\AppData\Local\Temp\ccCUhNNr.s:108    .text._ZN7daisysp4Tone21CalculateCoefficientsEv:00000064 $d
+
+UNDEFINED SYMBOLS
+cosf
+sqrtf

@@ -1,0 +1,660 @@
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"stringvoice.cpp"
+  13              		.text
+  14              		.section	.text._ZN7daisysp11StringVoice4InitEf,"ax",%progbits
+  15              		.align	1
+  16              		.p2align 2,,3
+  17              		.global	_ZN7daisysp11StringVoice4InitEf
+  18              		.arch armv7e-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv5-d16
+  24              	_ZN7daisysp11StringVoice4InitEf:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 38B5     		push	{r3, r4, r5, lr}
+  28 0002 0546     		mov	r5, r0
+  29 0004 0446     		mov	r4, r0
+  30 0006 2430     		adds	r0, r0, #36
+  31 0008 7035     		adds	r5, r5, #112
+  32 000a 2DED048B 		vpush.64	{d8, d9}
+  33 000e 84ED000A 		vstr.32	s0, [r4]
+  34 0012 F7EE008A 		vmov.f32	s17, #1.0e+0
+  35 0016 FFF7FEFF 		bl	_ZN7daisysp3Svf4InitEf
+  36 001a 94ED000A 		vldr.32	s0, [r4]
+  37 001e 2846     		mov	r0, r5
+  38 0020 9FED398A 		vldr.32	s16, .L13
+  39 0024 FFF7FEFF 		bl	_ZN7daisysp6String4InitEf
+  40 0028 9FED387A 		vldr.32	s14, .L13+4
+  41 002c F6EE007A 		vmov.f32	s15, #5.0e-1
+  42 0030 0023     		movs	r3, #0
+  43              		.syntax unified
+  44              	@ 36 "Source/Utility/dsp.h" 1
+  45 0032 C7FE887A 		vmaxnm.f32 s15, s15, s16
+  46              	@ 0 "" 2
+  47              	@ 47 "Source/Utility/dsp.h" 1
+  48 0036 C7FEE87A 		vminnm.f32 s15, s15, s17
+  49              	@ 0 "" 2
+  50              		.thumb
+  51              		.syntax unified
+  52 003a 67EE877A 		vmul.f32	s15, s15, s14
+  53 003e 9FED349A 		vldr.32	s18, .L13+8
+  54 0042 04F58052 		add	r2, r4, #4096
+  55 0046 2846     		mov	r0, r5
+  56 0048 B0EE490A 		vmov.f32	s0, s18
+  57 004c C4ED087A 		vstr.32	s15, [r4, #32]
+  58 0050 C2F8E034 		str	r3, [r2, #1248]
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s 			page 2
+
+
+  59 0054 2371     		strb	r3, [r4, #4]
+  60 0056 FFF7FEFF 		bl	_ZN7daisysp6String7SetFreqEf
+  61 005a DFED2E6A 		vldr.32	s13, .L13+12
+  62 005e 9FED2E0A 		vldr.32	s0, .L13+16
+  63 0062 B5EE006A 		vmov.f32	s12, #2.5e-1
+  64              		.syntax unified
+  65              	@ 36 "Source/Utility/dsp.h" 1
+  66 0066 80FE080A 		vmaxnm.f32 s0, s0, s16
+  67              	@ 0 "" 2
+  68              	@ 47 "Source/Utility/dsp.h" 1
+  69 006a 80FE680A 		vminnm.f32 s0, s0, s17
+  70              	@ 0 "" 2
+  71              		.thumb
+  72              		.syntax unified
+  73 006e B4EEE60A 		vcmpe.f32	s0, s13
+  74 0072 D4ED007A 		vldr.32	s15, [r4]
+  75 0076 89EE277A 		vdiv.f32	s14, s18, s15
+  76 007a DFED287A 		vldr.32	s15, .L13+20
+  77              		.syntax unified
+  78              	@ 36 "Source/Utility/dsp.h" 1
+  79 007e 87FE087A 		vmaxnm.f32 s14, s14, s16
+  80              	@ 0 "" 2
+  81              	@ 36 "Source/Utility/dsp.h" 1
+  82 0082 C7FE887A 		vmaxnm.f32 s15, s15, s16
+  83              	@ 0 "" 2
+  84              	@ 47 "Source/Utility/dsp.h" 1
+  85 0086 87FE467A 		vminnm.f32 s14, s14, s12
+  86              	@ 0 "" 2
+  87              	@ 47 "Source/Utility/dsp.h" 1
+  88 008a C7FEE87A 		vminnm.f32 s15, s15, s17
+  89              	@ 0 "" 2
+  90              		.thumb
+  91              		.syntax unified
+  92 008e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  93 0092 84ED027A 		vstr.32	s14, [r4, #8]
+  94 0096 C4ED067A 		vstr.32	s15, [r4, #24]
+  95 009a 23D5     		bpl	.L9
+  96 009c 30EE668A 		vsub.f32	s16, s0, s13
+  97 00a0 9FED1F0A 		vldr.32	s0, .L13+24
+  98 00a4 28EE000A 		vmul.f32	s0, s16, s0
+  99              	.L4:
+ 100 00a8 2846     		mov	r0, r5
+ 101 00aa FFF7FEFF 		bl	_ZN7daisysp6String15SetNonLinearityEf
+ 102 00ae F7EE006A 		vmov.f32	s13, #1.0e+0
+ 103 00b2 9FED156A 		vldr.32	s12, .L13
+ 104 00b6 DFED1B7A 		vldr.32	s15, .L13+28
+ 105              		.syntax unified
+ 106              	@ 36 "Source/Utility/dsp.h" 1
+ 107 00ba C7FE867A 		vmaxnm.f32 s15, s15, s12
+ 108              	@ 0 "" 2
+ 109              	@ 47 "Source/Utility/dsp.h" 1
+ 110 00be C7FEE67A 		vminnm.f32 s15, s15, s13
+ 111              	@ 0 "" 2
+ 112              		.thumb
+ 113              		.syntax unified
+ 114 00c2 67EEA75A 		vmul.f32	s11, s15, s15
+ 115 00c6 9FED147A 		vldr.32	s14, .L13+16
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s 			page 3
+
+
+ 116 00ca C4ED037A 		vstr.32	s15, [r4, #12]
+ 117              		.syntax unified
+ 118              	@ 36 "Source/Utility/dsp.h" 1
+ 119 00ce C7FE067A 		vmaxnm.f32 s15, s14, s12
+ 120              	@ 0 "" 2
+ 121              		.thumb
+ 122              		.syntax unified
+ 123 00d2 BDEC048B 		vldm	sp!, {d8-d9}
+ 124              		.syntax unified
+ 125              	@ 47 "Source/Utility/dsp.h" 1
+ 126 00d6 C7FEE67A 		vminnm.f32 s15, s15, s13
+ 127              	@ 0 "" 2
+ 128              		.thumb
+ 129              		.syntax unified
+ 130 00da C4ED055A 		vstr.32	s11, [r4, #20]
+ 131 00de C4ED047A 		vstr.32	s15, [r4, #16]
+ 132 00e2 38BD     		pop	{r3, r4, r5, pc}
+ 133              	.L9:
+ 134 00e4 DFED107A 		vldr.32	s15, .L13+32
+ 135 00e8 B4EEE70A 		vcmpe.f32	s0, s15
+ 136 00ec F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 137 00f0 06DD     		ble	.L10
+ 138 00f2 30EE678A 		vsub.f32	s16, s0, s15
+ 139 00f6 9FED0D0A 		vldr.32	s0, .L13+36
+ 140 00fa 28EE000A 		vmul.f32	s0, s16, s0
+ 141 00fe D3E7     		b	.L4
+ 142              	.L10:
+ 143 0100 B0EE480A 		vmov.f32	s0, s16
+ 144 0104 D0E7     		b	.L4
+ 145              	.L14:
+ 146 0106 00BF     		.align	2
+ 147              	.L13:
+ 148 0108 00000000 		.word	0
+ 149 010c 9A99993E 		.word	1050253722
+ 150 0110 0000DC43 		.word	1138491392
+ 151 0114 8FC2753E 		.word	1047904911
+ 152 0118 3333333F 		.word	1060320051
+ 153 011c CDCC4C3F 		.word	1061997773
+ 154 0120 DF4F8540 		.word	1082478559
+ 155 0124 CDCC4C3E 		.word	1045220557
+ 156 0128 B81E853E 		.word	1048911544
+ 157 012c 09F9AC3F 		.word	1068300553
+ 159              		.section	.text._ZN7daisysp11StringVoice5ResetEv,"ax",%progbits
+ 160              		.align	1
+ 161              		.p2align 2,,3
+ 162              		.global	_ZN7daisysp11StringVoice5ResetEv
+ 163              		.syntax unified
+ 164              		.thumb
+ 165              		.thumb_func
+ 166              		.fpu fpv5-d16
+ 168              	_ZN7daisysp11StringVoice5ResetEv:
+ 169              		@ args = 0, pretend = 0, frame = 0
+ 170              		@ frame_needed = 0, uses_anonymous_args = 0
+ 171              		@ link register save eliminated.
+ 172 0000 7030     		adds	r0, r0, #112
+ 173 0002 FFF7FEBF 		b	_ZN7daisysp6String5ResetEv
+ 175 0006 00BF     		.section	.text._ZN7daisysp11StringVoice10SetSustainEb,"ax",%progbits
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s 			page 4
+
+
+ 176              		.align	1
+ 177              		.p2align 2,,3
+ 178              		.global	_ZN7daisysp11StringVoice10SetSustainEb
+ 179              		.syntax unified
+ 180              		.thumb
+ 181              		.thumb_func
+ 182              		.fpu fpv5-d16
+ 184              	_ZN7daisysp11StringVoice10SetSustainEb:
+ 185              		@ args = 0, pretend = 0, frame = 0
+ 186              		@ frame_needed = 0, uses_anonymous_args = 0
+ 187              		@ link register save eliminated.
+ 188 0000 0171     		strb	r1, [r0, #4]
+ 189 0002 7047     		bx	lr
+ 191              		.section	.text._ZN7daisysp11StringVoice4TrigEv,"ax",%progbits
+ 192              		.align	1
+ 193              		.p2align 2,,3
+ 194              		.global	_ZN7daisysp11StringVoice4TrigEv
+ 195              		.syntax unified
+ 196              		.thumb
+ 197              		.thumb_func
+ 198              		.fpu fpv5-d16
+ 200              	_ZN7daisysp11StringVoice4TrigEv:
+ 201              		@ args = 0, pretend = 0, frame = 0
+ 202              		@ frame_needed = 0, uses_anonymous_args = 0
+ 203              		@ link register save eliminated.
+ 204 0000 0123     		movs	r3, #1
+ 205 0002 4371     		strb	r3, [r0, #5]
+ 206 0004 7047     		bx	lr
+ 208 0006 00BF     		.section	.text._ZN7daisysp11StringVoice7SetFreqEf,"ax",%progbits
+ 209              		.align	1
+ 210              		.p2align 2,,3
+ 211              		.global	_ZN7daisysp11StringVoice7SetFreqEf
+ 212              		.syntax unified
+ 213              		.thumb
+ 214              		.thumb_func
+ 215              		.fpu fpv5-d16
+ 217              	_ZN7daisysp11StringVoice7SetFreqEf:
+ 218              		@ args = 0, pretend = 0, frame = 0
+ 219              		@ frame_needed = 0, uses_anonymous_args = 0
+ 220 0000 10B5     		push	{r4, lr}
+ 221 0002 0446     		mov	r4, r0
+ 222 0004 7030     		adds	r0, r0, #112
+ 223 0006 2DED028B 		vpush.64	{d8}
+ 224 000a B0EE408A 		vmov.f32	s16, s0
+ 225 000e FFF7FEFF 		bl	_ZN7daisysp6String7SetFreqEf
+ 226 0012 94ED006A 		vldr.32	s12, [r4]
+ 227 0016 B5EE007A 		vmov.f32	s14, #2.5e-1
+ 228 001a DFED066A 		vldr.32	s13, .L20
+ 229 001e C8EE067A 		vdiv.f32	s15, s16, s12
+ 230              		.syntax unified
+ 231              	@ 36 "Source/Utility/dsp.h" 1
+ 232 0022 C7FEA67A 		vmaxnm.f32 s15, s15, s13
+ 233              	@ 0 "" 2
+ 234              	@ 47 "Source/Utility/dsp.h" 1
+ 235 0026 C7FEC77A 		vminnm.f32 s15, s15, s14
+ 236              	@ 0 "" 2
+ 237              		.thumb
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s 			page 5
+
+
+ 238              		.syntax unified
+ 239 002a C4ED027A 		vstr.32	s15, [r4, #8]
+ 240 002e BDEC028B 		vldm	sp!, {d8}
+ 241 0032 10BD     		pop	{r4, pc}
+ 242              	.L21:
+ 243              		.align	2
+ 244              	.L20:
+ 245 0034 00000000 		.word	0
+ 247              		.section	.text._ZN7daisysp11StringVoice9SetAccentEf,"ax",%progbits
+ 248              		.align	1
+ 249              		.p2align 2,,3
+ 250              		.global	_ZN7daisysp11StringVoice9SetAccentEf
+ 251              		.syntax unified
+ 252              		.thumb
+ 253              		.thumb_func
+ 254              		.fpu fpv5-d16
+ 256              	_ZN7daisysp11StringVoice9SetAccentEf:
+ 257              		@ args = 0, pretend = 0, frame = 0
+ 258              		@ frame_needed = 0, uses_anonymous_args = 0
+ 259              		@ link register save eliminated.
+ 260 0000 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 261 0004 9FED047A 		vldr.32	s14, .L23
+ 262              		.syntax unified
+ 263              	@ 36 "Source/Utility/dsp.h" 1
+ 264 0008 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 265              	@ 0 "" 2
+ 266              	@ 47 "Source/Utility/dsp.h" 1
+ 267 000c 80FE670A 		vminnm.f32 s0, s0, s15
+ 268              	@ 0 "" 2
+ 269              		.thumb
+ 270              		.syntax unified
+ 271 0010 80ED060A 		vstr.32	s0, [r0, #24]
+ 272 0014 7047     		bx	lr
+ 273              	.L24:
+ 274 0016 00BF     		.align	2
+ 275              	.L23:
+ 276 0018 00000000 		.word	0
+ 278              		.section	.text._ZN7daisysp11StringVoice12SetStructureEf,"ax",%progbits
+ 279              		.align	1
+ 280              		.p2align 2,,3
+ 281              		.global	_ZN7daisysp11StringVoice12SetStructureEf
+ 282              		.syntax unified
+ 283              		.thumb
+ 284              		.thumb_func
+ 285              		.fpu fpv5-d16
+ 287              	_ZN7daisysp11StringVoice12SetStructureEf:
+ 288              		@ args = 0, pretend = 0, frame = 0
+ 289              		@ frame_needed = 0, uses_anonymous_args = 0
+ 290              		@ link register save eliminated.
+ 291 0000 DFED166A 		vldr.32	s13, .L35
+ 292 0004 B7EE006A 		vmov.f32	s12, #1.0e+0
+ 293 0008 9FED157A 		vldr.32	s14, .L35+4
+ 294              		.syntax unified
+ 295              	@ 36 "Source/Utility/dsp.h" 1
+ 296 000c C0FE077A 		vmaxnm.f32 s15, s0, s14
+ 297              	@ 0 "" 2
+ 298              	@ 47 "Source/Utility/dsp.h" 1
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s 			page 6
+
+
+ 299 0010 C7FEC67A 		vminnm.f32 s15, s15, s12
+ 300              	@ 0 "" 2
+ 301              		.thumb
+ 302              		.syntax unified
+ 303 0014 F4EEE67A 		vcmpe.f32	s15, s13
+ 304 0018 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 305 001c 08D5     		bpl	.L33
+ 306 001e 77EEE67A 		vsub.f32	s15, s15, s13
+ 307 0022 9FED107A 		vldr.32	s14, .L35+8
+ 308 0026 7030     		adds	r0, r0, #112
+ 309 0028 27EE870A 		vmul.f32	s0, s15, s14
+ 310 002c FFF7FEBF 		b	_ZN7daisysp6String15SetNonLinearityEf
+ 311              	.L33:
+ 312 0030 9FED0D0A 		vldr.32	s0, .L35+12
+ 313 0034 F4EEC07A 		vcmpe.f32	s15, s0
+ 314 0038 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 315 003c 08DD     		ble	.L34
+ 316 003e 77EEC07A 		vsub.f32	s15, s15, s0
+ 317 0042 9FED0A7A 		vldr.32	s14, .L35+16
+ 318 0046 7030     		adds	r0, r0, #112
+ 319 0048 27EE870A 		vmul.f32	s0, s15, s14
+ 320 004c FFF7FEBF 		b	_ZN7daisysp6String15SetNonLinearityEf
+ 321              	.L34:
+ 322 0050 B0EE470A 		vmov.f32	s0, s14
+ 323 0054 7030     		adds	r0, r0, #112
+ 324 0056 FFF7FEBF 		b	_ZN7daisysp6String15SetNonLinearityEf
+ 325              	.L36:
+ 326 005a 00BF     		.align	2
+ 327              	.L35:
+ 328 005c 8FC2753E 		.word	1047904911
+ 329 0060 00000000 		.word	0
+ 330 0064 DF4F8540 		.word	1082478559
+ 331 0068 B81E853E 		.word	1048911544
+ 332 006c 09F9AC3F 		.word	1068300553
+ 334              		.section	.text._ZN7daisysp11StringVoice13SetBrightnessEf,"ax",%progbits
+ 335              		.align	1
+ 336              		.p2align 2,,3
+ 337              		.global	_ZN7daisysp11StringVoice13SetBrightnessEf
+ 338              		.syntax unified
+ 339              		.thumb
+ 340              		.thumb_func
+ 341              		.fpu fpv5-d16
+ 343              	_ZN7daisysp11StringVoice13SetBrightnessEf:
+ 344              		@ args = 0, pretend = 0, frame = 0
+ 345              		@ frame_needed = 0, uses_anonymous_args = 0
+ 346              		@ link register save eliminated.
+ 347 0000 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 348 0004 9FED067A 		vldr.32	s14, .L38
+ 349              		.syntax unified
+ 350              	@ 36 "Source/Utility/dsp.h" 1
+ 351 0008 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 352              	@ 0 "" 2
+ 353              	@ 47 "Source/Utility/dsp.h" 1
+ 354 000c 80FE670A 		vminnm.f32 s0, s0, s15
+ 355              	@ 0 "" 2
+ 356              		.thumb
+ 357              		.syntax unified
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s 			page 7
+
+
+ 358 0010 60EE007A 		vmul.f32	s15, s0, s0
+ 359 0014 80ED030A 		vstr.32	s0, [r0, #12]
+ 360 0018 C0ED057A 		vstr.32	s15, [r0, #20]
+ 361 001c 7047     		bx	lr
+ 362              	.L39:
+ 363 001e 00BF     		.align	2
+ 364              	.L38:
+ 365 0020 00000000 		.word	0
+ 367              		.section	.text._ZN7daisysp11StringVoice10SetDampingEf,"ax",%progbits
+ 368              		.align	1
+ 369              		.p2align 2,,3
+ 370              		.global	_ZN7daisysp11StringVoice10SetDampingEf
+ 371              		.syntax unified
+ 372              		.thumb
+ 373              		.thumb_func
+ 374              		.fpu fpv5-d16
+ 376              	_ZN7daisysp11StringVoice10SetDampingEf:
+ 377              		@ args = 0, pretend = 0, frame = 0
+ 378              		@ frame_needed = 0, uses_anonymous_args = 0
+ 379              		@ link register save eliminated.
+ 380 0000 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 381 0004 9FED047A 		vldr.32	s14, .L41
+ 382              		.syntax unified
+ 383              	@ 36 "Source/Utility/dsp.h" 1
+ 384 0008 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 385              	@ 0 "" 2
+ 386              	@ 47 "Source/Utility/dsp.h" 1
+ 387 000c 80FE670A 		vminnm.f32 s0, s0, s15
+ 388              	@ 0 "" 2
+ 389              		.thumb
+ 390              		.syntax unified
+ 391 0010 80ED040A 		vstr.32	s0, [r0, #16]
+ 392 0014 7047     		bx	lr
+ 393              	.L42:
+ 394 0016 00BF     		.align	2
+ 395              	.L41:
+ 396 0018 00000000 		.word	0
+ 398              		.section	.text._ZN7daisysp11StringVoice6GetAuxEv,"ax",%progbits
+ 399              		.align	1
+ 400              		.p2align 2,,3
+ 401              		.global	_ZN7daisysp11StringVoice6GetAuxEv
+ 402              		.syntax unified
+ 403              		.thumb
+ 404              		.thumb_func
+ 405              		.fpu fpv5-d16
+ 407              	_ZN7daisysp11StringVoice6GetAuxEv:
+ 408              		@ args = 0, pretend = 0, frame = 0
+ 409              		@ frame_needed = 0, uses_anonymous_args = 0
+ 410              		@ link register save eliminated.
+ 411 0000 90ED070A 		vldr.32	s0, [r0, #28]
+ 412 0004 7047     		bx	lr
+ 414 0006 00BF     		.section	.text._ZN7daisysp11StringVoice7ProcessEb,"ax",%progbits
+ 415              		.align	1
+ 416              		.p2align 2,,3
+ 417              		.global	_ZN7daisysp11StringVoice7ProcessEb
+ 418              		.syntax unified
+ 419              		.thumb
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s 			page 8
+
+
+ 420              		.thumb_func
+ 421              		.fpu fpv5-d16
+ 423              	_ZN7daisysp11StringVoice7ProcessEb:
+ 424              		@ args = 0, pretend = 0, frame = 8
+ 425              		@ frame_needed = 0, uses_anonymous_args = 0
+ 426 0000 90ED065A 		vldr.32	s10, [r0, #24]
+ 427 0004 B7EE006A 		vmov.f32	s12, #1.0e+0
+ 428 0008 B5EE003B 		vmov.f64	d3, #2.5e-1
+ 429 000c 90ED037A 		vldr.32	s14, [r0, #12]
+ 430 0010 B7EEC55A 		vcvt.f64.f32	d5, s10
+ 431 0014 90ED040A 		vldr.32	s0, [r0, #16]
+ 432 0018 36EE474A 		vsub.f32	s8, s12, s14
+ 433 001c 36EE406A 		vsub.f32	s12, s12, s0
+ 434 0020 25EE035B 		vmul.f64	d5, d5, d3
+ 435 0024 B7EEC77A 		vcvt.f64.f32	d7, s14
+ 436 0028 B7EEC00A 		vcvt.f64.f32	d0, s0
+ 437 002c B7EEC44A 		vcvt.f64.f32	d4, s8
+ 438 0030 B7EEC66A 		vcvt.f64.f32	d6, s12
+ 439 0034 A5EE047B 		vfma.f64	d7, d5, d4
+ 440 0038 A5EE060B 		vfma.f64	d0, d5, d6
+ 441 003c 70B5     		push	{r4, r5, r6, lr}
+ 442 003e 0446     		mov	r4, r0
+ 443 0040 2DED068B 		vpush.64	{d8, d9, d10}
+ 444 0044 F7EEC78B 		vcvt.f32.f64	s17, d7
+ 445 0048 82B0     		sub	sp, sp, #8
+ 446 004a B7EEC08B 		vcvt.f32.f64	s16, d0
+ 447 004e 11B9     		cbnz	r1, .L45
+ 448 0050 4379     		ldrb	r3, [r0, #5]	@ zero_extendqisi2
+ 449 0052 002B     		cmp	r3, #0
+ 450 0054 66D0     		beq	.L66
+ 451              	.L45:
+ 452 0056 B0EE000A 		vmov.f32	s0, #2.0e+0
+ 453 005a DFED636A 		vldr.32	s13, .L69
+ 454 005e BEEE007A 		vmov.f32	s14, #-5.0e-1
+ 455 0062 0023     		movs	r3, #0
+ 456 0064 B1EE009A 		vmov.f32	s18, #4.0e+0
+ 457 0068 DFED600A 		vldr.32	s1, .L69+4
+ 458 006c 30EE686A 		vsub.f32	s12, s0, s17
+ 459 0070 D4ED027A 		vldr.32	s15, [r4, #8]
+ 460 0074 F7EE009A 		vmov.f32	s19, #1.0e+0
+ 461 0078 6371     		strb	r3, [r4, #5]
+ 462 007a 27EE899A 		vmul.f32	s18, s15, s18
+ 463 007e 2546     		mov	r5, r4
+ 464 0080 A6EE287A 		vfma.f32	s14, s12, s17
+ 465 0084 04F58056 		add	r6, r4, #4096
+ 466 0088 2435     		adds	r5, r5, #36
+ 467 008a 27EE267A 		vmul.f32	s14, s14, s13
+ 468 008e 67EE200A 		vmul.f32	s1, s14, s1
+ 469 0092 FFF7FEFF 		bl	powf
+ 470 0096 D4ED025A 		vldr.32	s11, [r4, #8]
+ 471 009a 2379     		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+ 472 009c B6EE007A 		vmov.f32	s14, #5.0e-1
+ 473 00a0 C9EEA56A 		vdiv.f32	s13, s19, s11
+ 474 00a4 94ED006A 		vldr.32	s12, [r4]
+ 475 00a8 002B     		cmp	r3, #0
+ 476 00aa 2846     		mov	r0, r5
+ 477 00ac 60EE097A 		vmul.f32	s15, s0, s18
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s 			page 9
+
+
+ 478 00b0 9FED4F0A 		vldr.32	s0, .L69+8
+ 479              		.syntax unified
+ 480              	@ 47 "Source/Utility/dsp.h" 1
+ 481 00b4 87FEC00A 		vminnm.f32 s0, s15, s0
+ 482              	@ 0 "" 2
+ 483              		.thumb
+ 484              		.syntax unified
+ 485 00b8 20EE060A 		vmul.f32	s0, s0, s12
+ 486 00bc 07FE299A 		vseleq.f32	s18, s14, s19
+ 487 00c0 FCEEE66A 		vcvt.u32.f32	s13, s13
+ 488 00c4 16EE903A 		vmov	r3, s13	@ int
+ 489 00c8 C6F8E034 		str	r3, [r6, #1248]
+ 490 00cc FFF7FEFF 		bl	_ZN7daisysp3Svf7SetFreqEf
+ 491 00d0 B0EE490A 		vmov.f32	s0, s18
+ 492 00d4 2846     		mov	r0, r5
+ 493 00d6 FFF7FEFF 		bl	_ZN7daisysp3Svf6SetResEf
+ 494 00da 2379     		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+ 495 00dc 002B     		cmp	r3, #0
+ 496 00de 4DD1     		bne	.L67
+ 497 00e0 D6F8E034 		ldr	r3, [r6, #1248]
+ 498 00e4 4BBB     		cbnz	r3, .L68
+ 499              	.L56:
+ 500 00e6 9FED430A 		vldr.32	s0, .L69+12
+ 501              	.L51:
+ 502 00ea 2846     		mov	r0, r5
+ 503 00ec FFF7FEFF 		bl	_ZN7daisysp3Svf7ProcessEf
+ 504 00f0 94ED159A 		vldr.32	s18, [r4, #84]
+ 505 00f4 04F17000 		add	r0, r4, #112
+ 506 00f8 B0EE680A 		vmov.f32	s0, s17
+ 507 00fc 84ED079A 		vstr.32	s18, [r4, #28]
+ 508 0100 0190     		str	r0, [sp, #4]
+ 509 0102 FFF7FEFF 		bl	_ZN7daisysp6String13SetBrightnessEf
+ 510 0106 B0EE480A 		vmov.f32	s0, s16
+ 511 010a 0198     		ldr	r0, [sp, #4]
+ 512 010c FFF7FEFF 		bl	_ZN7daisysp6String10SetDampingEf
+ 513 0110 B0EE490A 		vmov.f32	s0, s18
+ 514 0114 0198     		ldr	r0, [sp, #4]
+ 515 0116 02B0     		add	sp, sp, #8
+ 516              		@ sp needed
+ 517 0118 BDEC068B 		vldm	sp!, {d8-d10}
+ 518 011c BDE87040 		pop	{r4, r5, r6, lr}
+ 519 0120 FFF7FEBF 		b	_ZN7daisysp6String7ProcessEf
+ 520              	.L66:
+ 521 0124 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
+ 522 0126 002B     		cmp	r3, #0
+ 523 0128 95D1     		bne	.L45
+ 524 012a 00F58056 		add	r6, r0, #4096
+ 525 012e 00F12405 		add	r5, r0, #36
+ 526 0132 D6F8E034 		ldr	r3, [r6, #1248]
+ 527 0136 002B     		cmp	r3, #0
+ 528 0138 D5D0     		beq	.L56
+ 529              	.L68:
+ 530 013a FFF7FEFF 		bl	rand
+ 531 013e 07EE900A 		vmov	s15, r0	@ int
+ 532 0142 D6F8E034 		ldr	r3, [r6, #1248]
+ 533 0146 BFEE000A 		vmov.f32	s0, #-1.0e+0
+ 534 014a F8EEE77A 		vcvt.f32.s32	s15, s15
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s 			page 10
+
+
+ 535 014e 9FED2A7A 		vldr.32	s14, .L69+16
+ 536 0152 013B     		subs	r3, r3, #1
+ 537 0154 77EEA77A 		vadd.f32	s15, s15, s15
+ 538 0158 A7EE870A 		vfma.f32	s0, s15, s14
+ 539 015c 07EE903A 		vmov	s15, r3	@ int
+ 540 0160 F8EE677A 		vcvt.f32.u32	s15, s15
+ 541 0164 F5EEC07A 		vcmpe.f32	s15, #0
+ 542 0168 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 543 016c 3ADD     		ble	.L64
+ 544 016e FCEEE77A 		vcvt.u32.f32	s15, s15
+ 545 0172 17EE903A 		vmov	r3, s15	@ int
+ 546              	.L52:
+ 547 0176 C6F8E034 		str	r3, [r6, #1248]
+ 548 017a B6E7     		b	.L51
+ 549              	.L67:
+ 550 017c 94ED057A 		vldr.32	s14, [r4, #20]
+ 551 0180 DFED1E7A 		vldr.32	s15, .L69+20
+ 552 0184 DFED1E6A 		vldr.32	s13, .L69+24
+ 553 0188 67EE277A 		vmul.f32	s15, s14, s15
+ 554 018c DFED1DAA 		vldr.32	s21, .L69+28
+ 555 0190 9FED18AA 		vldr.32	s20, .L69+12
+ 556 0194 E7EE27AA 		vfma.f32	s21, s14, s15
+ 557              		.syntax unified
+ 558              	@ 36 "Source/Utility/dsp.h" 1
+ 559 0198 8AFE8A9A 		vmaxnm.f32 s18, s21, s20
+ 560              	@ 0 "" 2
+ 561              	@ 47 "Source/Utility/dsp.h" 1
+ 562 019c 89FE699A 		vminnm.f32 s18, s18, s19
+ 563              	@ 0 "" 2
+ 564              		.thumb
+ 565              		.syntax unified
+ 566 01a0 29EE269A 		vmul.f32	s18, s18, s13
+ 567 01a4 84ED089A 		vstr.32	s18, [r4, #32]
+ 568 01a8 FFF7FEFF 		bl	rand
+ 569 01ac 00EE100A 		vmov	s0, r0	@ int
+ 570 01b0 D4ED087A 		vldr.32	s15, [r4, #32]
+ 571 01b4 BAEEE00A 		vcvt.f32.s32	s0, s0, #31
+ 572 01b8 B4EEE70A 		vcmpe.f32	s0, s15
+ 573 01bc F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 574 01c0 03D5     		bpl	.L49
+ 575 01c2 C9EE897A 		vdiv.f32	s15, s19, s18
+ 576 01c6 27EE80AA 		vmul.f32	s20, s15, s0
+ 577              	.L49:
+ 578 01ca B1EE087A 		vmov.f32	s14, #6.0e+0
+ 579 01ce D4ED067A 		vldr.32	s15, [r4, #24]
+ 580 01d2 B2EE000A 		vmov.f32	s0, #8.0e+0
+ 581 01d6 AAEEC70A 		vfms.f32	s0, s21, s14
+ 582 01da 20EE0A0A 		vmul.f32	s0, s0, s20
+ 583 01de 20EE270A 		vmul.f32	s0, s0, s15
+ 584 01e2 82E7     		b	.L51
+ 585              	.L64:
+ 586 01e4 0023     		movs	r3, #0
+ 587 01e6 C6E7     		b	.L52
+ 588              	.L70:
+ 589              		.align	2
+ 590              	.L69:
+ 591 01e8 ABAAAA3D 		.word	1034594987
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s 			page 11
+
+
+ 592 01ec 00009042 		.word	1116733440
+ 593 01f0 EE7CFF3E 		.word	1056931054
+ 594 01f4 00000000 		.word	0
+ 595 01f8 00000030 		.word	805306368
+ 596 01fc B9FC7F3F 		.word	1065352377
+ 597 0200 9A99993E 		.word	1050253722
+ 598 0204 17B75138 		.word	944879383
+ 600              		.ident	"GCC: (GNU Arm Embedded Toolchain 10-2020-q4-major) 10.2.1 20201103 (release)"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stringvoice.cpp
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:15     .text._ZN7daisysp11StringVoice4InitEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:24     .text._ZN7daisysp11StringVoice4InitEf:00000000 _ZN7daisysp11StringVoice4InitEf
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:148    .text._ZN7daisysp11StringVoice4InitEf:00000108 $d
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:160    .text._ZN7daisysp11StringVoice5ResetEv:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:168    .text._ZN7daisysp11StringVoice5ResetEv:00000000 _ZN7daisysp11StringVoice5ResetEv
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:176    .text._ZN7daisysp11StringVoice10SetSustainEb:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:184    .text._ZN7daisysp11StringVoice10SetSustainEb:00000000 _ZN7daisysp11StringVoice10SetSustainEb
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:192    .text._ZN7daisysp11StringVoice4TrigEv:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:200    .text._ZN7daisysp11StringVoice4TrigEv:00000000 _ZN7daisysp11StringVoice4TrigEv
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:209    .text._ZN7daisysp11StringVoice7SetFreqEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:217    .text._ZN7daisysp11StringVoice7SetFreqEf:00000000 _ZN7daisysp11StringVoice7SetFreqEf
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:245    .text._ZN7daisysp11StringVoice7SetFreqEf:00000034 $d
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:248    .text._ZN7daisysp11StringVoice9SetAccentEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:256    .text._ZN7daisysp11StringVoice9SetAccentEf:00000000 _ZN7daisysp11StringVoice9SetAccentEf
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:276    .text._ZN7daisysp11StringVoice9SetAccentEf:00000018 $d
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:279    .text._ZN7daisysp11StringVoice12SetStructureEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:287    .text._ZN7daisysp11StringVoice12SetStructureEf:00000000 _ZN7daisysp11StringVoice12SetStructureEf
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:328    .text._ZN7daisysp11StringVoice12SetStructureEf:0000005c $d
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:335    .text._ZN7daisysp11StringVoice13SetBrightnessEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:343    .text._ZN7daisysp11StringVoice13SetBrightnessEf:00000000 _ZN7daisysp11StringVoice13SetBrightnessEf
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:365    .text._ZN7daisysp11StringVoice13SetBrightnessEf:00000020 $d
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:368    .text._ZN7daisysp11StringVoice10SetDampingEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:376    .text._ZN7daisysp11StringVoice10SetDampingEf:00000000 _ZN7daisysp11StringVoice10SetDampingEf
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:396    .text._ZN7daisysp11StringVoice10SetDampingEf:00000018 $d
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:399    .text._ZN7daisysp11StringVoice6GetAuxEv:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:407    .text._ZN7daisysp11StringVoice6GetAuxEv:00000000 _ZN7daisysp11StringVoice6GetAuxEv
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:415    .text._ZN7daisysp11StringVoice7ProcessEb:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:423    .text._ZN7daisysp11StringVoice7ProcessEb:00000000 _ZN7daisysp11StringVoice7ProcessEb
+C:\Users\pedro\AppData\Local\Temp\ccHbNyW8.s:591    .text._ZN7daisysp11StringVoice7ProcessEb:000001e8 $d
+
+UNDEFINED SYMBOLS
+_ZN7daisysp3Svf4InitEf
+_ZN7daisysp6String4InitEf
+_ZN7daisysp6String7SetFreqEf
+_ZN7daisysp6String15SetNonLinearityEf
+_ZN7daisysp6String5ResetEv
+powf
+_ZN7daisysp3Svf7SetFreqEf
+_ZN7daisysp3Svf6SetResEf
+_ZN7daisysp3Svf7ProcessEf
+_ZN7daisysp6String13SetBrightnessEf
+_ZN7daisysp6String10SetDampingEf
+_ZN7daisysp6String7ProcessEf
+rand

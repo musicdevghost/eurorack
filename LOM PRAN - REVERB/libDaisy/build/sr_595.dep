@@ -1,0 +1,132 @@
+build/src/dev/sr_595.o: src/dev/sr_595.cpp \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\algorithm \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\utility \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\c++config.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\os_defines.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\cpu_defines.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_relops.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_pair.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\move.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\type_traits \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\initializer_list \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\functexcept.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\exception_defines.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\cpp_type_traits.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\ext\type_traits.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\ext\numeric_traits.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_iterator_base_types.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_iterator_base_funcs.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\concept_check.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\debug\assertions.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_iterator.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\ptr_traits.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\debug\debug.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\predefined_ops.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_algo.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\cstdlib \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\stdlib.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\ieeefp.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_ansi.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\newlib.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_newlib_version.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\config.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\features.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\lib\gcc\arm-none-eabi\10.2.1\include\stddef.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\reent.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_ansi.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_types.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\_types.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\_default_types.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\lock.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\cdefs.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\stdlib.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\alloca.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\std_abs.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\algorithmfwd.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_heap.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_tempbuf.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_construct.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\new \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\exception \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\exception.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\exception_ptr.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\cxxabi_init_exception.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\typeinfo \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\hash_bytes.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\nested_exception.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\uniform_int_dist.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\limits \
+ src/dev/sr_595.h src/daisy_core.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\lib\gcc\arm-none-eabi\10.2.1\include\stdint.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\stdint.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_intsup.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_stdint.h \
+ c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\stdlib.h \
+ src/per/gpio.h
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\algorithm:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\utility:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\c++config.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\os_defines.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\cpu_defines.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_relops.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_pair.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\move.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\type_traits:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\initializer_list:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_algobase.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\functexcept.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\exception_defines.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\cpp_type_traits.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\ext\type_traits.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\ext\numeric_traits.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_iterator_base_types.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_iterator_base_funcs.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\concept_check.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\debug\assertions.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_iterator.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\ptr_traits.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\debug\debug.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\predefined_ops.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_algo.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\cstdlib:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\stdlib.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\ieeefp.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_ansi.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\newlib.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_newlib_version.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\config.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\features.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\lib\gcc\arm-none-eabi\10.2.1\include\stddef.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\reent.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\_ansi.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_types.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\_types.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\_default_types.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\lock.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\cdefs.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\machine\stdlib.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\alloca.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\std_abs.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\algorithmfwd.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_heap.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_tempbuf.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\stl_construct.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\new:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\exception:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\exception.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\exception_ptr.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\cxxabi_init_exception.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\typeinfo:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\hash_bytes.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\nested_exception.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\bits\uniform_int_dist.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\limits:
+src/dev/sr_595.h:
+src/daisy_core.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\lib\gcc\arm-none-eabi\10.2.1\include\stdint.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\stdint.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_intsup.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\sys\_stdint.h:
+c\:\users\pedro\desktop\dev\daisytools\windows\arm-none-eabi\include\c++\10.2.1\stdlib.h:
+src/per/gpio.h:

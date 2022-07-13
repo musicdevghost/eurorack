@@ -1,0 +1,236 @@
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccb6eK4S.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"adenv.cpp"
+  13              		.text
+  14              		.section	.text._ZN7daisysp5AdEnv4InitEf,"ax",%progbits
+  15              		.align	1
+  16              		.p2align 2,,3
+  17              		.global	_ZN7daisysp5AdEnv4InitEf
+  18              		.arch armv7e-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv5-d16
+  24              	_ZN7daisysp5AdEnv4InitEf:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 0021     		movs	r1, #0
+  29 0002 094B     		ldr	r3, .L3
+  30 0004 0022     		movs	r2, #0
+  31 0006 4FF07E5C 		mov	ip, #1065353216
+  32 000a 0170     		strb	r1, [r0]
+  33 000c 0163     		str	r1, [r0, #48]
+  34 000e 0749     		ldr	r1, .L3+4
+  35 0010 C0F818C0 		str	ip, [r0, #24]	@ float
+  36 0014 80ED040A 		vstr.32	s0, [r0, #16]
+  37 0018 0262     		str	r2, [r0, #32]	@ float
+  38 001a 4261     		str	r2, [r0, #20]	@ float
+  39 001c 4360     		str	r3, [r0, #4]	@ float
+  40 001e 8360     		str	r3, [r0, #8]	@ float
+  41 0020 C161     		str	r1, [r0, #28]	@ float
+  42 0022 C360     		str	r3, [r0, #12]	@ float
+  43 0024 7047     		bx	lr
+  44              	.L4:
+  45 0026 00BF     		.align	2
+  46              	.L3:
+  47 0028 CDCC4C3D 		.word	1028443341
+  48 002c 17B7D138 		.word	953267991
+  50              		.section	.text._ZN7daisysp5AdEnv7ProcessEv,"ax",%progbits
+  51              		.align	1
+  52              		.p2align 2,,3
+  53              		.global	_ZN7daisysp5AdEnv7ProcessEv
+  54              		.syntax unified
+  55              		.thumb
+  56              		.thumb_func
+  57              		.fpu fpv5-d16
+  59              	_ZN7daisysp5AdEnv7ProcessEv:
+  60              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccb6eK4S.s 			page 2
+
+
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62              		@ link register save eliminated.
+  63 0000 90F83430 		ldrb	r3, [r0, #52]	@ zero_extendqisi2
+  64 0004 002B     		cmp	r3, #0
+  65 0006 53D0     		beq	.L6
+  66 0008 D0ED027A 		vldr.32	s15, [r0, #8]
+  67 000c 0023     		movs	r3, #0
+  68 000e 90ED047A 		vldr.32	s14, [r0, #16]
+  69 0012 0121     		movs	r1, #1
+  70 0014 90ED076A 		vldr.32	s12, [r0, #28]
+  71 0018 0022     		movs	r2, #0
+  72 001a 67EE877A 		vmul.f32	s15, s15, s14
+  73 001e 80F83430 		strb	r3, [r0, #52]
+  74 0022 F0EE466A 		vmov.f32	s13, s12
+  75 0026 0170     		strb	r1, [r0]
+  76 0028 0363     		str	r3, [r0, #48]
+  77 002a FCEEE77A 		vcvt.u32.f32	s15, s15
+  78 002e 8262     		str	r2, [r0, #40]	@ float
+  79 0030 80ED0B6A 		vstr.32	s12, [r0, #44]
+  80              	.L7:
+  81 0034 F7EE004A 		vmov.f32	s9, #1.0e+0
+  82 0038 0123     		movs	r3, #1
+  83 003a 74EEE64A 		vsub.f32	s9, s9, s13
+  84              	.L10:
+  85 003e 4278     		ldrb	r2, [r0, #1]	@ zero_extendqisi2
+  86 0040 9A42     		cmp	r2, r3
+  87 0042 4DD0     		beq	.L32
+  88              	.L11:
+  89 0044 4FF0000C 		mov	ip, #0
+  90 0048 0021     		movs	r1, #0
+  91 004a 0122     		movs	r2, #1
+  92 004c C0F828C0 		str	ip, [r0, #40]	@ float
+  93 0050 0163     		str	r1, [r0, #48]
+  94              	.L12:
+  95 0052 90ED085A 		vldr.32	s10, [r0, #32]
+  96 0056 F8EE677A 		vcvt.f32.u32	s15, s15
+  97 005a B5EE405A 		vcmp.f32	s10, #0
+  98 005e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  99 0062 4ED1     		bne	.L13
+ 100 0064 84EEA77A 		vdiv.f32	s14, s9, s15
+ 101 0068 77EE067A 		vadd.f32	s15, s14, s12
+ 102 006c 80ED097A 		vstr.32	s14, [r0, #36]
+ 103              	.L14:
+ 104 0070 0263     		str	r2, [r0, #48]
+ 105 0072 4370     		strb	r3, [r0, #1]
+ 106 0074 002B     		cmp	r3, #0
+ 107 0076 3FD0     		beq	.L15
+ 108 0078 012B     		cmp	r3, #1
+ 109 007a 07D1     		bne	.L21
+ 110 007c B7EE007A 		vmov.f32	s14, #1.0e+0
+ 111 0080 B4EEC76A 		vcmpe.f32	s12, s14
+ 112 0084 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 113 0088 80F28980 		bge	.L16
+ 114              	.L21:
+ 115 008c B5EE406A 		vcmp.f32	s12, #0
+ 116 0090 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 117 0094 01D8     		bhi	.L20
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccb6eK4S.s 			page 3
+
+
+ 118 0096 022B     		cmp	r3, #2
+ 119 0098 2CD0     		beq	.L18
+ 120              	.L20:
+ 121 009a 90ED050A 		vldr.32	s0, [r0, #20]
+ 122 009e 90ED067A 		vldr.32	s14, [r0, #24]
+ 123 00a2 C0ED077A 		vstr.32	s15, [r0, #28]
+ 124 00a6 77EE407A 		vsub.f32	s15, s14, s0
+ 125 00aa A7EE860A 		vfma.f32	s0, s15, s12
+ 126 00ae 7047     		bx	lr
+ 127              	.L6:
+ 128 00b0 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 129 00b2 90ED047A 		vldr.32	s14, [r0, #16]
+ 130 00b6 00EB8302 		add	r2, r0, r3, lsl #2
+ 131 00ba 012B     		cmp	r3, #1
+ 132 00bc D2ED017A 		vldr.32	s15, [r2, #4]
+ 133 00c0 67EE877A 		vmul.f32	s15, s15, s14
+ 134 00c4 FCEEE77A 		vcvt.u32.f32	s15, s15
+ 135 00c8 6CD0     		beq	.L8
+ 136 00ca 022B     		cmp	r3, #2
+ 137 00cc 0BD1     		bne	.L33
+ 138 00ce 4278     		ldrb	r2, [r0, #1]	@ zero_extendqisi2
+ 139 00d0 FFEE004A 		vmov.f32	s9, #-1.0e+0
+ 140 00d4 F7EE006A 		vmov.f32	s13, #1.0e+0
+ 141 00d8 90ED076A 		vldr.32	s12, [r0, #28]
+ 142 00dc 9A42     		cmp	r2, r3
+ 143 00de B1D1     		bne	.L11
+ 144              	.L32:
+ 145 00e0 026B     		ldr	r2, [r0, #48]
+ 146 00e2 0132     		adds	r2, r2, #1
+ 147 00e4 B5E7     		b	.L12
+ 148              	.L33:
+ 149 00e6 DFED324A 		vldr.32	s9, .L34
+ 150 00ea 90ED076A 		vldr.32	s12, [r0, #28]
+ 151 00ee F0EE646A 		vmov.f32	s13, s9
+ 152 00f2 A4E7     		b	.L10
+ 153              	.L18:
+ 154 00f4 0023     		movs	r3, #0
+ 155 00f6 0370     		strb	r3, [r0]
+ 156              	.L15:
+ 157 00f8 9FED2D6A 		vldr.32	s12, .L34
+ 158 00fc F0EE467A 		vmov.f32	s15, s12
+ 159 0100 CBE7     		b	.L20
+ 160              	.L13:
+ 161 0102 F7EE005A 		vmov.f32	s11, #1.0e+0
+ 162 0106 DFED2B3A 		vldr.32	s7, .L34+4
+ 163 010a 85EE274A 		vdiv.f32	s8, s10, s15
+ 164 010e 90ED0A3A 		vldr.32	s6, [r0, #40]
+ 165 0112 B0EE657A 		vmov.f32	s14, s11
+ 166 0116 F0EE657A 		vmov.f32	s15, s11
+ 167 011a A5EE237A 		vfma.f32	s14, s10, s7
+ 168 011e 27EE077A 		vmul.f32	s14, s14, s14
+ 169 0122 34EE035A 		vadd.f32	s10, s8, s6
+ 170 0126 27EE077A 		vmul.f32	s14, s14, s14
+ 171 012a E5EE237A 		vfma.f32	s15, s10, s7
+ 172 012e 80ED0A5A 		vstr.32	s10, [r0, #40]
+ 173 0132 27EE077A 		vmul.f32	s14, s14, s14
+ 174 0136 B0EE655A 		vmov.f32	s10, s11
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccb6eK4S.s 			page 4
+
+
+ 175 013a 27EE077A 		vmul.f32	s14, s14, s14
+ 176 013e 67EEA77A 		vmul.f32	s15, s15, s15
+ 177 0142 27EE077A 		vmul.f32	s14, s14, s14
+ 178 0146 67EEA77A 		vmul.f32	s15, s15, s15
+ 179 014a 27EE077A 		vmul.f32	s14, s14, s14
+ 180 014e 67EEA77A 		vmul.f32	s15, s15, s15
+ 181 0152 27EE077A 		vmul.f32	s14, s14, s14
+ 182 0156 67EEA77A 		vmul.f32	s15, s15, s15
+ 183 015a 27EE077A 		vmul.f32	s14, s14, s14
+ 184 015e 67EEA77A 		vmul.f32	s15, s15, s15
+ 185 0162 27EE077A 		vmul.f32	s14, s14, s14
+ 186 0166 67EEA77A 		vmul.f32	s15, s15, s15
+ 187 016a A7EE475A 		vfms.f32	s10, s14, s14
+ 188 016e 67EEA77A 		vmul.f32	s15, s15, s15
+ 189 0172 67EEA77A 		vmul.f32	s15, s15, s15
+ 190 0176 84EE857A 		vdiv.f32	s14, s9, s10
+ 191 017a 67EEA77A 		vmul.f32	s15, s15, s15
+ 192 017e E7EEE75A 		vfms.f32	s11, s15, s15
+ 193 0182 F0EE667A 		vmov.f32	s15, s13
+ 194 0186 E7EE257A 		vfma.f32	s15, s14, s11
+ 195 018a 80ED097A 		vstr.32	s14, [r0, #36]
+ 196 018e F4EE677A 		vcmp.f32	s15, s15
+ 197 0192 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 198 0196 18BF     		it	ne
+ 199 0198 DFED057A 		vldrne.32	s15, .L34
+ 200 019c 68E7     		b	.L14
+ 201              	.L16:
+ 202 019e 0223     		movs	r3, #2
+ 203 01a0 0370     		strb	r3, [r0]
+ 204 01a2 7AE7     		b	.L20
+ 205              	.L8:
+ 206 01a4 90ED076A 		vldr.32	s12, [r0, #28]
+ 207 01a8 D0ED0B6A 		vldr.32	s13, [r0, #44]
+ 208 01ac 42E7     		b	.L7
+ 209              	.L35:
+ 210 01ae 00BF     		.align	2
+ 211              	.L34:
+ 212 01b0 00000000 		.word	0
+ 213 01b4 0000803A 		.word	981467136
+ 215              		.ident	"GCC: (GNU Arm Embedded Toolchain 10-2020-q4-major) 10.2.1 20201103 (release)"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccb6eK4S.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 adenv.cpp
+C:\Users\pedro\AppData\Local\Temp\ccb6eK4S.s:15     .text._ZN7daisysp5AdEnv4InitEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccb6eK4S.s:24     .text._ZN7daisysp5AdEnv4InitEf:00000000 _ZN7daisysp5AdEnv4InitEf
+C:\Users\pedro\AppData\Local\Temp\ccb6eK4S.s:47     .text._ZN7daisysp5AdEnv4InitEf:00000028 $d
+C:\Users\pedro\AppData\Local\Temp\ccb6eK4S.s:51     .text._ZN7daisysp5AdEnv7ProcessEv:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccb6eK4S.s:59     .text._ZN7daisysp5AdEnv7ProcessEv:00000000 _ZN7daisysp5AdEnv7ProcessEv
+C:\Users\pedro\AppData\Local\Temp\ccb6eK4S.s:212    .text._ZN7daisysp5AdEnv7ProcessEv:000001b0 $d
+
+NO UNDEFINED SYMBOLS

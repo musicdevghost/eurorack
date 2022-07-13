@@ -1,0 +1,197 @@
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"tremolo.cpp"
+  13              		.text
+  14              		.section	.text._ZN7daisysp7Tremolo4InitEf,"ax",%progbits
+  15              		.align	1
+  16              		.p2align 2,,3
+  17              		.global	_ZN7daisysp7Tremolo4InitEf
+  18              		.arch armv7e-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv5-d16
+  24              	_ZN7daisysp7Tremolo4InitEf:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 38B5     		push	{r3, r4, r5, lr}
+  28 0002 F0EE407A 		vmov.f32	s15, s0
+  29 0006 0546     		mov	r5, r0
+  30 0008 0446     		mov	r4, r0
+  31 000a 9FED1E0A 		vldr.32	s0, .L4
+  32 000e 0835     		adds	r5, r5, #8
+  33 0010 2DED048B 		vpush.64	{d8, d9}
+  34 0014 F7EE008A 		vmov.f32	s17, #1.0e+0
+  35 0018 9FED1B8A 		vldr.32	s16, .L4+4
+  36 001c B6EE009A 		vmov.f32	s18, #5.0e-1
+  37 0020 C0ED007A 		vstr.32	s15, [r0]
+  38 0024 C0ED057A 		vstr.32	s15, [r0, #20]
+  39 0028 2846     		mov	r0, r5
+  40 002a 88EEA77A 		vdiv.f32	s14, s17, s15
+  41 002e 84ED078A 		vstr.32	s16, [r4, #28]
+  42 0032 84ED039A 		vstr.32	s18, [r4, #12]
+  43 0036 84ED040A 		vstr.32	s0, [r4, #16]
+  44              		.syntax unified
+  45              	@ 36 "Source/Utility/dsp.h" 1
+  46 003a 88FE888A 		vmaxnm.f32 s16, s17, s16
+  47              	@ 0 "" 2
+  48              	@ 47 "Source/Utility/dsp.h" 1
+  49 003e 88FE688A 		vminnm.f32 s16, s16, s17
+  50              	@ 0 "" 2
+  51              		.thumb
+  52              		.syntax unified
+  53 0042 84ED067A 		vstr.32	s14, [r4, #24]
+  54 0046 FFF7FEFF 		bl	_ZN7daisysp10Oscillator12CalcPhaseIncEf
+  55 004a 28EE098A 		vmul.f32	s16, s16, s18
+  56 004e F0EE407A 		vmov.f32	s15, s0
+  57 0052 0022     		movs	r2, #0
+  58 0054 40F20113 		movw	r3, #257
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s 			page 2
+
+
+  59 0058 B0EE680A 		vmov.f32	s0, s17
+  60 005c 84ED038A 		vstr.32	s16, [r4, #12]
+  61 0060 2846     		mov	r0, r5
+  62 0062 C4ED087A 		vstr.32	s15, [r4, #32]
+  63 0066 78EEC87A 		vsub.f32	s15, s17, s16
+  64 006a C4ED048A 		vstr.32	s17, [r4, #16]
+  65 006e 2272     		strb	r2, [r4, #8]
+  66 0070 A385     		strh	r3, [r4, #44]	@ movhi
+  67 0072 C4ED017A 		vstr.32	s15, [r4, #4]
+  68 0076 FFF7FEFF 		bl	_ZN7daisysp10Oscillator12CalcPhaseIncEf
+  69 007a 84ED080A 		vstr.32	s0, [r4, #32]
+  70 007e BDEC048B 		vldm	sp!, {d8-d9}
+  71 0082 38BD     		pop	{r3, r4, r5, pc}
+  72              	.L5:
+  73              		.align	2
+  74              	.L4:
+  75 0084 0000C842 		.word	1120403456
+  76 0088 00000000 		.word	0
+  78              		.section	.text._ZN7daisysp7Tremolo7ProcessEf,"ax",%progbits
+  79              		.align	1
+  80              		.p2align 2,,3
+  81              		.global	_ZN7daisysp7Tremolo7ProcessEf
+  82              		.syntax unified
+  83              		.thumb
+  84              		.thumb_func
+  85              		.fpu fpv5-d16
+  87              	_ZN7daisysp7Tremolo7ProcessEf:
+  88              		@ args = 0, pretend = 0, frame = 0
+  89              		@ frame_needed = 0, uses_anonymous_args = 0
+  90 0000 08B5     		push	{r3, lr}
+  91 0002 0346     		mov	r3, r0
+  92 0004 0830     		adds	r0, r0, #8
+  93 0006 2DED028B 		vpush.64	{d8}
+  94 000a D3ED018A 		vldr.32	s17, [r3, #4]
+  95 000e B0EE408A 		vmov.f32	s16, s0
+  96 0012 FFF7FEFF 		bl	_ZN7daisysp10Oscillator7ProcessEv
+  97 0016 38EE800A 		vadd.f32	s0, s17, s0
+  98 001a 20EE080A 		vmul.f32	s0, s0, s16
+  99 001e BDEC028B 		vldm	sp!, {d8}
+ 100 0022 08BD     		pop	{r3, pc}
+ 102              		.section	.text._ZN7daisysp7Tremolo7SetFreqEf,"ax",%progbits
+ 103              		.align	1
+ 104              		.p2align 2,,3
+ 105              		.global	_ZN7daisysp7Tremolo7SetFreqEf
+ 106              		.syntax unified
+ 107              		.thumb
+ 108              		.thumb_func
+ 109              		.fpu fpv5-d16
+ 111              	_ZN7daisysp7Tremolo7SetFreqEf:
+ 112              		@ args = 0, pretend = 0, frame = 0
+ 113              		@ frame_needed = 0, uses_anonymous_args = 0
+ 114 0000 10B5     		push	{r4, lr}
+ 115 0002 0446     		mov	r4, r0
+ 116 0004 0830     		adds	r0, r0, #8
+ 117 0006 84ED040A 		vstr.32	s0, [r4, #16]
+ 118 000a FFF7FEFF 		bl	_ZN7daisysp10Oscillator12CalcPhaseIncEf
+ 119 000e 84ED080A 		vstr.32	s0, [r4, #32]
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s 			page 3
+
+
+ 120 0012 10BD     		pop	{r4, pc}
+ 122              		.section	.text._ZN7daisysp7Tremolo11SetWaveformEi,"ax",%progbits
+ 123              		.align	1
+ 124              		.p2align 2,,3
+ 125              		.global	_ZN7daisysp7Tremolo11SetWaveformEi
+ 126              		.syntax unified
+ 127              		.thumb
+ 128              		.thumb_func
+ 129              		.fpu fpv5-d16
+ 131              	_ZN7daisysp7Tremolo11SetWaveformEi:
+ 132              		@ args = 0, pretend = 0, frame = 0
+ 133              		@ frame_needed = 0, uses_anonymous_args = 0
+ 134              		@ link register save eliminated.
+ 135 0000 C9B2     		uxtb	r1, r1
+ 136 0002 0829     		cmp	r1, #8
+ 137 0004 28BF     		it	cs
+ 138 0006 0021     		movcs	r1, #0
+ 139 0008 0172     		strb	r1, [r0, #8]
+ 140 000a 7047     		bx	lr
+ 142              		.section	.text._ZN7daisysp7Tremolo8SetDepthEf,"ax",%progbits
+ 143              		.align	1
+ 144              		.p2align 2,,3
+ 145              		.global	_ZN7daisysp7Tremolo8SetDepthEf
+ 146              		.syntax unified
+ 147              		.thumb
+ 148              		.thumb_func
+ 149              		.fpu fpv5-d16
+ 151              	_ZN7daisysp7Tremolo8SetDepthEf:
+ 152              		@ args = 0, pretend = 0, frame = 0
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154              		@ link register save eliminated.
+ 155 0000 B6EE007A 		vmov.f32	s14, #5.0e-1
+ 156 0004 DFED086A 		vldr.32	s13, .L13
+ 157 0008 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 158              		.syntax unified
+ 159              	@ 36 "Source/Utility/dsp.h" 1
+ 160 000c 80FE260A 		vmaxnm.f32 s0, s0, s13
+ 161              	@ 0 "" 2
+ 162              	@ 47 "Source/Utility/dsp.h" 1
+ 163 0010 80FE670A 		vminnm.f32 s0, s0, s15
+ 164              	@ 0 "" 2
+ 165              		.thumb
+ 166              		.syntax unified
+ 167 0014 20EE070A 		vmul.f32	s0, s0, s14
+ 168 0018 77EEC07A 		vsub.f32	s15, s15, s0
+ 169 001c 80ED030A 		vstr.32	s0, [r0, #12]
+ 170 0020 C0ED017A 		vstr.32	s15, [r0, #4]
+ 171 0024 7047     		bx	lr
+ 172              	.L14:
+ 173 0026 00BF     		.align	2
+ 174              	.L13:
+ 175 0028 00000000 		.word	0
+ 177              		.ident	"GCC: (GNU Arm Embedded Toolchain 10-2020-q4-major) 10.2.1 20201103 (release)"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 tremolo.cpp
+C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s:15     .text._ZN7daisysp7Tremolo4InitEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s:24     .text._ZN7daisysp7Tremolo4InitEf:00000000 _ZN7daisysp7Tremolo4InitEf
+C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s:75     .text._ZN7daisysp7Tremolo4InitEf:00000084 $d
+C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s:79     .text._ZN7daisysp7Tremolo7ProcessEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s:87     .text._ZN7daisysp7Tremolo7ProcessEf:00000000 _ZN7daisysp7Tremolo7ProcessEf
+C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s:103    .text._ZN7daisysp7Tremolo7SetFreqEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s:111    .text._ZN7daisysp7Tremolo7SetFreqEf:00000000 _ZN7daisysp7Tremolo7SetFreqEf
+C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s:123    .text._ZN7daisysp7Tremolo11SetWaveformEi:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s:131    .text._ZN7daisysp7Tremolo11SetWaveformEi:00000000 _ZN7daisysp7Tremolo11SetWaveformEi
+C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s:143    .text._ZN7daisysp7Tremolo8SetDepthEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s:151    .text._ZN7daisysp7Tremolo8SetDepthEf:00000000 _ZN7daisysp7Tremolo8SetDepthEf
+C:\Users\pedro\AppData\Local\Temp\ccvKUG9z.s:175    .text._ZN7daisysp7Tremolo8SetDepthEf:00000028 $d
+
+UNDEFINED SYMBOLS
+_ZN7daisysp10Oscillator12CalcPhaseIncEf
+_ZN7daisysp10Oscillator7ProcessEv

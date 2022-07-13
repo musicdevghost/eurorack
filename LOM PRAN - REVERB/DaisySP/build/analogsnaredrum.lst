@@ -1,0 +1,736 @@
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"analogsnaredrum.cpp"
+  13              		.text
+  14              		.section	.text._ZN7daisysp15AnalogSnareDrum4InitEf,"ax",%progbits
+  15              		.align	1
+  16              		.p2align 2,,3
+  17              		.global	_ZN7daisysp15AnalogSnareDrum4InitEf
+  18              		.arch armv7e-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv5-d16
+  24              	_ZN7daisysp15AnalogSnareDrum4InitEf:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  28 0002 F7EE005A 		vmov.f32	s11, #1.0e+0
+  29 0006 0023     		movs	r3, #0
+  30 0008 F6EE007A 		vmov.f32	s15, #5.0e-1
+  31 000c 9FED287A 		vldr.32	s14, .L6
+  32 0010 284A     		ldr	r2, .L6+4
+  33 0012 0446     		mov	r4, r0
+  34 0014 00F13406 		add	r6, r0, #52
+  35 0018 00F5FE75 		add	r5, r0, #508
+  36 001c 00F50477 		add	r7, r0, #528
+  37 0020 C7EE006A 		vdiv.f32	s13, s14, s0
+  38 0024 9FED246A 		vldr.32	s12, .L6+8
+  39 0028 9FED247A 		vldr.32	s14, .L6+12
+  40 002c 2DED028B 		vpush.64	{d8}
+  41 0030 9FED238A 		vldr.32	s16, .L6+16
+  42              		.syntax unified
+  43              	@ 36 "Source/Utility/dsp.h" 1
+  44 0034 C7FE887A 		vmaxnm.f32 s15, s15, s16
+  45              	@ 0 "" 2
+  46              	@ 47 "Source/Utility/dsp.h" 1
+  47 0038 C7FEE57A 		vminnm.f32 s15, s15, s11
+  48              	@ 0 "" 2
+  49              		.thumb
+  50              		.syntax unified
+  51 003c 77EEA77A 		vadd.f32	s15, s15, s15
+  52 0040 80ED000A 		vstr.32	s0, [r0]
+  53              		.syntax unified
+  54              	@ 36 "Source/Utility/dsp.h" 1
+  55 0044 86FE086A 		vmaxnm.f32 s12, s12, s16
+  56              	@ 0 "" 2
+  57              	@ 36 "Source/Utility/dsp.h" 1
+  58 0048 C6FE886A 		vmaxnm.f32 s13, s13, s16
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 2
+
+
+  59              	@ 0 "" 2
+  60              	@ 47 "Source/Utility/dsp.h" 1
+  61 004c 86FE656A 		vminnm.f32 s12, s12, s11
+  62              	@ 0 "" 2
+  63              	@ 47 "Source/Utility/dsp.h" 1
+  64 0050 C6FEC76A 		vminnm.f32 s13, s13, s14
+  65              	@ 0 "" 2
+  66              		.thumb
+  67              		.syntax unified
+  68 0054 C361     		str	r3, [r0, #28]
+  69 0056 9FED1B7A 		vldr.32	s14, .L6+20
+  70 005a 80ED088A 		vstr.32	s16, [r0, #32]
+  71              		.syntax unified
+  72              	@ 36 "Source/Utility/dsp.h" 1
+  73 005e 87FE087A 		vmaxnm.f32 s14, s14, s16
+  74              	@ 0 "" 2
+  75              		.thumb
+  76              		.syntax unified
+  77 0062 80ED098A 		vstr.32	s16, [r0, #36]
+  78              		.syntax unified
+  79              	@ 47 "Source/Utility/dsp.h" 1
+  80 0066 87FE657A 		vminnm.f32 s14, s14, s11
+  81              	@ 0 "" 2
+  82              		.thumb
+  83              		.syntax unified
+  84 006a 80ED0A8A 		vstr.32	s16, [r0, #40]
+  85 006e 80ED0B8A 		vstr.32	s16, [r0, #44]
+  86 0072 80ED0C8A 		vstr.32	s16, [r0, #48]
+  87 0076 0383     		strh	r3, [r0, #24]	@ movhi
+  88 0078 80ED036A 		vstr.32	s12, [r0, #12]
+  89 007c C0ED016A 		vstr.32	s13, [r0, #4]
+  90 0080 4261     		str	r2, [r0, #20]	@ float
+  91 0082 80ED047A 		vstr.32	s14, [r0, #16]
+  92 0086 C0ED027A 		vstr.32	s15, [r0, #8]
+  93              	.L3:
+  94 008a 3046     		mov	r0, r6
+  95 008c 4C36     		adds	r6, r6, #76
+  96 008e FFF7FEFF 		bl	_ZN7daisysp3Svf4InitEf
+  97 0092 A5EC018A 		vstmia.32	r5!, {s16}
+  98 0096 BD42     		cmp	r5, r7
+  99 0098 94ED000A 		vldr.32	s0, [r4]
+ 100 009c F5D1     		bne	.L3
+ 101 009e 04F5D870 		add	r0, r4, #432
+ 102 00a2 BDEC028B 		vldm	sp!, {d8}
+ 103 00a6 BDE8F840 		pop	{r3, r4, r5, r6, r7, lr}
+ 104 00aa FFF7FEBF 		b	_ZN7daisysp3Svf4InitEf
+ 105              	.L7:
+ 106 00ae 00BF     		.align	2
+ 107              	.L6:
+ 108 00b0 00004843 		.word	1128792064
+ 109 00b4 9A99993E 		.word	1050253722
+ 110 00b8 9A99193F 		.word	1058642330
+ 111 00bc CDCCCC3E 		.word	1053609165
+ 112 00c0 00000000 		.word	0
+ 113 00c4 3333333F 		.word	1060320051
+ 115              		.section	.text._ZN7daisysp15AnalogSnareDrum4TrigEv,"ax",%progbits
+ 116              		.align	1
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 3
+
+
+ 117              		.p2align 2,,3
+ 118              		.global	_ZN7daisysp15AnalogSnareDrum4TrigEv
+ 119              		.syntax unified
+ 120              		.thumb
+ 121              		.thumb_func
+ 122              		.fpu fpv5-d16
+ 124              	_ZN7daisysp15AnalogSnareDrum4TrigEv:
+ 125              		@ args = 0, pretend = 0, frame = 0
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127              		@ link register save eliminated.
+ 128 0000 0123     		movs	r3, #1
+ 129 0002 4376     		strb	r3, [r0, #25]
+ 130 0004 7047     		bx	lr
+ 132 0006 00BF     		.section	.text._ZN7daisysp15AnalogSnareDrum10SetSustainEb,"ax",%progbits
+ 133              		.align	1
+ 134              		.p2align 2,,3
+ 135              		.global	_ZN7daisysp15AnalogSnareDrum10SetSustainEb
+ 136              		.syntax unified
+ 137              		.thumb
+ 138              		.thumb_func
+ 139              		.fpu fpv5-d16
+ 141              	_ZN7daisysp15AnalogSnareDrum10SetSustainEb:
+ 142              		@ args = 0, pretend = 0, frame = 0
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 144              		@ link register save eliminated.
+ 145 0000 0176     		strb	r1, [r0, #24]
+ 146 0002 7047     		bx	lr
+ 148              		.section	.text._ZN7daisysp15AnalogSnareDrum9SetAccentEf,"ax",%progbits
+ 149              		.align	1
+ 150              		.p2align 2,,3
+ 151              		.global	_ZN7daisysp15AnalogSnareDrum9SetAccentEf
+ 152              		.syntax unified
+ 153              		.thumb
+ 154              		.thumb_func
+ 155              		.fpu fpv5-d16
+ 157              	_ZN7daisysp15AnalogSnareDrum9SetAccentEf:
+ 158              		@ args = 0, pretend = 0, frame = 0
+ 159              		@ frame_needed = 0, uses_anonymous_args = 0
+ 160              		@ link register save eliminated.
+ 161 0000 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 162 0004 9FED047A 		vldr.32	s14, .L11
+ 163              		.syntax unified
+ 164              	@ 36 "Source/Utility/dsp.h" 1
+ 165 0008 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 166              	@ 0 "" 2
+ 167              	@ 47 "Source/Utility/dsp.h" 1
+ 168 000c 80FE670A 		vminnm.f32 s0, s0, s15
+ 169              	@ 0 "" 2
+ 170              		.thumb
+ 171              		.syntax unified
+ 172 0010 80ED030A 		vstr.32	s0, [r0, #12]
+ 173 0014 7047     		bx	lr
+ 174              	.L12:
+ 175 0016 00BF     		.align	2
+ 176              	.L11:
+ 177 0018 00000000 		.word	0
+ 179              		.section	.text._ZN7daisysp15AnalogSnareDrum7SetFreqEf,"ax",%progbits
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 4
+
+
+ 180              		.align	1
+ 181              		.p2align 2,,3
+ 182              		.global	_ZN7daisysp15AnalogSnareDrum7SetFreqEf
+ 183              		.syntax unified
+ 184              		.thumb
+ 185              		.thumb_func
+ 186              		.fpu fpv5-d16
+ 188              	_ZN7daisysp15AnalogSnareDrum7SetFreqEf:
+ 189              		@ args = 0, pretend = 0, frame = 0
+ 190              		@ frame_needed = 0, uses_anonymous_args = 0
+ 191              		@ link register save eliminated.
+ 192 0000 90ED006A 		vldr.32	s12, [r0]
+ 193 0004 DFED066A 		vldr.32	s13, .L14
+ 194 0008 C0EE067A 		vdiv.f32	s15, s0, s12
+ 195 000c 9FED057A 		vldr.32	s14, .L14+4
+ 196              		.syntax unified
+ 197              	@ 36 "Source/Utility/dsp.h" 1
+ 198 0010 C7FEA67A 		vmaxnm.f32 s15, s15, s13
+ 199              	@ 0 "" 2
+ 200              	@ 47 "Source/Utility/dsp.h" 1
+ 201 0014 C7FEC77A 		vminnm.f32 s15, s15, s14
+ 202              	@ 0 "" 2
+ 203              		.thumb
+ 204              		.syntax unified
+ 205 0018 C0ED017A 		vstr.32	s15, [r0, #4]
+ 206 001c 7047     		bx	lr
+ 207              	.L15:
+ 208 001e 00BF     		.align	2
+ 209              	.L14:
+ 210 0020 00000000 		.word	0
+ 211 0024 CDCCCC3E 		.word	1053609165
+ 213              		.section	.text._ZN7daisysp15AnalogSnareDrum7SetToneEf,"ax",%progbits
+ 214              		.align	1
+ 215              		.p2align 2,,3
+ 216              		.global	_ZN7daisysp15AnalogSnareDrum7SetToneEf
+ 217              		.syntax unified
+ 218              		.thumb
+ 219              		.thumb_func
+ 220              		.fpu fpv5-d16
+ 222              	_ZN7daisysp15AnalogSnareDrum7SetToneEf:
+ 223              		@ args = 0, pretend = 0, frame = 0
+ 224              		@ frame_needed = 0, uses_anonymous_args = 0
+ 225              		@ link register save eliminated.
+ 226 0000 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 227 0004 9FED057A 		vldr.32	s14, .L17
+ 228              		.syntax unified
+ 229              	@ 36 "Source/Utility/dsp.h" 1
+ 230 0008 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 231              	@ 0 "" 2
+ 232              	@ 47 "Source/Utility/dsp.h" 1
+ 233 000c 80FE670A 		vminnm.f32 s0, s0, s15
+ 234              	@ 0 "" 2
+ 235              		.thumb
+ 236              		.syntax unified
+ 237 0010 30EE000A 		vadd.f32	s0, s0, s0
+ 238 0014 80ED020A 		vstr.32	s0, [r0, #8]
+ 239 0018 7047     		bx	lr
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 5
+
+
+ 240              	.L18:
+ 241 001a 00BF     		.align	2
+ 242              	.L17:
+ 243 001c 00000000 		.word	0
+ 245              		.section	.text._ZN7daisysp15AnalogSnareDrum8SetDecayEf,"ax",%progbits
+ 246              		.align	1
+ 247              		.p2align 2,,3
+ 248              		.global	_ZN7daisysp15AnalogSnareDrum8SetDecayEf
+ 249              		.syntax unified
+ 250              		.thumb
+ 251              		.thumb_func
+ 252              		.fpu fpv5-d16
+ 254              	_ZN7daisysp15AnalogSnareDrum8SetDecayEf:
+ 255              		@ args = 0, pretend = 0, frame = 0
+ 256              		@ frame_needed = 0, uses_anonymous_args = 0
+ 257              		@ link register save eliminated.
+ 258 0000 80ED050A 		vstr.32	s0, [r0, #20]
+ 259 0004 7047     		bx	lr
+ 261 0006 00BF     		.section	.text._ZN7daisysp15AnalogSnareDrum9SetSnappyEf,"ax",%progbits
+ 262              		.align	1
+ 263              		.p2align 2,,3
+ 264              		.global	_ZN7daisysp15AnalogSnareDrum9SetSnappyEf
+ 265              		.syntax unified
+ 266              		.thumb
+ 267              		.thumb_func
+ 268              		.fpu fpv5-d16
+ 270              	_ZN7daisysp15AnalogSnareDrum9SetSnappyEf:
+ 271              		@ args = 0, pretend = 0, frame = 0
+ 272              		@ frame_needed = 0, uses_anonymous_args = 0
+ 273              		@ link register save eliminated.
+ 274 0000 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 275 0004 9FED047A 		vldr.32	s14, .L21
+ 276              		.syntax unified
+ 277              	@ 36 "Source/Utility/dsp.h" 1
+ 278 0008 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 279              	@ 0 "" 2
+ 280              	@ 47 "Source/Utility/dsp.h" 1
+ 281 000c 80FE670A 		vminnm.f32 s0, s0, s15
+ 282              	@ 0 "" 2
+ 283              		.thumb
+ 284              		.syntax unified
+ 285 0010 80ED040A 		vstr.32	s0, [r0, #16]
+ 286 0014 7047     		bx	lr
+ 287              	.L22:
+ 288 0016 00BF     		.align	2
+ 289              	.L21:
+ 290 0018 00000000 		.word	0
+ 292              		.section	.text._ZN7daisysp15AnalogSnareDrum7ProcessEb,"ax",%progbits
+ 293              		.align	1
+ 294              		.p2align 2,,3
+ 295              		.global	_ZN7daisysp15AnalogSnareDrum7ProcessEb
+ 296              		.syntax unified
+ 297              		.thumb
+ 298              		.thumb_func
+ 299              		.fpu fpv5-d16
+ 301              	_ZN7daisysp15AnalogSnareDrum7ProcessEb:
+ 302              		@ args = 0, pretend = 0, frame = 40
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 6
+
+
+ 303              		@ frame_needed = 0, uses_anonymous_args = 0
+ 304 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 305 0004 2DED0C8B 		vpush.64	{d8, d9, d10, d11, d12, d13}
+ 306 0008 B7EE00BA 		vmov.f32	s22, #1.0e+0
+ 307 000c D0ED057A 		vldr.32	s15, [r0, #20]
+ 308 0010 9FED8DAA 		vldr.32	s20, .L69+16
+ 309 0014 0446     		mov	r4, r0
+ 310 0016 DFED8D0A 		vldr.32	s1, .L69+20
+ 311 001a 8AB0     		sub	sp, sp, #40
+ 312 001c 77EECB6A 		vsub.f32	s13, s15, s22
+ 313 0020 90ED009A 		vldr.32	s18, [r0]
+ 314 0024 B0EE4B7A 		vmov.f32	s14, s22
+ 315 0028 0D46     		mov	r5, r1
+ 316 002a B0EE000A 		vmov.f32	s0, #2.0e+0
+ 317 002e B7EEC99A 		vcvt.f64.f32	d9, s18
+ 318 0032 A7EEA67A 		vfma.f32	s14, s15, s13
+ 319 0036 B0EE4BDA 		vmov.f32	s26, s22
+ 320 003a 9FED7F8B 		vldr.64	d8, .L69
+ 321 003e 67EE877A 		vmul.f32	s15, s15, s14
+ 322 0042 29EE088B 		vmul.f64	d8, d9, d8
+ 323 0046 67EE8A7A 		vmul.f32	s15, s15, s20
+ 324 004a 67EEA00A 		vmul.f32	s1, s15, s1
+ 325 004e FFF7FEFF 		bl	powf
+ 326 0052 F2EE046A 		vmov.f32	s13, #1.0e+1
+ 327 0056 94ED046A 		vldr.32	s12, [r4, #16]
+ 328 005a B0EE40CA 		vmov.f32	s24, s0
+ 329 005e DFED7C0A 		vldr.32	s1, .L69+24
+ 330 0062 B0EE000A 		vmov.f32	s0, #2.0e+0
+ 331 0066 D4ED057A 		vldr.32	s15, [r4, #20]
+ 332 006a BDEEC88B 		vcvt.s32.f64	s16, d8
+ 333 006e E6EE260A 		vfma.f32	s1, s12, s13
+ 334 0072 9FED787A 		vldr.32	s14, .L69+28
+ 335 0076 2CEE07CA 		vmul.f32	s24, s24, s14
+ 336 007a 67EEE00A 		vnmul.f32	s1, s15, s1
+ 337 007e 60EE8A0A 		vmul.f32	s1, s1, s20
+ 338 0082 FFF7FEFF 		bl	powf
+ 339 0086 F0EE007A 		vmov.f32	s15, #2.0e+0
+ 340 008a D4ED048A 		vldr.32	s17, [r4, #16]
+ 341 008e DFED725A 		vldr.32	s11, .L69+32
+ 342 0092 77EEE87A 		vsub.f32	s15, s15, s17
+ 343 0096 DFED716A 		vldr.32	s13, .L69+36
+ 344 009a 9FED715A 		vldr.32	s10, .L69+40
+ 345 009e A0EE65DA 		vfms.f32	s26, s0, s11
+ 346 00a2 9FED707A 		vldr.32	s14, .L69+44
+ 347 00a6 67EEA87A 		vmul.f32	s15, s15, s17
+ 348 00aa 9FED6F6A 		vldr.32	s12, .L69+48
+ 349 00ae A8EE857A 		vfma.f32	s14, s17, s10
+ 350 00b2 D4ED02BA 		vldr.32	s23, [r4, #8]
+ 351              		.syntax unified
+ 352              	@ 36 "Source/Utility/dsp.h" 1
+ 353 00b6 87FE067A 		vmaxnm.f32 s14, s14, s12
+ 354              	@ 0 "" 2
+ 355              		.thumb
+ 356              		.syntax unified
+ 357 00ba 67EEA68A 		vmul.f32	s17, s15, s13
+ 358              		.syntax unified
+ 359              	@ 47 "Source/Utility/dsp.h" 1
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 7
+
+
+ 360 00be 87FE4BBA 		vminnm.f32 s22, s14, s22
+ 361              	@ 0 "" 2
+ 362              		.thumb
+ 363              		.syntax unified
+ 364 00c2 A5BB     		cbnz	r5, .L24
+ 365 00c4 637E     		ldrb	r3, [r4, #25]	@ zero_extendqisi2
+ 366 00c6 93BB     		cbnz	r3, .L24
+ 367              	.L25:
+ 368 00c8 E846     		mov	r8, sp
+ 369 00ca 04F13407 		add	r7, r4, #52
+ 370 00ce F5EE00DA 		vmov.f32	s27, #2.5e-1
+ 371 00d2 DFF8ACA1 		ldr	r10, .L69+72
+ 372 00d6 3D46     		mov	r5, r7
+ 373 00d8 DFED64CA 		vldr.32	s25, .L69+52
+ 374 00dc C146     		mov	r9, r8
+ 375 00de 0126     		movs	r6, #1
+ 376 00e0 9FED57AB 		vldr.64	d10, .L69+8
+ 377              	.L28:
+ 378 00e4 BAEC018A 		vldmia.32	r10!, {s16}
+ 379 00e8 2846     		mov	r0, r5
+ 380 00ea 94ED017A 		vldr.32	s14, [r4, #4]
+ 381 00ee 94ED000A 		vldr.32	s0, [r4]
+ 382 00f2 28EE078A 		vmul.f32	s16, s16, s14
+ 383              		.syntax unified
+ 384              	@ 47 "Source/Utility/dsp.h" 1
+ 385 00f6 88FE6C8A 		vminnm.f32 s16, s16, s25
+ 386              	@ 0 "" 2
+ 387              		.thumb
+ 388              		.syntax unified
+ 389 00fa 28EE000A 		vmul.f32	s0, s16, s0
+ 390 00fe A9EC018A 		vstmia.32	r9!, {s16}
+ 391 0102 FFF7FEFF 		bl	_ZN7daisysp3Svf7SetFreqEf
+ 392 0106 012E     		cmp	r6, #1
+ 393 0108 2846     		mov	r0, r5
+ 394 010a 22D0     		beq	.L26
+ 395 010c 2CEE2D0A 		vmul.f32	s0, s24, s27
+ 396 0110 20EE080A 		vmul.f32	s0, s0, s16
+ 397 0114 B7EEC00A 		vcvt.f64.f32	d0, s0
+ 398 0118 20EE0A0B 		vmul.f64	d0, d0, d10
+ 399 011c B7EEC00B 		vcvt.f32.f64	s0, d0
+ 400 0120 FFF7FEFF 		bl	_ZN7daisysp3Svf6SetResEf
+ 401 0124 052E     		cmp	r6, #5
+ 402 0126 1FD0     		beq	.L27
+ 403              	.L48:
+ 404 0128 4C35     		adds	r5, r5, #76
+ 405 012a 0136     		adds	r6, r6, #1
+ 406 012c DAE7     		b	.L28
+ 407              	.L24:
+ 408 012e B1EE0C7A 		vmov.f32	s14, #7.0e+0
+ 409 0132 D4ED036A 		vldr.32	s13, [r4, #12]
+ 410 0136 F0EE087A 		vmov.f32	s15, #3.0e+0
+ 411 013a 4FF08043 		mov	r3, #1073741824
+ 412 013e 0022     		movs	r2, #0
+ 413 0140 84ED078A 		vstr.32	s16, [r4, #28]	@ int
+ 414 0144 E362     		str	r3, [r4, #44]	@ float
+ 415 0146 E6EE877A 		vfma.f32	s15, s13, s14
+ 416 014a 6276     		strb	r2, [r4, #25]
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 8
+
+
+ 417 014c C4ED097A 		vstr.32	s15, [r4, #36]
+ 418 0150 BAE7     		b	.L25
+ 419              	.L26:
+ 420 0152 2CEE087A 		vmul.f32	s14, s24, s16
+ 421 0156 B7EEC77A 		vcvt.f64.f32	d7, s14
+ 422 015a 27EE0A7B 		vmul.f64	d7, d7, d10
+ 423 015e B7EEC70B 		vcvt.f32.f64	s0, d7
+ 424 0162 FFF7FEFF 		bl	_ZN7daisysp3Svf6SetResEf
+ 425 0166 DFE7     		b	.L48
+ 426              	.L27:
+ 427 0168 DFED417A 		vldr.32	s15, .L69+56
+ 428 016c F4EEE7BA 		vcmpe.f32	s23, s15
+ 429 0170 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 430 0174 3CD5     		bpl	.L63
+ 431 0176 B7EE087A 		vmov.f32	s14, #1.5e+0
+ 432 017a DFED3E6A 		vldr.32	s13, .L69+60
+ 433 017e F7EE007A 		vmov.f32	s15, #1.0e+0
+ 434 0182 0023     		movs	r3, #0
+ 435 0184 B1EE026A 		vmov.f32	s12, #4.5e+0
+ 436 0188 6BEE87BA 		vmul.f32	s23, s23, s14
+ 437 018c 0793     		str	r3, [sp, #28]	@ float
+ 438 018e F0EE005A 		vmov.f32	s11, #2.0e+0
+ 439 0192 0893     		str	r3, [sp, #32]	@ float
+ 440 0194 0993     		str	r3, [sp, #36]	@ float
+ 441 0196 77EEEB7A 		vsub.f32	s15, s15, s23
+ 442 019a EBEEA56A 		vfma.f32	s13, s23, s11
+ 443 019e 67EEA77A 		vmul.f32	s15, s15, s15
+ 444 01a2 A7EE867A 		vfma.f32	s14, s15, s12
+ 445 01a6 CDED066A 		vstr.32	s13, [sp, #24]
+ 446 01aa 8DED057A 		vstr.32	s14, [sp, #20]
+ 447              	.L31:
+ 448 01ae F3EE007A 		vmov.f32	s15, #1.6e+1
+ 449 01b2 94ED018A 		vldr.32	s16, [r4, #4]
+ 450 01b6 04F5D87A 		add	r10, r4, #432
+ 451 01ba 94ED000A 		vldr.32	s0, [r4]
+ 452 01be 28EE278A 		vmul.f32	s16, s16, s15
+ 453 01c2 5046     		mov	r0, r10
+ 454 01c4 28EE000A 		vmul.f32	s0, s16, s0
+ 455 01c8 FFF7FEFF 		bl	_ZN7daisysp3Svf7SetFreqEf
+ 456 01cc B7EE080A 		vmov.f32	s0, #1.5e+0
+ 457 01d0 5046     		mov	r0, r10
+ 458 01d2 28EE000A 		vmul.f32	s0, s16, s0
+ 459 01d6 FFF7FEFF 		bl	_ZN7daisysp3Svf6SetResEf
+ 460 01da E369     		ldr	r3, [r4, #28]
+ 461 01dc 002B     		cmp	r3, #0
+ 462 01de 51D0     		beq	.L32
+ 463 01e0 013B     		subs	r3, r3, #1
+ 464 01e2 E361     		str	r3, [r4, #28]
+ 465 01e4 002B     		cmp	r3, #0
+ 466 01e6 00F01881 		beq	.L33
+ 467 01ea 94ED09AA 		vldr.32	s20, [r4, #36]
+ 468 01ee 59E0     		b	.L66
+ 469              	.L63:
+ 470 01f0 7BEEE7BA 		vsub.f32	s23, s23, s15
+ 471 01f4 9FED206A 		vldr.32	s12, .L69+64
+ 472 01f8 F0EE086A 		vmov.f32	s13, #3.0e+0
+ 473 01fc DFED1F7A 		vldr.32	s15, .L69+68
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 9
+
+
+ 474 0200 F6EE005A 		vmov.f32	s11, #5.0e-1
+ 475 0204 B7EE087A 		vmov.f32	s14, #1.5e+0
+ 476 0208 6BEEA6BA 		vmul.f32	s23, s23, s13
+ 477 020c EBEEC67A 		vfms.f32	s15, s23, s12
+ 478 0210 CDED07BA 		vstr.32	s23, [sp, #28]
+ 479 0214 6BEEAB6A 		vmul.f32	s13, s23, s23
+ 480 0218 ABEEE57A 		vfms.f32	s14, s23, s11
+ 481 021c 26EEA66A 		vmul.f32	s12, s13, s13
+ 482 0220 CDED086A 		vstr.32	s13, [sp, #32]
+ 483 0224 CDED067A 		vstr.32	s15, [sp, #24]
+ 484 0228 8DED096A 		vstr.32	s12, [sp, #36]
+ 485 022c 8DED057A 		vstr.32	s14, [sp, #20]
+ 486 0230 BDE7     		b	.L31
+ 487              	.L70:
+ 488 0232 00BFAFF3 		.align	3
+ 488      0080
+ 489              	.L69:
+ 490 0238 FCA9F1D2 		.word	-755914244
+ 491 023c 4D62503F 		.word	1062232653
+ 492 0240 9A999999 		.word	-1717986918
+ 493 0244 9999C93F 		.word	1070176665
+ 494 0248 ABAAAA3D 		.word	1034594987
+ 495 024c 0000A842 		.word	1118306304
+ 496 0250 00004842 		.word	1112014848
+ 497 0254 0000FA44 		.word	1157234688
+ 498 0258 89D2DE3A 		.word	987681417
+ 499 025c CDCCCC3D 		.word	1036831949
+ 500 0260 CDCC8C3F 		.word	1066192077
+ 501 0264 CDCC4CBD 		.word	-1119040307
+ 502 0268 00000000 		.word	0
+ 503 026c EE7CFF3E 		.word	1056931054
+ 504 0270 B0AA2A3F 		.word	1059760816
+ 505 0274 9A99193E 		.word	1041865114
+ 506 0278 3333333F 		.word	1060320051
+ 507 027c 9A990940 		.word	1074370970
+ 508 0280 00000000 		.word	.LANCHOR0
+ 509              	.L32:
+ 510 0284 9FED6C6B 		vldr.64	d6, .L71
+ 511 0288 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 512 028c 94ED08AA 		vldr.32	s20, [r4, #32]
+ 513 0290 29EE069B 		vmul.f64	d9, d9, d6
+ 514 0294 B7EEC99B 		vcvt.f32.f64	s18, d9
+ 515 0298 87EE897A 		vdiv.f32	s14, s15, s18
+ 516 029c 77EEC77A 		vsub.f32	s15, s15, s14
+ 517 02a0 27EE8AAA 		vmul.f32	s20, s15, s20
+ 518              	.L66:
+ 519 02a4 D4ED057A 		vldr.32	s15, [r4, #20]
+ 520 02a8 04F5FE75 		add	r5, r4, #508
+ 521 02ac D4ED039A 		vldr.32	s19, [r4, #12]
+ 522 02b0 0DF11409 		add	r9, sp, #20
+ 523 02b4 9FED629A 		vldr.32	s18, .L71+8
+ 524 02b8 0026     		movs	r6, #0
+ 525 02ba 69EEA79A 		vmul.f32	s19, s19, s15
+ 526 02be DFED61AA 		vldr.32	s21, .L71+12
+ 527 02c2 9FED61CA 		vldr.32	s24, .L71+16
+ 528 02c6 B6EE087A 		vmov.f32	s14, #7.5e-1
+ 529 02ca DFED60BA 		vldr.32	s23, .L71+20
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 10
+
+
+ 530 02ce D4ED0A7A 		vldr.32	s15, [r4, #40]
+ 531 02d2 84ED08AA 		vstr.32	s20, [r4, #32]
+ 532              		.syntax unified
+ 533              	@ 36 "Source/Utility/dsp.h" 1
+ 534 02d6 C7FE8A7A 		vmaxnm.f32 s15, s15, s20
+ 535              	@ 0 "" 2
+ 536              		.thumb
+ 537              		.syntax unified
+ 538 02da C4ED0C9A 		vstr.32	s19, [r4, #48]
+ 539              		.syntax unified
+ 540              	@ 47 "Source/Utility/dsp.h" 1
+ 541 02de C7FEC77A 		vminnm.f32 s15, s15, s14
+ 542              	@ 0 "" 2
+ 543              		.thumb
+ 544              		.syntax unified
+ 545 02e2 C4ED0A7A 		vstr.32	s15, [r4, #40]
+ 546              	.L43:
+ 547 02e6 002E     		cmp	r6, #0
+ 548 02e8 00F09080 		beq	.L68
+ 549              	.L36:
+ 550 02ec 2AEE2A8A 		vmul.f32	s16, s20, s21
+ 551              	.L37:
+ 552 02f0 D5ED006A 		vldr.32	s13, [r5]
+ 553 02f4 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 554 02f8 F8EC017A 		vldmia.32	r8!, {s15}
+ 555 02fc B0EE480A 		vmov.f32	s0, s16
+ 556 0300 3846     		mov	r0, r7
+ 557 0302 77EEA67A 		vadd.f32	s15, s15, s13
+ 558 0306 F4EEC77A 		vcmpe.f32	s15, s14
+ 559 030a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 560 030e A8BF     		it	ge
+ 561 0310 77EEC77A 		vsubge.f32	s15, s15, s14
+ 562 0314 C5ED007A 		vstr.32	s15, [r5]
+ 563 0318 FFF7FEFF 		bl	_ZN7daisysp3Svf7ProcessEf
+ 564 031c 237E     		ldrb	r3, [r4, #24]	@ zero_extendqisi2
+ 565 031e F9EC01CA 		vldmia.32	r9!, {s25}
+ 566 0322 002B     		cmp	r3, #0
+ 567 0324 64D0     		beq	.L40
+ 568 0326 B5EC010A 		vldmia.32	r5!, {s0}
+ 569 032a 0136     		adds	r6, r6, #1
+ 570 032c 4C37     		adds	r7, r7, #76
+ 571 032e 20EE2B0A 		vmul.f32	s0, s0, s23
+ 572 0332 FFF7FEFF 		bl	sinf
+ 573 0336 F5EE007A 		vmov.f32	s15, #2.5e-1
+ 574 033a 29EE800A 		vmul.f32	s0, s19, s0
+ 575 033e 052E     		cmp	r6, #5
+ 576 0340 20EE270A 		vmul.f32	s0, s0, s15
+ 577 0344 ACEE809A 		vfma.f32	s18, s25, s0
+ 578 0348 CDD1     		bne	.L43
+ 579              	.L41:
+ 580 034a F8EE087A 		vmov.f32	s15, #-3.0e+0
+ 581 034e B4EEE79A 		vcmpe.f32	s18, s15
+ 582 0352 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 583 0356 6AD4     		bmi	.L49
+ 584 0358 F0EE087A 		vmov.f32	s15, #3.0e+0
+ 585 035c B4EEE79A 		vcmpe.f32	s18, s15
+ 586 0360 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 11
+
+
+ 587 0364 60DC     		bgt	.L50
+ 588 0366 F3EE0B7A 		vmov.f32	s15, #2.7e+1
+ 589 036a F2EE026A 		vmov.f32	s13, #9.0e+0
+ 590 036e B0EE677A 		vmov.f32	s14, s15
+ 591 0372 69EE266A 		vmul.f32	s13, s18, s13
+ 592 0376 A9EE097A 		vfma.f32	s14, s18, s18
+ 593 037a E6EE897A 		vfma.f32	s15, s13, s18
+ 594 037e 27EE099A 		vmul.f32	s18, s14, s18
+ 595 0382 89EE278A 		vdiv.f32	s16, s18, s15
+ 596              	.L44:
+ 597 0386 FFF7FEFF 		bl	rand
+ 598 038a 07EE900A 		vmov	s15, r0	@ int
+ 599 038e 9FED307A 		vldr.32	s14, .L71+24
+ 600 0392 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 601 0396 BFEE000A 		vmov.f32	s0, #-1.0e+0
+ 602 039a 77EEA77A 		vadd.f32	s15, s15, s15
+ 603 039e A7EE870A 		vfma.f32	s0, s15, s14
+ 604 03a2 B5EEC00A 		vcmpe.f32	s0, #0
+ 605 03a6 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 606 03aa 01D5     		bpl	.L45
+ 607 03ac 9FED240A 		vldr.32	s0, .L71+8
+ 608              	.L45:
+ 609 03b0 D4ED0B7A 		vldr.32	s15, [r4, #44]
+ 610 03b4 5046     		mov	r0, r10
+ 611 03b6 237E     		ldrb	r3, [r4, #24]	@ zero_extendqisi2
+ 612 03b8 2DEE27DA 		vmul.f32	s26, s26, s15
+ 613 03bc 002B     		cmp	r3, #0
+ 614 03be 4DFE299A 		vseleq.f32	s19, s26, s19
+ 615 03c2 69EE8B9A 		vmul.f32	s19, s19, s22
+ 616 03c6 84ED0BDA 		vstr.32	s26, [r4, #44]
+ 617 03ca 79EEA99A 		vadd.f32	s19, s19, s19
+ 618 03ce 29EE800A 		vmul.f32	s0, s19, s0
+ 619 03d2 FFF7FEFF 		bl	_ZN7daisysp3Svf7ProcessEf
+ 620 03d6 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 621 03da 94ED7A0A 		vldr.32	s0, [r4, #488]
+ 622 03de 37EECBBA 		vsub.f32	s22, s15, s22
+ 623 03e2 ABEE080A 		vfma.f32	s0, s22, s16
+ 624 03e6 0AB0     		add	sp, sp, #40
+ 625              		@ sp needed
+ 626 03e8 BDEC0C8B 		vldm	sp!, {d8-d13}
+ 627 03ec BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 628              	.L40:
+ 629 03f0 D7ED0E7A 		vldr.32	s15, [r7, #56]
+ 630 03f4 0136     		adds	r6, r6, #1
+ 631 03f6 0435     		adds	r5, r5, #4
+ 632 03f8 4C37     		adds	r7, r7, #76
+ 633 03fa E8EE287A 		vfma.f32	s15, s16, s17
+ 634 03fe 052E     		cmp	r6, #5
+ 635 0400 ACEEA79A 		vfma.f32	s18, s25, s15
+ 636 0404 A1D0     		beq	.L41
+ 637 0406 002E     		cmp	r6, #0
+ 638 0408 7FF470AF 		bne	.L36
+ 639              	.L68:
+ 640 040c 94ED0A8A 		vldr.32	s16, [r4, #40]
+ 641 0410 3AEE488A 		vsub.f32	s16, s20, s16
+ 642 0414 AAEE0C8A 		vfma.f32	s16, s20, s24
+ 643 0418 6AE7     		b	.L37
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 12
+
+
+ 644              	.L33:
+ 645 041a F7EE007A 		vmov.f32	s15, #1.0e+0
+ 646 041e 94ED09AA 		vldr.32	s20, [r4, #36]
+ 647 0422 3AEE67AA 		vsub.f32	s20, s20, s15
+ 648 0426 3DE7     		b	.L66
+ 649              	.L50:
+ 650 0428 B7EE008A 		vmov.f32	s16, #1.0e+0
+ 651 042c ABE7     		b	.L44
+ 652              	.L49:
+ 653 042e BFEE008A 		vmov.f32	s16, #-1.0e+0
+ 654 0432 A8E7     		b	.L44
+ 655              	.L72:
+ 656 0434 AFF30080 		.align	3
+ 657              	.L71:
+ 658 0438 2D431CEB 		.word	-350469331
+ 659 043c E2361A3F 		.word	1058682594
+ 660 0440 00000000 		.word	0
+ 661 0444 F4FDD43C 		.word	1020591604
+ 662 0448 A69BC43B 		.word	1002740646
+ 663 044c DB0FC940 		.word	1086918619
+ 664 0450 00000030 		.word	805306368
+ 666              		.section	.rodata._ZZN7daisysp15AnalogSnareDrum7ProcessEbE16kModeFrequencies,"a"
+ 667              		.align	2
+ 668              		.set	.LANCHOR0,. + 0
+ 671              	_ZZN7daisysp15AnalogSnareDrum7ProcessEbE16kModeFrequencies:
+ 672 0000 0000803F 		.word	1065353216
+ 673 0004 00000040 		.word	1073741824
+ 674 0008 1F854B40 		.word	1078691103
+ 675 000c B81E8540 		.word	1082465976
+ 676 0010 0AD7B340 		.word	1085527818
+ 677              		.ident	"GCC: (GNU Arm Embedded Toolchain 10-2020-q4-major) 10.2.1 20201103 (release)"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\cc302Yug.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 analogsnaredrum.cpp
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:15     .text._ZN7daisysp15AnalogSnareDrum4InitEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:24     .text._ZN7daisysp15AnalogSnareDrum4InitEf:00000000 _ZN7daisysp15AnalogSnareDrum4InitEf
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:108    .text._ZN7daisysp15AnalogSnareDrum4InitEf:000000b0 $d
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:116    .text._ZN7daisysp15AnalogSnareDrum4TrigEv:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:124    .text._ZN7daisysp15AnalogSnareDrum4TrigEv:00000000 _ZN7daisysp15AnalogSnareDrum4TrigEv
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:133    .text._ZN7daisysp15AnalogSnareDrum10SetSustainEb:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:141    .text._ZN7daisysp15AnalogSnareDrum10SetSustainEb:00000000 _ZN7daisysp15AnalogSnareDrum10SetSustainEb
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:149    .text._ZN7daisysp15AnalogSnareDrum9SetAccentEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:157    .text._ZN7daisysp15AnalogSnareDrum9SetAccentEf:00000000 _ZN7daisysp15AnalogSnareDrum9SetAccentEf
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:177    .text._ZN7daisysp15AnalogSnareDrum9SetAccentEf:00000018 $d
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:180    .text._ZN7daisysp15AnalogSnareDrum7SetFreqEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:188    .text._ZN7daisysp15AnalogSnareDrum7SetFreqEf:00000000 _ZN7daisysp15AnalogSnareDrum7SetFreqEf
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:210    .text._ZN7daisysp15AnalogSnareDrum7SetFreqEf:00000020 $d
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:214    .text._ZN7daisysp15AnalogSnareDrum7SetToneEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:222    .text._ZN7daisysp15AnalogSnareDrum7SetToneEf:00000000 _ZN7daisysp15AnalogSnareDrum7SetToneEf
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:243    .text._ZN7daisysp15AnalogSnareDrum7SetToneEf:0000001c $d
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:246    .text._ZN7daisysp15AnalogSnareDrum8SetDecayEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:254    .text._ZN7daisysp15AnalogSnareDrum8SetDecayEf:00000000 _ZN7daisysp15AnalogSnareDrum8SetDecayEf
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:262    .text._ZN7daisysp15AnalogSnareDrum9SetSnappyEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:270    .text._ZN7daisysp15AnalogSnareDrum9SetSnappyEf:00000000 _ZN7daisysp15AnalogSnareDrum9SetSnappyEf
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:290    .text._ZN7daisysp15AnalogSnareDrum9SetSnappyEf:00000018 $d
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:293    .text._ZN7daisysp15AnalogSnareDrum7ProcessEb:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:301    .text._ZN7daisysp15AnalogSnareDrum7ProcessEb:00000000 _ZN7daisysp15AnalogSnareDrum7ProcessEb
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:490    .text._ZN7daisysp15AnalogSnareDrum7ProcessEb:00000238 $d
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:510    .text._ZN7daisysp15AnalogSnareDrum7ProcessEb:00000284 $t
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:658    .text._ZN7daisysp15AnalogSnareDrum7ProcessEb:00000438 $d
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:667    .rodata._ZZN7daisysp15AnalogSnareDrum7ProcessEbE16kModeFrequencies:00000000 $d
+C:\Users\pedro\AppData\Local\Temp\cc302Yug.s:671    .rodata._ZZN7daisysp15AnalogSnareDrum7ProcessEbE16kModeFrequencies:00000000 _ZZN7daisysp15AnalogSnareDrum7ProcessEbE16kModeFrequencies
+
+UNDEFINED SYMBOLS
+_ZN7daisysp3Svf4InitEf
+powf
+_ZN7daisysp3Svf7SetFreqEf
+_ZN7daisysp3Svf6SetResEf
+_ZN7daisysp3Svf7ProcessEf
+sinf
+rand

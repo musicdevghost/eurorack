@@ -1,0 +1,365 @@
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"variablesawosc.cpp"
+  13              		.text
+  14              		.section	.text._ZN7daisysp21VariableSawOscillator4InitEf,"ax",%progbits
+  15              		.align	1
+  16              		.p2align 2,,3
+  17              		.global	_ZN7daisysp21VariableSawOscillator4InitEf
+  18              		.arch armv7e-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv5-d16
+  24              	_ZN7daisysp21VariableSawOscillator4InitEf:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 DFED195A 		vldr.32	s11, .L6
+  29 0004 B5EE006A 		vmov.f32	s12, #2.5e-1
+  30 0008 F6EE007A 		vmov.f32	s15, #5.0e-1
+  31 000c 9FED177A 		vldr.32	s14, .L6+4
+  32 0010 C5EE806A 		vdiv.f32	s13, s11, s0
+  33 0014 0023     		movs	r3, #0
+  34 0016 80ED000A 		vstr.32	s0, [r0]
+  35 001a 80ED017A 		vstr.32	s14, [r0, #4]
+  36 001e 80ED027A 		vstr.32	s14, [r0, #8]
+  37 0022 C0ED037A 		vstr.32	s15, [r0, #12]
+  38 0026 0374     		strb	r3, [r0, #16]
+  39 0028 F4EEC66A 		vcmpe.f32	s13, s12
+  40 002c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  41 0030 11DA     		bge	.L2
+  42 0032 36EEA66A 		vadd.f32	s12, s13, s13
+  43 0036 4FF07E53 		mov	r3, #1065353216
+  44 003a F7EE007A 		vmov.f32	s15, #1.0e+0
+  45 003e C0ED066A 		vstr.32	s13, [r0, #24]
+  46              		.syntax unified
+  47              	@ 36 "Source/Utility/dsp.h" 1
+  48 0042 87FE067A 		vmaxnm.f32 s14, s14, s12
+  49              	@ 0 "" 2
+  50              		.thumb
+  51              		.syntax unified
+  52 0046 0362     		str	r3, [r0, #32]	@ float
+  53 0048 77EEC67A 		vsub.f32	s15, s15, s12
+  54              		.syntax unified
+  55              	@ 47 "Source/Utility/dsp.h" 1
+  56 004c C7FE677A 		vminnm.f32 s15, s14, s15
+  57              	@ 0 "" 2
+  58              		.thumb
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s 			page 2
+
+
+  59              		.syntax unified
+  60 0050 C0ED077A 		vstr.32	s15, [r0, #28]
+  61 0054 7047     		bx	lr
+  62              	.L2:
+  63 0056 4FF07E53 		mov	r3, #1065353216
+  64 005a 80ED066A 		vstr.32	s12, [r0, #24]
+  65 005e C0ED077A 		vstr.32	s15, [r0, #28]
+  66 0062 0362     		str	r3, [r0, #32]	@ float
+  67 0064 7047     		bx	lr
+  68              	.L7:
+  69 0066 00BF     		.align	2
+  70              	.L6:
+  71 0068 00005C43 		.word	1130102784
+  72 006c 00000000 		.word	0
+  74              		.section	.text._ZN7daisysp21VariableSawOscillator7ProcessEv,"ax",%progbits
+  75              		.align	1
+  76              		.p2align 2,,3
+  77              		.global	_ZN7daisysp21VariableSawOscillator7ProcessEv
+  78              		.syntax unified
+  79              		.thumb
+  80              		.thumb_func
+  81              		.fpu fpv5-d16
+  83              	_ZN7daisysp21VariableSawOscillator7ProcessEv:
+  84              		@ args = 0, pretend = 0, frame = 0
+  85              		@ frame_needed = 0, uses_anonymous_args = 0
+  86              		@ link register save eliminated.
+  87 0000 B7EE007A 		vmov.f32	s14, #1.0e+0
+  88 0004 D0ED075A 		vldr.32	s11, [r0, #28]
+  89 0008 D0ED017A 		vldr.32	s15, [r0, #4]
+  90 000c D0ED061A 		vldr.32	s3, [r0, #24]
+  91 0010 37EE656A 		vsub.f32	s12, s14, s11
+  92 0014 D0ED086A 		vldr.32	s13, [r0, #32]
+  93 0018 71EEA77A 		vadd.f32	s15, s3, s15
+  94 001c 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2
+  95 001e 87EE255A 		vdiv.f32	s10, s14, s11
+  96 0022 90ED024A 		vldr.32	s8, [r0, #8]
+  97 0026 C0ED017A 		vstr.32	s15, [r0, #4]
+  98 002a C7EE062A 		vdiv.f32	s5, s14, s12
+  99 002e 77EE663A 		vsub.f32	s7, s14, s13
+ 100 0032 2DED028B 		vpush.64	{d8}
+ 101 0036 002B     		cmp	r3, #0
+ 102 0038 5AD1     		bne	.L9
+ 103 003a F4EEE75A 		vcmpe.f32	s11, s15
+ 104 003e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 105 0042 55D8     		bhi	.L9
+ 106 0044 D0ED030A 		vldr.32	s1, [r0, #12]
+ 107 0048 37EEE50A 		vsub.f32	s0, s15, s11
+ 108 004c D0ED054A 		vldr.32	s9, [r0, #20]
+ 109 0050 B6EE003A 		vmov.f32	s6, #5.0e-1
+ 110 0054 70EEE50A 		vsub.f32	s1, s1, s11
+ 111 0058 0123     		movs	r3, #1
+ 112 005a 74EE874A 		vadd.f32	s9, s9, s14
+ 113 005e 35EE222A 		vadd.f32	s4, s10, s5
+ 114 0062 0374     		strb	r3, [r0, #16]
+ 115 0064 70EEA10A 		vadd.f32	s1, s1, s3
+ 116 0068 BEEE001A 		vmov.f32	s2, #-5.0e-1
+ 117 006c 62EE211A 		vmul.f32	s3, s4, s3
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s 			page 3
+
+
+ 118 0070 80EE206A 		vdiv.f32	s12, s0, s1
+ 119 0074 74EEE50A 		vsub.f32	s1, s9, s11
+ 120 0078 B7EE088A 		vmov.f32	s16, #1.5e+0
+ 121 007c F4EEE75A 		vcmpe.f32	s11, s15
+ 122 0080 60EEA30A 		vmul.f32	s1, s1, s7
+ 123 0084 66EEE11A 		vnmul.f32	s3, s13, s3
+ 124 0088 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 125 008c 37EE467A 		vsub.f32	s14, s14, s12
+ 126 0090 26EE032A 		vmul.f32	s4, s12, s6
+ 127 0094 27EE011A 		vmul.f32	s2, s14, s2
+ 128 0098 26EE026A 		vmul.f32	s12, s12, s4
+ 129 009c 21EE071A 		vmul.f32	s2, s2, s14
+ 130 00a0 27EE037A 		vmul.f32	s14, s14, s6
+ 131 00a4 B4EE083A 		vmov.f32	s6, #1.875e-1
+ 132 00a8 A0EE864A 		vfma.f32	s8, s1, s12
+ 133 00ac 9FED466A 		vldr.32	s12, .L22
+ 134 00b0 27EE070A 		vmul.f32	s0, s14, s14
+ 135 00b4 A0EE816A 		vfma.f32	s12, s1, s2
+ 136 00b8 33EE477A 		vsub.f32	s14, s6, s14
+ 137 00bc 22EE021A 		vmul.f32	s2, s4, s4
+ 138 00c0 33EE423A 		vsub.f32	s6, s6, s4
+ 139 00c4 A0EE087A 		vfma.f32	s14, s0, s16
+ 140 00c8 A1EE083A 		vfma.f32	s6, s2, s16
+ 141 00cc A0EE407A 		vfms.f32	s14, s0, s0
+ 142 00d0 A1EE413A 		vfms.f32	s6, s2, s2
+ 143 00d4 A1EE874A 		vfma.f32	s8, s3, s14
+ 144 00d8 A1EE836A 		vfma.f32	s12, s3, s6
+ 145 00dc 56DC     		bgt	.L20
+ 146              	.L18:
+ 147 00de 37EEE57A 		vsub.f32	s14, s15, s11
+ 148 00e2 B7EE005A 		vmov.f32	s10, #1.0e+0
+ 149 00e6 F0EE647A 		vmov.f32	s15, s9
+ 150 00ea A2EEC75A 		vfms.f32	s10, s5, s14
+ 151 00ee 4FE0     		b	.L15
+ 152              	.L9:
+ 153 00f0 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 154 00f4 F4EEC77A 		vcmpe.f32	s15, s14
+ 155 00f8 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 156 00fc 5DDB     		blt	.L21
+ 157 00fe 77EEC77A 		vsub.f32	s15, s15, s14
+ 158 0102 D0ED054A 		vldr.32	s9, [r0, #20]
+ 159 0106 BEEE001A 		vmov.f32	s2, #-5.0e-1
+ 160 010a 0023     		movs	r3, #0
+ 161 010c 74EE874A 		vadd.f32	s9, s9, s14
+ 162 0110 C7EEA10A 		vdiv.f32	s1, s15, s3
+ 163 0114 C0ED017A 		vstr.32	s15, [r0, #4]
+ 164 0118 0374     		strb	r3, [r0, #16]
+ 165 011a 35EE222A 		vadd.f32	s4, s10, s5
+ 166 011e B6EE006A 		vmov.f32	s12, #5.0e-1
+ 167 0122 B4EE083A 		vmov.f32	s6, #1.875e-1
+ 168 0126 22EE212A 		vmul.f32	s4, s4, s3
+ 169 012a B7EE080A 		vmov.f32	s0, #1.5e+0
+ 170 012e 22EE262A 		vmul.f32	s4, s4, s13
+ 171 0132 37EE607A 		vsub.f32	s14, s14, s1
+ 172 0136 67EE011A 		vmul.f32	s3, s14, s2
+ 173 013a 61EE871A 		vmul.f32	s3, s3, s14
+ 174 013e 27EE067A 		vmul.f32	s14, s14, s12
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s 			page 4
+
+
+ 175 0142 20EE866A 		vmul.f32	s12, s1, s12
+ 176 0146 27EE071A 		vmul.f32	s2, s14, s14
+ 177 014a 33EE477A 		vsub.f32	s14, s6, s14
+ 178 014e 60EE860A 		vmul.f32	s1, s1, s12
+ 179 0152 33EE463A 		vsub.f32	s6, s6, s12
+ 180 0156 26EE066A 		vmul.f32	s12, s12, s12
+ 181 015a A1EE007A 		vfma.f32	s14, s2, s0
+ 182 015e A6EE003A 		vfma.f32	s6, s12, s0
+ 183 0162 A1EE417A 		vfms.f32	s14, s2, s2
+ 184 0166 23EEE41A 		vnmul.f32	s2, s7, s9
+ 185 016a A6EE463A 		vfms.f32	s6, s12, s12
+ 186 016e 9FED166A 		vldr.32	s12, .L22
+ 187 0172 A1EE204A 		vfma.f32	s8, s2, s1
+ 188 0176 A1EE216A 		vfma.f32	s12, s2, s3
+ 189 017a A2EE074A 		vfma.f32	s8, s4, s14
+ 190 017e A2EE036A 		vfma.f32	s12, s4, s6
+ 191              	.L11:
+ 192 0182 F4EEE75A 		vcmpe.f32	s11, s15
+ 193 0186 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 194 018a A8DD     		ble	.L18
+ 195              	.L20:
+ 196 018c 25EE275A 		vmul.f32	s10, s10, s15
+ 197              	.L15:
+ 198 0190 66EE856A 		vmul.f32	s13, s13, s10
+ 199 0194 C0ED035A 		vstr.32	s11, [r0, #12]
+ 200 0198 B0EE007A 		vmov.f32	s14, #2.0e+0
+ 201 019c BFEE000A 		vmov.f32	s0, #-1.0e+0
+ 202 01a0 E3EEA76A 		vfma.f32	s13, s7, s15
+ 203 01a4 A4EE070A 		vfma.f32	s0, s8, s14
+ 204 01a8 BDEC028B 		vldm	sp!, {d8}
+ 205 01ac 76EE266A 		vadd.f32	s13, s12, s13
+ 206 01b0 80EE240A 		vdiv.f32	s0, s0, s9
+ 207 01b4 C0ED026A 		vstr.32	s13, [r0, #8]
+ 208 01b8 7047     		bx	lr
+ 209              	.L21:
+ 210 01ba D0ED054A 		vldr.32	s9, [r0, #20]
+ 211 01be 9FED026A 		vldr.32	s12, .L22
+ 212 01c2 74EE874A 		vadd.f32	s9, s9, s14
+ 213 01c6 DCE7     		b	.L11
+ 214              	.L23:
+ 215              		.align	2
+ 216              	.L22:
+ 217 01c8 00000000 		.word	0
+ 219              		.section	.text._ZN7daisysp21VariableSawOscillator7SetFreqEf,"ax",%progbits
+ 220              		.align	1
+ 221              		.p2align 2,,3
+ 222              		.global	_ZN7daisysp21VariableSawOscillator7SetFreqEf
+ 223              		.syntax unified
+ 224              		.thumb
+ 225              		.thumb_func
+ 226              		.fpu fpv5-d16
+ 228              	_ZN7daisysp21VariableSawOscillator7SetFreqEf:
+ 229              		@ args = 0, pretend = 0, frame = 0
+ 230              		@ frame_needed = 0, uses_anonymous_args = 0
+ 231              		@ link register save eliminated.
+ 232 0000 D0ED006A 		vldr.32	s13, [r0]
+ 233 0004 B5EE007A 		vmov.f32	s14, #2.5e-1
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s 			page 5
+
+
+ 234 0008 C0EE267A 		vdiv.f32	s15, s0, s13
+ 235 000c F4EEC77A 		vcmpe.f32	s15, s14
+ 236 0010 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 237 0014 04DA     		bge	.L26
+ 238 0016 C369     		ldr	r3, [r0, #28]	@ float
+ 239 0018 C0ED067A 		vstr.32	s15, [r0, #24]
+ 240 001c C361     		str	r3, [r0, #28]	@ float
+ 241 001e 7047     		bx	lr
+ 242              	.L26:
+ 243 0020 F0EE477A 		vmov.f32	s15, s14
+ 244 0024 4FF07C53 		mov	r3, #1056964608
+ 245 0028 C361     		str	r3, [r0, #28]	@ float
+ 246 002a C0ED067A 		vstr.32	s15, [r0, #24]
+ 247 002e 7047     		bx	lr
+ 249              		.section	.text._ZN7daisysp21VariableSawOscillator5SetPWEf,"ax",%progbits
+ 250              		.align	1
+ 251              		.p2align 2,,3
+ 252              		.global	_ZN7daisysp21VariableSawOscillator5SetPWEf
+ 253              		.syntax unified
+ 254              		.thumb
+ 255              		.thumb_func
+ 256              		.fpu fpv5-d16
+ 258              	_ZN7daisysp21VariableSawOscillator5SetPWEf:
+ 259              		@ args = 0, pretend = 0, frame = 0
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261              		@ link register save eliminated.
+ 262 0000 B5EE007A 		vmov.f32	s14, #2.5e-1
+ 263 0004 D0ED067A 		vldr.32	s15, [r0, #24]
+ 264 0008 F4EEC77A 		vcmpe.f32	s15, s14
+ 265 000c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 266 0010 0CDA     		bge	.L29
+ 267 0012 77EEA77A 		vadd.f32	s15, s15, s15
+ 268 0016 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 269              		.syntax unified
+ 270              	@ 36 "Source/Utility/dsp.h" 1
+ 271 001a 80FE270A 		vmaxnm.f32 s0, s0, s15
+ 272              	@ 0 "" 2
+ 273              		.thumb
+ 274              		.syntax unified
+ 275 001e 77EE677A 		vsub.f32	s15, s14, s15
+ 276              		.syntax unified
+ 277              	@ 47 "Source/Utility/dsp.h" 1
+ 278 0022 80FE670A 		vminnm.f32 s0, s0, s15
+ 279              	@ 0 "" 2
+ 280              		.thumb
+ 281              		.syntax unified
+ 282 0026 80ED070A 		vstr.32	s0, [r0, #28]
+ 283 002a 7047     		bx	lr
+ 284              	.L29:
+ 285 002c B6EE000A 		vmov.f32	s0, #5.0e-1
+ 286 0030 80ED070A 		vstr.32	s0, [r0, #28]
+ 287 0034 7047     		bx	lr
+ 289 0036 00BF     		.section	.text._ZN7daisysp21VariableSawOscillator12SetWaveshapeEf,"ax",%progbits
+ 290              		.align	1
+ 291              		.p2align 2,,3
+ 292              		.global	_ZN7daisysp21VariableSawOscillator12SetWaveshapeEf
+ 293              		.syntax unified
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s 			page 6
+
+
+ 294              		.thumb
+ 295              		.thumb_func
+ 296              		.fpu fpv5-d16
+ 298              	_ZN7daisysp21VariableSawOscillator12SetWaveshapeEf:
+ 299              		@ args = 0, pretend = 0, frame = 0
+ 300              		@ frame_needed = 0, uses_anonymous_args = 0
+ 301              		@ link register save eliminated.
+ 302 0000 80ED080A 		vstr.32	s0, [r0, #32]
+ 303 0004 7047     		bx	lr
+ 305 0006 00BF     		.section	.text._ZN7daisysp21VariableSawOscillator18ComputeNaiveSampleEffffff,"ax",%progbits
+ 306              		.align	1
+ 307              		.p2align 2,,3
+ 308              		.global	_ZN7daisysp21VariableSawOscillator18ComputeNaiveSampleEffffff
+ 309              		.syntax unified
+ 310              		.thumb
+ 311              		.thumb_func
+ 312              		.fpu fpv5-d16
+ 314              	_ZN7daisysp21VariableSawOscillator18ComputeNaiveSampleEffffff:
+ 315              		@ args = 0, pretend = 0, frame = 0
+ 316              		@ frame_needed = 0, uses_anonymous_args = 0
+ 317              		@ link register save eliminated.
+ 318 0000 B4EEE00A 		vcmpe.f32	s0, s1
+ 319 0004 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 320 0008 12D4     		bmi	.L32
+ 321 000a B7EE007A 		vmov.f32	s14, #1.0e+0
+ 322 000e D0ED056A 		vldr.32	s13, [r0, #20]
+ 323 0012 30EE600A 		vsub.f32	s0, s0, s1
+ 324 0016 F0EE477A 		vmov.f32	s15, s14
+ 325 001a E0EE617A 		vfms.f32	s15, s0, s3
+ 326 001e 36EE870A 		vadd.f32	s0, s13, s14
+ 327 0022 67EE827A 		vmul.f32	s15, s15, s4
+ 328 0026 E2EE807A 		vfma.f32	s15, s5, s0
+ 329 002a B0EE670A 		vmov.f32	s0, s15
+ 330 002e 7047     		bx	lr
+ 331              	.L32:
+ 332 0030 60EE017A 		vmul.f32	s15, s0, s2
+ 333 0034 67EE827A 		vmul.f32	s15, s15, s4
+ 334 0038 E2EE807A 		vfma.f32	s15, s5, s0
+ 335 003c B0EE670A 		vmov.f32	s0, s15
+ 336 0040 7047     		bx	lr
+ 338 0042 00BF     		.ident	"GCC: (GNU Arm Embedded Toolchain 10-2020-q4-major) 10.2.1 20201103 (release)"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 variablesawosc.cpp
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:15     .text._ZN7daisysp21VariableSawOscillator4InitEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:24     .text._ZN7daisysp21VariableSawOscillator4InitEf:00000000 _ZN7daisysp21VariableSawOscillator4InitEf
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:71     .text._ZN7daisysp21VariableSawOscillator4InitEf:00000068 $d
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:75     .text._ZN7daisysp21VariableSawOscillator7ProcessEv:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:83     .text._ZN7daisysp21VariableSawOscillator7ProcessEv:00000000 _ZN7daisysp21VariableSawOscillator7ProcessEv
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:217    .text._ZN7daisysp21VariableSawOscillator7ProcessEv:000001c8 $d
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:220    .text._ZN7daisysp21VariableSawOscillator7SetFreqEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:228    .text._ZN7daisysp21VariableSawOscillator7SetFreqEf:00000000 _ZN7daisysp21VariableSawOscillator7SetFreqEf
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:250    .text._ZN7daisysp21VariableSawOscillator5SetPWEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:258    .text._ZN7daisysp21VariableSawOscillator5SetPWEf:00000000 _ZN7daisysp21VariableSawOscillator5SetPWEf
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:290    .text._ZN7daisysp21VariableSawOscillator12SetWaveshapeEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:298    .text._ZN7daisysp21VariableSawOscillator12SetWaveshapeEf:00000000 _ZN7daisysp21VariableSawOscillator12SetWaveshapeEf
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:306    .text._ZN7daisysp21VariableSawOscillator18ComputeNaiveSampleEffffff:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccEunHmg.s:314    .text._ZN7daisysp21VariableSawOscillator18ComputeNaiveSampleEffffff:00000000 _ZN7daisysp21VariableSawOscillator18ComputeNaiveSampleEffffff
+
+NO UNDEFINED SYMBOLS

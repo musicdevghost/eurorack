@@ -1,0 +1,376 @@
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"oscillator.cpp"
+  13              		.text
+  14              		.section	.text._ZN7daisysp10Oscillator7ProcessEv,"ax",%progbits
+  15              		.align	1
+  16              		.p2align 2,,3
+  17              		.global	_ZN7daisysp10Oscillator7ProcessEv
+  18              		.arch armv7e-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv5-d16
+  24              	_ZN7daisysp10Oscillator7ProcessEv:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+  28 0002 10B5     		push	{r4, lr}
+  29 0004 0446     		mov	r4, r0
+  30 0006 2DED028B 		vpush.64	{d8}
+  31 000a 072B     		cmp	r3, #7
+  32 000c 00F2C981 		bhi	.L2
+  33 0010 DFE813F0 		tbh	[pc, r3, lsl #1]
+  34              	.L4:
+  35 0014 5D00     		.2byte	(.L11-.L4)/2
+  36 0016 AD00     		.2byte	(.L10-.L4)/2
+  37 0018 C200     		.2byte	(.L9-.L4)/2
+  38 001a 8E00     		.2byte	(.L8-.L4)/2
+  39 001c 9D00     		.2byte	(.L7-.L4)/2
+  40 001e D300     		.2byte	(.L6-.L4)/2
+  41 0020 2D01     		.2byte	(.L5-.L4)/2
+  42 0022 0800     		.2byte	(.L3-.L4)/2
+  43              		.p2align 1
+  44              	.L3:
+  45 0024 D0ED057A 		vldr.32	s15, [r0, #20]
+  46 0028 BFEE000A 		vmov.f32	s0, #-1.0e+0
+  47 002c 9FEDE07A 		vldr.32	s14, .L72
+  48 0030 DFEDE06A 		vldr.32	s13, .L72+4
+  49 0034 90ED068A 		vldr.32	s16, [r0, #24]
+  50 0038 F4EEC77A 		vcmpe.f32	s15, s14
+  51 003c 67EEA67A 		vmul.f32	s15, s15, s13
+  52 0040 28EE268A 		vmul.f32	s16, s16, s13
+  53 0044 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  54 0048 B7EE007A 		vmov.f32	s14, #1.0e+0
+  55 004c F4EEC87A 		vcmpe.f32	s15, s16
+  56 0050 54BF     		ite	pl
+  57 0052 F0EE408A 		vmovpl.f32	s17, s0
+  58 0056 F0EE478A 		vmovmi.f32	s17, s14
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s 			page 2
+
+
+  59 005a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  60 005e 00F19381 		bmi	.L65
+  61 0062 77EE486A 		vsub.f32	s13, s14, s16
+  62 0066 F4EEE67A 		vcmpe.f32	s15, s13
+  63 006a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  64 006e 00F34481 		bgt	.L66
+  65              	.L31:
+  66 0072 B6EE000A 		vmov.f32	s0, #5.0e-1
+  67 0076 F7EE000A 		vmov.f32	s1, #1.0e+0
+  68 007a 37EE800A 		vadd.f32	s0, s15, s0
+  69 007e FFF7FEFF 		bl	fmodf
+  70 0082 B4EEC80A 		vcmpe.f32	s0, s16
+  71 0086 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  72 008a 00F14581 		bmi	.L67
+  73 008e B7EE007A 		vmov.f32	s14, #1.0e+0
+  74 0092 77EE487A 		vsub.f32	s15, s14, s16
+  75 0096 B4EEE70A 		vcmpe.f32	s0, s15
+  76 009a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  77 009e 0DDD     		ble	.L35
+  78 00a0 30EE470A 		vsub.f32	s0, s0, s14
+  79 00a4 C0EE087A 		vdiv.f32	s15, s0, s16
+  80 00a8 F0EE676A 		vmov.f32	s13, s15
+  81 00ac E7EEA76A 		vfma.f32	s13, s15, s15
+  82 00b0 77EEA67A 		vadd.f32	s15, s15, s13
+  83 00b4 77EE877A 		vadd.f32	s15, s15, s14
+  84 00b8 78EEE78A 		vsub.f32	s17, s17, s15
+  85              	.L35:
+  86 00bc 9FEDBE0A 		vldr.32	s0, .L72+8
+  87 00c0 94ED058A 		vldr.32	s16, [r4, #20]
+  88 00c4 28EE800A 		vmul.f32	s0, s17, s0
+  89 00c8 94ED067A 		vldr.32	s14, [r4, #24]
+  90 00cc 07E0     		b	.L12
+  91              	.L11:
+  92 00ce 90ED058A 		vldr.32	s16, [r0, #20]
+  93 00d2 B0EE480A 		vmov.f32	s0, s16
+  94 00d6 FFF7FEFF 		bl	sinf
+  95 00da 94ED067A 		vldr.32	s14, [r4, #24]
+  96              	.L12:
+  97 00de 78EE077A 		vadd.f32	s15, s16, s14
+  98 00e2 DFEDB66A 		vldr.32	s13, .L72+12
+  99 00e6 F4EEE67A 		vcmpe.f32	s15, s13
+ 100 00ea F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 101 00ee 00F3EF80 		bgt	.L37
+ 102 00f2 0023     		movs	r3, #0
+ 103 00f4 C4ED057A 		vstr.32	s15, [r4, #20]
+ 104              	.L38:
+ 105 00f8 37EEC77A 		vsub.f32	s14, s15, s14
+ 106 00fc DFEDAC6A 		vldr.32	s13, .L72
+ 107 0100 84F82530 		strb	r3, [r4, #37]
+ 108 0104 B4EEE67A 		vcmpe.f32	s14, s13
+ 109 0108 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 110 010c 40F1DE80 		bpl	.L62
+ 111 0110 F4EEE67A 		vcmpe.f32	s15, s13
+ 112 0114 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 113 0118 ACBF     		ite	ge
+ 114 011a 0123     		movge	r3, #1
+ 115 011c 0023     		movlt	r3, #0
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s 			page 3
+
+
+ 116              	.L39:
+ 117 011e D4ED017A 		vldr.32	s15, [r4, #4]
+ 118 0122 84F82430 		strb	r3, [r4, #36]
+ 119 0126 20EE270A 		vmul.f32	s0, s0, s15
+ 120 012a BDEC028B 		vldm	sp!, {d8}
+ 121 012e 10BD     		pop	{r4, pc}
+ 122              	.L8:
+ 123 0130 90ED058A 		vldr.32	s16, [r0, #20]
+ 124 0134 F0EE006A 		vmov.f32	s13, #2.0e+0
+ 125 0138 DFED9E7A 		vldr.32	s15, .L72+4
+ 126 013c BFEE000A 		vmov.f32	s0, #-1.0e+0
+ 127 0140 90ED067A 		vldr.32	s14, [r0, #24]
+ 128 0144 68EE277A 		vmul.f32	s15, s16, s15
+ 129 0148 A7EEA60A 		vfma.f32	s0, s15, s13
+ 130 014c C7E7     		b	.L12
+ 131              	.L7:
+ 132 014e 90ED058A 		vldr.32	s16, [r0, #20]
+ 133 0152 DFED977A 		vldr.32	s15, .L72
+ 134 0156 90ED067A 		vldr.32	s14, [r0, #24]
+ 135 015a B4EEE78A 		vcmpe.f32	s16, s15
+ 136 015e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 137 0162 4CBF     		ite	mi
+ 138 0164 B7EE000A 		vmovmi.f32	s0, #1.0e+0
+ 139 0168 BFEE000A 		vmovpl.f32	s0, #-1.0e+0
+ 140 016c B7E7     		b	.L12
+ 141              	.L10:
+ 142 016e 90ED058A 		vldr.32	s16, [r0, #20]
+ 143 0172 BFEE000A 		vmov.f32	s0, #-1.0e+0
+ 144 0176 DFED8F6A 		vldr.32	s13, .L72+4
+ 145 017a F6EE007A 		vmov.f32	s15, #5.0e-1
+ 146 017e 38EE086A 		vadd.f32	s12, s16, s16
+ 147 0182 90ED067A 		vldr.32	s14, [r0, #24]
+ 148 0186 A6EE260A 		vfma.f32	s0, s12, s13
+ 149 018a B0EEC00A 		vabs.f32	s0, s0
+ 150 018e 30EE670A 		vsub.f32	s0, s0, s15
+ 151 0192 30EE000A 		vadd.f32	s0, s0, s0
+ 152 0196 A2E7     		b	.L12
+ 153              	.L9:
+ 154 0198 90ED058A 		vldr.32	s16, [r0, #20]
+ 155 019c F0EE006A 		vmov.f32	s13, #2.0e+0
+ 156 01a0 DFED847A 		vldr.32	s15, .L72+4
+ 157 01a4 BFEE000A 		vmov.f32	s0, #-1.0e+0
+ 158 01a8 90ED067A 		vldr.32	s14, [r0, #24]
+ 159 01ac 68EE277A 		vmul.f32	s15, s16, s15
+ 160 01b0 A7EEA60A 		vfma.f32	s0, s15, s13
+ 161 01b4 B1EE400A 		vneg.f32	s0, s0
+ 162 01b8 91E7     		b	.L12
+ 163              	.L6:
+ 164 01ba D0ED057A 		vldr.32	s15, [r0, #20]
+ 165 01be FFEE008A 		vmov.f32	s17, #-1.0e+0
+ 166 01c2 9FED7B7A 		vldr.32	s14, .L72
+ 167 01c6 DFED7B6A 		vldr.32	s13, .L72+4
+ 168 01ca 90ED068A 		vldr.32	s16, [r0, #24]
+ 169 01ce F4EEC77A 		vcmpe.f32	s15, s14
+ 170 01d2 67EEA67A 		vmul.f32	s15, s15, s13
+ 171 01d6 28EE268A 		vmul.f32	s16, s16, s13
+ 172 01da F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s 			page 4
+
+
+ 173 01de B7EE007A 		vmov.f32	s14, #1.0e+0
+ 174 01e2 F4EEC87A 		vcmpe.f32	s15, s16
+ 175 01e6 48BF     		it	mi
+ 176 01e8 F0EE478A 		vmovmi.f32	s17, s14
+ 177 01ec F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 178 01f0 00F1BD80 		bmi	.L68
+ 179 01f4 77EE486A 		vsub.f32	s13, s14, s16
+ 180 01f8 F4EEE67A 		vcmpe.f32	s15, s13
+ 181 01fc F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 182 0200 6CDC     		bgt	.L69
+ 183              	.L18:
+ 184 0202 B6EE000A 		vmov.f32	s0, #5.0e-1
+ 185 0206 F7EE000A 		vmov.f32	s1, #1.0e+0
+ 186 020a 37EE800A 		vadd.f32	s0, s15, s0
+ 187 020e FFF7FEFF 		bl	fmodf
+ 188 0212 B4EEC80A 		vcmpe.f32	s0, s16
+ 189 0216 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 190 021a 00F18C80 		bmi	.L70
+ 191 021e B7EE007A 		vmov.f32	s14, #1.0e+0
+ 192 0222 77EE487A 		vsub.f32	s15, s14, s16
+ 193 0226 B4EEE70A 		vcmpe.f32	s0, s15
+ 194 022a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 195 022e 0DDD     		ble	.L22
+ 196 0230 30EE470A 		vsub.f32	s0, s0, s14
+ 197 0234 C0EE087A 		vdiv.f32	s15, s0, s16
+ 198 0238 F0EE676A 		vmov.f32	s13, s15
+ 199 023c E7EEA76A 		vfma.f32	s13, s15, s15
+ 200 0240 77EEA67A 		vadd.f32	s15, s15, s13
+ 201 0244 77EE877A 		vadd.f32	s15, s15, s14
+ 202 0248 78EEE78A 		vsub.f32	s17, s17, s15
+ 203              	.L22:
+ 204 024c B7EE000A 		vmov.f32	s0, #1.0e+0
+ 205 0250 94ED067A 		vldr.32	s14, [r4, #24]
+ 206 0254 D4ED077A 		vldr.32	s15, [r4, #28]
+ 207 0258 94ED058A 		vldr.32	s16, [r4, #20]
+ 208 025c 30EE470A 		vsub.f32	s0, s0, s14
+ 209 0260 20EE270A 		vmul.f32	s0, s0, s15
+ 210 0264 A7EE280A 		vfma.f32	s0, s14, s17
+ 211 0268 84ED070A 		vstr.32	s0, [r4, #28]
+ 212 026c 37E7     		b	.L12
+ 213              	.L5:
+ 214 026e DFED517A 		vldr.32	s15, .L72+4
+ 215 0272 B0EE006A 		vmov.f32	s12, #2.0e+0
+ 216 0276 90ED058A 		vldr.32	s16, [r0, #20]
+ 217 027a BFEE000A 		vmov.f32	s0, #-1.0e+0
+ 218 027e 90ED067A 		vldr.32	s14, [r0, #24]
+ 219 0282 68EE276A 		vmul.f32	s13, s16, s15
+ 220 0286 67EE277A 		vmul.f32	s15, s14, s15
+ 221 028a A6EE860A 		vfma.f32	s0, s13, s12
+ 222 028e F4EEE76A 		vcmpe.f32	s13, s15
+ 223 0292 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 224 0296 5DD4     		bmi	.L71
+ 225 0298 F7EE005A 		vmov.f32	s11, #1.0e+0
+ 226 029c 35EEE76A 		vsub.f32	s12, s11, s15
+ 227 02a0 F4EEC66A 		vcmpe.f32	s13, s12
+ 228 02a4 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 229 02a8 0DDD     		ble	.L26
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s 			page 5
+
+
+ 230 02aa 76EEE56A 		vsub.f32	s13, s13, s11
+ 231 02ae 86EEA76A 		vdiv.f32	s12, s13, s15
+ 232 02b2 F0EE467A 		vmov.f32	s15, s12
+ 233 02b6 E6EE067A 		vfma.f32	s15, s12, s12
+ 234 02ba 36EE276A 		vadd.f32	s12, s12, s15
+ 235 02be 36EE256A 		vadd.f32	s12, s12, s11
+ 236 02c2 30EE460A 		vsub.f32	s0, s0, s12
+ 237              	.L26:
+ 238 02c6 B1EE400A 		vneg.f32	s0, s0
+ 239 02ca 08E7     		b	.L12
+ 240              	.L62:
+ 241 02cc 0023     		movs	r3, #0
+ 242 02ce 26E7     		b	.L39
+ 243              	.L37:
+ 244 02d0 77EEE67A 		vsub.f32	s15, s15, s13
+ 245 02d4 0123     		movs	r3, #1
+ 246 02d6 C4ED057A 		vstr.32	s15, [r4, #20]
+ 247 02da 0DE7     		b	.L38
+ 248              	.L69:
+ 249 02dc 37EEC76A 		vsub.f32	s12, s15, s14
+ 250 02e0 C6EE086A 		vdiv.f32	s13, s12, s16
+ 251 02e4 B0EE666A 		vmov.f32	s12, s13
+ 252 02e8 A6EEA66A 		vfma.f32	s12, s13, s13
+ 253 02ec 76EE866A 		vadd.f32	s13, s13, s12
+ 254 02f0 36EE877A 		vadd.f32	s14, s13, s14
+ 255 02f4 78EE878A 		vadd.f32	s17, s17, s14
+ 256 02f8 83E7     		b	.L18
+ 257              	.L66:
+ 258 02fa 37EEC76A 		vsub.f32	s12, s15, s14
+ 259 02fe C6EE086A 		vdiv.f32	s13, s12, s16
+ 260 0302 B0EE666A 		vmov.f32	s12, s13
+ 261 0306 A6EEA66A 		vfma.f32	s12, s13, s13
+ 262 030a 76EE866A 		vadd.f32	s13, s13, s12
+ 263 030e 36EE877A 		vadd.f32	s14, s13, s14
+ 264 0312 78EE878A 		vadd.f32	s17, s17, s14
+ 265 0316 ACE6     		b	.L31
+ 266              	.L67:
+ 267 0318 80EE087A 		vdiv.f32	s14, s0, s16
+ 268 031c B0EE006A 		vmov.f32	s12, #2.0e+0
+ 269 0320 F7EE006A 		vmov.f32	s13, #1.0e+0
+ 270 0324 67EE477A 		vnmul.f32	s15, s14, s14
+ 271 0328 E7EE067A 		vfma.f32	s15, s14, s12
+ 272 032c 77EEE67A 		vsub.f32	s15, s15, s13
+ 273 0330 78EEE78A 		vsub.f32	s17, s17, s15
+ 274 0334 C2E6     		b	.L35
+ 275              	.L70:
+ 276 0336 80EE087A 		vdiv.f32	s14, s0, s16
+ 277 033a B0EE006A 		vmov.f32	s12, #2.0e+0
+ 278 033e F7EE006A 		vmov.f32	s13, #1.0e+0
+ 279 0342 67EE477A 		vnmul.f32	s15, s14, s14
+ 280 0346 E7EE067A 		vfma.f32	s15, s14, s12
+ 281 034a 77EEE67A 		vsub.f32	s15, s15, s13
+ 282 034e 78EEE78A 		vsub.f32	s17, s17, s15
+ 283 0352 7BE7     		b	.L22
+ 284              	.L71:
+ 285 0354 C6EEA75A 		vdiv.f32	s11, s13, s15
+ 286 0358 F7EE006A 		vmov.f32	s13, #1.0e+0
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s 			page 6
+
+
+ 287 035c 65EEE57A 		vnmul.f32	s15, s11, s11
+ 288 0360 E5EE867A 		vfma.f32	s15, s11, s12
+ 289 0364 77EEE67A 		vsub.f32	s15, s15, s13
+ 290 0368 30EE670A 		vsub.f32	s0, s0, s15
+ 291 036c ABE7     		b	.L26
+ 292              	.L68:
+ 293 036e 87EE886A 		vdiv.f32	s12, s15, s16
+ 294 0372 F0EE005A 		vmov.f32	s11, #2.0e+0
+ 295 0376 66EE466A 		vnmul.f32	s13, s12, s12
+ 296 037a E6EE256A 		vfma.f32	s13, s12, s11
+ 297 037e 36EEC77A 		vsub.f32	s14, s13, s14
+ 298 0382 78EE878A 		vadd.f32	s17, s17, s14
+ 299 0386 3CE7     		b	.L18
+ 300              	.L65:
+ 301 0388 87EE886A 		vdiv.f32	s12, s15, s16
+ 302 038c F0EE005A 		vmov.f32	s11, #2.0e+0
+ 303 0390 66EE466A 		vnmul.f32	s13, s12, s12
+ 304 0394 E6EE256A 		vfma.f32	s13, s12, s11
+ 305 0398 36EEC77A 		vsub.f32	s14, s13, s14
+ 306 039c 78EE878A 		vadd.f32	s17, s17, s14
+ 307 03a0 67E6     		b	.L31
+ 308              	.L2:
+ 309 03a2 90ED058A 		vldr.32	s16, [r0, #20]
+ 310 03a6 90ED067A 		vldr.32	s14, [r0, #24]
+ 311 03aa 9FED050A 		vldr.32	s0, .L72+16
+ 312 03ae 96E6     		b	.L12
+ 313              	.L73:
+ 314              		.align	2
+ 315              	.L72:
+ 316 03b0 DB0F4940 		.word	1078530011
+ 317 03b4 83F9223E 		.word	1042479491
+ 318 03b8 F4FD343F 		.word	1060437492
+ 319 03bc DB0FC940 		.word	1086918619
+ 320 03c0 00000000 		.word	0
+ 322              		.section	.text._ZN7daisysp10Oscillator12CalcPhaseIncEf,"ax",%progbits
+ 323              		.align	1
+ 324              		.p2align 2,,3
+ 325              		.global	_ZN7daisysp10Oscillator12CalcPhaseIncEf
+ 326              		.syntax unified
+ 327              		.thumb
+ 328              		.thumb_func
+ 329              		.fpu fpv5-d16
+ 331              	_ZN7daisysp10Oscillator12CalcPhaseIncEf:
+ 332              		@ args = 0, pretend = 0, frame = 0
+ 333              		@ frame_needed = 0, uses_anonymous_args = 0
+ 334              		@ link register save eliminated.
+ 335 0000 DFED047A 		vldr.32	s15, .L75
+ 336 0004 20EE270A 		vmul.f32	s0, s0, s15
+ 337 0008 D0ED047A 		vldr.32	s15, [r0, #16]
+ 338 000c 20EE270A 		vmul.f32	s0, s0, s15
+ 339 0010 7047     		bx	lr
+ 340              	.L76:
+ 341 0012 00BF     		.align	2
+ 342              	.L75:
+ 343 0014 DB0FC940 		.word	1086918619
+ 345              		.ident	"GCC: (GNU Arm Embedded Toolchain 10-2020-q4-major) 10.2.1 20201103 (release)"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 oscillator.cpp
+C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s:15     .text._ZN7daisysp10Oscillator7ProcessEv:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s:24     .text._ZN7daisysp10Oscillator7ProcessEv:00000000 _ZN7daisysp10Oscillator7ProcessEv
+C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s:35     .text._ZN7daisysp10Oscillator7ProcessEv:00000014 $d
+C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s:43     .text._ZN7daisysp10Oscillator7ProcessEv:00000024 $t
+C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s:316    .text._ZN7daisysp10Oscillator7ProcessEv:000003b0 $d
+C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s:323    .text._ZN7daisysp10Oscillator12CalcPhaseIncEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s:331    .text._ZN7daisysp10Oscillator12CalcPhaseIncEf:00000000 _ZN7daisysp10Oscillator12CalcPhaseIncEf
+C:\Users\pedro\AppData\Local\Temp\ccJdvhkt.s:343    .text._ZN7daisysp10Oscillator12CalcPhaseIncEf:00000014 $d
+
+UNDEFINED SYMBOLS
+fmodf
+sinf

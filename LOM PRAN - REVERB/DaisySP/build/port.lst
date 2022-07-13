@@ -1,0 +1,104 @@
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccG8WS1A.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"port.cpp"
+  13              		.text
+  14              		.section	.text._ZN7daisysp4Port4InitEff,"ax",%progbits
+  15              		.align	1
+  16              		.p2align 2,,3
+  17              		.global	_ZN7daisysp4Port4InitEff
+  18              		.arch armv7e-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv5-d16
+  24              	_ZN7daisysp4Port4InitEff:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 B7EE007A 		vmov.f32	s14, #1.0e+0
+  29 0004 0022     		movs	r2, #0
+  30 0006 064B     		ldr	r3, .L3
+  31 0008 C260     		str	r2, [r0, #12]	@ float
+  32 000a C7EE007A 		vdiv.f32	s15, s14, s0
+  33 000e 0361     		str	r3, [r0, #16]	@ float
+  34 0010 C0ED000A 		vstr.32	s1, [r0]
+  35 0014 80ED050A 		vstr.32	s0, [r0, #20]
+  36 0018 C0ED067A 		vstr.32	s15, [r0, #24]
+  37 001c 7047     		bx	lr
+  38              	.L4:
+  39 001e 00BF     		.align	2
+  40              	.L3:
+  41 0020 0000C8C2 		.word	-1027080192
+  43              		.section	.text._ZN7daisysp4Port7ProcessEf,"ax",%progbits
+  44              		.align	1
+  45              		.p2align 2,,3
+  46              		.global	_ZN7daisysp4Port7ProcessEf
+  47              		.syntax unified
+  48              		.thumb
+  49              		.thumb_func
+  50              		.fpu fpv5-d16
+  52              	_ZN7daisysp4Port7ProcessEf:
+  53              		@ args = 0, pretend = 0, frame = 0
+  54              		@ frame_needed = 0, uses_anonymous_args = 0
+  55 0000 D0ED007A 		vldr.32	s15, [r0]
+  56 0004 90ED047A 		vldr.32	s14, [r0, #16]
+  57 0008 B4EE677A 		vcmp.f32	s14, s15
+  58 000c 10B5     		push	{r4, lr}
+  59 000e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  60 0012 0446     		mov	r4, r0
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccG8WS1A.s 			page 2
+
+
+  61 0014 2DED028B 		vpush.64	{d8}
+  62 0018 B0EE408A 		vmov.f32	s16, s0
+  63 001c 10D1     		bne	.L6
+  64 001e 90ED017A 		vldr.32	s14, [r0, #4]
+  65 0022 D0ED027A 		vldr.32	s15, [r0, #8]
+  66              	.L7:
+  67 0026 94ED030A 		vldr.32	s0, [r4, #12]
+  68 002a 67EE807A 		vmul.f32	s15, s15, s0
+  69 002e E8EE077A 		vfma.f32	s15, s16, s14
+  70 0032 BDEC028B 		vldm	sp!, {d8}
+  71 0036 B0EE670A 		vmov.f32	s0, s15
+  72 003a C4ED037A 		vstr.32	s15, [r4, #12]
+  73 003e 10BD     		pop	{r4, pc}
+  74              	.L6:
+  75 0040 90ED067A 		vldr.32	s14, [r0, #24]
+  76 0044 B6EE000B 		vmov.f64	d0, #5.0e-1
+  77 0048 87EE271A 		vdiv.f32	s2, s14, s15
+  78 004c B7EEC11A 		vcvt.f64.f32	d1, s2
+  79 0050 FFF7FEFF 		bl	pow
+  80 0054 B7EE007A 		vmov.f32	s14, #1.0e+0
+  81 0058 F7EEC07B 		vcvt.f32.f64	s15, d0
+  82 005c 2368     		ldr	r3, [r4]	@ float
+  83 005e 2361     		str	r3, [r4, #16]	@ float
+  84 0060 37EE677A 		vsub.f32	s14, s14, s15
+  85 0064 C4ED027A 		vstr.32	s15, [r4, #8]
+  86 0068 84ED017A 		vstr.32	s14, [r4, #4]
+  87 006c DBE7     		b	.L7
+  89 006e 00BF     		.ident	"GCC: (GNU Arm Embedded Toolchain 10-2020-q4-major) 10.2.1 20201103 (release)"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccG8WS1A.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 port.cpp
+C:\Users\pedro\AppData\Local\Temp\ccG8WS1A.s:15     .text._ZN7daisysp4Port4InitEff:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccG8WS1A.s:24     .text._ZN7daisysp4Port4InitEff:00000000 _ZN7daisysp4Port4InitEff
+C:\Users\pedro\AppData\Local\Temp\ccG8WS1A.s:41     .text._ZN7daisysp4Port4InitEff:00000020 $d
+C:\Users\pedro\AppData\Local\Temp\ccG8WS1A.s:44     .text._ZN7daisysp4Port7ProcessEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccG8WS1A.s:52     .text._ZN7daisysp4Port7ProcessEf:00000000 _ZN7daisysp4Port7ProcessEf
+
+UNDEFINED SYMBOLS
+pow

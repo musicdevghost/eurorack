@@ -1,0 +1,744 @@
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"synthsnaredrum.cpp"
+  13              		.text
+  14              		.section	.text._ZN7daisysp18SyntheticSnareDrum4InitEf,"ax",%progbits
+  15              		.align	1
+  16              		.p2align 2,,3
+  17              		.global	_ZN7daisysp18SyntheticSnareDrum4InitEf
+  18              		.arch armv7e-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv5-d16
+  24              	_ZN7daisysp18SyntheticSnareDrum4InitEf:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 DFED287A 		vldr.32	s15, .L4
+  28 0004 B7EE005A 		vmov.f32	s10, #1.0e+0
+  29 0008 9FED277A 		vldr.32	s14, .L4+4
+  30 000c 0023     		movs	r3, #0
+  31              		.syntax unified
+  32              	@ 36 "Source/Utility/dsp.h" 1
+  33 000e 87FE277A 		vmaxnm.f32 s14, s14, s15
+  34              	@ 0 "" 2
+  35              	@ 47 "Source/Utility/dsp.h" 1
+  36 0012 87FE457A 		vminnm.f32 s14, s14, s10
+  37              	@ 0 "" 2
+  38              		.thumb
+  39              		.syntax unified
+  40 0016 27EE077A 		vmul.f32	s14, s14, s14
+  41 001a DFED246A 		vldr.32	s13, .L4+8
+  42 001e DFED245A 		vldr.32	s11, .L4+12
+  43 0022 86EE806A 		vdiv.f32	s12, s13, s0
+  44 0026 9FED234A 		vldr.32	s8, .L4+16
+  45              		.syntax unified
+  46              	@ 36 "Source/Utility/dsp.h" 1
+  47 002a C5FEA75A 		vmaxnm.f32 s11, s11, s15
+  48              	@ 0 "" 2
+  49              	@ 36 "Source/Utility/dsp.h" 1
+  50 002e 86FE276A 		vmaxnm.f32 s12, s12, s15
+  51              	@ 0 "" 2
+  52              	@ 47 "Source/Utility/dsp.h" 1
+  53 0032 C5FEC55A 		vminnm.f32 s11, s11, s10
+  54              	@ 0 "" 2
+  55              	@ 47 "Source/Utility/dsp.h" 1
+  56 0036 86FE456A 		vminnm.f32 s12, s12, s10
+  57              	@ 0 "" 2
+  58              	@ 36 "Source/Utility/dsp.h" 1
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 2
+
+
+  59 003a 84FE274A 		vmaxnm.f32 s8, s8, s15
+  60              	@ 0 "" 2
+  61              		.thumb
+  62              		.syntax unified
+  63 003e 10B5     		push	{r4, lr}
+  64 0040 0446     		mov	r4, r0
+  65 0042 DFED1D6A 		vldr.32	s13, .L4+20
+  66 0046 3830     		adds	r0, r0, #56
+  67 0048 84ED000A 		vstr.32	s0, [r4]
+  68              		.syntax unified
+  69              	@ 36 "Source/Utility/dsp.h" 1
+  70 004c C6FEA76A 		vmaxnm.f32 s13, s13, s15
+  71              	@ 0 "" 2
+  72              		.thumb
+  73              		.syntax unified
+  74 0050 C4ED077A 		vstr.32	s15, [r4, #28]
+  75 0054 C4ED087A 		vstr.32	s15, [r4, #32]
+  76              		.syntax unified
+  77              	@ 47 "Source/Utility/dsp.h" 1
+  78 0058 C6FEC56A 		vminnm.f32 s13, s13, s10
+  79              	@ 0 "" 2
+  80              		.thumb
+  81              		.syntax unified
+  82 005c C4ED097A 		vstr.32	s15, [r4, #36]
+  83 0060 C4ED0A7A 		vstr.32	s15, [r4, #40]
+  84 0064 C4ED0B7A 		vstr.32	s15, [r4, #44]
+  85 0068 6363     		str	r3, [r4, #52]
+  86 006a C4ED0C7A 		vstr.32	s15, [r4, #48]
+  87 006e C4ED025A 		vstr.32	s11, [r4, #8]
+  88 0072 84ED036A 		vstr.32	s12, [r4, #12]
+  89 0076 84ED047A 		vstr.32	s14, [r4, #16]
+  90 007a 84ED054A 		vstr.32	s8, [r4, #20]
+  91 007e C4ED066A 		vstr.32	s13, [r4, #24]
+  92 0082 A380     		strh	r3, [r4, #4]	@ movhi
+  93 0084 FFF7FEFF 		bl	_ZN7daisysp3Svf4InitEf
+  94 0088 2046     		mov	r0, r4
+  95 008a 94ED000A 		vldr.32	s0, [r4]
+  96 008e 8430     		adds	r0, r0, #132
+  97 0090 FFF7FEFF 		bl	_ZN7daisysp3Svf4InitEf
+  98 0094 2046     		mov	r0, r4
+  99 0096 94ED000A 		vldr.32	s0, [r4]
+ 100 009a D030     		adds	r0, r0, #208
+ 101 009c BDE81040 		pop	{r4, lr}
+ 102 00a0 FFF7FEBF 		b	_ZN7daisysp3Svf4InitEf
+ 103              	.L5:
+ 104              		.align	2
+ 105              	.L4:
+ 106 00a4 00000000 		.word	0
+ 107 00a8 CDCCCC3D 		.word	1036831949
+ 108 00ac 00004843 		.word	1128792064
+ 109 00b0 9A99193F 		.word	1058642330
+ 110 00b4 9A99993E 		.word	1050253722
+ 111 00b8 3333333F 		.word	1060320051
+ 113              		.section	.text._ZN7daisysp18SyntheticSnareDrum7ProcessEb,"ax",%progbits
+ 114              		.align	1
+ 115              		.p2align 2,,3
+ 116              		.global	_ZN7daisysp18SyntheticSnareDrum7ProcessEb
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 3
+
+
+ 117              		.syntax unified
+ 118              		.thumb
+ 119              		.thumb_func
+ 120              		.fpu fpv5-d16
+ 122              	_ZN7daisysp18SyntheticSnareDrum7ProcessEb:
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 126 0004 F2EE080A 		vmov.f32	s1, #1.2e+1
+ 127 0008 90ED057A 		vldr.32	s14, [r0, #20]
+ 128 000c D0ED047A 		vldr.32	s15, [r0, #16]
+ 129 0010 0446     		mov	r4, r0
+ 130 0012 9FEDDE6A 		vldr.32	s12, .L57
+ 131 0016 B0EE000A 		vmov.f32	s0, #2.0e+0
+ 132 001a 60EEE70A 		vnmul.f32	s1, s1, s15
+ 133 001e D0ED066A 		vldr.32	s13, [r0, #24]
+ 134 0022 0F46     		mov	r7, r1
+ 135 0024 2DED0A8B 		vpush.64	{d8, d9, d10, d11, d12}
+ 136 0028 F7EE008A 		vmov.f32	s17, #1.0e+0
+ 137 002c 9FEDD89A 		vldr.32	s18, .L57+4
+ 138 0030 B1EE0C8A 		vmov.f32	s16, #7.0e+0
+ 139 0034 90ED00AA 		vldr.32	s20, [r0]
+ 140 0038 77EE685A 		vsub.f32	s11, s14, s17
+ 141 003c F0EE687A 		vmov.f32	s15, s17
+ 142 0040 E7EE257A 		vfma.f32	s15, s14, s11
+ 143 0044 67EEC77A 		vnmul.f32	s15, s15, s14
+ 144 0048 E7EE860A 		vfma.f32	s1, s15, s12
+ 145 004c E6EE880A 		vfma.f32	s1, s13, s16
+ 146 0050 60EE890A 		vmul.f32	s1, s1, s18
+ 147 0054 FFF7FEFF 		bl	powf
+ 148 0058 D4ED060A 		vldr.32	s1, [r4, #24]
+ 149 005c 94ED057A 		vldr.32	s14, [r4, #20]
+ 150 0060 F0EE409A 		vmov.f32	s19, s0
+ 151 0064 28EE608A 		vnmul.f32	s16, s16, s1
+ 152 0068 DFEDCA7A 		vldr.32	s15, .L57+8
+ 153 006c B0EE000A 		vmov.f32	s0, #2.0e+0
+ 154 0070 D4ED00BA 		vldr.32	s23, [r4]
+ 155 0074 A7EE678A 		vfms.f32	s16, s14, s15
+ 156 0078 68EE090A 		vmul.f32	s1, s16, s18
+ 157 007c 9FEDC68A 		vldr.32	s16, .L57+12
+ 158 0080 FFF7FEFF 		bl	powf
+ 159 0084 D4ED066A 		vldr.32	s13, [r4, #24]
+ 160 0088 9FEDC47A 		vldr.32	s14, .L57+16
+ 161 008c F0EE40AA 		vmov.f32	s21, s0
+ 162 0090 DFEDC37A 		vldr.32	s15, .L57+20
+ 163 0094 A6EE878A 		vfma.f32	s16, s13, s14
+ 164 0098 94ED00BA 		vldr.32	s22, [r4]
+ 165              		.syntax unified
+ 166              	@ 36 "Source/Utility/dsp.h" 1
+ 167 009c 88FE278A 		vmaxnm.f32 s16, s16, s15
+ 168              	@ 0 "" 2
+ 169              	@ 47 "Source/Utility/dsp.h" 1
+ 170 00a0 88FE688A 		vminnm.f32 s16, s16, s17
+ 171              	@ 0 "" 2
+ 172              		.thumb
+ 173              		.syntax unified
+ 174 00a4 78EEC88A 		vsub.f32	s17, s17, s16
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 4
+
+
+ 175 00a8 F4EE678A 		vcmp.f32	s17, s15
+ 176 00ac F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 177 00b0 00F1F181 		bmi	.L47
+ 178 00b4 B1EEE89A 		vsqrt.f32	s18, s17
+ 179              	.L9:
+ 180 00b8 B5EE408A 		vcmp.f32	s16, #0
+ 181 00bc F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 182 00c0 00F1E281 		bmi	.L48
+ 183 00c4 F1EEC88A 		vsqrt.f32	s17, s16
+ 184              	.L12:
+ 185 00c8 D4ED037A 		vldr.32	s15, [r4, #12]
+ 186 00cc 04F18408 		add	r8, r4, #132
+ 187 00d0 94ED000A 		vldr.32	s0, [r4]
+ 188 00d4 2546     		mov	r5, r4
+ 189 00d6 DFEDB36A 		vldr.32	s13, .L57+24
+ 190 00da 4046     		mov	r0, r8
+ 191 00dc D035     		adds	r5, r5, #208
+ 192 00de 2646     		mov	r6, r4
+ 193 00e0 B2EE047A 		vmov.f32	s14, #1.0e+1
+ 194 00e4 F6EE00CA 		vmov.f32	s25, #5.0e-1
+ 195 00e8 3836     		adds	r6, r6, #56
+ 196 00ea 27EE877A 		vmul.f32	s14, s15, s14
+ 197              		.syntax unified
+ 198              	@ 47 "Source/Utility/dsp.h" 1
+ 199 00ee 87FE6C7A 		vminnm.f32 s14, s14, s25
+ 200              	@ 0 "" 2
+ 201              		.thumb
+ 202              		.syntax unified
+ 203 00f2 27EE000A 		vmul.f32	s0, s14, s0
+ 204 00f6 67EEA67A 		vmul.f32	s15, s15, s13
+ 205              		.syntax unified
+ 206              	@ 47 "Source/Utility/dsp.h" 1
+ 207 00fa 87FEECCA 		vminnm.f32 s24, s15, s25
+ 208              	@ 0 "" 2
+ 209              		.thumb
+ 210              		.syntax unified
+ 211 00fe FFF7FEFF 		bl	_ZN7daisysp3Svf7SetFreqEf
+ 212 0102 94ED000A 		vldr.32	s0, [r4]
+ 213 0106 2846     		mov	r0, r5
+ 214 0108 2CEE000A 		vmul.f32	s0, s24, s0
+ 215 010c FFF7FEFF 		bl	_ZN7daisysp3Svf7SetFreqEf
+ 216 0110 F0EE007A 		vmov.f32	s15, #2.0e+0
+ 217 0114 B0EE6C0A 		vmov.f32	s0, s25
+ 218 0118 2846     		mov	r0, r5
+ 219 011a A8EE270A 		vfma.f32	s0, s16, s15
+ 220 011e FFF7FEFF 		bl	_ZN7daisysp3Svf6SetResEf
+ 221 0122 B0EE087A 		vmov.f32	s14, #3.0e+0
+ 222 0126 D4ED037A 		vldr.32	s15, [r4, #12]
+ 223 012a 3046     		mov	r0, r6
+ 224 012c 94ED000A 		vldr.32	s0, [r4]
+ 225 0130 67EE877A 		vmul.f32	s15, s15, s14
+ 226 0134 27EE800A 		vmul.f32	s0, s15, s0
+ 227 0138 FFF7FEFF 		bl	_ZN7daisysp3Svf7SetFreqEf
+ 228 013c 1FB9     		cbnz	r7, .L13
+ 229 013e 2379     		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+ 230 0140 002B     		cmp	r3, #0
+ 231 0142 00F07D81 		beq	.L54
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 5
+
+
+ 232              	.L13:
+ 233 0146 D4ED055A 		vldr.32	s11, [r4, #20]
+ 234 014a 4FF07E53 		mov	r3, #1065353216
+ 235 014e DFEDA17A 		vldr.32	s15, .L57+72
+ 236 0152 0022     		movs	r2, #0
+ 237 0154 9FED947A 		vldr.32	s14, .L57+28
+ 238 0158 DFED946A 		vldr.32	s13, .L57+32
+ 239 015c A5EEA77A 		vfma.f32	s14, s11, s15
+ 240 0160 94ED025A 		vldr.32	s10, [r4, #8]
+ 241 0164 9FED926A 		vldr.32	s12, .L57+36
+ 242 0168 D4ED005A 		vldr.32	s11, [r4]
+ 243 016c A5EE266A 		vfma.f32	s12, s10, s13
+ 244 0170 DFED8B7A 		vldr.32	s15, .L57+20
+ 245 0174 2271     		strb	r2, [r4, #4]
+ 246 0176 F0EE676A 		vmov.f32	s13, s15
+ 247 017a E362     		str	r3, [r4, #44]	@ float
+ 248 017c 27EE257A 		vmul.f32	s14, s14, s11
+ 249 0180 C4ED087A 		vstr.32	s15, [r4, #32]
+ 250 0184 F0EE673A 		vmov.f32	s7, s15
+ 251 0188 C4ED077A 		vstr.32	s15, [r4, #28]
+ 252 018c BDEEC77A 		vcvt.s32.f32	s14, s14
+ 253 0190 84ED096A 		vstr.32	s12, [r4, #36]
+ 254 0194 84ED0A6A 		vstr.32	s12, [r4, #40]
+ 255 0198 84ED0D7A 		vstr.32	s14, [r4, #52]	@ int
+ 256              	.L14:
+ 257 019c 854A     		ldr	r2, .L57+40
+ 258 019e 6179     		ldrb	r1, [r4, #5]	@ zero_extendqisi2
+ 259 01a0 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 260 01a2 83F00103 		eor	r3, r3, #1
+ 261 01a6 1370     		strb	r3, [r2]
+ 262 01a8 0029     		cmp	r1, #0
+ 263 01aa 00F01981 		beq	.L15
+ 264 01ae DFED7C7A 		vldr.32	s15, .L57+20
+ 265 01b2 94ED027A 		vldr.32	s14, [r4, #8]
+ 266 01b6 94ED050A 		vldr.32	s0, [r4, #20]
+ 267 01ba F0EE675A 		vmov.f32	s11, s15
+ 268 01be C4ED0B7A 		vstr.32	s15, [r4, #44]
+ 269 01c2 27EE000A 		vmul.f32	s0, s14, s0
+ 270 01c6 84ED0A0A 		vstr.32	s0, [r4, #40]
+ 271 01ca 84ED0C0A 		vstr.32	s0, [r4, #48]
+ 272 01ce 84ED090A 		vstr.32	s0, [r4, #36]
+ 273              	.L16:
+ 274 01d2 B7EE005A 		vmov.f32	s10, #1.0e+0
+ 275 01d6 94ED046A 		vldr.32	s12, [r4, #16]
+ 276 01da B4EE007A 		vmov.f32	s14, #1.25e-1
+ 277 01de D4ED037A 		vldr.32	s15, [r4, #12]
+ 278 01e2 B6EE003A 		vmov.f32	s6, #5.0e-1
+ 279 01e6 9FED6E4A 		vldr.32	s8, .L57+20
+ 280 01ea B0EE452A 		vmov.f32	s4, s10
+ 281 01ee DFED722A 		vldr.32	s5, .L57+44
+ 282 01f2 37EE677A 		vsub.f32	s14, s14, s15
+ 283 01f6 F2EE001A 		vmov.f32	s3, #8.0e+0
+ 284 01fa A6EE252A 		vfma.f32	s4, s12, s11
+ 285 01fe F4EEC33A 		vcmpe.f32	s7, s6
+ 286 0202 27EE217A 		vmul.f32	s14, s14, s3
+ 287              		.syntax unified
+ 288              	@ 36 "Source/Utility/dsp.h" 1
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 6
+
+
+ 289 0206 87FE047A 		vmaxnm.f32 s14, s14, s8
+ 290              	@ 0 "" 2
+ 291              	@ 47 "Source/Utility/dsp.h" 1
+ 292 020a 87FE457A 		vminnm.f32 s14, s14, s10
+ 293              	@ 0 "" 2
+ 294              		.thumb
+ 295              		.syntax unified
+ 296 020e 27EE077A 		vmul.f32	s14, s14, s14
+ 297 0212 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 298 0216 67EE827A 		vmul.f32	s15, s15, s4
+ 299 021a F4EEC36A 		vcmpe.f32	s13, s6
+ 300 021e 9FED673A 		vldr.32	s6, .L57+48
+ 301 0222 F0EE004A 		vmov.f32	s9, #2.0e+0
+ 302 0226 F8EE005A 		vmov.f32	s11, #-2.0e+0
+ 303 022a 26EE077A 		vmul.f32	s14, s12, s14
+ 304 022e E7EEA26A 		vfma.f32	s13, s15, s5
+ 305 0232 74FE244A 		vselgt.f32	s9, s8, s9
+ 306 0236 75FE845A 		vselgt.f32	s11, s11, s8
+ 307 023a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 308 023e B4EEC37A 		vcmpe.f32	s14, s6
+ 309 0242 77EEA37A 		vadd.f32	s15, s15, s7
+ 310 0246 75FEA45A 		vselgt.f32	s11, s11, s9
+ 311 024a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 312 024e C4ED077A 		vstr.32	s15, [r4, #28]
+ 313 0252 C4ED086A 		vstr.32	s13, [r4, #32]
+ 314 0256 40F38480 		ble	.L50
+ 315 025a 9FED596A 		vldr.32	s12, .L57+52
+ 316 025e 27EE067A 		vmul.f32	s14, s14, s12
+ 317 0262 B0EE456A 		vmov.f32	s12, s10
+ 318 0266 A7EE256A 		vfma.f32	s12, s14, s11
+ 319 026a F4EEC67A 		vcmpe.f32	s15, s12
+ 320 026e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 321 0272 03DB     		blt	.L26
+ 322 0274 75EE677A 		vsub.f32	s15, s10, s15
+ 323 0278 C4ED077A 		vstr.32	s15, [r4, #28]
+ 324              	.L26:
+ 325 027c F4EEC66A 		vcmpe.f32	s13, s12
+ 326 0280 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 327 0284 80F2E180 		bge	.L55
+ 328              	.L28:
+ 329 0288 B6EE007A 		vmov.f32	s14, #5.0e-1
+ 330 028c F4EEC77A 		vcmpe.f32	s15, s14
+ 331 0290 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 332 0294 03D4     		bmi	.L33
+ 333 0296 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 334 029a 77EE677A 		vsub.f32	s15, s14, s15
+ 335              	.L33:
+ 336 029e B1EE004A 		vmov.f32	s8, #4.0e+0
+ 337 02a2 9FED487A 		vldr.32	s14, .L57+56
+ 338 02a6 B6EE005A 		vmov.f32	s10, #5.0e-1
+ 339 02aa 9FED476A 		vldr.32	s12, .L57+60
+ 340 02ae F7EE005A 		vmov.f32	s11, #1.0e+0
+ 341 02b2 DFED464A 		vldr.32	s9, .L57+64
+ 342 02b6 A7EE847A 		vfma.f32	s14, s15, s8
+ 343 02ba 3046     		mov	r0, r6
+ 344 02bc F4EEC56A 		vcmpe.f32	s13, s10
+ 345 02c0 B1EE005A 		vmov.f32	s10, #4.0e+0
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 7
+
+
+ 346 02c4 29EE000A 		vmul.f32	s0, s18, s0
+ 347 02c8 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 348 02cc F0EEC77A 		vabs.f32	s15, s14
+ 349 02d0 37EE077A 		vadd.f32	s14, s14, s14
+ 350 02d4 58BF     		it	pl
+ 351 02d6 75EEE66A 		vsubpl.f32	s13, s11, s13
+ 352 02da 77EEA57A 		vadd.f32	s15, s15, s11
+ 353 02de F7EE005A 		vmov.f32	s11, #1.0e+0
+ 354 02e2 87EE274A 		vdiv.f32	s8, s14, s15
+ 355 02e6 DFED377A 		vldr.32	s15, .L57+56
+ 356 02ea E6EE857A 		vfma.f32	s15, s13, s10
+ 357 02ee B0EE467A 		vmov.f32	s14, s12
+ 358 02f2 B5EE006A 		vmov.f32	s12, #2.5e-1
+ 359 02f6 F0EEE76A 		vabs.f32	s13, s15
+ 360 02fa 77EEA77A 		vadd.f32	s15, s15, s15
+ 361 02fe 76EEA56A 		vadd.f32	s13, s13, s11
+ 362 0302 A4EE247A 		vfma.f32	s14, s8, s9
+ 363 0306 C7EEA65A 		vdiv.f32	s11, s15, s13
+ 364 030a A5EE867A 		vfma.f32	s14, s11, s12
+ 365 030e 20EE070A 		vmul.f32	s0, s0, s14
+ 366 0312 FFF7FEFF 		bl	_ZN7daisysp3Svf7ProcessEf
+ 367 0316 94ED1A8A 		vldr.32	s16, [r4, #104]
+ 368 031a FFF7FEFF 		bl	rand
+ 369 031e 00EE100A 		vmov	s0, r0	@ int
+ 370 0322 2846     		mov	r0, r5
+ 371 0324 BAEEE00A 		vcvt.f32.s32	s0, s0, #31
+ 372 0328 FFF7FEFF 		bl	_ZN7daisysp3Svf7ProcessEf
+ 373 032c 94ED400A 		vldr.32	s0, [r4, #256]
+ 374 0330 4046     		mov	r0, r8
+ 375 0332 FFF7FEFF 		bl	_ZN7daisysp3Svf7ProcessEf
+ 376 0336 D4ED0A7A 		vldr.32	s15, [r4, #40]
+ 377 033a 94ED0B6A 		vldr.32	s12, [r4, #44]
+ 378 033e B0EE480A 		vmov.f32	s0, s16
+ 379 0342 94ED2E7A 		vldr.32	s14, [r4, #184]
+ 380 0346 DFED1D6A 		vldr.32	s13, .L57+48
+ 381 034a 77EE867A 		vadd.f32	s15, s15, s12
+ 382 034e 37EE267A 		vadd.f32	s14, s14, s13
+ 383 0352 67EE877A 		vmul.f32	s15, s15, s14
+ 384 0356 A7EEA80A 		vfma.f32	s0, s15, s17
+ 385 035a BDEC0A8B 		vldm	sp!, {d8-d12}
+ 386 035e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 387              	.L50:
+ 388 0362 F4EEC57A 		vcmpe.f32	s15, s10
+ 389 0366 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 390 036a 03DB     		blt	.L30
+ 391 036c 77EEC57A 		vsub.f32	s15, s15, s10
+ 392 0370 C4ED077A 		vstr.32	s15, [r4, #28]
+ 393              	.L30:
+ 394 0374 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 395 0378 F4EEC76A 		vcmpe.f32	s13, s14
+ 396 037c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 397 0380 82DB     		blt	.L28
+ 398 0382 76EEC76A 		vsub.f32	s13, s13, s14
+ 399 0386 C4ED086A 		vstr.32	s13, [r4, #32]
+ 400 038a 7DE7     		b	.L28
+ 401              	.L58:
+ 402              		.align	2
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 8
+
+
+ 403              	.L57:
+ 404 038c 00009042 		.word	1116733440
+ 405 0390 ABAAAA3D 		.word	1034594987
+ 406 0394 00007042 		.word	1114636288
+ 407 0398 CDCC4CBD 		.word	-1119040307
+ 408 039c CDCC8C3F 		.word	1066192077
+ 409 03a0 00000000 		.word	0
+ 410 03a4 00000C42 		.word	1108082688
+ 411 03a8 0AD7233D 		.word	1025758986
+ 412 03ac 3333333F 		.word	1060320051
+ 413 03b0 9A99993E 		.word	1050253722
+ 414 03b4 00000000 		.word	.LANCHOR0
+ 415 03b8 F628BC3F 		.word	1069295862
+ 416 03bc CDCCCC3D 		.word	1036831949
+ 417 03c0 CDCCCC3C 		.word	1020054733
+ 418 03c4 6666A6BF 		.word	-1079613850
+ 419 03c8 CDCCCCBD 		.word	-1110651699
+ 420 03cc 9A99193F 		.word	1058642330
+ 421 03d0 8FC2753C 		.word	1014350479
+ 422 03d4 8FC2F53C 		.word	1022739087
+ 423 03d8 4260E53B 		.word	1004888130
+ 424 03dc 0AD7233C 		.word	1008981770
+ 425              	.L15:
+ 426 03e0 1FED056A 		vldr.32	s12, .L57+68
+ 427 03e4 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 428 03e8 94ED090A 		vldr.32	s0, [r4, #36]
+ 429 03ec 2AEE06AA 		vmul.f32	s20, s20, s12
+ 430 03f0 1FED087A 		vldr.32	s14, .L57+72
+ 431 03f4 B4EEC70A 		vcmpe.f32	s0, s14
+ 432 03f8 87EE8A6A 		vdiv.f32	s12, s15, s20
+ 433 03fc F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 434 0400 E6EE697A 		vfms.f32	s15, s12, s19
+ 435 0404 28DD     		ble	.L49
+ 436              	.L52:
+ 437 0406 20EE270A 		vmul.f32	s0, s0, s15
+ 438 040a 636B     		ldr	r3, [r4, #52]
+ 439 040c 84ED090A 		vstr.32	s0, [r4, #36]
+ 440 0410 4BB3     		cbz	r3, .L20
+ 441              	.L56:
+ 442 0412 013B     		subs	r3, r3, #1
+ 443 0414 6363     		str	r3, [r4, #52]
+ 444              	.L21:
+ 445 0416 1FED107A 		vldr.32	s14, .L57+76
+ 446 041a B7EE006A 		vmov.f32	s12, #1.0e+0
+ 447 041e D4ED0B7A 		vldr.32	s15, [r4, #44]
+ 448 0422 F1EE005A 		vmov.f32	s11, #4.0e+0
+ 449 0426 2BEE07BA 		vmul.f32	s22, s22, s14
+ 450 042a 86EE0B7A 		vdiv.f32	s14, s12, s22
+ 451 042e 36EE477A 		vsub.f32	s14, s12, s14
+ 452 0432 27EE277A 		vmul.f32	s14, s14, s15
+ 453 0436 67EE255A 		vmul.f32	s11, s14, s11
+ 454 043a 84ED0B7A 		vstr.32	s14, [r4, #44]
+ 455 043e C8E6     		b	.L16
+ 456              	.L54:
+ 457 0440 D4ED073A 		vldr.32	s7, [r4, #28]
+ 458 0444 D4ED086A 		vldr.32	s13, [r4, #32]
+ 459 0448 A8E6     		b	.L14
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 9
+
+
+ 460              	.L55:
+ 461 044a B7EE007A 		vmov.f32	s14, #1.0e+0
+ 462 044e 77EE666A 		vsub.f32	s13, s14, s13
+ 463 0452 C4ED086A 		vstr.32	s13, [r4, #32]
+ 464 0456 17E7     		b	.L28
+ 465              	.L49:
+ 466 0458 002B     		cmp	r3, #0
+ 467 045a D4D1     		bne	.L52
+ 468 045c 636B     		ldr	r3, [r4, #52]
+ 469 045e 84ED090A 		vstr.32	s0, [r4, #36]
+ 470 0462 002B     		cmp	r3, #0
+ 471 0464 D5D1     		bne	.L56
+ 472              	.L20:
+ 473 0466 1FED236A 		vldr.32	s12, .L57+80
+ 474 046a F7EE007A 		vmov.f32	s15, #1.0e+0
+ 475 046e 94ED0A7A 		vldr.32	s14, [r4, #40]
+ 476 0472 6BEE86BA 		vmul.f32	s23, s23, s12
+ 477 0476 87EEAB6A 		vdiv.f32	s12, s15, s23
+ 478 047a E6EE6A7A 		vfms.f32	s15, s12, s21
+ 479 047e 67EE277A 		vmul.f32	s15, s14, s15
+ 480 0482 C4ED0A7A 		vstr.32	s15, [r4, #40]
+ 481 0486 C6E7     		b	.L21
+ 482              	.L48:
+ 483 0488 B0EE480A 		vmov.f32	s0, s16
+ 484 048c FFF7FEFF 		bl	sqrtf
+ 485 0490 F0EE408A 		vmov.f32	s17, s0
+ 486 0494 18E6     		b	.L12
+ 487              	.L47:
+ 488 0496 B0EE680A 		vmov.f32	s0, s17
+ 489 049a FFF7FEFF 		bl	sqrtf
+ 490 049e B0EE409A 		vmov.f32	s18, s0
+ 491 04a2 09E6     		b	.L9
+ 493              		.section	.text._ZN7daisysp18SyntheticSnareDrum4TrigEv,"ax",%progbits
+ 494              		.align	1
+ 495              		.p2align 2,,3
+ 496              		.global	_ZN7daisysp18SyntheticSnareDrum4TrigEv
+ 497              		.syntax unified
+ 498              		.thumb
+ 499              		.thumb_func
+ 500              		.fpu fpv5-d16
+ 502              	_ZN7daisysp18SyntheticSnareDrum4TrigEv:
+ 503              		@ args = 0, pretend = 0, frame = 0
+ 504              		@ frame_needed = 0, uses_anonymous_args = 0
+ 505              		@ link register save eliminated.
+ 506 0000 0123     		movs	r3, #1
+ 507 0002 0371     		strb	r3, [r0, #4]
+ 508 0004 7047     		bx	lr
+ 510 0006 00BF     		.section	.text._ZN7daisysp18SyntheticSnareDrum10SetSustainEb,"ax",%progbits
+ 511              		.align	1
+ 512              		.p2align 2,,3
+ 513              		.global	_ZN7daisysp18SyntheticSnareDrum10SetSustainEb
+ 514              		.syntax unified
+ 515              		.thumb
+ 516              		.thumb_func
+ 517              		.fpu fpv5-d16
+ 519              	_ZN7daisysp18SyntheticSnareDrum10SetSustainEb:
+ 520              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 10
+
+
+ 521              		@ frame_needed = 0, uses_anonymous_args = 0
+ 522              		@ link register save eliminated.
+ 523 0000 4171     		strb	r1, [r0, #5]
+ 524 0002 7047     		bx	lr
+ 526              		.section	.text._ZN7daisysp18SyntheticSnareDrum9SetAccentEf,"ax",%progbits
+ 527              		.align	1
+ 528              		.p2align 2,,3
+ 529              		.global	_ZN7daisysp18SyntheticSnareDrum9SetAccentEf
+ 530              		.syntax unified
+ 531              		.thumb
+ 532              		.thumb_func
+ 533              		.fpu fpv5-d16
+ 535              	_ZN7daisysp18SyntheticSnareDrum9SetAccentEf:
+ 536              		@ args = 0, pretend = 0, frame = 0
+ 537              		@ frame_needed = 0, uses_anonymous_args = 0
+ 538              		@ link register save eliminated.
+ 539 0000 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 540 0004 9FED047A 		vldr.32	s14, .L62
+ 541              		.syntax unified
+ 542              	@ 36 "Source/Utility/dsp.h" 1
+ 543 0008 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 544              	@ 0 "" 2
+ 545              	@ 47 "Source/Utility/dsp.h" 1
+ 546 000c 80FE670A 		vminnm.f32 s0, s0, s15
+ 547              	@ 0 "" 2
+ 548              		.thumb
+ 549              		.syntax unified
+ 550 0010 80ED020A 		vstr.32	s0, [r0, #8]
+ 551 0014 7047     		bx	lr
+ 552              	.L63:
+ 553 0016 00BF     		.align	2
+ 554              	.L62:
+ 555 0018 00000000 		.word	0
+ 557              		.section	.text._ZN7daisysp18SyntheticSnareDrum7SetFreqEf,"ax",%progbits
+ 558              		.align	1
+ 559              		.p2align 2,,3
+ 560              		.global	_ZN7daisysp18SyntheticSnareDrum7SetFreqEf
+ 561              		.syntax unified
+ 562              		.thumb
+ 563              		.thumb_func
+ 564              		.fpu fpv5-d16
+ 566              	_ZN7daisysp18SyntheticSnareDrum7SetFreqEf:
+ 567              		@ args = 0, pretend = 0, frame = 0
+ 568              		@ frame_needed = 0, uses_anonymous_args = 0
+ 569              		@ link register save eliminated.
+ 570 0000 90ED006A 		vldr.32	s12, [r0]
+ 571 0004 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 572 0008 DFED056A 		vldr.32	s13, .L65
+ 573 000c C0EE067A 		vdiv.f32	s15, s0, s12
+ 574              		.syntax unified
+ 575              	@ 36 "Source/Utility/dsp.h" 1
+ 576 0010 C7FEA67A 		vmaxnm.f32 s15, s15, s13
+ 577              	@ 0 "" 2
+ 578              	@ 47 "Source/Utility/dsp.h" 1
+ 579 0014 C7FEC77A 		vminnm.f32 s15, s15, s14
+ 580              	@ 0 "" 2
+ 581              		.thumb
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 11
+
+
+ 582              		.syntax unified
+ 583 0018 C0ED037A 		vstr.32	s15, [r0, #12]
+ 584 001c 7047     		bx	lr
+ 585              	.L66:
+ 586 001e 00BF     		.align	2
+ 587              	.L65:
+ 588 0020 00000000 		.word	0
+ 590              		.section	.text._ZN7daisysp18SyntheticSnareDrum11SetFmAmountEf,"ax",%progbits
+ 591              		.align	1
+ 592              		.p2align 2,,3
+ 593              		.global	_ZN7daisysp18SyntheticSnareDrum11SetFmAmountEf
+ 594              		.syntax unified
+ 595              		.thumb
+ 596              		.thumb_func
+ 597              		.fpu fpv5-d16
+ 599              	_ZN7daisysp18SyntheticSnareDrum11SetFmAmountEf:
+ 600              		@ args = 0, pretend = 0, frame = 0
+ 601              		@ frame_needed = 0, uses_anonymous_args = 0
+ 602              		@ link register save eliminated.
+ 603 0000 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 604 0004 9FED057A 		vldr.32	s14, .L68
+ 605              		.syntax unified
+ 606              	@ 36 "Source/Utility/dsp.h" 1
+ 607 0008 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 608              	@ 0 "" 2
+ 609              	@ 47 "Source/Utility/dsp.h" 1
+ 610 000c 80FE670A 		vminnm.f32 s0, s0, s15
+ 611              	@ 0 "" 2
+ 612              		.thumb
+ 613              		.syntax unified
+ 614 0010 20EE000A 		vmul.f32	s0, s0, s0
+ 615 0014 80ED040A 		vstr.32	s0, [r0, #16]
+ 616 0018 7047     		bx	lr
+ 617              	.L69:
+ 618 001a 00BF     		.align	2
+ 619              	.L68:
+ 620 001c 00000000 		.word	0
+ 622              		.section	.text._ZN7daisysp18SyntheticSnareDrum8SetDecayEf,"ax",%progbits
+ 623              		.align	1
+ 624              		.p2align 2,,3
+ 625              		.global	_ZN7daisysp18SyntheticSnareDrum8SetDecayEf
+ 626              		.syntax unified
+ 627              		.thumb
+ 628              		.thumb_func
+ 629              		.fpu fpv5-d16
+ 631              	_ZN7daisysp18SyntheticSnareDrum8SetDecayEf:
+ 632              		@ args = 0, pretend = 0, frame = 0
+ 633              		@ frame_needed = 0, uses_anonymous_args = 0
+ 634              		@ link register save eliminated.
+ 635 0000 DFED037A 		vldr.32	s15, .L71
+ 636              		.syntax unified
+ 637              	@ 36 "Source/Utility/dsp.h" 1
+ 638 0004 80FE270A 		vmaxnm.f32 s0, s0, s15
+ 639              	@ 0 "" 2
+ 640              		.thumb
+ 641              		.syntax unified
+ 642 0008 80ED050A 		vstr.32	s0, [r0, #20]
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 12
+
+
+ 643 000c 7047     		bx	lr
+ 644              	.L72:
+ 645 000e 00BF     		.align	2
+ 646              	.L71:
+ 647 0010 00000000 		.word	0
+ 649              		.section	.text._ZN7daisysp18SyntheticSnareDrum9SetSnappyEf,"ax",%progbits
+ 650              		.align	1
+ 651              		.p2align 2,,3
+ 652              		.global	_ZN7daisysp18SyntheticSnareDrum9SetSnappyEf
+ 653              		.syntax unified
+ 654              		.thumb
+ 655              		.thumb_func
+ 656              		.fpu fpv5-d16
+ 658              	_ZN7daisysp18SyntheticSnareDrum9SetSnappyEf:
+ 659              		@ args = 0, pretend = 0, frame = 0
+ 660              		@ frame_needed = 0, uses_anonymous_args = 0
+ 661              		@ link register save eliminated.
+ 662 0000 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 663 0004 9FED047A 		vldr.32	s14, .L74
+ 664              		.syntax unified
+ 665              	@ 36 "Source/Utility/dsp.h" 1
+ 666 0008 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 667              	@ 0 "" 2
+ 668              	@ 47 "Source/Utility/dsp.h" 1
+ 669 000c 80FE670A 		vminnm.f32 s0, s0, s15
+ 670              	@ 0 "" 2
+ 671              		.thumb
+ 672              		.syntax unified
+ 673 0010 80ED060A 		vstr.32	s0, [r0, #24]
+ 674 0014 7047     		bx	lr
+ 675              	.L75:
+ 676 0016 00BF     		.align	2
+ 677              	.L74:
+ 678 0018 00000000 		.word	0
+ 680              		.global	even
+ 681              		.section	.data.even,"aw"
+ 682              		.set	.LANCHOR0,. + 0
+ 685              	even:
+ 686 0000 01       		.byte	1
+ 687              		.ident	"GCC: (GNU Arm Embedded Toolchain 10-2020-q4-major) 10.2.1 20201103 (release)"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 synthsnaredrum.cpp
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:15     .text._ZN7daisysp18SyntheticSnareDrum4InitEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:24     .text._ZN7daisysp18SyntheticSnareDrum4InitEf:00000000 _ZN7daisysp18SyntheticSnareDrum4InitEf
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:106    .text._ZN7daisysp18SyntheticSnareDrum4InitEf:000000a4 $d
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:114    .text._ZN7daisysp18SyntheticSnareDrum7ProcessEb:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:122    .text._ZN7daisysp18SyntheticSnareDrum7ProcessEb:00000000 _ZN7daisysp18SyntheticSnareDrum7ProcessEb
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:404    .text._ZN7daisysp18SyntheticSnareDrum7ProcessEb:0000038c $d
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:426    .text._ZN7daisysp18SyntheticSnareDrum7ProcessEb:000003e0 $t
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:494    .text._ZN7daisysp18SyntheticSnareDrum4TrigEv:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:502    .text._ZN7daisysp18SyntheticSnareDrum4TrigEv:00000000 _ZN7daisysp18SyntheticSnareDrum4TrigEv
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:511    .text._ZN7daisysp18SyntheticSnareDrum10SetSustainEb:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:519    .text._ZN7daisysp18SyntheticSnareDrum10SetSustainEb:00000000 _ZN7daisysp18SyntheticSnareDrum10SetSustainEb
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:527    .text._ZN7daisysp18SyntheticSnareDrum9SetAccentEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:535    .text._ZN7daisysp18SyntheticSnareDrum9SetAccentEf:00000000 _ZN7daisysp18SyntheticSnareDrum9SetAccentEf
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:555    .text._ZN7daisysp18SyntheticSnareDrum9SetAccentEf:00000018 $d
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:558    .text._ZN7daisysp18SyntheticSnareDrum7SetFreqEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:566    .text._ZN7daisysp18SyntheticSnareDrum7SetFreqEf:00000000 _ZN7daisysp18SyntheticSnareDrum7SetFreqEf
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:588    .text._ZN7daisysp18SyntheticSnareDrum7SetFreqEf:00000020 $d
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:591    .text._ZN7daisysp18SyntheticSnareDrum11SetFmAmountEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:599    .text._ZN7daisysp18SyntheticSnareDrum11SetFmAmountEf:00000000 _ZN7daisysp18SyntheticSnareDrum11SetFmAmountEf
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:620    .text._ZN7daisysp18SyntheticSnareDrum11SetFmAmountEf:0000001c $d
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:623    .text._ZN7daisysp18SyntheticSnareDrum8SetDecayEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:631    .text._ZN7daisysp18SyntheticSnareDrum8SetDecayEf:00000000 _ZN7daisysp18SyntheticSnareDrum8SetDecayEf
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:647    .text._ZN7daisysp18SyntheticSnareDrum8SetDecayEf:00000010 $d
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:650    .text._ZN7daisysp18SyntheticSnareDrum9SetSnappyEf:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:658    .text._ZN7daisysp18SyntheticSnareDrum9SetSnappyEf:00000000 _ZN7daisysp18SyntheticSnareDrum9SetSnappyEf
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:678    .text._ZN7daisysp18SyntheticSnareDrum9SetSnappyEf:00000018 $d
+C:\Users\pedro\AppData\Local\Temp\ccaIPLuF.s:685    .data.even:00000000 even
+
+UNDEFINED SYMBOLS
+_ZN7daisysp3Svf4InitEf
+powf
+_ZN7daisysp3Svf7SetFreqEf
+_ZN7daisysp3Svf6SetResEf
+_ZN7daisysp3Svf7ProcessEf
+rand
+sqrtf
