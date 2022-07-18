@@ -10,3 +10,6 @@
 [submodule "DaisySP"]
 	path = LOM PRAN - REVERB/DaisySP
 	url = https://github.com/electro-smith/DaisySP
+[submodule "LOM PRAN - REVERB/parasites"]
+	path = LOM PRAN - REVERB/parasites
+	url = https://github.com/mqtthiqs/parasites

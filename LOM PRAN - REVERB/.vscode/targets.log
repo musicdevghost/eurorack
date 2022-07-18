@@ -6,7 +6,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul 13 19:45:06 2022
+# Make data base, printed on Fri Jul 15 23:27:03 2022
 
 # Variables
 
@@ -22,7 +22,8 @@ LIBDIR = -L$(LIBDAISY_DIR)/build -L $(DAISYSP_DIR)/build
 LC_ALL = C
 # environment
 USERPROFILE = C:\Users\pedro
-# makefile (from 'libDaisy/core/Makefile', line 204)
+# makefile (from 'libDaisy/core/Makef 
+ile', line 204)
 DAISY_PID = df11
 # environment
 LOCALAPPDATA = C:\Users\pedro\AppData\Local
@@ -57,7 +58,7 @@ CPP_SOURCES = Reverb.cpp
 # makefile (from 'libDaisy/core/Makefile', line 113)
 C_DEFS = -DUSE_HAL_DRIVER -DSTM32H750xx -DHSE_VALUE=16000000  -DCORE_CM7 -DSTM32H750IB -DARM_MATH_CM7 -DUSE_FULL_LL_DRIVER
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_13576_KLMUVBKTGLIHAXVX
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_26396_YRKXUFXDVCJGUNPM
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -69,13 +70,12 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\pedro\AppData\Roaming\Code - Insiders\CachedData\052d5b0027f6c9d64c8ca35955cb5117ba94d5d7
+VSCODE_CODE_CACHE_PATH = C:\Users\pedro\AppData\Roaming\Code - Insiders\CachedData\e0a65a97d4f349cf11a7cae804a5553ccb412528
 # makefile (from 'libDaisy/core/Makefile', line 103)
 AS_DEFS = 
 # environment
 LANG = C
-# makefile (from 'lib 
-Daisy/core/Makefile', line 16)
+# makefile (from 'libDaisy/core/Makefile', line 16)
 OCD_DIR = /usr/local/share/openocd/scripts
 # default
 .LOADED := 
@@ -102,7 +102,7 @@ HEX = $(CP) -O ihex
 # makefile (from 'libDaisy/core/Makefile', line 214)
 FLASH_ADDRESS = $(INTERNAL_ADDRESS)
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # makefile (from 'libDaisy/core/Makefile', line 212)
 LDSCRIPT = $(SYSTEM_FILES_DIR)/STM32H750IB_flash.lds
 # automatic
@@ -124,7 +124,7 @@ ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffuncti
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 13576
+VSCODE_PID = 26396
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # makefile (from 'libDaisy/core/Makefile', line 125)
@@ -247,7 +247,8 @@ CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -Wno-missing-attributes -fa
 HOMEDRIVE = C:
 # makefile (from 'libDaisy/core/Makefile', line 20)
 GDB_FLAGS = 
-# makefile (from 'libDaisy/core/Makefile', line 207)
+# makefile (from 'libDaisy/core/Makefile', line 2 
+07)
 BOOT_BIN = $(wildcard $(SYSTEM_FILES_DIR)/dsy_bootloader*)
 # environment
 PROCESSOR_ARCHITECTURE = x86
@@ -292,10 +293,9 @@ DAISYSP_DIR = DaisySP
 # makefile (from 'libDaisy/core/Makefile', line 199)
 INTERNAL_ADDRESS = 0x08000000
 # environment
-PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10 
-, GenuineIntel
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
 # variable set hash-table stats:
-# Load=141/1024=14%, Rehash=0, Collisions=17/272=6%
+# Load=141/1024=14%, Rehash=0, Collisions=19/304=6%
 
 # Pattern-specific Variable Values
 
@@ -303,11 +303,11 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10
 
 # Directories
 
-# build (key c:/Users/pedro/Desktop/DEV/eurorack/LOM PRAN - REVERB/build, mtime 1657707869): 12 files, no impossibilities.
-# . (key c:/Users/pedro/Desktop/DEV/eurorack/LOM PRAN - REVERB, mtime 1657707867): 11 files, no impossibilities.
-# libDaisy/core (key c:/Users/pedro/Desktop/DEV/eurorack/LOM PRAN - REVERB/libDaisy/core, mtime 1657700933): 9 files, no impossibilities.
+# build (key c:/Users/pedro/Desktop/DEV/eurorack/LOM PRAN - REVERB/build, mtime 1657902392): 9 files, no impossibilities.
+# . (key c:/Users/pedro/Desktop/DEV/eurorack/LOM PRAN - REVERB, mtime 1657902390): 14 files, no impossibilities.
+# libDaisy/core (key c:/Users/pedro/Desktop/DEV/eurorack/LOM PRAN - REVERB/libDaisy/core, mtime 1657700933): No files, no impossibilities so far.
 
-# 32 files, no impossibilities in 3 directories.
+# 23 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -334,11 +334,15 @@ build/%.bin: build/%.elf | build
 # 5 implicit rules, 0 (0.0%) terminal.
 # Files
 
+parasites/stmlib/dsp/filter.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 DaisySP/Source/PhysicalModeling/modalvoice.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h:
 #  Implicit rule search has been done.
@@ -359,22 +363,19 @@ libDaisy/Drivers/CMSIS/Include/core_cm7.h:
 #  Successfully updated.
 
 libDaisy/src/per/spiMultislave.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Effects/bitcrush.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Filters/allpass.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 program-boot:
 #  Implicit rule search has not been done.
@@ -397,10 +398,9 @@ debug_client:
 	ddd --eval-command="target remote localhost:3333" --debugger $(GDB) $(TARGET_ELF)
 
 DaisySP/Source/Drums/analogbassdrum.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 #  Implicit rule search has been done.
@@ -409,16 +409,14 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 #  Successfully updated.
 
 DaisySP/Source/Effects/chorus.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/hid/disp/graphics_common.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sdram.h:
 #  Implicit rule search has been done.
@@ -445,81 +443,70 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h:
 #  Successfully updated.
 
 libDaisy/src/dev/mcp23x17.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-build/Reverb.hex: build/Reverb.elf | build
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'Reverb'
-#  Last modified 2022-07-13 17:24:29
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'libDaisy/core/Makefile', line 280):
-	$(HEX) $< $@
+# Not a target:
+build/Reverb.hex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not  
+been updated.
 
 DaisySP/Source/Effects/flanger.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 program-dfu:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'libDaisy/core/Makefile', line 330):
-	df 
-u-util -a 0 -s $(FLASH_ADDRESS):leave -D $(BUILD_DIR)/$(TARGET_BIN) -d ,0483:$(USBPID)
+	dfu-util -a 0 -s $(FLASH_ADDRESS):leave -D $(BUILD_DIR)/$(TARGET_BIN) -d ,0483:$(USBPID)
 
 libDaisy/src/ui/ButtonMonitor.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/dev/sdram.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Control/adsr.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/hid/switch.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Synthesis/harmonic_osc.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-build/Reverb.o: Reverb.cpp Makefile Reverb.cpp libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h libDaisy/Drivers/CMSIS/Include/core_cm7.h libDaisy/Drivers/CMSIS/Include/cmsis_compiler.h libDaisy/Drivers/CMSIS/Include/cmsis_gcc.h libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h libDaisy/src/sys/stm32h7xx_hal_conf.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dcmi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma2d.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dsi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dfsdm.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cec.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_comp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hrtim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ 
-hsem.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sram.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nor.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nand.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2s.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_iwdg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_jpeg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdios.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_sdmmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_lptim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_qspi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ramecc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rng.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_delayblock.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sdram.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spdifrx.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_swpmi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smbus.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_wwdg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h libDaisy/src/daisy_patch_sm.h libDaisy/src/daisy.h libDaisy/src/daisy_core.h libDaisy/src/version.h libDaisy/src/sys/system.h libDaisy/src/per/tim.h libDaisy/src/per/qspi.h libDaisy/src/per/dac.h libDaisy/src/per/gpio.h libDaisy/src/dev/leddriver.h libDaisy/src/per/i2c.h libDaisy/src/dev/mpr121.h libDaisy/src/dev/sdram.h libDaisy/src/dev/sr_4021.h libDaisy/src/sys/system.h libDaisy/src/hid/audio.h libDaisy/src/per/sai.h libDaisy/src/util/unique_id.h libDaisy/src/per/adc.h libDaisy/src/per/uart.h libDaisy/src/hid/midi.h libDaisy/src/util/ringbuffer.h libDaisy/src/hid/MidiEvent.h libDaisy/src/hid/usb_midi.h libDaisy/src/hid/usb.h libDaisy/src/hid/encoder.h libDaisy/src/hid/switch.h libDaisy/src/hid/switch3.h libDaisy/src/hid/ctrl.h libDaisy/src/hid/gatein.h libDaisy/src/hid/parameter.h libDaisy/src/hid/logger.h libDaisy/src/hid/logger_impl.h libDaisy/src/hid/usb_host.h libDaisy/src/per/sdmmc.h libDaisy/src/per/spi.h libDaisy/src/per/spiMultislave.h libDaisy/src/per/rng.h libDaisy/src/hid/disp/display.h libDaisy/src/util/oled_fonts.h libDaisy/src/hid/disp/graphics_common.h libDaisy/src/hid/disp/oled_display.h libDaisy/src/hid/wavplayer.h libDaisy/src/util/wav_format.h libDaisy/Middlewares/Third_Party/FatFs/src/ff.h libDaisy/Middlewares/Third_Party/FatFs/src/integer.h libDaisy/src/sys/ffconf.h libDaisy/src/util/bsp_sd_diskio 
-.h libDaisy/src/hid/led.h libDaisy/src/hid/rgb_led.h libDaisy/src/util/color.h libDaisy/src/dev/sr_595.h libDaisy/src/dev/apds9960.h libDaisy/src/dev/codec_pcm3060.h libDaisy/src/dev/codec_wm8731.h libDaisy/src/dev/dps310.h libDaisy/src/dev/lcd_hd44780.h libDaisy/src/dev/mcp23x17.h libDaisy/src/dev/max11300.h libDaisy/src/dev/tlv493d.h libDaisy/src/dev/neopixel.h libDaisy/src/dev/neotrellis.h libDaisy/src/dev/icm20948.h libDaisy/src/ui/ButtonMonitor.h libDaisy/src/ui/UiEventQueue.h libDaisy/src/ui/../util/FIFO.h libDaisy/src/ui/../util/scopedirqblocker.h libDaisy/Drivers/CMSIS/Include/cmsis_gcc.h libDaisy/src/ui/../sys/system.h libDaisy/src/ui/PotMonitor.h libDaisy/src/ui/UI.h libDaisy/src/ui/../util/Stack.h libDaisy/src/ui/AbstractMenu.h libDaisy/src/util/MappedValue.h libDaisy/src/util/FixedCapStr.h libDaisy/src/ui/FullScreenItemMenu.h libDaisy/src/util/CpuLoadMeter.h libDaisy/src/util/PersistentStorage.h libDaisy/src/per/qspi.h libDaisy/src/util/VoctCalibration.h libDaisy/src/util/WaveTableLoader.h libDaisy/src/sys/fatfs.h libDaisy/src/util/WavWriter.h DaisySP/Source/daisysp.h DaisySP/Source/Control/adenv.h DaisySP/Source/Control/adsr.h DaisySP/Source/Control/line.h DaisySP/Source/Control/phasor.h DaisySP/Source/Drums/analogbassdrum.h DaisySP/Source/Synthesis/oscillator.h DaisySP/Source/Utility/dsp.h DaisySP/Source/Filters/svf.h DaisySP/Source/Drums/analogsnaredrum.h DaisySP/Source/Drums/hihat.h DaisySP/Source/Drums/synthbassdrum.h DaisySP/Source/Drums/synthsnaredrum.h DaisySP/Source/Dynamics/balance.h DaisySP/Source/Dynamics/compressor.h DaisySP/Source/Dynamics/crossfade.h DaisySP/Source/Dynamics/limiter.h DaisySP/Source/Effects/autowah.h DaisySP/Source/Effects/bitcrush.h DaisySP/Source/Effects/chorus.h DaisySP/Source/Utility/delayline.h DaisySP/Source/Effects/decimator.h DaisySP/Source/Effects/flanger.h DaisySP/Source/Effects/fold.h DaisySP/Source/Effects/overdrive.h DaisySP/Source/Effects/reverbsc.h DaisySP/Source/Effects/phaser.h DaisySP/Source/Effects/pitchshifter.h DaisySP/Source/Effects/sampleratereducer.h DaisySP/Source/Effects/tremolo.h DaisySP/Source/Filters/allpass.h DaisySP/Source/Filters/atone.h DaisySP/Source/Filters/biquad.h DaisySP/Source/Filters/comb.h DaisySP/Source/Filters/mode.h DaisySP/Source/Filters/moogladder.h DaisySP/Source/Filters/nlfilt.h DaisySP/Source/Filters/tone.h DaisySP/Source/Filters/fir.h DaisySP/Source/Noise/clockednoise.h DaisySP/Source/Noise/dust.h DaisySP/Source/Noise/fractal_noise.h DaisySP/Source/Noise/grainlet.h DaisySP/Source/Noise/particle.h DaisySP/Source/Noise/whitenoise.h DaisySP/Source/PhysicalModeling/drip.h DaisySP/Source/PhysicalModeling/modalvoice.h DaisySP/Source/PhysicalModeling/resonator.h DaisySP/Source/PhysicalModeling/pluck.h DaisySP/Source/PhysicalModeling/PolyPluck.h DaisySP/Source/Utility/dcblock.h DaisySP/Source/PhysicalModeling/KarplusString.h DaisySP/Source/PhysicalModeling/stringvoice.h DaisySP/Source/Synthesis/blosc.h DaisySP/Source/Synthesis/fm2.h DaisySP/Source/Synthesis/formantosc.h DaisySP/Source/Synthesis/harmonic_osc.h DaisySP/Source/Synthesis/oscillatorbank.h DaisySP/Source/Synthesis/variablesawosc.h DaisySP/Source/Synthesis/variableshapeosc.h DaisySP/Source/Synthesis/vosim.h DaisySP/Source/Synthesis/zoscillator.h DaisySP/Source/Utility/jitter.h DaisySP/Source/Utility/looper.h DaisySP/Source/Utility/maytrig.h DaisySP/Source/Utility/metro.h DaisySP/Source/Utility/port.h DaisySP/Source/Utility/samplehold.h DaisySP/Source/Utility/smooth_random.h eurorack/rings/dsp/fx/reverb.h eurorack/stmlib/stmlib.h eurorack/rings/dsp/fx/fx_engine.h eurorack/stmlib/dsp/dsp.h eurorack/stmlib/dsp/cosine_oscillator.h | build
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'Reverb'
-#  Last modified 2022-07-13 17:24:29
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'libDaisy/core/Makefile', line 271):
-	$(CXX) -c $(CPPFLAGS) $(CPP_STANDARD) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.cpp=.lst)) $< -o $@
+build/Reverb.o: Reverb.cpp libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h libDaisy/Drivers/CMSIS/Include/core_cm7.h libDaisy/Drivers/CMSIS/Include/cmsis_compiler.h libDaisy/Drivers/CMSIS/Include/cmsis_gcc.h libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h libDaisy/src/sys/stm32h7xx_hal_conf.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dcmi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma2d.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dsi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dfsdm.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cec.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_comp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hrtim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sram.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nor.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nand.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2s.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_iwdg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_jpeg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdios.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_sdmmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_lptim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_qspi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ramecc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rng.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd.h libDaisy/Drivers/STM32H7xx_HA 
+L_Driver/Inc/stm32h7xx_ll_delayblock.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sdram.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spdifrx.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_swpmi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smbus.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_wwdg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h libDaisy/src/daisy_patch_sm.h libDaisy/src/daisy.h libDaisy/src/daisy_core.h libDaisy/src/version.h libDaisy/src/sys/system.h libDaisy/src/per/tim.h libDaisy/src/per/qspi.h libDaisy/src/per/dac.h libDaisy/src/per/gpio.h libDaisy/src/dev/leddriver.h libDaisy/src/per/i2c.h libDaisy/src/dev/mpr121.h libDaisy/src/dev/sdram.h libDaisy/src/dev/sr_4021.h libDaisy/src/sys/system.h libDaisy/src/hid/audio.h libDaisy/src/per/sai.h libDaisy/src/util/unique_id.h libDaisy/src/per/adc.h libDaisy/src/per/uart.h libDaisy/src/hid/midi.h libDaisy/src/util/ringbuffer.h libDaisy/src/hid/MidiEvent.h libDaisy/src/hid/usb_midi.h libDaisy/src/hid/usb.h libDaisy/src/hid/encoder.h libDaisy/src/hid/switch.h libDaisy/src/hid/switch3.h libDaisy/src/hid/ctrl.h libDaisy/src/hid/gatein.h libDaisy/src/hid/parameter.h libDaisy/src/hid/logger.h libDaisy/src/hid/logger_impl.h libDaisy/src/hid/usb_host.h libDaisy/src/per/sdmmc.h libDaisy/src/per/spi.h libDaisy/src/per/spiMultislave.h libDaisy/src/per/rng.h libDaisy/src/hid/disp/display.h libDaisy/src/util/oled_fonts.h libDaisy/src/hid/disp/graphics_common.h libDaisy/src/hid/disp/oled_display.h libDaisy/src/hid/wavplayer.h libDaisy/src/util/wav_format.h libDaisy/Middlewares/Third_Party/FatFs/src/ff.h libDaisy/Middlewares/Third_Party/FatFs/src/integer.h libDaisy/src/sys/ffconf.h libDaisy/src/util/bsp_sd_diskio.h libDaisy/src/hid/led.h libDaisy/src/hid/rgb_led.h libDaisy/src/util/color.h libDaisy/src/dev/sr_595.h libDaisy/src/dev/apds9960.h libDaisy/src/dev/codec_pcm3060.h libDaisy/src/dev/codec_wm8731.h libDaisy/src/dev/dps310.h libDaisy/src/dev/lcd_hd44780.h libDaisy/src/dev/mcp23x17.h libDaisy/src/dev/max11300.h libDaisy/src/dev/tlv493d.h libDaisy/src/dev/neopixel.h libDaisy/src/dev/neotrellis.h libDaisy/src/dev/icm20948.h libDaisy/src/ui/ButtonMonitor.h libDaisy/src/ui/UiEventQueue.h libDaisy/src/ui/../util/FIFO.h libDaisy/src/ui/../util/scopedirqblocker.h libDaisy/Drivers/CMSIS/Include/cmsis_gcc.h libDaisy/src/ui/../sys/system.h libDaisy/src/ui/PotMonitor.h libDaisy/src/ui/UI.h libDaisy/src/ui/../util/Stack.h libDaisy/src/ui/AbstractMenu.h libDaisy/src/util/MappedValue.h libDaisy/src/util/FixedCapStr.h libDaisy/src/ui/FullScreenItemMenu.h libDaisy/src/util/CpuLoadMeter.h libDaisy/src/util/PersistentStorage.h libDaisy/src/per/qspi.h libDaisy/src/util/VoctCalibration.h libDaisy/src/util/WaveTableLoader.h libDaisy/src/sys/fatfs.h libDaisy/src/util/WavWriter.h DaisySP/Source/daisysp.h DaisySP/Source/Control/adenv.h DaisySP/Source/Control/adsr.h DaisySP/Source/Control/line.h DaisySP/Source/Control/phasor.h DaisySP/Source/Drums/analogbassdrum.h DaisySP/Source/Synthesis/oscillator.h Da 
+isySP/Source/Utility/dsp.h DaisySP/Source/Filters/svf.h DaisySP/Source/Drums/analogsnaredrum.h DaisySP/Source/Drums/hihat.h DaisySP/Source/Drums/synthbassdrum.h DaisySP/Source/Drums/synthsnaredrum.h DaisySP/Source/Dynamics/balance.h DaisySP/Source/Dynamics/compressor.h DaisySP/Source/Dynamics/crossfade.h DaisySP/Source/Dynamics/limiter.h DaisySP/Source/Effects/autowah.h DaisySP/Source/Effects/bitcrush.h DaisySP/Source/Effects/chorus.h DaisySP/Source/Utility/delayline.h DaisySP/Source/Effects/decimator.h DaisySP/Source/Effects/flanger.h DaisySP/Source/Effects/fold.h DaisySP/Source/Effects/overdrive.h DaisySP/Source/Effects/reverbsc.h DaisySP/Source/Effects/phaser.h DaisySP/Source/Effects/pitchshifter.h DaisySP/Source/Effects/sampleratereducer.h DaisySP/Source/Effects/tremolo.h DaisySP/Source/Filters/allpass.h DaisySP/Source/Filters/atone.h DaisySP/Source/Filters/biquad.h DaisySP/Source/Filters/comb.h DaisySP/Source/Filters/mode.h DaisySP/Source/Filters/moogladder.h DaisySP/Source/Filters/nlfilt.h DaisySP/Source/Filters/tone.h DaisySP/Source/Filters/fir.h DaisySP/Source/Noise/clockednoise.h DaisySP/Source/Noise/dust.h DaisySP/Source/Noise/fractal_noise.h DaisySP/Source/Noise/grainlet.h DaisySP/Source/Noise/particle.h DaisySP/Source/Noise/whitenoise.h DaisySP/Source/PhysicalModeling/drip.h DaisySP/Source/PhysicalModeling/modalvoice.h DaisySP/Source/PhysicalModeling/resonator.h DaisySP/Source/PhysicalModeling/pluck.h DaisySP/Source/PhysicalModeling/PolyPluck.h DaisySP/Source/Utility/dcblock.h DaisySP/Source/PhysicalModeling/KarplusString.h DaisySP/Source/PhysicalModeling/stringvoice.h DaisySP/Source/Synthesis/blosc.h DaisySP/Source/Synthesis/fm2.h DaisySP/Source/Synthesis/formantosc.h DaisySP/Source/Synthesis/harmonic_osc.h DaisySP/Source/Synthesis/oscillatorbank.h DaisySP/Source/Synthesis/variablesawosc.h DaisySP/Source/Synthesis/variableshapeosc.h DaisySP/Source/Synthesis/vosim.h DaisySP/Source/Synthesis/zoscillator.h DaisySP/Source/Utility/jitter.h DaisySP/Source/Utility/looper.h DaisySP/Source/Utility/maytrig.h DaisySP/Source/Utility/metro.h DaisySP/Source/Utility/port.h DaisySP/Source/Utility/samplehold.h DaisySP/Source/Utility/smooth_random.h parasites/clouds/dsp/fx/fx_engine.h parasites/stmlib/stmlib.h parasites/stmlib/dsp/dsp.h parasites/stmlib/dsp/cosine_oscillator.h parasites/clouds/dsp/frame.h parasites/clouds/dsp/fx/oliverb.h parasites/clouds/dsp/random_oscillator.h parasites/clouds/dsp/../resources.h parasites/stmlib/utils/random.h parasites/rings/dsp/follower.h parasites/stmlib/dsp/filter.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Dynamics/crossfade.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-# 
-  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+parasites/clouds/dsp/random_oscillator.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nand.h:
 #  Implicit rule search has been done.
@@ -527,17 +514,20 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nand.h:
 #  File has been updated.
 #  Successfully updated.
 
+parasites/clouds/dsp/../resources.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 DaisySP/Source/Effects/fold.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Drums/synthbassdrum.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash.h:
 #  Implicit rule search has been done.
@@ -570,16 +560,15 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:
 #  Successfully updated.
 
 libDaisy/src/dev/max11300.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search  
+has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Utility/delayline.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cec.h:
 #  Implicit rule search has been done.
@@ -587,17 +576,10 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cec.h:
 #  File has been updated.
 #  Successfully updated.
 
-eurorack/rings/dsp/fx/fx_engine.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:51
-#  File has been updated.
-#  Successfully updated.
-
 libDaisy/src/per/spi.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_iwdg.h:
 #  Implicit rule search has been done.
@@ -612,40 +594,34 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai.h:
 #  Successfully updated.
 
 libDaisy/src/util/oled_fonts.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Dynamics/limiter.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Synthesis/variableshapeosc.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Utility/samplehold.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/ui/AbstractMenu.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Utility/dcblock.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_lptim.h:
 #  Implicit rule search has been done.
@@ -654,16 +630,14 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_lptim.h:
 #  Successfully updated.
 
 DaisySP/Source/Noise/clockednoise.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/dev/sr_595.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h:
 #  Implicit rule search has been done.
@@ -672,16 +646,14 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h:
 #  Successfully updated.
 
 DaisySP/Source/Filters/comb.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Filters/fir.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc.h:
 #  Implicit rule search has been done.
@@ -692,12 +664,6 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc.h:
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smbus.h:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
-
-eurorack/rings/dsp/fx/reverb.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:51
 #  File has been updated.
 #  Successfully updated.
 
@@ -724,35 +690,31 @@ debug:
     fi
 
 DaisySP/Source/PhysicalModeling/KarplusString.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Utility/port.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:40:59
+#  Last modified 2022-07-15 23:27:01
 #  File has been updated.
 #  Successfully updated.
 
 libDaisy/src/per/i2c.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/util/PersistentStorage.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h:
 #  Implicit rule search has been done.
@@ -761,16 +723,19 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h:
 #  Successfully updated.
 
 DaisySP/Source/Filters/atone.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/daisy_patch_sm.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+parasites/rings/dsp/follower.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai_ex.h:
 #  Implicit rule search has been done.
@@ -785,10 +750,9 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2s.h:
 #  Successfully updated.
 
 libDaisy/src/hid/usb_midi.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp_ex.h:
 #  Implicit rule search has been done.
@@ -797,28 +761,24 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp_ex.h:
 #  Successfully updated.
 
 libDaisy/src/util/WavWriter.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Synthesis/zoscillator.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/hid/usb_host.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Effects/reverbsc.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spdifrx.h:
 #  Implicit rule search has been done.
@@ -827,34 +787,29 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spdifrx.h:
 #  Successfully updated.
 
 DaisySP/Source/Effects/tremolo.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/util/VoctCalibration.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Utility/maytrig.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Middlewares/Third_Party/FatFs/src/ff.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Drums/hihat.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hrtim.h:
 #  Implicit rule search has been done.
@@ -869,42 +824,32 @@ libDaisy/core/startup_stm32h750xx.c:
 #  File has been updated.
 #  Successfully updated.
 
-eurorack/stmlib/dsp/dsp.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:52
-#  File has been updated.
-#  Successfully updated.
-
 DaisySP/Source/Noise/whitenoise.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-13 15:28:53
 #  File has been updated.
-#  Successfully updated.
+# 
+  Successfully updated.
 
 libDaisy/src/hid/midi.h:
-#  Implicit rule search has been done.
-#  
- Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/hid/disp/oled_display.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Filters/moogladder.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_wwdg.h:
 #  Implicit rule search has been done.
@@ -913,22 +858,19 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_wwdg.h:
 #  Successfully updated.
 
 libDaisy/src/dev/tlv493d.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Synthesis/variablesawosc.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Utility/looper.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h:
 #  Implicit rule search has been done.
@@ -937,16 +879,14 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h:
 #  Successfully updated.
 
 libDaisy/src/dev/icm20948.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/ui/PotMonitor.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 clean:
 #  Implicit rule search has not been done.
@@ -956,46 +896,44 @@ clean:
 	-rm -fR $(BUILD_DIR)
 
 DaisySP/Source/daisysp.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/dev/lcd_hd44780.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Effects/overdrive.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Synthesis/vosim.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+parasites/stmlib/dsp/cosine_oscillator.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/daisy_core.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Dynamics/compressor.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/per/sai.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc_ex.h:
 #  Implicit rule search has been done.
@@ -1016,16 +954,14 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h:
 #  Successfully updated.
 
 libDaisy/src/hid/logger_impl.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Dynamics/balance.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h:
 #  Implicit rule search has been done.
@@ -1034,16 +970,14 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h:
 #  Successfully updated.
 
 DaisySP/Source/PhysicalModeling/drip.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/hid/rgb_led.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h:
 #  Implicit rule search has been done.
@@ -1058,10 +992,9 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h:
 #  Successfully updated.
 
 DaisySP/Source/Filters/biquad.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h:
 #  Implicit rule search has been done.
@@ -1076,31 +1009,25 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 #  Successfully updated.
 
 libDaisy/src/util/unique_id.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-build/Reverb.bin: build/Reverb.elf | build
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'Reverb'
-#  Last modified 2022-07-13 17:24:29
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'libDaisy/core/Makefile', line 283):
-	$(BIN) $< $@
+# Not a target:
+build/Reverb.bin:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Utility/jitter.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/ui/../util/FIFO.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd.h:
 #  Implicit rule search has been done.
@@ -1109,16 +1036,14 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd.h:
 #  Successfully updated.
 
 DaisySP/Source/Effects/phaser.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Drums/analogsnaredrum.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h:
 #  Implicit rule search has been done.
@@ -1133,40 +1058,34 @@ libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h:
 #  Successfully updated.
 
 libDaisy/src/ui/UiEventQueue.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/dev/leddriver.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/PhysicalModeling/stringvoice.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Utility/metro.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/hid/logger.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Synthesis/formantosc.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda_ex.h:
 #  Implicit rule search has been done.
@@ -1191,7 +1110,8 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda.h:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-13 15:28:53
 #  File has been updated.
-#  Successfully updated.
+#  Successf 
+ully updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h:
 #  Implicit rule search has been done.
@@ -1206,16 +1126,14 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h:
 #  Successfully updated.
 
 libDaisy/src/dev/codec_pcm3060.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/util/FixedCapStr.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/CMSIS/Include/cmsis_compiler.h:
 #  Implicit rule search has been done.
@@ -1224,40 +1142,34 @@ libDaisy/Drivers/CMSIS/Include/cmsis_compiler.h:
 #  Successfully updated.
 
 libDaisy/src/ui/../util/Stack.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/util/color.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/ui/../util/scopedirqblocker.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/PhysicalModeling/pluck.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Filters/tone.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/per/uart.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h:
 #  Implicit rule search has been done.
@@ -1266,10 +1178,9 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h:
 #  Successfully updated.
 
 DaisySP/Source/Effects/decimator.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h:
 #  Implicit rule search has been done.
@@ -1279,28 +1190,29 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h:
 
 # Not a target:
 Reverb.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 17:23:57
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/util/MappedValue.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/sys/system.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+parasites/clouds/dsp/fx/fx_engine.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Utility/smooth_random.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac.h:
 #  Implicit rule search has been done.
@@ -1314,50 +1226,54 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac.h:
 #  Modification time never checked.
 #  File has not been updated.
 
+parasites/clouds/dsp/frame.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 build/Reverb.elf: build/startup_stm32h750xx.o build/Reverb.o Makefile
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-13 17:24:29
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/32=0%
 #  recipe to execute (from 'libDaisy/core/Makefile', line 277):
 	$(CXX) $(OBJECTS) $(LDFLAGS) -o $@
 
 libDaisy/src/hid/MidiEvent.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/hid/ctrl.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 all: build/Reverb.elf build/Reverb.hex build/Reverb.bin
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/32=0%
 
 libDaisy/src/per/gpio.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/dev/neotrellis.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Effects/sampleratereducer.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc.h:
 #  Implicit rule search has been done.
@@ -1384,14 +1300,13 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth.h:
 #  Successfully updated.
 
 DaisySP/Source/Control/adenv.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 build:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-13 17:24:29
+#  Last modified 2022-07-15 23:26:32
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'libDaisy/core/Makefile', line 286):
@@ -1422,16 +1337,14 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h:
 #  Successfully updated.
 
 DaisySP/Source/Filters/nlfilt.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/util/bsp_sd_diskio.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dcmi.h:
 #  Implicit rule search has been done.
@@ -1440,40 +1353,31 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dcmi.h:
 #  Successfully updated.
 
 libDaisy/src/dev/dps310.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/util/CpuLoadMeter.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
-
-eurorack/stmlib/dsp/cosine_oscillator.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:52
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/hid/led.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h:
-#  Implicit rule search has been done.
+#  Implicit rule search has be 
+en done.
 #  Last modified 2022-07-13 15:28:53
 #  File has been updated.
 #  Successfully updated.
 
 libDaisy/src/sys/fatfs.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h:
 #  Implicit rule search has been done.
@@ -1506,28 +1410,24 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp.h:
 #  Successfully updated.
 
 DaisySP/Source/Filters/mode.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/per/dac.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Synthesis/fm2.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/per/sdmmc.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h:
 #  Implicit rule search has been done.
@@ -1541,12 +1441,6 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h:
 #  File has been updated.
 #  Successfully updated.
 
-eurorack/stmlib/stmlib.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:52
-#  File has been updated.
-#  Successfully updated.
-
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_swpmi.h:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-13 15:28:53
@@ -1554,16 +1448,19 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_swpmi.h:
 #  Successfully updated.
 
 libDaisy/src/dev/neopixel.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+parasites/clouds/dsp/fx/oliverb.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Filters/svf.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma2d.h:
 #  Implicit rule search has been done.
@@ -1572,16 +1469,24 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma2d.h:
 #  Successfully updated.
 
 DaisySP/Source/Synthesis/oscillatorbank.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+parasites/stmlib/dsp/dsp.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Noise/dust.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+parasites/stmlib/stmlib.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac_ex.h:
 #  Implicit rule search has been done.
@@ -1596,39 +1501,34 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_sdmmc.h:
 #  Successfully updated.
 
 DaisySP/Source/Effects/pitchshifter.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/hid/usb.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/dev/sr_4021.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Noise/grainlet.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Noise/fractal_noise.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 build/startup_stm32h750xx.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-13 17:24:27
+#  Last modified 2022-07-15 23:26:30
 #  File has been updated.
 #  Successfully updated.
 
@@ -1639,10 +1539,9 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ramecc.h:
 #  Successfully updated.
 
 DaisySP/Source/Control/line.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 openocd:
 #  Implicit rule search has not been done.
@@ -1658,40 +1557,40 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h:
 #  Successfully updated.
 
 DaisySP/Source/Drums/synthsnaredrum.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/PhysicalModeling/resonator.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Middlewares/Third_Party/FatFs/src/integer.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/dev/codec_wm8731.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/per/rng.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-13 15:28:53
 #  File has been updated.
 #  Successfully updated.
+
+parasites/stmlib/utils/random.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash_ex.h:
 #  Implicit rule search has been done.
@@ -1706,38 +1605,56 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp.h:
 #  Successfully updated.
 
 DaisySP/Source/Noise/particle.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-DaisySP/Source/PhysicalModeling/PolyPluck.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+DaisySP/Source/PhysicalMode 
+ling/PolyPluck.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 build/Reverb.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-13 17:24:28
+#  Last modified 2022-07-15 23:26:31
 #  File has been updated.
 #  Successfully updated.
 
-build/startup_stm32h750xx.o: libDaisy/core/startup_stm32h750xx.c Makefile libDaisy/core/startup_stm32h750xx.c libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h libDaisy/Drivers/CMSIS/Include/core_cm7.h libDaisy/Drivers/CMSIS/Include/cmsis_compiler.h libDaisy/Drivers/CMSIS/Include/cmsis_gcc.h libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h libDaisy/src/sys/stm32h7xx_hal_conf.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dcmi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma2d.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dsi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dfsdm.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cec.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_comp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hrtim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sram.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nor.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nand.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2s.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_iwdg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_jpeg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdios.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_sdmmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_lptim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_qspi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ramecc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rng.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_delayblock.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sdram.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spdifrx.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_swpmi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smbus.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_wwdg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h | build
+build/startup_stm32h750xx.o: libDaisy/core/startup_stm32h750xx.c Makefile libDaisy/core/startup_stm32h750xx.c libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h libDaisy/Drivers/CMSIS/Include/core_cm7.h libDaisy/Drivers/CMSIS/Include/cmsis_compiler.h libDaisy/Drivers/CMSIS/Include/cmsis_gcc.h libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h libDaisy/src/sys/stm32h7xx_hal_conf.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dcmi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma2d.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dsi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dfsdm.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cec.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_comp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hrtim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sram.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nor.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nand.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2s.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_iwdg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_jpeg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdios.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_sdmmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_lptim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_qspi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ramecc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rng.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_delayblock.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sdram.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h libDaisy/Drivers/STM32H7xx_HAL_D 
+river/Inc/stm32h7xx_hal_spi_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spdifrx.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_swpmi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smbus.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_wwdg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'startup_stm32h750xx'
-#  Last modified 2022-07-13 17:24:28
+#  Last modified 2022-07-15 23:26:30
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := build/startup_stm32h750xx.o
+# automatic
+# * := startup_stm32h750xx
+# automatic
+# < := libDaisy/core/startup_stm32h750xx.c
+# automatic
+# + := libDaisy/core/startup_stm32h750xx.c Makefile libDaisy/core/startup_stm32h750xx.c libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h libDaisy/Drivers/CMSIS/Include/core_cm7.h libDaisy/Drivers/CMSIS/Include/cmsis_compiler.h libDaisy/Drivers/CMSIS/Include/cmsis_gcc.h libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h libDaisy/src/sys/stm32h7xx_hal_conf.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dcmi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma2d.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dsi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dfsdm.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cec.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_comp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hrtim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sram.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nor.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nand.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2s.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_iwdg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_jpeg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdios.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_sdmmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_lptim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_qspi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ramecc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rng.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_delayblock.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sdram.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spdifrx.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_swpmi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smbus.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_wwdg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h
+# automatic
+# % := 
+# automatic
+# ^ := libDaisy/core/startup_stm32h750xx.c Makefile libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx 
+/Include/stm32h7xx.h libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h libDaisy/Drivers/CMSIS/Include/core_cm7.h libDaisy/Drivers/CMSIS/Include/cmsis_compiler.h libDaisy/Drivers/CMSIS/Include/cmsis_gcc.h libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h libDaisy/src/sys/stm32h7xx_hal_conf.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hash_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dcmi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma2d.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dsi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dfsdm.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_eth_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cec.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_comp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cryp_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hrtim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sram.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nor.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nand.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2s.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_iwdg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_jpeg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdios.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_sdmmc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_lptim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_opamp_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_qspi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ramecc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rng.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_delayblock.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sdram.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spdifrx.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_swpmi.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_irda_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smbus.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_wwdg.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h
+# automatic
+# ? := Makefile
+# automatic
+# | := build
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=9/44=20%
 #  recipe to execute (from 'libDaisy/core/Makefile', line 268):
 	$(CC) -c $(CFLAGS) $(C_STANDARD) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
 
 libDaisy/src/per/tim.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc_ex.h:
 #  Implicit rule search has been done.
@@ -1748,20 +1665,19 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mmc_ex.h:
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-13 15:28:53
-#  File has been updated.
+#  File has been up 
+dated.
 #  Successfully updated.
 
 libDaisy/src/per/qspi.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/util/wav_format.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart_ex.h:
 #  Implicit rule search has been done.
@@ -1770,22 +1686,19 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_usart_ex.h:
 #  Successfully updated.
 
 libDaisy/src/hid/encoder.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/hid/audio.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/hid/gatein.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h:
 #  Implicit rule search has been done.
@@ -1794,10 +1707,9 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h:
 #  Successfully updated.
 
 libDaisy/src/hid/disp/display.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h:
 #  Implicit rule search has been done.
@@ -1806,28 +1718,24 @@ libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h:
 #  Successfully updated.
 
 libDaisy/src/dev/apds9960.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Synthesis/oscillator.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Control/phasor.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Effects/autowah.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd_ex.h:
 #  Implicit rule search has been done.
@@ -1836,10 +1744,9 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd_ex.h:
 #  Successfully updated.
 
 libDaisy/src/ui/UI.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc.h:
 #  Implicit rule search has been done.
@@ -1848,28 +1755,24 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_ltdc.h:
 #  Successfully updated.
 
 libDaisy/src/sys/ffconf.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/daisy.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/version.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/dev/mpr121.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h:
 #  Implicit rule search has been done.
@@ -1878,10 +1781,9 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h:
 #  Successfully updated.
 
 DaisySP/Source/Synthesis/blosc.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h:
 #  Implicit rule search has been done.
@@ -1896,22 +1798,19 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_smartcard_ex.h:
 #  Successfully updated.
 
 libDaisy/src/hid/wavplayer.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/util/WaveTableLoader.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 DaisySP/Source/Utility/dsp.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:25:51
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/CMSIS/Include/cmsis_gcc.h:
 #  Implicit rule search has been done.
@@ -1932,10 +1831,9 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_nor.h:
 #  Successfully updated.
 
 libDaisy/src/util/ringbuffer.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dfsdm.h:
 #  Implicit rule search has been done.
@@ -1944,16 +1842,14 @@ libDaisy/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dfsdm.h:
 #  Successfully updated.
 
 libDaisy/src/hid/parameter.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/ui/FullScreenItemMenu.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 program:
 #  Implicit rule search has not been done.
@@ -1964,22 +1860,19 @@ program:
 		-c "program ./build/$(TARGET).elf verify reset exit"
 
 libDaisy/src/per/adc.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/ui/../sys/system.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/hid/switch3.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 15:28:53
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 libDaisy/src/sys/stm32h7xx_hal_conf.h:
 #  Implicit rule search has been done.
@@ -1994,23 +1887,24 @@ libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=270/1024=26%, Rehash=0, Collisions=181/1018=18%
+# Load=276/1024=27%, Rehash=0, Collisions=182/1017=18%
 # VPATH Search Paths
 
 vpath %.c libDaisy/core
 
 # 1 'vpath' search paths.
 
-# No general ('VPATH' variable) search path.
+# No general ('VPATH' variab 
+le) search path.
 
-# strcache buffers: 2 (1) / strings = 305 / storage = 11558 B / avg = 37 B
-# current buf: size = 8174 B / used = 3408 B / count = 104 / avg = 32 B
-# other used: total = 8150 B / count = 201 / avg = 40 B
-# other free: total = 24 B / max = 24 B / min = 24 B / avg = 24 B
+# strcache buffers: 2 (1) / strings = 304 / storage = 11633 B / avg = 38 B
+# current buf: size = 8174 B / used = 3489 B / count = 103 / avg = 33 B
+# other used: total = 8144 B / count = 201 / avg = 40 B
+# other free: total = 30 B / max = 30 B / min = 30 B / avg = 30 B
 
-# strcache performance: lookups = 1161 / hit rate = 73%
+# strcache performance: lookups = 1152 / hit rate = 73%
 # hash-table stats:
-# Load=305/8192=4%, Rehash=0, Collisions=30/1161=3%
-# Finished Make data base on Wed Jul 13 19:45:06 2022
+# Load=304/8192=4%, Rehash=0, Collisions=27/1152=2%
+# Finished Make data base on Fri Jul 15 23:27:03 2022
 
  

@@ -178,10 +178,11 @@ build/Reverb.o: Reverb.cpp \
  DaisySP/Source/Utility/jitter.h DaisySP/Source/Utility/looper.h \
  DaisySP/Source/Utility/maytrig.h DaisySP/Source/Utility/metro.h \
  DaisySP/Source/Utility/port.h DaisySP/Source/Utility/samplehold.h \
- DaisySP/Source/Utility/smooth_random.h eurorack/clouds/dsp/frame.h \
- eurorack/stmlib/stmlib.h eurorack/clouds/dsp/fx/reverb.h \
- eurorack/clouds/dsp/fx/fx_engine.h eurorack/stmlib/dsp/dsp.h \
- eurorack/stmlib/dsp/cosine_oscillator.h
+ DaisySP/Source/Utility/smooth_random.h \
+ eurorack/clouds/dsp/fx/fx_engine.h eurorack/stmlib/stmlib.h \
+ eurorack/stmlib/dsp/dsp.h eurorack/stmlib/dsp/cosine_oscillator.h \
+ eurorack/clouds/dsp/frame.h eurorack/clouds/dsp/fx/reverb.h \
+ eurorack/rings/dsp/follower.h eurorack/stmlib/dsp/filter.h
 libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h:
 libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 libDaisy/Drivers/CMSIS/Include/core_cm7.h:
@@ -428,9 +429,11 @@ DaisySP/Source/Utility/metro.h:
 DaisySP/Source/Utility/port.h:
 DaisySP/Source/Utility/samplehold.h:
 DaisySP/Source/Utility/smooth_random.h:
-eurorack/clouds/dsp/frame.h:
-eurorack/stmlib/stmlib.h:
-eurorack/clouds/dsp/fx/reverb.h:
 eurorack/clouds/dsp/fx/fx_engine.h:
+eurorack/stmlib/stmlib.h:
 eurorack/stmlib/dsp/dsp.h:
 eurorack/stmlib/dsp/cosine_oscillator.h:
+eurorack/clouds/dsp/frame.h:
+eurorack/clouds/dsp/fx/reverb.h:
+eurorack/rings/dsp/follower.h:
+eurorack/stmlib/dsp/filter.h:
