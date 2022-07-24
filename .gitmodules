@@ -13,3 +13,6 @@
 [submodule "LOM PRAN - REVERB/parasites"]
 	path = LOM PRAN - REVERB/parasites
 	url = https://github.com/mqtthiqs/parasites
+[submodule "LOM PRAN - REVERB/mi-custom"]
+	path = LOM PRAN - REVERB/mi-custom
+	url = https://github.com/musicdevghost/mi-custom

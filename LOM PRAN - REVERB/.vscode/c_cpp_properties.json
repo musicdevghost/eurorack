@@ -13,7 +13,7 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/libDaisy/**",
                 "${workspaceFolder}/DaisySP/**",
-                "${workspaceFolder}/eurorack/**"
+                "${workspaceFolder}/mi-custom/**"
             ],
             "name": "Win32",
             "windowsSdkVersion": "10.0.17763.0",
@@ -32,7 +32,7 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/libDaisy/**",
                 "${workspaceFolder}/DaisySP/**",
-                "${workspaceFolder}/eurorack/**"
+                "${workspaceFolder}/mi-custom/**"
             ],
             "name": "macOS"
         }

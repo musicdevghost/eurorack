@@ -4,6 +4,6 @@
 [submodule "libdaisy"]
 	path = libdaisy
 	url = https://github.com/electro-smith/libdaisy
-[submodule "eurorack"]
-	path = eurorack
-	url = https://github.com/pichenettes/eurorack
+[submodule "mi-custom"]
+	path = mi-custom
+	url = https://github.com/musicdevghost/mi-custom
