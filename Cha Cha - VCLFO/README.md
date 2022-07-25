@@ -2,7 +2,9 @@
 ## Eurorack DIY VCLFO
 
 Build Video: https://www.youtube.com/watch?v=DsVzbcYWhuM&t=0s
+
 Calibration Video: https://youtu.be/DsVzbcYWhuM
+
 Audio Demo Video: https://www.youtube.com/watch?v=-pCzQHZPQRY&t=0s
 
 Square core low frequency oscillator with four waveform outputs and two cv inputs for FM, and RESET modulation
