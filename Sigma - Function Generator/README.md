@@ -2,6 +2,13 @@
 
 Sigma is a function/slope generator based on Serge's first designs on the dual universal slope generator, here boiled down to one module in 8HP with a couple more outputs and an upgrade to improve v/oct tracking.
 
+Features:
+* Voltage control over either Rise, Fall or Both through a switch control
+* Separate V/OCT input/tracking
+* Two processing inputs, Trigger and IN (IN takes any kind of signal input)
+* Bipolar, DC and AC outputs
+* EOC (End of cycle) outputs and logic NOT EOC output
+
 ## Build Instructions
 * You can easiliy order all needed compoenents from [Tayda](https://www.taydaelectronics.com) online shop simply by uploading the ["Tayda Auto Order"](./Tayda%20Auto%20Order.csv) CSV file at https://www.taydaelectronics.com/quick-order/
 * Print out the BOM file
