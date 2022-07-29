@@ -1,11 +1,13 @@
 # Sigma - Function Generator
 
 <div>
-    <p float="left">
+    <p style="float:left;">
     Sigma is an analog function/slope generator based on Serge's first designs on the dual universal slope generator, here boiled down to one module in 8HP with a couple more outputs and an upgrade to improve v/oct tracking.
     </p>
-    <p float="left">
-    <img src="./Images/panel_overview.png" height="400px"></p>
+    <p style="float:left;">
+        <img src="./Images/panel_overview.png" height="400px">
+    </p>
+    <p style="clear:both;"></p>
 </div>
 
 
