@@ -1,0 +1,2469 @@
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"startup_stm32h750xx.c"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.section	.text.Default_Handler,"ax",%progbits
+  17              		.align	1
+  18              		.p2align 2,,3
+  19              		.global	Default_Handler
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv5-d16
+  26              	Default_Handler:
+  27              	.LFB321:
+  28              		.file 1 "libDaisy/core/startup_stm32h750xx.c"
+   1:libDaisy/core/startup_stm32h750xx.c **** /*
+   2:libDaisy/core/startup_stm32h750xx.c **** 	This file contains the entry point (Reset_Handler) of your firmware project.
+   3:libDaisy/core/startup_stm32h750xx.c **** 	The reset handled initializes the RAM and calls system library initializers as well as
+   4:libDaisy/core/startup_stm32h750xx.c **** 	the platform-specific initializer and the main() function.
+   5:libDaisy/core/startup_stm32h750xx.c **** */
+   6:libDaisy/core/startup_stm32h750xx.c **** 
+   7:libDaisy/core/startup_stm32h750xx.c **** #include <stddef.h>
+   8:libDaisy/core/startup_stm32h750xx.c **** extern void *_estack;
+   9:libDaisy/core/startup_stm32h750xx.c **** 
+  10:libDaisy/core/startup_stm32h750xx.c **** void Reset_Handler();
+  11:libDaisy/core/startup_stm32h750xx.c **** void Default_Handler();
+  12:libDaisy/core/startup_stm32h750xx.c **** //#define DEBUG_DEFAULT_INTERRUPT_HANDLERS
+  13:libDaisy/core/startup_stm32h750xx.c **** #ifdef DEBUG_DEFAULT_INTERRUPT_HANDLERS
+  14:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) NMI_Handler() 
+  15:libDaisy/core/startup_stm32h750xx.c **** {
+  16:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+  17:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+  18:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void NMI_Handler();
+  19:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+  20:libDaisy/core/startup_stm32h750xx.c **** }
+  21:libDaisy/core/startup_stm32h750xx.c **** 
+  22:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) HardFault_Handler() 
+  23:libDaisy/core/startup_stm32h750xx.c **** {
+  24:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+  25:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+  26:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void HardFault_Handler();
+  27:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+  28:libDaisy/core/startup_stm32h750xx.c **** }
+  29:libDaisy/core/startup_stm32h750xx.c **** 
+  30:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) MemManage_Handler() 
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 2
+
+
+  31:libDaisy/core/startup_stm32h750xx.c **** {
+  32:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+  33:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+  34:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void MemManage_Handler();
+  35:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+  36:libDaisy/core/startup_stm32h750xx.c **** }
+  37:libDaisy/core/startup_stm32h750xx.c **** 
+  38:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) BusFault_Handler() 
+  39:libDaisy/core/startup_stm32h750xx.c **** {
+  40:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+  41:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+  42:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void BusFault_Handler();
+  43:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+  44:libDaisy/core/startup_stm32h750xx.c **** }
+  45:libDaisy/core/startup_stm32h750xx.c **** 
+  46:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) UsageFault_Handler() 
+  47:libDaisy/core/startup_stm32h750xx.c **** {
+  48:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+  49:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+  50:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void UsageFault_Handler();
+  51:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+  52:libDaisy/core/startup_stm32h750xx.c **** }
+  53:libDaisy/core/startup_stm32h750xx.c **** 
+  54:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SVC_Handler() 
+  55:libDaisy/core/startup_stm32h750xx.c **** {
+  56:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+  57:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+  58:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SVC_Handler();
+  59:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+  60:libDaisy/core/startup_stm32h750xx.c **** }
+  61:libDaisy/core/startup_stm32h750xx.c **** 
+  62:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DebugMon_Handler() 
+  63:libDaisy/core/startup_stm32h750xx.c **** {
+  64:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+  65:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+  66:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DebugMon_Handler();
+  67:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+  68:libDaisy/core/startup_stm32h750xx.c **** }
+  69:libDaisy/core/startup_stm32h750xx.c **** 
+  70:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) PendSV_Handler() 
+  71:libDaisy/core/startup_stm32h750xx.c **** {
+  72:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+  73:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+  74:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void PendSV_Handler();
+  75:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+  76:libDaisy/core/startup_stm32h750xx.c **** }
+  77:libDaisy/core/startup_stm32h750xx.c **** 
+  78:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SysTick_Handler() 
+  79:libDaisy/core/startup_stm32h750xx.c **** {
+  80:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+  81:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+  82:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SysTick_Handler();
+  83:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+  84:libDaisy/core/startup_stm32h750xx.c **** }
+  85:libDaisy/core/startup_stm32h750xx.c **** 
+  86:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) WWDG_IRQHandler() 
+  87:libDaisy/core/startup_stm32h750xx.c **** {
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 3
+
+
+  88:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+  89:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+  90:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void WWDG_IRQHandler();
+  91:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+  92:libDaisy/core/startup_stm32h750xx.c **** }
+  93:libDaisy/core/startup_stm32h750xx.c **** 
+  94:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) PVD_AVD_IRQHandler() 
+  95:libDaisy/core/startup_stm32h750xx.c **** {
+  96:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+  97:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+  98:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void PVD_AVD_IRQHandler();
+  99:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 100:libDaisy/core/startup_stm32h750xx.c **** }
+ 101:libDaisy/core/startup_stm32h750xx.c **** 
+ 102:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TAMP_STAMP_IRQHandler() 
+ 103:libDaisy/core/startup_stm32h750xx.c **** {
+ 104:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 105:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 106:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TAMP_STAMP_IRQHandler();
+ 107:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 108:libDaisy/core/startup_stm32h750xx.c **** }
+ 109:libDaisy/core/startup_stm32h750xx.c **** 
+ 110:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) RTC_WKUP_IRQHandler() 
+ 111:libDaisy/core/startup_stm32h750xx.c **** {
+ 112:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 113:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 114:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void RTC_WKUP_IRQHandler();
+ 115:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 116:libDaisy/core/startup_stm32h750xx.c **** }
+ 117:libDaisy/core/startup_stm32h750xx.c **** 
+ 118:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) FLASH_IRQHandler() 
+ 119:libDaisy/core/startup_stm32h750xx.c **** {
+ 120:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 121:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 122:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void FLASH_IRQHandler();
+ 123:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 124:libDaisy/core/startup_stm32h750xx.c **** }
+ 125:libDaisy/core/startup_stm32h750xx.c **** 
+ 126:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) RCC_IRQHandler() 
+ 127:libDaisy/core/startup_stm32h750xx.c **** {
+ 128:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 129:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 130:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void RCC_IRQHandler();
+ 131:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 132:libDaisy/core/startup_stm32h750xx.c **** }
+ 133:libDaisy/core/startup_stm32h750xx.c **** 
+ 134:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) EXTI0_IRQHandler() 
+ 135:libDaisy/core/startup_stm32h750xx.c **** {
+ 136:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 137:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 138:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void EXTI0_IRQHandler();
+ 139:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 140:libDaisy/core/startup_stm32h750xx.c **** }
+ 141:libDaisy/core/startup_stm32h750xx.c **** 
+ 142:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) EXTI1_IRQHandler() 
+ 143:libDaisy/core/startup_stm32h750xx.c **** {
+ 144:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 4
+
+
+ 145:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 146:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void EXTI1_IRQHandler();
+ 147:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 148:libDaisy/core/startup_stm32h750xx.c **** }
+ 149:libDaisy/core/startup_stm32h750xx.c **** 
+ 150:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) EXTI2_IRQHandler() 
+ 151:libDaisy/core/startup_stm32h750xx.c **** {
+ 152:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 153:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 154:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void EXTI2_IRQHandler();
+ 155:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 156:libDaisy/core/startup_stm32h750xx.c **** }
+ 157:libDaisy/core/startup_stm32h750xx.c **** 
+ 158:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) EXTI3_IRQHandler() 
+ 159:libDaisy/core/startup_stm32h750xx.c **** {
+ 160:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 161:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 162:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void EXTI3_IRQHandler();
+ 163:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 164:libDaisy/core/startup_stm32h750xx.c **** }
+ 165:libDaisy/core/startup_stm32h750xx.c **** 
+ 166:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) EXTI4_IRQHandler() 
+ 167:libDaisy/core/startup_stm32h750xx.c **** {
+ 168:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 169:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 170:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void EXTI4_IRQHandler();
+ 171:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 172:libDaisy/core/startup_stm32h750xx.c **** }
+ 173:libDaisy/core/startup_stm32h750xx.c **** 
+ 174:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA1_Stream0_IRQHandler() 
+ 175:libDaisy/core/startup_stm32h750xx.c **** {
+ 176:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 177:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 178:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA1_Stream0_IRQHandler();
+ 179:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 180:libDaisy/core/startup_stm32h750xx.c **** }
+ 181:libDaisy/core/startup_stm32h750xx.c **** 
+ 182:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA1_Stream1_IRQHandler() 
+ 183:libDaisy/core/startup_stm32h750xx.c **** {
+ 184:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 185:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 186:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA1_Stream1_IRQHandler();
+ 187:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 188:libDaisy/core/startup_stm32h750xx.c **** }
+ 189:libDaisy/core/startup_stm32h750xx.c **** 
+ 190:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA1_Stream2_IRQHandler() 
+ 191:libDaisy/core/startup_stm32h750xx.c **** {
+ 192:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 193:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 194:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA1_Stream2_IRQHandler();
+ 195:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 196:libDaisy/core/startup_stm32h750xx.c **** }
+ 197:libDaisy/core/startup_stm32h750xx.c **** 
+ 198:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA1_Stream3_IRQHandler() 
+ 199:libDaisy/core/startup_stm32h750xx.c **** {
+ 200:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 201:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 5
+
+
+ 202:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA1_Stream3_IRQHandler();
+ 203:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 204:libDaisy/core/startup_stm32h750xx.c **** }
+ 205:libDaisy/core/startup_stm32h750xx.c **** 
+ 206:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA1_Stream4_IRQHandler() 
+ 207:libDaisy/core/startup_stm32h750xx.c **** {
+ 208:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 209:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 210:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA1_Stream4_IRQHandler();
+ 211:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 212:libDaisy/core/startup_stm32h750xx.c **** }
+ 213:libDaisy/core/startup_stm32h750xx.c **** 
+ 214:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA1_Stream5_IRQHandler() 
+ 215:libDaisy/core/startup_stm32h750xx.c **** {
+ 216:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 217:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 218:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA1_Stream5_IRQHandler();
+ 219:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 220:libDaisy/core/startup_stm32h750xx.c **** }
+ 221:libDaisy/core/startup_stm32h750xx.c **** 
+ 222:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA1_Stream6_IRQHandler() 
+ 223:libDaisy/core/startup_stm32h750xx.c **** {
+ 224:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 225:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 226:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA1_Stream6_IRQHandler();
+ 227:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 228:libDaisy/core/startup_stm32h750xx.c **** }
+ 229:libDaisy/core/startup_stm32h750xx.c **** 
+ 230:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) ADC_IRQHandler() 
+ 231:libDaisy/core/startup_stm32h750xx.c **** {
+ 232:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 233:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 234:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void ADC_IRQHandler();
+ 235:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 236:libDaisy/core/startup_stm32h750xx.c **** }
+ 237:libDaisy/core/startup_stm32h750xx.c **** 
+ 238:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) FDCAN1_IT0_IRQHandler() 
+ 239:libDaisy/core/startup_stm32h750xx.c **** {
+ 240:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 241:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 242:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void FDCAN1_IT0_IRQHandler();
+ 243:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 244:libDaisy/core/startup_stm32h750xx.c **** }
+ 245:libDaisy/core/startup_stm32h750xx.c **** 
+ 246:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) FDCAN2_IT0_IRQHandler() 
+ 247:libDaisy/core/startup_stm32h750xx.c **** {
+ 248:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 249:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 250:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void FDCAN2_IT0_IRQHandler();
+ 251:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 252:libDaisy/core/startup_stm32h750xx.c **** }
+ 253:libDaisy/core/startup_stm32h750xx.c **** 
+ 254:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) FDCAN1_IT1_IRQHandler() 
+ 255:libDaisy/core/startup_stm32h750xx.c **** {
+ 256:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 257:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 258:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void FDCAN1_IT1_IRQHandler();
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 6
+
+
+ 259:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 260:libDaisy/core/startup_stm32h750xx.c **** }
+ 261:libDaisy/core/startup_stm32h750xx.c **** 
+ 262:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) FDCAN2_IT1_IRQHandler() 
+ 263:libDaisy/core/startup_stm32h750xx.c **** {
+ 264:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 265:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 266:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void FDCAN2_IT1_IRQHandler();
+ 267:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 268:libDaisy/core/startup_stm32h750xx.c **** }
+ 269:libDaisy/core/startup_stm32h750xx.c **** 
+ 270:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) EXTI9_5_IRQHandler() 
+ 271:libDaisy/core/startup_stm32h750xx.c **** {
+ 272:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 273:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 274:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void EXTI9_5_IRQHandler();
+ 275:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 276:libDaisy/core/startup_stm32h750xx.c **** }
+ 277:libDaisy/core/startup_stm32h750xx.c **** 
+ 278:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM1_BRK_IRQHandler() 
+ 279:libDaisy/core/startup_stm32h750xx.c **** {
+ 280:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 281:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 282:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM1_BRK_IRQHandler();
+ 283:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 284:libDaisy/core/startup_stm32h750xx.c **** }
+ 285:libDaisy/core/startup_stm32h750xx.c **** 
+ 286:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM1_UP_IRQHandler() 
+ 287:libDaisy/core/startup_stm32h750xx.c **** {
+ 288:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 289:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 290:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM1_UP_IRQHandler();
+ 291:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 292:libDaisy/core/startup_stm32h750xx.c **** }
+ 293:libDaisy/core/startup_stm32h750xx.c **** 
+ 294:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM1_TRG_COM_IRQHandler() 
+ 295:libDaisy/core/startup_stm32h750xx.c **** {
+ 296:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 297:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 298:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM1_TRG_COM_IRQHandler();
+ 299:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 300:libDaisy/core/startup_stm32h750xx.c **** }
+ 301:libDaisy/core/startup_stm32h750xx.c **** 
+ 302:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM1_CC_IRQHandler() 
+ 303:libDaisy/core/startup_stm32h750xx.c **** {
+ 304:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 305:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 306:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM1_CC_IRQHandler();
+ 307:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 308:libDaisy/core/startup_stm32h750xx.c **** }
+ 309:libDaisy/core/startup_stm32h750xx.c **** 
+ 310:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM2_IRQHandler() 
+ 311:libDaisy/core/startup_stm32h750xx.c **** {
+ 312:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 313:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 314:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM2_IRQHandler();
+ 315:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 7
+
+
+ 316:libDaisy/core/startup_stm32h750xx.c **** }
+ 317:libDaisy/core/startup_stm32h750xx.c **** 
+ 318:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM3_IRQHandler() 
+ 319:libDaisy/core/startup_stm32h750xx.c **** {
+ 320:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 321:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 322:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM3_IRQHandler();
+ 323:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 324:libDaisy/core/startup_stm32h750xx.c **** }
+ 325:libDaisy/core/startup_stm32h750xx.c **** 
+ 326:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM4_IRQHandler() 
+ 327:libDaisy/core/startup_stm32h750xx.c **** {
+ 328:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 329:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 330:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM4_IRQHandler();
+ 331:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 332:libDaisy/core/startup_stm32h750xx.c **** }
+ 333:libDaisy/core/startup_stm32h750xx.c **** 
+ 334:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) I2C1_EV_IRQHandler() 
+ 335:libDaisy/core/startup_stm32h750xx.c **** {
+ 336:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 337:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 338:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void I2C1_EV_IRQHandler();
+ 339:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 340:libDaisy/core/startup_stm32h750xx.c **** }
+ 341:libDaisy/core/startup_stm32h750xx.c **** 
+ 342:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) I2C1_ER_IRQHandler() 
+ 343:libDaisy/core/startup_stm32h750xx.c **** {
+ 344:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 345:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 346:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void I2C1_ER_IRQHandler();
+ 347:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 348:libDaisy/core/startup_stm32h750xx.c **** }
+ 349:libDaisy/core/startup_stm32h750xx.c **** 
+ 350:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) I2C2_EV_IRQHandler() 
+ 351:libDaisy/core/startup_stm32h750xx.c **** {
+ 352:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 353:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 354:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void I2C2_EV_IRQHandler();
+ 355:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 356:libDaisy/core/startup_stm32h750xx.c **** }
+ 357:libDaisy/core/startup_stm32h750xx.c **** 
+ 358:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) I2C2_ER_IRQHandler() 
+ 359:libDaisy/core/startup_stm32h750xx.c **** {
+ 360:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 361:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 362:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void I2C2_ER_IRQHandler();
+ 363:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 364:libDaisy/core/startup_stm32h750xx.c **** }
+ 365:libDaisy/core/startup_stm32h750xx.c **** 
+ 366:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SPI1_IRQHandler() 
+ 367:libDaisy/core/startup_stm32h750xx.c **** {
+ 368:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 369:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 370:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SPI1_IRQHandler();
+ 371:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 372:libDaisy/core/startup_stm32h750xx.c **** }
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 8
+
+
+ 373:libDaisy/core/startup_stm32h750xx.c **** 
+ 374:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SPI2_IRQHandler() 
+ 375:libDaisy/core/startup_stm32h750xx.c **** {
+ 376:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 377:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 378:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SPI2_IRQHandler();
+ 379:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 380:libDaisy/core/startup_stm32h750xx.c **** }
+ 381:libDaisy/core/startup_stm32h750xx.c **** 
+ 382:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) USART1_IRQHandler() 
+ 383:libDaisy/core/startup_stm32h750xx.c **** {
+ 384:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 385:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 386:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void USART1_IRQHandler();
+ 387:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 388:libDaisy/core/startup_stm32h750xx.c **** }
+ 389:libDaisy/core/startup_stm32h750xx.c **** 
+ 390:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) USART2_IRQHandler() 
+ 391:libDaisy/core/startup_stm32h750xx.c **** {
+ 392:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 393:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 394:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void USART2_IRQHandler();
+ 395:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 396:libDaisy/core/startup_stm32h750xx.c **** }
+ 397:libDaisy/core/startup_stm32h750xx.c **** 
+ 398:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) USART3_IRQHandler() 
+ 399:libDaisy/core/startup_stm32h750xx.c **** {
+ 400:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 401:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 402:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void USART3_IRQHandler();
+ 403:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 404:libDaisy/core/startup_stm32h750xx.c **** }
+ 405:libDaisy/core/startup_stm32h750xx.c **** 
+ 406:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) EXTI15_10_IRQHandler() 
+ 407:libDaisy/core/startup_stm32h750xx.c **** {
+ 408:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 409:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 410:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void EXTI15_10_IRQHandler();
+ 411:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 412:libDaisy/core/startup_stm32h750xx.c **** }
+ 413:libDaisy/core/startup_stm32h750xx.c **** 
+ 414:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) RTC_Alarm_IRQHandler() 
+ 415:libDaisy/core/startup_stm32h750xx.c **** {
+ 416:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 417:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 418:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void RTC_Alarm_IRQHandler();
+ 419:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 420:libDaisy/core/startup_stm32h750xx.c **** }
+ 421:libDaisy/core/startup_stm32h750xx.c **** 
+ 422:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM8_BRK_TIM12_IRQHandler() 
+ 423:libDaisy/core/startup_stm32h750xx.c **** {
+ 424:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 425:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 426:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM8_BRK_TIM12_IRQHandler();
+ 427:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 428:libDaisy/core/startup_stm32h750xx.c **** }
+ 429:libDaisy/core/startup_stm32h750xx.c **** 
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 9
+
+
+ 430:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM8_UP_TIM13_IRQHandler() 
+ 431:libDaisy/core/startup_stm32h750xx.c **** {
+ 432:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 433:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 434:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM8_UP_TIM13_IRQHandler();
+ 435:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 436:libDaisy/core/startup_stm32h750xx.c **** }
+ 437:libDaisy/core/startup_stm32h750xx.c **** 
+ 438:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM8_TRG_COM_TIM14_IRQHandler() 
+ 439:libDaisy/core/startup_stm32h750xx.c **** {
+ 440:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 441:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 442:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM8_TRG_COM_TIM14_IRQHandler();
+ 443:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 444:libDaisy/core/startup_stm32h750xx.c **** }
+ 445:libDaisy/core/startup_stm32h750xx.c **** 
+ 446:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM8_CC_IRQHandler() 
+ 447:libDaisy/core/startup_stm32h750xx.c **** {
+ 448:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 449:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 450:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM8_CC_IRQHandler();
+ 451:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 452:libDaisy/core/startup_stm32h750xx.c **** }
+ 453:libDaisy/core/startup_stm32h750xx.c **** 
+ 454:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA1_Stream7_IRQHandler() 
+ 455:libDaisy/core/startup_stm32h750xx.c **** {
+ 456:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 457:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 458:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA1_Stream7_IRQHandler();
+ 459:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 460:libDaisy/core/startup_stm32h750xx.c **** }
+ 461:libDaisy/core/startup_stm32h750xx.c **** 
+ 462:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) FMC_IRQHandler() 
+ 463:libDaisy/core/startup_stm32h750xx.c **** {
+ 464:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 465:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 466:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void FMC_IRQHandler();
+ 467:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 468:libDaisy/core/startup_stm32h750xx.c **** }
+ 469:libDaisy/core/startup_stm32h750xx.c **** 
+ 470:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SDMMC1_IRQHandler() 
+ 471:libDaisy/core/startup_stm32h750xx.c **** {
+ 472:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 473:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 474:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SDMMC1_IRQHandler();
+ 475:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 476:libDaisy/core/startup_stm32h750xx.c **** }
+ 477:libDaisy/core/startup_stm32h750xx.c **** 
+ 478:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM5_IRQHandler() 
+ 479:libDaisy/core/startup_stm32h750xx.c **** {
+ 480:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 481:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 482:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM5_IRQHandler();
+ 483:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 484:libDaisy/core/startup_stm32h750xx.c **** }
+ 485:libDaisy/core/startup_stm32h750xx.c **** 
+ 486:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SPI3_IRQHandler() 
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 10
+
+
+ 487:libDaisy/core/startup_stm32h750xx.c **** {
+ 488:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 489:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 490:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SPI3_IRQHandler();
+ 491:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 492:libDaisy/core/startup_stm32h750xx.c **** }
+ 493:libDaisy/core/startup_stm32h750xx.c **** 
+ 494:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) UART4_IRQHandler() 
+ 495:libDaisy/core/startup_stm32h750xx.c **** {
+ 496:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 497:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 498:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void UART4_IRQHandler();
+ 499:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 500:libDaisy/core/startup_stm32h750xx.c **** }
+ 501:libDaisy/core/startup_stm32h750xx.c **** 
+ 502:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) UART5_IRQHandler() 
+ 503:libDaisy/core/startup_stm32h750xx.c **** {
+ 504:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 505:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 506:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void UART5_IRQHandler();
+ 507:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 508:libDaisy/core/startup_stm32h750xx.c **** }
+ 509:libDaisy/core/startup_stm32h750xx.c **** 
+ 510:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM6_DAC_IRQHandler() 
+ 511:libDaisy/core/startup_stm32h750xx.c **** {
+ 512:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 513:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 514:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM6_DAC_IRQHandler();
+ 515:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 516:libDaisy/core/startup_stm32h750xx.c **** }
+ 517:libDaisy/core/startup_stm32h750xx.c **** 
+ 518:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM7_IRQHandler() 
+ 519:libDaisy/core/startup_stm32h750xx.c **** {
+ 520:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 521:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 522:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM7_IRQHandler();
+ 523:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 524:libDaisy/core/startup_stm32h750xx.c **** }
+ 525:libDaisy/core/startup_stm32h750xx.c **** 
+ 526:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA2_Stream0_IRQHandler() 
+ 527:libDaisy/core/startup_stm32h750xx.c **** {
+ 528:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 529:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 530:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA2_Stream0_IRQHandler();
+ 531:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 532:libDaisy/core/startup_stm32h750xx.c **** }
+ 533:libDaisy/core/startup_stm32h750xx.c **** 
+ 534:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA2_Stream1_IRQHandler() 
+ 535:libDaisy/core/startup_stm32h750xx.c **** {
+ 536:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 537:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 538:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA2_Stream1_IRQHandler();
+ 539:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 540:libDaisy/core/startup_stm32h750xx.c **** }
+ 541:libDaisy/core/startup_stm32h750xx.c **** 
+ 542:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA2_Stream2_IRQHandler() 
+ 543:libDaisy/core/startup_stm32h750xx.c **** {
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 11
+
+
+ 544:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 545:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 546:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA2_Stream2_IRQHandler();
+ 547:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 548:libDaisy/core/startup_stm32h750xx.c **** }
+ 549:libDaisy/core/startup_stm32h750xx.c **** 
+ 550:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA2_Stream3_IRQHandler() 
+ 551:libDaisy/core/startup_stm32h750xx.c **** {
+ 552:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 553:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 554:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA2_Stream3_IRQHandler();
+ 555:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 556:libDaisy/core/startup_stm32h750xx.c **** }
+ 557:libDaisy/core/startup_stm32h750xx.c **** 
+ 558:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA2_Stream4_IRQHandler() 
+ 559:libDaisy/core/startup_stm32h750xx.c **** {
+ 560:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 561:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 562:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA2_Stream4_IRQHandler();
+ 563:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 564:libDaisy/core/startup_stm32h750xx.c **** }
+ 565:libDaisy/core/startup_stm32h750xx.c **** 
+ 566:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) ETH_IRQHandler() 
+ 567:libDaisy/core/startup_stm32h750xx.c **** {
+ 568:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 569:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 570:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void ETH_IRQHandler();
+ 571:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 572:libDaisy/core/startup_stm32h750xx.c **** }
+ 573:libDaisy/core/startup_stm32h750xx.c **** 
+ 574:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) ETH_WKUP_IRQHandler() 
+ 575:libDaisy/core/startup_stm32h750xx.c **** {
+ 576:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 577:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 578:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void ETH_WKUP_IRQHandler();
+ 579:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 580:libDaisy/core/startup_stm32h750xx.c **** }
+ 581:libDaisy/core/startup_stm32h750xx.c **** 
+ 582:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) FDCAN_CAL_IRQHandler() 
+ 583:libDaisy/core/startup_stm32h750xx.c **** {
+ 584:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 585:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 586:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void FDCAN_CAL_IRQHandler();
+ 587:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 588:libDaisy/core/startup_stm32h750xx.c **** }
+ 589:libDaisy/core/startup_stm32h750xx.c **** 
+ 590:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA2_Stream5_IRQHandler() 
+ 591:libDaisy/core/startup_stm32h750xx.c **** {
+ 592:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 593:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 594:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA2_Stream5_IRQHandler();
+ 595:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 596:libDaisy/core/startup_stm32h750xx.c **** }
+ 597:libDaisy/core/startup_stm32h750xx.c **** 
+ 598:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA2_Stream6_IRQHandler() 
+ 599:libDaisy/core/startup_stm32h750xx.c **** {
+ 600:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 12
+
+
+ 601:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 602:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA2_Stream6_IRQHandler();
+ 603:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 604:libDaisy/core/startup_stm32h750xx.c **** }
+ 605:libDaisy/core/startup_stm32h750xx.c **** 
+ 606:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA2_Stream7_IRQHandler() 
+ 607:libDaisy/core/startup_stm32h750xx.c **** {
+ 608:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 609:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 610:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA2_Stream7_IRQHandler();
+ 611:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 612:libDaisy/core/startup_stm32h750xx.c **** }
+ 613:libDaisy/core/startup_stm32h750xx.c **** 
+ 614:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) USART6_IRQHandler() 
+ 615:libDaisy/core/startup_stm32h750xx.c **** {
+ 616:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 617:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 618:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void USART6_IRQHandler();
+ 619:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 620:libDaisy/core/startup_stm32h750xx.c **** }
+ 621:libDaisy/core/startup_stm32h750xx.c **** 
+ 622:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) I2C3_EV_IRQHandler() 
+ 623:libDaisy/core/startup_stm32h750xx.c **** {
+ 624:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 625:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 626:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void I2C3_EV_IRQHandler();
+ 627:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 628:libDaisy/core/startup_stm32h750xx.c **** }
+ 629:libDaisy/core/startup_stm32h750xx.c **** 
+ 630:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) I2C3_ER_IRQHandler() 
+ 631:libDaisy/core/startup_stm32h750xx.c **** {
+ 632:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 633:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 634:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void I2C3_ER_IRQHandler();
+ 635:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 636:libDaisy/core/startup_stm32h750xx.c **** }
+ 637:libDaisy/core/startup_stm32h750xx.c **** 
+ 638:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) OTG_HS_EP1_OUT_IRQHandler() 
+ 639:libDaisy/core/startup_stm32h750xx.c **** {
+ 640:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 641:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 642:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void OTG_HS_EP1_OUT_IRQHandler();
+ 643:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 644:libDaisy/core/startup_stm32h750xx.c **** }
+ 645:libDaisy/core/startup_stm32h750xx.c **** 
+ 646:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) OTG_HS_EP1_IN_IRQHandler() 
+ 647:libDaisy/core/startup_stm32h750xx.c **** {
+ 648:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 649:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 650:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void OTG_HS_EP1_IN_IRQHandler();
+ 651:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 652:libDaisy/core/startup_stm32h750xx.c **** }
+ 653:libDaisy/core/startup_stm32h750xx.c **** 
+ 654:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) OTG_HS_WKUP_IRQHandler() 
+ 655:libDaisy/core/startup_stm32h750xx.c **** {
+ 656:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 657:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 13
+
+
+ 658:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void OTG_HS_WKUP_IRQHandler();
+ 659:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 660:libDaisy/core/startup_stm32h750xx.c **** }
+ 661:libDaisy/core/startup_stm32h750xx.c **** 
+ 662:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) OTG_HS_IRQHandler() 
+ 663:libDaisy/core/startup_stm32h750xx.c **** {
+ 664:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 665:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 666:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void OTG_HS_IRQHandler();
+ 667:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 668:libDaisy/core/startup_stm32h750xx.c **** }
+ 669:libDaisy/core/startup_stm32h750xx.c **** 
+ 670:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DCMI_IRQHandler() 
+ 671:libDaisy/core/startup_stm32h750xx.c **** {
+ 672:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 673:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 674:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DCMI_IRQHandler();
+ 675:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 676:libDaisy/core/startup_stm32h750xx.c **** }
+ 677:libDaisy/core/startup_stm32h750xx.c **** 
+ 678:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) CRYP_IRQHandler() 
+ 679:libDaisy/core/startup_stm32h750xx.c **** {
+ 680:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 681:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 682:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void CRYP_IRQHandler();
+ 683:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 684:libDaisy/core/startup_stm32h750xx.c **** }
+ 685:libDaisy/core/startup_stm32h750xx.c **** 
+ 686:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) HASH_RNG_IRQHandler() 
+ 687:libDaisy/core/startup_stm32h750xx.c **** {
+ 688:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 689:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 690:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void HASH_RNG_IRQHandler();
+ 691:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 692:libDaisy/core/startup_stm32h750xx.c **** }
+ 693:libDaisy/core/startup_stm32h750xx.c **** 
+ 694:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) FPU_IRQHandler() 
+ 695:libDaisy/core/startup_stm32h750xx.c **** {
+ 696:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 697:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 698:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void FPU_IRQHandler();
+ 699:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 700:libDaisy/core/startup_stm32h750xx.c **** }
+ 701:libDaisy/core/startup_stm32h750xx.c **** 
+ 702:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) UART7_IRQHandler() 
+ 703:libDaisy/core/startup_stm32h750xx.c **** {
+ 704:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 705:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 706:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void UART7_IRQHandler();
+ 707:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 708:libDaisy/core/startup_stm32h750xx.c **** }
+ 709:libDaisy/core/startup_stm32h750xx.c **** 
+ 710:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) UART8_IRQHandler() 
+ 711:libDaisy/core/startup_stm32h750xx.c **** {
+ 712:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 713:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 714:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void UART8_IRQHandler();
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 14
+
+
+ 715:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 716:libDaisy/core/startup_stm32h750xx.c **** }
+ 717:libDaisy/core/startup_stm32h750xx.c **** 
+ 718:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SPI4_IRQHandler() 
+ 719:libDaisy/core/startup_stm32h750xx.c **** {
+ 720:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 721:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 722:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SPI4_IRQHandler();
+ 723:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 724:libDaisy/core/startup_stm32h750xx.c **** }
+ 725:libDaisy/core/startup_stm32h750xx.c **** 
+ 726:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SPI5_IRQHandler() 
+ 727:libDaisy/core/startup_stm32h750xx.c **** {
+ 728:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 729:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 730:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SPI5_IRQHandler();
+ 731:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 732:libDaisy/core/startup_stm32h750xx.c **** }
+ 733:libDaisy/core/startup_stm32h750xx.c **** 
+ 734:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SPI6_IRQHandler() 
+ 735:libDaisy/core/startup_stm32h750xx.c **** {
+ 736:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 737:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 738:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SPI6_IRQHandler();
+ 739:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 740:libDaisy/core/startup_stm32h750xx.c **** }
+ 741:libDaisy/core/startup_stm32h750xx.c **** 
+ 742:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SAI1_IRQHandler() 
+ 743:libDaisy/core/startup_stm32h750xx.c **** {
+ 744:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 745:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 746:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SAI1_IRQHandler();
+ 747:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 748:libDaisy/core/startup_stm32h750xx.c **** }
+ 749:libDaisy/core/startup_stm32h750xx.c **** 
+ 750:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) LTDC_IRQHandler() 
+ 751:libDaisy/core/startup_stm32h750xx.c **** {
+ 752:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 753:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 754:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void LTDC_IRQHandler();
+ 755:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 756:libDaisy/core/startup_stm32h750xx.c **** }
+ 757:libDaisy/core/startup_stm32h750xx.c **** 
+ 758:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) LTDC_ER_IRQHandler() 
+ 759:libDaisy/core/startup_stm32h750xx.c **** {
+ 760:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 761:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 762:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void LTDC_ER_IRQHandler();
+ 763:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 764:libDaisy/core/startup_stm32h750xx.c **** }
+ 765:libDaisy/core/startup_stm32h750xx.c **** 
+ 766:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA2D_IRQHandler() 
+ 767:libDaisy/core/startup_stm32h750xx.c **** {
+ 768:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 769:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 770:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA2D_IRQHandler();
+ 771:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 15
+
+
+ 772:libDaisy/core/startup_stm32h750xx.c **** }
+ 773:libDaisy/core/startup_stm32h750xx.c **** 
+ 774:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SAI2_IRQHandler() 
+ 775:libDaisy/core/startup_stm32h750xx.c **** {
+ 776:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 777:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 778:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SAI2_IRQHandler();
+ 779:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 780:libDaisy/core/startup_stm32h750xx.c **** }
+ 781:libDaisy/core/startup_stm32h750xx.c **** 
+ 782:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) QUADSPI_IRQHandler() 
+ 783:libDaisy/core/startup_stm32h750xx.c **** {
+ 784:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 785:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 786:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void QUADSPI_IRQHandler();
+ 787:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 788:libDaisy/core/startup_stm32h750xx.c **** }
+ 789:libDaisy/core/startup_stm32h750xx.c **** 
+ 790:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) LPTIM1_IRQHandler() 
+ 791:libDaisy/core/startup_stm32h750xx.c **** {
+ 792:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 793:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 794:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void LPTIM1_IRQHandler();
+ 795:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 796:libDaisy/core/startup_stm32h750xx.c **** }
+ 797:libDaisy/core/startup_stm32h750xx.c **** 
+ 798:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) CEC_IRQHandler() 
+ 799:libDaisy/core/startup_stm32h750xx.c **** {
+ 800:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 801:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 802:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void CEC_IRQHandler();
+ 803:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 804:libDaisy/core/startup_stm32h750xx.c **** }
+ 805:libDaisy/core/startup_stm32h750xx.c **** 
+ 806:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) I2C4_EV_IRQHandler() 
+ 807:libDaisy/core/startup_stm32h750xx.c **** {
+ 808:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 809:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 810:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void I2C4_EV_IRQHandler();
+ 811:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 812:libDaisy/core/startup_stm32h750xx.c **** }
+ 813:libDaisy/core/startup_stm32h750xx.c **** 
+ 814:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) I2C4_ER_IRQHandler() 
+ 815:libDaisy/core/startup_stm32h750xx.c **** {
+ 816:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 817:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 818:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void I2C4_ER_IRQHandler();
+ 819:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 820:libDaisy/core/startup_stm32h750xx.c **** }
+ 821:libDaisy/core/startup_stm32h750xx.c **** 
+ 822:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SPDIF_RX_IRQHandler() 
+ 823:libDaisy/core/startup_stm32h750xx.c **** {
+ 824:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 825:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 826:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SPDIF_RX_IRQHandler();
+ 827:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 828:libDaisy/core/startup_stm32h750xx.c **** }
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 16
+
+
+ 829:libDaisy/core/startup_stm32h750xx.c **** 
+ 830:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) OTG_FS_EP1_OUT_IRQHandler() 
+ 831:libDaisy/core/startup_stm32h750xx.c **** {
+ 832:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 833:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 834:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void OTG_FS_EP1_OUT_IRQHandler();
+ 835:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 836:libDaisy/core/startup_stm32h750xx.c **** }
+ 837:libDaisy/core/startup_stm32h750xx.c **** 
+ 838:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) OTG_FS_EP1_IN_IRQHandler() 
+ 839:libDaisy/core/startup_stm32h750xx.c **** {
+ 840:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 841:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 842:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void OTG_FS_EP1_IN_IRQHandler();
+ 843:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 844:libDaisy/core/startup_stm32h750xx.c **** }
+ 845:libDaisy/core/startup_stm32h750xx.c **** 
+ 846:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) OTG_FS_WKUP_IRQHandler() 
+ 847:libDaisy/core/startup_stm32h750xx.c **** {
+ 848:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 849:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 850:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void OTG_FS_WKUP_IRQHandler();
+ 851:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 852:libDaisy/core/startup_stm32h750xx.c **** }
+ 853:libDaisy/core/startup_stm32h750xx.c **** 
+ 854:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) OTG_FS_IRQHandler() 
+ 855:libDaisy/core/startup_stm32h750xx.c **** {
+ 856:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 857:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 858:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void OTG_FS_IRQHandler();
+ 859:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 860:libDaisy/core/startup_stm32h750xx.c **** }
+ 861:libDaisy/core/startup_stm32h750xx.c **** 
+ 862:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMAMUX1_OVR_IRQHandler() 
+ 863:libDaisy/core/startup_stm32h750xx.c **** {
+ 864:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 865:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 866:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMAMUX1_OVR_IRQHandler();
+ 867:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 868:libDaisy/core/startup_stm32h750xx.c **** }
+ 869:libDaisy/core/startup_stm32h750xx.c **** 
+ 870:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) HRTIM1_Master_IRQHandler() 
+ 871:libDaisy/core/startup_stm32h750xx.c **** {
+ 872:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 873:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 874:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void HRTIM1_Master_IRQHandler();
+ 875:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 876:libDaisy/core/startup_stm32h750xx.c **** }
+ 877:libDaisy/core/startup_stm32h750xx.c **** 
+ 878:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) HRTIM1_TIMA_IRQHandler() 
+ 879:libDaisy/core/startup_stm32h750xx.c **** {
+ 880:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 881:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 882:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void HRTIM1_TIMA_IRQHandler();
+ 883:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 884:libDaisy/core/startup_stm32h750xx.c **** }
+ 885:libDaisy/core/startup_stm32h750xx.c **** 
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 17
+
+
+ 886:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) HRTIM1_TIMB_IRQHandler() 
+ 887:libDaisy/core/startup_stm32h750xx.c **** {
+ 888:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 889:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 890:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void HRTIM1_TIMB_IRQHandler();
+ 891:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 892:libDaisy/core/startup_stm32h750xx.c **** }
+ 893:libDaisy/core/startup_stm32h750xx.c **** 
+ 894:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) HRTIM1_TIMC_IRQHandler() 
+ 895:libDaisy/core/startup_stm32h750xx.c **** {
+ 896:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 897:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 898:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void HRTIM1_TIMC_IRQHandler();
+ 899:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 900:libDaisy/core/startup_stm32h750xx.c **** }
+ 901:libDaisy/core/startup_stm32h750xx.c **** 
+ 902:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) HRTIM1_TIMD_IRQHandler() 
+ 903:libDaisy/core/startup_stm32h750xx.c **** {
+ 904:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 905:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 906:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void HRTIM1_TIMD_IRQHandler();
+ 907:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 908:libDaisy/core/startup_stm32h750xx.c **** }
+ 909:libDaisy/core/startup_stm32h750xx.c **** 
+ 910:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) HRTIM1_TIME_IRQHandler() 
+ 911:libDaisy/core/startup_stm32h750xx.c **** {
+ 912:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 913:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 914:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void HRTIM1_TIME_IRQHandler();
+ 915:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 916:libDaisy/core/startup_stm32h750xx.c **** }
+ 917:libDaisy/core/startup_stm32h750xx.c **** 
+ 918:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) HRTIM1_FLT_IRQHandler() 
+ 919:libDaisy/core/startup_stm32h750xx.c **** {
+ 920:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 921:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 922:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void HRTIM1_FLT_IRQHandler();
+ 923:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 924:libDaisy/core/startup_stm32h750xx.c **** }
+ 925:libDaisy/core/startup_stm32h750xx.c **** 
+ 926:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DFSDM1_FLT0_IRQHandler() 
+ 927:libDaisy/core/startup_stm32h750xx.c **** {
+ 928:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 929:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 930:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DFSDM1_FLT0_IRQHandler();
+ 931:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 932:libDaisy/core/startup_stm32h750xx.c **** }
+ 933:libDaisy/core/startup_stm32h750xx.c **** 
+ 934:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DFSDM1_FLT1_IRQHandler() 
+ 935:libDaisy/core/startup_stm32h750xx.c **** {
+ 936:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 937:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 938:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DFSDM1_FLT1_IRQHandler();
+ 939:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 940:libDaisy/core/startup_stm32h750xx.c **** }
+ 941:libDaisy/core/startup_stm32h750xx.c **** 
+ 942:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DFSDM1_FLT2_IRQHandler() 
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 18
+
+
+ 943:libDaisy/core/startup_stm32h750xx.c **** {
+ 944:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 945:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 946:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DFSDM1_FLT2_IRQHandler();
+ 947:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 948:libDaisy/core/startup_stm32h750xx.c **** }
+ 949:libDaisy/core/startup_stm32h750xx.c **** 
+ 950:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DFSDM1_FLT3_IRQHandler() 
+ 951:libDaisy/core/startup_stm32h750xx.c **** {
+ 952:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 953:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 954:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DFSDM1_FLT3_IRQHandler();
+ 955:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 956:libDaisy/core/startup_stm32h750xx.c **** }
+ 957:libDaisy/core/startup_stm32h750xx.c **** 
+ 958:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SAI3_IRQHandler() 
+ 959:libDaisy/core/startup_stm32h750xx.c **** {
+ 960:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 961:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 962:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SAI3_IRQHandler();
+ 963:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 964:libDaisy/core/startup_stm32h750xx.c **** }
+ 965:libDaisy/core/startup_stm32h750xx.c **** 
+ 966:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SWPMI1_IRQHandler() 
+ 967:libDaisy/core/startup_stm32h750xx.c **** {
+ 968:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 969:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 970:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SWPMI1_IRQHandler();
+ 971:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 972:libDaisy/core/startup_stm32h750xx.c **** }
+ 973:libDaisy/core/startup_stm32h750xx.c **** 
+ 974:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM15_IRQHandler() 
+ 975:libDaisy/core/startup_stm32h750xx.c **** {
+ 976:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 977:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 978:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM15_IRQHandler();
+ 979:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 980:libDaisy/core/startup_stm32h750xx.c **** }
+ 981:libDaisy/core/startup_stm32h750xx.c **** 
+ 982:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM16_IRQHandler() 
+ 983:libDaisy/core/startup_stm32h750xx.c **** {
+ 984:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 985:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 986:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM16_IRQHandler();
+ 987:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 988:libDaisy/core/startup_stm32h750xx.c **** }
+ 989:libDaisy/core/startup_stm32h750xx.c **** 
+ 990:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM17_IRQHandler() 
+ 991:libDaisy/core/startup_stm32h750xx.c **** {
+ 992:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ 993:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ 994:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM17_IRQHandler();
+ 995:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+ 996:libDaisy/core/startup_stm32h750xx.c **** }
+ 997:libDaisy/core/startup_stm32h750xx.c **** 
+ 998:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) MDIOS_WKUP_IRQHandler() 
+ 999:libDaisy/core/startup_stm32h750xx.c **** {
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 19
+
+
+1000:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1001:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1002:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void MDIOS_WKUP_IRQHandler();
+1003:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1004:libDaisy/core/startup_stm32h750xx.c **** }
+1005:libDaisy/core/startup_stm32h750xx.c **** 
+1006:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) MDIOS_IRQHandler() 
+1007:libDaisy/core/startup_stm32h750xx.c **** {
+1008:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1009:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1010:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void MDIOS_IRQHandler();
+1011:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1012:libDaisy/core/startup_stm32h750xx.c **** }
+1013:libDaisy/core/startup_stm32h750xx.c **** 
+1014:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) JPEG_IRQHandler() 
+1015:libDaisy/core/startup_stm32h750xx.c **** {
+1016:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1017:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1018:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void JPEG_IRQHandler();
+1019:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1020:libDaisy/core/startup_stm32h750xx.c **** }
+1021:libDaisy/core/startup_stm32h750xx.c **** 
+1022:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) MDMA_IRQHandler() 
+1023:libDaisy/core/startup_stm32h750xx.c **** {
+1024:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1025:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1026:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void MDMA_IRQHandler();
+1027:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1028:libDaisy/core/startup_stm32h750xx.c **** }
+1029:libDaisy/core/startup_stm32h750xx.c **** 
+1030:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SDMMC2_IRQHandler() 
+1031:libDaisy/core/startup_stm32h750xx.c **** {
+1032:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1033:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1034:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SDMMC2_IRQHandler();
+1035:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1036:libDaisy/core/startup_stm32h750xx.c **** }
+1037:libDaisy/core/startup_stm32h750xx.c **** 
+1038:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) HSEM1_IRQHandler() 
+1039:libDaisy/core/startup_stm32h750xx.c **** {
+1040:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1041:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1042:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void HSEM1_IRQHandler();
+1043:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1044:libDaisy/core/startup_stm32h750xx.c **** }
+1045:libDaisy/core/startup_stm32h750xx.c **** 
+1046:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) ADC3_IRQHandler() 
+1047:libDaisy/core/startup_stm32h750xx.c **** {
+1048:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1049:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1050:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void ADC3_IRQHandler();
+1051:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1052:libDaisy/core/startup_stm32h750xx.c **** }
+1053:libDaisy/core/startup_stm32h750xx.c **** 
+1054:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMAMUX2_OVR_IRQHandler() 
+1055:libDaisy/core/startup_stm32h750xx.c **** {
+1056:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 20
+
+
+1057:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1058:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMAMUX2_OVR_IRQHandler();
+1059:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1060:libDaisy/core/startup_stm32h750xx.c **** }
+1061:libDaisy/core/startup_stm32h750xx.c **** 
+1062:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) BDMA_Channel0_IRQHandler() 
+1063:libDaisy/core/startup_stm32h750xx.c **** {
+1064:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1065:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1066:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void BDMA_Channel0_IRQHandler();
+1067:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1068:libDaisy/core/startup_stm32h750xx.c **** }
+1069:libDaisy/core/startup_stm32h750xx.c **** 
+1070:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) BDMA_Channel1_IRQHandler() 
+1071:libDaisy/core/startup_stm32h750xx.c **** {
+1072:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1073:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1074:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void BDMA_Channel1_IRQHandler();
+1075:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1076:libDaisy/core/startup_stm32h750xx.c **** }
+1077:libDaisy/core/startup_stm32h750xx.c **** 
+1078:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) BDMA_Channel2_IRQHandler() 
+1079:libDaisy/core/startup_stm32h750xx.c **** {
+1080:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1081:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1082:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void BDMA_Channel2_IRQHandler();
+1083:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1084:libDaisy/core/startup_stm32h750xx.c **** }
+1085:libDaisy/core/startup_stm32h750xx.c **** 
+1086:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) BDMA_Channel3_IRQHandler() 
+1087:libDaisy/core/startup_stm32h750xx.c **** {
+1088:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1089:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1090:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void BDMA_Channel3_IRQHandler();
+1091:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1092:libDaisy/core/startup_stm32h750xx.c **** }
+1093:libDaisy/core/startup_stm32h750xx.c **** 
+1094:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) BDMA_Channel4_IRQHandler() 
+1095:libDaisy/core/startup_stm32h750xx.c **** {
+1096:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1097:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1098:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void BDMA_Channel4_IRQHandler();
+1099:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1100:libDaisy/core/startup_stm32h750xx.c **** }
+1101:libDaisy/core/startup_stm32h750xx.c **** 
+1102:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) BDMA_Channel5_IRQHandler() 
+1103:libDaisy/core/startup_stm32h750xx.c **** {
+1104:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1105:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1106:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void BDMA_Channel5_IRQHandler();
+1107:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1108:libDaisy/core/startup_stm32h750xx.c **** }
+1109:libDaisy/core/startup_stm32h750xx.c **** 
+1110:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) BDMA_Channel6_IRQHandler() 
+1111:libDaisy/core/startup_stm32h750xx.c **** {
+1112:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1113:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 21
+
+
+1114:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void BDMA_Channel6_IRQHandler();
+1115:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1116:libDaisy/core/startup_stm32h750xx.c **** }
+1117:libDaisy/core/startup_stm32h750xx.c **** 
+1118:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) BDMA_Channel7_IRQHandler() 
+1119:libDaisy/core/startup_stm32h750xx.c **** {
+1120:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1121:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1122:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void BDMA_Channel7_IRQHandler();
+1123:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1124:libDaisy/core/startup_stm32h750xx.c **** }
+1125:libDaisy/core/startup_stm32h750xx.c **** 
+1126:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) COMP1_IRQHandler() 
+1127:libDaisy/core/startup_stm32h750xx.c **** {
+1128:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1129:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1130:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void COMP1_IRQHandler();
+1131:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1132:libDaisy/core/startup_stm32h750xx.c **** }
+1133:libDaisy/core/startup_stm32h750xx.c **** 
+1134:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) LPTIM2_IRQHandler() 
+1135:libDaisy/core/startup_stm32h750xx.c **** {
+1136:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1137:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1138:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void LPTIM2_IRQHandler();
+1139:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1140:libDaisy/core/startup_stm32h750xx.c **** }
+1141:libDaisy/core/startup_stm32h750xx.c **** 
+1142:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) LPTIM3_IRQHandler() 
+1143:libDaisy/core/startup_stm32h750xx.c **** {
+1144:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1145:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1146:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void LPTIM3_IRQHandler();
+1147:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1148:libDaisy/core/startup_stm32h750xx.c **** }
+1149:libDaisy/core/startup_stm32h750xx.c **** 
+1150:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) LPTIM4_IRQHandler() 
+1151:libDaisy/core/startup_stm32h750xx.c **** {
+1152:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1153:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1154:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void LPTIM4_IRQHandler();
+1155:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1156:libDaisy/core/startup_stm32h750xx.c **** }
+1157:libDaisy/core/startup_stm32h750xx.c **** 
+1158:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) LPTIM5_IRQHandler() 
+1159:libDaisy/core/startup_stm32h750xx.c **** {
+1160:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1161:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1162:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void LPTIM5_IRQHandler();
+1163:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1164:libDaisy/core/startup_stm32h750xx.c **** }
+1165:libDaisy/core/startup_stm32h750xx.c **** 
+1166:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) LPUART1_IRQHandler() 
+1167:libDaisy/core/startup_stm32h750xx.c **** {
+1168:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1169:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1170:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void LPUART1_IRQHandler();
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 22
+
+
+1171:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1172:libDaisy/core/startup_stm32h750xx.c **** }
+1173:libDaisy/core/startup_stm32h750xx.c **** 
+1174:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) CRS_IRQHandler() 
+1175:libDaisy/core/startup_stm32h750xx.c **** {
+1176:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1177:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1178:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void CRS_IRQHandler();
+1179:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1180:libDaisy/core/startup_stm32h750xx.c **** }
+1181:libDaisy/core/startup_stm32h750xx.c **** 
+1182:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) ECC_IRQHandler() 
+1183:libDaisy/core/startup_stm32h750xx.c **** {
+1184:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1185:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1186:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void ECC_IRQHandler();
+1187:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1188:libDaisy/core/startup_stm32h750xx.c **** }
+1189:libDaisy/core/startup_stm32h750xx.c **** 
+1190:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SAI4_IRQHandler() 
+1191:libDaisy/core/startup_stm32h750xx.c **** {
+1192:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1193:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1194:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SAI4_IRQHandler();
+1195:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1196:libDaisy/core/startup_stm32h750xx.c **** }
+1197:libDaisy/core/startup_stm32h750xx.c **** 
+1198:libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) WAKEUP_PIN_IRQHandler() 
+1199:libDaisy/core/startup_stm32h750xx.c **** {
+1200:libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
+1201:libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
+1202:libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void WAKEUP_PIN_IRQHandler();
+1203:libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
+1204:libDaisy/core/startup_stm32h750xx.c **** }
+1205:libDaisy/core/startup_stm32h750xx.c **** 
+1206:libDaisy/core/startup_stm32h750xx.c **** #else
+1207:libDaisy/core/startup_stm32h750xx.c **** void NMI_Handler()                    __attribute__ ((weak, alias ("Default_Handler")));
+1208:libDaisy/core/startup_stm32h750xx.c **** void HardFault_Handler()              __attribute__ ((weak, alias ("Default_Handler")));
+1209:libDaisy/core/startup_stm32h750xx.c **** void MemManage_Handler()              __attribute__ ((weak, alias ("Default_Handler")));
+1210:libDaisy/core/startup_stm32h750xx.c **** void BusFault_Handler()               __attribute__ ((weak, alias ("Default_Handler")));
+1211:libDaisy/core/startup_stm32h750xx.c **** void UsageFault_Handler()             __attribute__ ((weak, alias ("Default_Handler")));
+1212:libDaisy/core/startup_stm32h750xx.c **** void SVC_Handler()                    __attribute__ ((weak, alias ("Default_Handler")));
+1213:libDaisy/core/startup_stm32h750xx.c **** void DebugMon_Handler()               __attribute__ ((weak, alias ("Default_Handler")));
+1214:libDaisy/core/startup_stm32h750xx.c **** void PendSV_Handler()                 __attribute__ ((weak, alias ("Default_Handler")));
+1215:libDaisy/core/startup_stm32h750xx.c **** void SysTick_Handler()                __attribute__ ((weak, alias ("Default_Handler")));
+1216:libDaisy/core/startup_stm32h750xx.c **** void WWDG_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1217:libDaisy/core/startup_stm32h750xx.c **** void PVD_AVD_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1218:libDaisy/core/startup_stm32h750xx.c **** void TAMP_STAMP_IRQHandler()          __attribute__ ((weak, alias ("Default_Handler")));
+1219:libDaisy/core/startup_stm32h750xx.c **** void RTC_WKUP_IRQHandler()            __attribute__ ((weak, alias ("Default_Handler")));
+1220:libDaisy/core/startup_stm32h750xx.c **** void FLASH_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1221:libDaisy/core/startup_stm32h750xx.c **** void RCC_IRQHandler()                 __attribute__ ((weak, alias ("Default_Handler")));
+1222:libDaisy/core/startup_stm32h750xx.c **** void EXTI0_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1223:libDaisy/core/startup_stm32h750xx.c **** void EXTI1_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1224:libDaisy/core/startup_stm32h750xx.c **** void EXTI2_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1225:libDaisy/core/startup_stm32h750xx.c **** void EXTI3_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1226:libDaisy/core/startup_stm32h750xx.c **** void EXTI4_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1227:libDaisy/core/startup_stm32h750xx.c **** void DMA1_Stream0_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 23
+
+
+1228:libDaisy/core/startup_stm32h750xx.c **** void DMA1_Stream1_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1229:libDaisy/core/startup_stm32h750xx.c **** void DMA1_Stream2_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1230:libDaisy/core/startup_stm32h750xx.c **** void DMA1_Stream3_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1231:libDaisy/core/startup_stm32h750xx.c **** void DMA1_Stream4_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1232:libDaisy/core/startup_stm32h750xx.c **** void DMA1_Stream5_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1233:libDaisy/core/startup_stm32h750xx.c **** void DMA1_Stream6_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1234:libDaisy/core/startup_stm32h750xx.c **** void ADC_IRQHandler()                 __attribute__ ((weak, alias ("Default_Handler")));
+1235:libDaisy/core/startup_stm32h750xx.c **** void FDCAN1_IT0_IRQHandler()          __attribute__ ((weak, alias ("Default_Handler")));
+1236:libDaisy/core/startup_stm32h750xx.c **** void FDCAN2_IT0_IRQHandler()          __attribute__ ((weak, alias ("Default_Handler")));
+1237:libDaisy/core/startup_stm32h750xx.c **** void FDCAN1_IT1_IRQHandler()          __attribute__ ((weak, alias ("Default_Handler")));
+1238:libDaisy/core/startup_stm32h750xx.c **** void FDCAN2_IT1_IRQHandler()          __attribute__ ((weak, alias ("Default_Handler")));
+1239:libDaisy/core/startup_stm32h750xx.c **** void EXTI9_5_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1240:libDaisy/core/startup_stm32h750xx.c **** void TIM1_BRK_IRQHandler()            __attribute__ ((weak, alias ("Default_Handler")));
+1241:libDaisy/core/startup_stm32h750xx.c **** void TIM1_UP_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1242:libDaisy/core/startup_stm32h750xx.c **** void TIM1_TRG_COM_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1243:libDaisy/core/startup_stm32h750xx.c **** void TIM1_CC_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1244:libDaisy/core/startup_stm32h750xx.c **** void TIM2_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1245:libDaisy/core/startup_stm32h750xx.c **** void TIM3_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1246:libDaisy/core/startup_stm32h750xx.c **** void TIM4_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1247:libDaisy/core/startup_stm32h750xx.c **** void I2C1_EV_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1248:libDaisy/core/startup_stm32h750xx.c **** void I2C1_ER_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1249:libDaisy/core/startup_stm32h750xx.c **** void I2C2_EV_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1250:libDaisy/core/startup_stm32h750xx.c **** void I2C2_ER_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1251:libDaisy/core/startup_stm32h750xx.c **** void SPI1_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1252:libDaisy/core/startup_stm32h750xx.c **** void SPI2_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1253:libDaisy/core/startup_stm32h750xx.c **** void USART1_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1254:libDaisy/core/startup_stm32h750xx.c **** void USART2_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1255:libDaisy/core/startup_stm32h750xx.c **** void USART3_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1256:libDaisy/core/startup_stm32h750xx.c **** void EXTI15_10_IRQHandler()           __attribute__ ((weak, alias ("Default_Handler")));
+1257:libDaisy/core/startup_stm32h750xx.c **** void RTC_Alarm_IRQHandler()           __attribute__ ((weak, alias ("Default_Handler")));
+1258:libDaisy/core/startup_stm32h750xx.c **** void TIM8_BRK_TIM12_IRQHandler()      __attribute__ ((weak, alias ("Default_Handler")));
+1259:libDaisy/core/startup_stm32h750xx.c **** void TIM8_UP_TIM13_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
+1260:libDaisy/core/startup_stm32h750xx.c **** void TIM8_TRG_COM_TIM14_IRQHandler()  __attribute__ ((weak, alias ("Default_Handler")));
+1261:libDaisy/core/startup_stm32h750xx.c **** void TIM8_CC_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1262:libDaisy/core/startup_stm32h750xx.c **** void DMA1_Stream7_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1263:libDaisy/core/startup_stm32h750xx.c **** void FMC_IRQHandler()                 __attribute__ ((weak, alias ("Default_Handler")));
+1264:libDaisy/core/startup_stm32h750xx.c **** void SDMMC1_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1265:libDaisy/core/startup_stm32h750xx.c **** void TIM5_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1266:libDaisy/core/startup_stm32h750xx.c **** void SPI3_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1267:libDaisy/core/startup_stm32h750xx.c **** void UART4_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1268:libDaisy/core/startup_stm32h750xx.c **** void UART5_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1269:libDaisy/core/startup_stm32h750xx.c **** void TIM6_DAC_IRQHandler()            __attribute__ ((weak, alias ("Default_Handler")));
+1270:libDaisy/core/startup_stm32h750xx.c **** void TIM7_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1271:libDaisy/core/startup_stm32h750xx.c **** void DMA2_Stream0_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1272:libDaisy/core/startup_stm32h750xx.c **** void DMA2_Stream1_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1273:libDaisy/core/startup_stm32h750xx.c **** void DMA2_Stream2_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1274:libDaisy/core/startup_stm32h750xx.c **** void DMA2_Stream3_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1275:libDaisy/core/startup_stm32h750xx.c **** void DMA2_Stream4_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1276:libDaisy/core/startup_stm32h750xx.c **** void ETH_IRQHandler()                 __attribute__ ((weak, alias ("Default_Handler")));
+1277:libDaisy/core/startup_stm32h750xx.c **** void ETH_WKUP_IRQHandler()            __attribute__ ((weak, alias ("Default_Handler")));
+1278:libDaisy/core/startup_stm32h750xx.c **** void FDCAN_CAL_IRQHandler()           __attribute__ ((weak, alias ("Default_Handler")));
+1279:libDaisy/core/startup_stm32h750xx.c **** void DMA2_Stream5_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1280:libDaisy/core/startup_stm32h750xx.c **** void DMA2_Stream6_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1281:libDaisy/core/startup_stm32h750xx.c **** void DMA2_Stream7_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
+1282:libDaisy/core/startup_stm32h750xx.c **** void USART6_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1283:libDaisy/core/startup_stm32h750xx.c **** void I2C3_EV_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1284:libDaisy/core/startup_stm32h750xx.c **** void I2C3_ER_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 24
+
+
+1285:libDaisy/core/startup_stm32h750xx.c **** void OTG_HS_EP1_OUT_IRQHandler()      __attribute__ ((weak, alias ("Default_Handler")));
+1286:libDaisy/core/startup_stm32h750xx.c **** void OTG_HS_EP1_IN_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
+1287:libDaisy/core/startup_stm32h750xx.c **** void OTG_HS_WKUP_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1288:libDaisy/core/startup_stm32h750xx.c **** void OTG_HS_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1289:libDaisy/core/startup_stm32h750xx.c **** void DCMI_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1290:libDaisy/core/startup_stm32h750xx.c **** void CRYP_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1291:libDaisy/core/startup_stm32h750xx.c **** void HASH_RNG_IRQHandler()            __attribute__ ((weak, alias ("Default_Handler")));
+1292:libDaisy/core/startup_stm32h750xx.c **** void FPU_IRQHandler()                 __attribute__ ((weak, alias ("Default_Handler")));
+1293:libDaisy/core/startup_stm32h750xx.c **** void UART7_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1294:libDaisy/core/startup_stm32h750xx.c **** void UART8_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1295:libDaisy/core/startup_stm32h750xx.c **** void SPI4_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1296:libDaisy/core/startup_stm32h750xx.c **** void SPI5_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1297:libDaisy/core/startup_stm32h750xx.c **** void SPI6_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1298:libDaisy/core/startup_stm32h750xx.c **** void SAI1_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1299:libDaisy/core/startup_stm32h750xx.c **** void LTDC_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1300:libDaisy/core/startup_stm32h750xx.c **** void LTDC_ER_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1301:libDaisy/core/startup_stm32h750xx.c **** void DMA2D_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1302:libDaisy/core/startup_stm32h750xx.c **** void SAI2_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1303:libDaisy/core/startup_stm32h750xx.c **** void QUADSPI_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1304:libDaisy/core/startup_stm32h750xx.c **** void LPTIM1_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1305:libDaisy/core/startup_stm32h750xx.c **** void CEC_IRQHandler()                 __attribute__ ((weak, alias ("Default_Handler")));
+1306:libDaisy/core/startup_stm32h750xx.c **** void I2C4_EV_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1307:libDaisy/core/startup_stm32h750xx.c **** void I2C4_ER_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1308:libDaisy/core/startup_stm32h750xx.c **** void SPDIF_RX_IRQHandler()            __attribute__ ((weak, alias ("Default_Handler")));
+1309:libDaisy/core/startup_stm32h750xx.c **** void OTG_FS_EP1_OUT_IRQHandler()      __attribute__ ((weak, alias ("Default_Handler")));
+1310:libDaisy/core/startup_stm32h750xx.c **** void OTG_FS_EP1_IN_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
+1311:libDaisy/core/startup_stm32h750xx.c **** void OTG_FS_WKUP_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1312:libDaisy/core/startup_stm32h750xx.c **** void OTG_FS_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1313:libDaisy/core/startup_stm32h750xx.c **** void DMAMUX1_OVR_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1314:libDaisy/core/startup_stm32h750xx.c **** void HRTIM1_Master_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
+1315:libDaisy/core/startup_stm32h750xx.c **** void HRTIM1_TIMA_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1316:libDaisy/core/startup_stm32h750xx.c **** void HRTIM1_TIMB_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1317:libDaisy/core/startup_stm32h750xx.c **** void HRTIM1_TIMC_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1318:libDaisy/core/startup_stm32h750xx.c **** void HRTIM1_TIMD_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1319:libDaisy/core/startup_stm32h750xx.c **** void HRTIM1_TIME_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1320:libDaisy/core/startup_stm32h750xx.c **** void HRTIM1_FLT_IRQHandler()          __attribute__ ((weak, alias ("Default_Handler")));
+1321:libDaisy/core/startup_stm32h750xx.c **** void DFSDM1_FLT0_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1322:libDaisy/core/startup_stm32h750xx.c **** void DFSDM1_FLT1_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1323:libDaisy/core/startup_stm32h750xx.c **** void DFSDM1_FLT2_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1324:libDaisy/core/startup_stm32h750xx.c **** void DFSDM1_FLT3_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1325:libDaisy/core/startup_stm32h750xx.c **** void SAI3_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1326:libDaisy/core/startup_stm32h750xx.c **** void SWPMI1_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1327:libDaisy/core/startup_stm32h750xx.c **** void TIM15_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1328:libDaisy/core/startup_stm32h750xx.c **** void TIM16_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1329:libDaisy/core/startup_stm32h750xx.c **** void TIM17_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1330:libDaisy/core/startup_stm32h750xx.c **** void MDIOS_WKUP_IRQHandler()          __attribute__ ((weak, alias ("Default_Handler")));
+1331:libDaisy/core/startup_stm32h750xx.c **** void MDIOS_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1332:libDaisy/core/startup_stm32h750xx.c **** void JPEG_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1333:libDaisy/core/startup_stm32h750xx.c **** void MDMA_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1334:libDaisy/core/startup_stm32h750xx.c **** void SDMMC2_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1335:libDaisy/core/startup_stm32h750xx.c **** void HSEM1_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1336:libDaisy/core/startup_stm32h750xx.c **** void ADC3_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1337:libDaisy/core/startup_stm32h750xx.c **** void DMAMUX2_OVR_IRQHandler()         __attribute__ ((weak, alias ("Default_Handler")));
+1338:libDaisy/core/startup_stm32h750xx.c **** void BDMA_Channel0_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
+1339:libDaisy/core/startup_stm32h750xx.c **** void BDMA_Channel1_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
+1340:libDaisy/core/startup_stm32h750xx.c **** void BDMA_Channel2_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
+1341:libDaisy/core/startup_stm32h750xx.c **** void BDMA_Channel3_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 25
+
+
+1342:libDaisy/core/startup_stm32h750xx.c **** void BDMA_Channel4_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
+1343:libDaisy/core/startup_stm32h750xx.c **** void BDMA_Channel5_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
+1344:libDaisy/core/startup_stm32h750xx.c **** void BDMA_Channel6_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
+1345:libDaisy/core/startup_stm32h750xx.c **** void BDMA_Channel7_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
+1346:libDaisy/core/startup_stm32h750xx.c **** void COMP1_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
+1347:libDaisy/core/startup_stm32h750xx.c **** void LPTIM2_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1348:libDaisy/core/startup_stm32h750xx.c **** void LPTIM3_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1349:libDaisy/core/startup_stm32h750xx.c **** void LPTIM4_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1350:libDaisy/core/startup_stm32h750xx.c **** void LPTIM5_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
+1351:libDaisy/core/startup_stm32h750xx.c **** void LPUART1_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
+1352:libDaisy/core/startup_stm32h750xx.c **** void CRS_IRQHandler()                 __attribute__ ((weak, alias ("Default_Handler")));
+1353:libDaisy/core/startup_stm32h750xx.c **** void ECC_IRQHandler()                 __attribute__ ((weak, alias ("Default_Handler")));
+1354:libDaisy/core/startup_stm32h750xx.c **** void SAI4_IRQHandler()                __attribute__ ((weak, alias ("Default_Handler")));
+1355:libDaisy/core/startup_stm32h750xx.c **** void WAKEUP_PIN_IRQHandler()          __attribute__ ((weak, alias ("Default_Handler")));
+1356:libDaisy/core/startup_stm32h750xx.c **** #endif
+1357:libDaisy/core/startup_stm32h750xx.c **** 
+1358:libDaisy/core/startup_stm32h750xx.c **** void * g_pfnVectors[0xa6] __attribute__ ((section (".isr_vector"), used)) = 
+1359:libDaisy/core/startup_stm32h750xx.c **** {
+1360:libDaisy/core/startup_stm32h750xx.c **** 	&_estack,
+1361:libDaisy/core/startup_stm32h750xx.c **** 	&Reset_Handler,
+1362:libDaisy/core/startup_stm32h750xx.c **** 	&NMI_Handler,
+1363:libDaisy/core/startup_stm32h750xx.c **** 	&HardFault_Handler,
+1364:libDaisy/core/startup_stm32h750xx.c **** 	&MemManage_Handler,
+1365:libDaisy/core/startup_stm32h750xx.c **** 	&BusFault_Handler,
+1366:libDaisy/core/startup_stm32h750xx.c **** 	&UsageFault_Handler,
+1367:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1368:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1369:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1370:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1371:libDaisy/core/startup_stm32h750xx.c **** 	&SVC_Handler,
+1372:libDaisy/core/startup_stm32h750xx.c **** 	&DebugMon_Handler,
+1373:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1374:libDaisy/core/startup_stm32h750xx.c **** 	&PendSV_Handler,
+1375:libDaisy/core/startup_stm32h750xx.c **** 	&SysTick_Handler,
+1376:libDaisy/core/startup_stm32h750xx.c **** 	&WWDG_IRQHandler,
+1377:libDaisy/core/startup_stm32h750xx.c **** 	&PVD_AVD_IRQHandler,
+1378:libDaisy/core/startup_stm32h750xx.c **** 	&TAMP_STAMP_IRQHandler,
+1379:libDaisy/core/startup_stm32h750xx.c **** 	&RTC_WKUP_IRQHandler,
+1380:libDaisy/core/startup_stm32h750xx.c **** 	&FLASH_IRQHandler,
+1381:libDaisy/core/startup_stm32h750xx.c **** 	&RCC_IRQHandler,
+1382:libDaisy/core/startup_stm32h750xx.c **** 	&EXTI0_IRQHandler,
+1383:libDaisy/core/startup_stm32h750xx.c **** 	&EXTI1_IRQHandler,
+1384:libDaisy/core/startup_stm32h750xx.c **** 	&EXTI2_IRQHandler,
+1385:libDaisy/core/startup_stm32h750xx.c **** 	&EXTI3_IRQHandler,
+1386:libDaisy/core/startup_stm32h750xx.c **** 	&EXTI4_IRQHandler,
+1387:libDaisy/core/startup_stm32h750xx.c **** 	&DMA1_Stream0_IRQHandler,
+1388:libDaisy/core/startup_stm32h750xx.c **** 	&DMA1_Stream1_IRQHandler,
+1389:libDaisy/core/startup_stm32h750xx.c **** 	&DMA1_Stream2_IRQHandler,
+1390:libDaisy/core/startup_stm32h750xx.c **** 	&DMA1_Stream3_IRQHandler,
+1391:libDaisy/core/startup_stm32h750xx.c **** 	&DMA1_Stream4_IRQHandler,
+1392:libDaisy/core/startup_stm32h750xx.c **** 	&DMA1_Stream5_IRQHandler,
+1393:libDaisy/core/startup_stm32h750xx.c **** 	&DMA1_Stream6_IRQHandler,
+1394:libDaisy/core/startup_stm32h750xx.c **** 	&ADC_IRQHandler,
+1395:libDaisy/core/startup_stm32h750xx.c **** 	&FDCAN1_IT0_IRQHandler,
+1396:libDaisy/core/startup_stm32h750xx.c **** 	&FDCAN2_IT0_IRQHandler,
+1397:libDaisy/core/startup_stm32h750xx.c **** 	&FDCAN1_IT1_IRQHandler,
+1398:libDaisy/core/startup_stm32h750xx.c **** 	&FDCAN2_IT1_IRQHandler,
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 26
+
+
+1399:libDaisy/core/startup_stm32h750xx.c **** 	&EXTI9_5_IRQHandler,
+1400:libDaisy/core/startup_stm32h750xx.c **** 	&TIM1_BRK_IRQHandler,
+1401:libDaisy/core/startup_stm32h750xx.c **** 	&TIM1_UP_IRQHandler,
+1402:libDaisy/core/startup_stm32h750xx.c **** 	&TIM1_TRG_COM_IRQHandler,
+1403:libDaisy/core/startup_stm32h750xx.c **** 	&TIM1_CC_IRQHandler,
+1404:libDaisy/core/startup_stm32h750xx.c **** 	&TIM2_IRQHandler,
+1405:libDaisy/core/startup_stm32h750xx.c **** 	&TIM3_IRQHandler,
+1406:libDaisy/core/startup_stm32h750xx.c **** 	&TIM4_IRQHandler,
+1407:libDaisy/core/startup_stm32h750xx.c **** 	&I2C1_EV_IRQHandler,
+1408:libDaisy/core/startup_stm32h750xx.c **** 	&I2C1_ER_IRQHandler,
+1409:libDaisy/core/startup_stm32h750xx.c **** 	&I2C2_EV_IRQHandler,
+1410:libDaisy/core/startup_stm32h750xx.c **** 	&I2C2_ER_IRQHandler,
+1411:libDaisy/core/startup_stm32h750xx.c **** 	&SPI1_IRQHandler,
+1412:libDaisy/core/startup_stm32h750xx.c **** 	&SPI2_IRQHandler,
+1413:libDaisy/core/startup_stm32h750xx.c **** 	&USART1_IRQHandler,
+1414:libDaisy/core/startup_stm32h750xx.c **** 	&USART2_IRQHandler,
+1415:libDaisy/core/startup_stm32h750xx.c **** 	&USART3_IRQHandler,
+1416:libDaisy/core/startup_stm32h750xx.c **** 	&EXTI15_10_IRQHandler,
+1417:libDaisy/core/startup_stm32h750xx.c **** 	&RTC_Alarm_IRQHandler,
+1418:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1419:libDaisy/core/startup_stm32h750xx.c **** 	&TIM8_BRK_TIM12_IRQHandler,
+1420:libDaisy/core/startup_stm32h750xx.c **** 	&TIM8_UP_TIM13_IRQHandler,
+1421:libDaisy/core/startup_stm32h750xx.c **** 	&TIM8_TRG_COM_TIM14_IRQHandler,
+1422:libDaisy/core/startup_stm32h750xx.c **** 	&TIM8_CC_IRQHandler,
+1423:libDaisy/core/startup_stm32h750xx.c **** 	&DMA1_Stream7_IRQHandler,
+1424:libDaisy/core/startup_stm32h750xx.c **** 	&FMC_IRQHandler,
+1425:libDaisy/core/startup_stm32h750xx.c **** 	&SDMMC1_IRQHandler,
+1426:libDaisy/core/startup_stm32h750xx.c **** 	&TIM5_IRQHandler,
+1427:libDaisy/core/startup_stm32h750xx.c **** 	&SPI3_IRQHandler,
+1428:libDaisy/core/startup_stm32h750xx.c **** 	&UART4_IRQHandler,
+1429:libDaisy/core/startup_stm32h750xx.c **** 	&UART5_IRQHandler,
+1430:libDaisy/core/startup_stm32h750xx.c **** 	&TIM6_DAC_IRQHandler,
+1431:libDaisy/core/startup_stm32h750xx.c **** 	&TIM7_IRQHandler,
+1432:libDaisy/core/startup_stm32h750xx.c **** 	&DMA2_Stream0_IRQHandler,
+1433:libDaisy/core/startup_stm32h750xx.c **** 	&DMA2_Stream1_IRQHandler,
+1434:libDaisy/core/startup_stm32h750xx.c **** 	&DMA2_Stream2_IRQHandler,
+1435:libDaisy/core/startup_stm32h750xx.c **** 	&DMA2_Stream3_IRQHandler,
+1436:libDaisy/core/startup_stm32h750xx.c **** 	&DMA2_Stream4_IRQHandler,
+1437:libDaisy/core/startup_stm32h750xx.c **** 	&ETH_IRQHandler,
+1438:libDaisy/core/startup_stm32h750xx.c **** 	&ETH_WKUP_IRQHandler,
+1439:libDaisy/core/startup_stm32h750xx.c **** 	&FDCAN_CAL_IRQHandler,
+1440:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1441:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1442:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1443:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1444:libDaisy/core/startup_stm32h750xx.c **** 	&DMA2_Stream5_IRQHandler,
+1445:libDaisy/core/startup_stm32h750xx.c **** 	&DMA2_Stream6_IRQHandler,
+1446:libDaisy/core/startup_stm32h750xx.c **** 	&DMA2_Stream7_IRQHandler,
+1447:libDaisy/core/startup_stm32h750xx.c **** 	&USART6_IRQHandler,
+1448:libDaisy/core/startup_stm32h750xx.c **** 	&I2C3_EV_IRQHandler,
+1449:libDaisy/core/startup_stm32h750xx.c **** 	&I2C3_ER_IRQHandler,
+1450:libDaisy/core/startup_stm32h750xx.c **** 	&OTG_HS_EP1_OUT_IRQHandler,
+1451:libDaisy/core/startup_stm32h750xx.c **** 	&OTG_HS_EP1_IN_IRQHandler,
+1452:libDaisy/core/startup_stm32h750xx.c **** 	&OTG_HS_WKUP_IRQHandler,
+1453:libDaisy/core/startup_stm32h750xx.c **** 	&OTG_HS_IRQHandler,
+1454:libDaisy/core/startup_stm32h750xx.c **** 	&DCMI_IRQHandler,
+1455:libDaisy/core/startup_stm32h750xx.c **** 	&CRYP_IRQHandler,
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 27
+
+
+1456:libDaisy/core/startup_stm32h750xx.c **** 	&HASH_RNG_IRQHandler,
+1457:libDaisy/core/startup_stm32h750xx.c **** 	&FPU_IRQHandler,
+1458:libDaisy/core/startup_stm32h750xx.c **** 	&UART7_IRQHandler,
+1459:libDaisy/core/startup_stm32h750xx.c **** 	&UART8_IRQHandler,
+1460:libDaisy/core/startup_stm32h750xx.c **** 	&SPI4_IRQHandler,
+1461:libDaisy/core/startup_stm32h750xx.c **** 	&SPI5_IRQHandler,
+1462:libDaisy/core/startup_stm32h750xx.c **** 	&SPI6_IRQHandler,
+1463:libDaisy/core/startup_stm32h750xx.c **** 	&SAI1_IRQHandler,
+1464:libDaisy/core/startup_stm32h750xx.c **** 	&LTDC_IRQHandler,
+1465:libDaisy/core/startup_stm32h750xx.c **** 	&LTDC_ER_IRQHandler,
+1466:libDaisy/core/startup_stm32h750xx.c **** 	&DMA2D_IRQHandler,
+1467:libDaisy/core/startup_stm32h750xx.c **** 	&SAI2_IRQHandler,
+1468:libDaisy/core/startup_stm32h750xx.c **** 	&QUADSPI_IRQHandler,
+1469:libDaisy/core/startup_stm32h750xx.c **** 	&LPTIM1_IRQHandler,
+1470:libDaisy/core/startup_stm32h750xx.c **** 	&CEC_IRQHandler,
+1471:libDaisy/core/startup_stm32h750xx.c **** 	&I2C4_EV_IRQHandler,
+1472:libDaisy/core/startup_stm32h750xx.c **** 	&I2C4_ER_IRQHandler,
+1473:libDaisy/core/startup_stm32h750xx.c **** 	&SPDIF_RX_IRQHandler,
+1474:libDaisy/core/startup_stm32h750xx.c **** 	&OTG_FS_EP1_OUT_IRQHandler,
+1475:libDaisy/core/startup_stm32h750xx.c **** 	&OTG_FS_EP1_IN_IRQHandler,
+1476:libDaisy/core/startup_stm32h750xx.c **** 	&OTG_FS_WKUP_IRQHandler,
+1477:libDaisy/core/startup_stm32h750xx.c **** 	&OTG_FS_IRQHandler,
+1478:libDaisy/core/startup_stm32h750xx.c **** 	&DMAMUX1_OVR_IRQHandler,
+1479:libDaisy/core/startup_stm32h750xx.c **** 	&HRTIM1_Master_IRQHandler,
+1480:libDaisy/core/startup_stm32h750xx.c **** 	&HRTIM1_TIMA_IRQHandler,
+1481:libDaisy/core/startup_stm32h750xx.c **** 	&HRTIM1_TIMB_IRQHandler,
+1482:libDaisy/core/startup_stm32h750xx.c **** 	&HRTIM1_TIMC_IRQHandler,
+1483:libDaisy/core/startup_stm32h750xx.c **** 	&HRTIM1_TIMD_IRQHandler,
+1484:libDaisy/core/startup_stm32h750xx.c **** 	&HRTIM1_TIME_IRQHandler,
+1485:libDaisy/core/startup_stm32h750xx.c **** 	&HRTIM1_FLT_IRQHandler,
+1486:libDaisy/core/startup_stm32h750xx.c **** 	&DFSDM1_FLT0_IRQHandler,
+1487:libDaisy/core/startup_stm32h750xx.c **** 	&DFSDM1_FLT1_IRQHandler,
+1488:libDaisy/core/startup_stm32h750xx.c **** 	&DFSDM1_FLT2_IRQHandler,
+1489:libDaisy/core/startup_stm32h750xx.c **** 	&DFSDM1_FLT3_IRQHandler,
+1490:libDaisy/core/startup_stm32h750xx.c **** 	&SAI3_IRQHandler,
+1491:libDaisy/core/startup_stm32h750xx.c **** 	&SWPMI1_IRQHandler,
+1492:libDaisy/core/startup_stm32h750xx.c **** 	&TIM15_IRQHandler,
+1493:libDaisy/core/startup_stm32h750xx.c **** 	&TIM16_IRQHandler,
+1494:libDaisy/core/startup_stm32h750xx.c **** 	&TIM17_IRQHandler,
+1495:libDaisy/core/startup_stm32h750xx.c **** 	&MDIOS_WKUP_IRQHandler,
+1496:libDaisy/core/startup_stm32h750xx.c **** 	&MDIOS_IRQHandler,
+1497:libDaisy/core/startup_stm32h750xx.c **** 	&JPEG_IRQHandler,
+1498:libDaisy/core/startup_stm32h750xx.c **** 	&MDMA_IRQHandler,
+1499:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1500:libDaisy/core/startup_stm32h750xx.c **** 	&SDMMC2_IRQHandler,
+1501:libDaisy/core/startup_stm32h750xx.c **** 	&HSEM1_IRQHandler,
+1502:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1503:libDaisy/core/startup_stm32h750xx.c **** 	&ADC3_IRQHandler,
+1504:libDaisy/core/startup_stm32h750xx.c **** 	&DMAMUX2_OVR_IRQHandler,
+1505:libDaisy/core/startup_stm32h750xx.c **** 	&BDMA_Channel0_IRQHandler,
+1506:libDaisy/core/startup_stm32h750xx.c **** 	&BDMA_Channel1_IRQHandler,
+1507:libDaisy/core/startup_stm32h750xx.c **** 	&BDMA_Channel2_IRQHandler,
+1508:libDaisy/core/startup_stm32h750xx.c **** 	&BDMA_Channel3_IRQHandler,
+1509:libDaisy/core/startup_stm32h750xx.c **** 	&BDMA_Channel4_IRQHandler,
+1510:libDaisy/core/startup_stm32h750xx.c **** 	&BDMA_Channel5_IRQHandler,
+1511:libDaisy/core/startup_stm32h750xx.c **** 	&BDMA_Channel6_IRQHandler,
+1512:libDaisy/core/startup_stm32h750xx.c **** 	&BDMA_Channel7_IRQHandler,
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 28
+
+
+1513:libDaisy/core/startup_stm32h750xx.c **** 	&COMP1_IRQHandler,
+1514:libDaisy/core/startup_stm32h750xx.c **** 	&LPTIM2_IRQHandler,
+1515:libDaisy/core/startup_stm32h750xx.c **** 	&LPTIM3_IRQHandler,
+1516:libDaisy/core/startup_stm32h750xx.c **** 	&LPTIM4_IRQHandler,
+1517:libDaisy/core/startup_stm32h750xx.c **** 	&LPTIM5_IRQHandler,
+1518:libDaisy/core/startup_stm32h750xx.c **** 	&LPUART1_IRQHandler,
+1519:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1520:libDaisy/core/startup_stm32h750xx.c **** 	&CRS_IRQHandler,
+1521:libDaisy/core/startup_stm32h750xx.c **** 	&ECC_IRQHandler,
+1522:libDaisy/core/startup_stm32h750xx.c **** 	&SAI4_IRQHandler,
+1523:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1524:libDaisy/core/startup_stm32h750xx.c **** 	NULL,
+1525:libDaisy/core/startup_stm32h750xx.c **** 	&WAKEUP_PIN_IRQHandler,
+1526:libDaisy/core/startup_stm32h750xx.c **** };
+1527:libDaisy/core/startup_stm32h750xx.c **** 
+1528:libDaisy/core/startup_stm32h750xx.c **** void SystemInit();
+1529:libDaisy/core/startup_stm32h750xx.c **** void __libc_init_array();
+1530:libDaisy/core/startup_stm32h750xx.c **** int main();
+1531:libDaisy/core/startup_stm32h750xx.c **** 
+1532:libDaisy/core/startup_stm32h750xx.c **** extern void *_sidata, *_sdata, *_edata;
+1533:libDaisy/core/startup_stm32h750xx.c **** extern void *_sbss, *_ebss;
+1534:libDaisy/core/startup_stm32h750xx.c **** 
+1535:libDaisy/core/startup_stm32h750xx.c **** void __attribute__((naked, noreturn)) Reset_Handler()
+1536:libDaisy/core/startup_stm32h750xx.c **** {
+1537:libDaisy/core/startup_stm32h750xx.c **** 	//Normally the CPU should will setup the based on the value from the first entry in the vector tab
+1538:libDaisy/core/startup_stm32h750xx.c **** 	//If you encounter problems with accessing stack variables during initialization, ensure the line 
+1539:libDaisy/core/startup_stm32h750xx.c **** 	#ifdef sram_layout
+1540:libDaisy/core/startup_stm32h750xx.c **** 	asm ("ldr sp, =_estack");
+1541:libDaisy/core/startup_stm32h750xx.c **** 	#endif
+1542:libDaisy/core/startup_stm32h750xx.c **** 
+1543:libDaisy/core/startup_stm32h750xx.c **** 	void **pSource, **pDest;
+1544:libDaisy/core/startup_stm32h750xx.c **** 	for (pSource = &_sidata, pDest = &_sdata; pDest != &_edata; pSource++, pDest++)
+1545:libDaisy/core/startup_stm32h750xx.c **** 		*pDest = *pSource;
+1546:libDaisy/core/startup_stm32h750xx.c **** 
+1547:libDaisy/core/startup_stm32h750xx.c **** 	for (pDest = &_sbss; pDest != &_ebss; pDest++)
+1548:libDaisy/core/startup_stm32h750xx.c **** 		*pDest = 0;
+1549:libDaisy/core/startup_stm32h750xx.c **** 
+1550:libDaisy/core/startup_stm32h750xx.c **** 	#ifndef BOOT_APP
+1551:libDaisy/core/startup_stm32h750xx.c **** 	SystemInit();
+1552:libDaisy/core/startup_stm32h750xx.c **** 	#endif
+1553:libDaisy/core/startup_stm32h750xx.c **** 	__libc_init_array();
+1554:libDaisy/core/startup_stm32h750xx.c **** 
+1555:libDaisy/core/startup_stm32h750xx.c **** 
+1556:libDaisy/core/startup_stm32h750xx.c **** 	(void)main();
+1557:libDaisy/core/startup_stm32h750xx.c **** 	for (;;) ;
+1558:libDaisy/core/startup_stm32h750xx.c **** }
+1559:libDaisy/core/startup_stm32h750xx.c **** 
+1560:libDaisy/core/startup_stm32h750xx.c **** void __attribute__((naked, noreturn)) Default_Handler()
+1561:libDaisy/core/startup_stm32h750xx.c **** {
+  29              		.loc 1 1561 1 view -0
+  30              		.cfi_startproc
+  31              		@ Naked Function: prologue and epilogue provided by programmer.
+  32              		@ Volatile: function does not return.
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35              	.L2:
+1562:libDaisy/core/startup_stm32h750xx.c **** 	//If you get stuck here, your code is missing a handler for some interrupt.
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 29
+
+
+1563:libDaisy/core/startup_stm32h750xx.c **** 	//Define a 'DEBUG_DEFAULT_INTERRUPT_HANDLERS' macro via VisualGDB Project Properties and rebuild y
+1564:libDaisy/core/startup_stm32h750xx.c **** 	//This will pinpoint a specific missing vector.
+1565:libDaisy/core/startup_stm32h750xx.c **** 	for (;;) ;
+  36              		.loc 1 1565 2 discriminator 1 view .LVU1
+  37              		.loc 1 1565 11 discriminator 1 view .LVU2
+  38              		.loc 1 1565 8 discriminator 1 view .LVU3
+  39 0000 FEE7     		b	.L2
+  40              		.cfi_endproc
+  41              	.LFE321:
+  43              		.weak	WAKEUP_PIN_IRQHandler
+  44              		.thumb_set WAKEUP_PIN_IRQHandler,Default_Handler
+  45              		.weak	SAI4_IRQHandler
+  46              		.thumb_set SAI4_IRQHandler,Default_Handler
+  47              		.weak	ECC_IRQHandler
+  48              		.thumb_set ECC_IRQHandler,Default_Handler
+  49              		.weak	CRS_IRQHandler
+  50              		.thumb_set CRS_IRQHandler,Default_Handler
+  51              		.weak	LPUART1_IRQHandler
+  52              		.thumb_set LPUART1_IRQHandler,Default_Handler
+  53              		.weak	LPTIM5_IRQHandler
+  54              		.thumb_set LPTIM5_IRQHandler,Default_Handler
+  55              		.weak	LPTIM4_IRQHandler
+  56              		.thumb_set LPTIM4_IRQHandler,Default_Handler
+  57              		.weak	LPTIM3_IRQHandler
+  58              		.thumb_set LPTIM3_IRQHandler,Default_Handler
+  59              		.weak	LPTIM2_IRQHandler
+  60              		.thumb_set LPTIM2_IRQHandler,Default_Handler
+  61              		.weak	COMP1_IRQHandler
+  62              		.thumb_set COMP1_IRQHandler,Default_Handler
+  63              		.weak	BDMA_Channel7_IRQHandler
+  64              		.thumb_set BDMA_Channel7_IRQHandler,Default_Handler
+  65              		.weak	BDMA_Channel6_IRQHandler
+  66              		.thumb_set BDMA_Channel6_IRQHandler,Default_Handler
+  67              		.weak	BDMA_Channel5_IRQHandler
+  68              		.thumb_set BDMA_Channel5_IRQHandler,Default_Handler
+  69              		.weak	BDMA_Channel4_IRQHandler
+  70              		.thumb_set BDMA_Channel4_IRQHandler,Default_Handler
+  71              		.weak	BDMA_Channel3_IRQHandler
+  72              		.thumb_set BDMA_Channel3_IRQHandler,Default_Handler
+  73              		.weak	BDMA_Channel2_IRQHandler
+  74              		.thumb_set BDMA_Channel2_IRQHandler,Default_Handler
+  75              		.weak	BDMA_Channel1_IRQHandler
+  76              		.thumb_set BDMA_Channel1_IRQHandler,Default_Handler
+  77              		.weak	BDMA_Channel0_IRQHandler
+  78              		.thumb_set BDMA_Channel0_IRQHandler,Default_Handler
+  79              		.weak	DMAMUX2_OVR_IRQHandler
+  80              		.thumb_set DMAMUX2_OVR_IRQHandler,Default_Handler
+  81              		.weak	ADC3_IRQHandler
+  82              		.thumb_set ADC3_IRQHandler,Default_Handler
+  83              		.weak	HSEM1_IRQHandler
+  84              		.thumb_set HSEM1_IRQHandler,Default_Handler
+  85              		.weak	SDMMC2_IRQHandler
+  86              		.thumb_set SDMMC2_IRQHandler,Default_Handler
+  87              		.weak	MDMA_IRQHandler
+  88              		.thumb_set MDMA_IRQHandler,Default_Handler
+  89              		.weak	JPEG_IRQHandler
+  90              		.thumb_set JPEG_IRQHandler,Default_Handler
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 30
+
+
+  91              		.weak	MDIOS_IRQHandler
+  92              		.thumb_set MDIOS_IRQHandler,Default_Handler
+  93              		.weak	MDIOS_WKUP_IRQHandler
+  94              		.thumb_set MDIOS_WKUP_IRQHandler,Default_Handler
+  95              		.weak	TIM17_IRQHandler
+  96              		.thumb_set TIM17_IRQHandler,Default_Handler
+  97              		.weak	TIM16_IRQHandler
+  98              		.thumb_set TIM16_IRQHandler,Default_Handler
+  99              		.weak	TIM15_IRQHandler
+ 100              		.thumb_set TIM15_IRQHandler,Default_Handler
+ 101              		.weak	SWPMI1_IRQHandler
+ 102              		.thumb_set SWPMI1_IRQHandler,Default_Handler
+ 103              		.weak	SAI3_IRQHandler
+ 104              		.thumb_set SAI3_IRQHandler,Default_Handler
+ 105              		.weak	DFSDM1_FLT3_IRQHandler
+ 106              		.thumb_set DFSDM1_FLT3_IRQHandler,Default_Handler
+ 107              		.weak	DFSDM1_FLT2_IRQHandler
+ 108              		.thumb_set DFSDM1_FLT2_IRQHandler,Default_Handler
+ 109              		.weak	DFSDM1_FLT1_IRQHandler
+ 110              		.thumb_set DFSDM1_FLT1_IRQHandler,Default_Handler
+ 111              		.weak	DFSDM1_FLT0_IRQHandler
+ 112              		.thumb_set DFSDM1_FLT0_IRQHandler,Default_Handler
+ 113              		.weak	HRTIM1_FLT_IRQHandler
+ 114              		.thumb_set HRTIM1_FLT_IRQHandler,Default_Handler
+ 115              		.weak	HRTIM1_TIME_IRQHandler
+ 116              		.thumb_set HRTIM1_TIME_IRQHandler,Default_Handler
+ 117              		.weak	HRTIM1_TIMD_IRQHandler
+ 118              		.thumb_set HRTIM1_TIMD_IRQHandler,Default_Handler
+ 119              		.weak	HRTIM1_TIMC_IRQHandler
+ 120              		.thumb_set HRTIM1_TIMC_IRQHandler,Default_Handler
+ 121              		.weak	HRTIM1_TIMB_IRQHandler
+ 122              		.thumb_set HRTIM1_TIMB_IRQHandler,Default_Handler
+ 123              		.weak	HRTIM1_TIMA_IRQHandler
+ 124              		.thumb_set HRTIM1_TIMA_IRQHandler,Default_Handler
+ 125              		.weak	HRTIM1_Master_IRQHandler
+ 126              		.thumb_set HRTIM1_Master_IRQHandler,Default_Handler
+ 127              		.weak	DMAMUX1_OVR_IRQHandler
+ 128              		.thumb_set DMAMUX1_OVR_IRQHandler,Default_Handler
+ 129              		.weak	OTG_FS_IRQHandler
+ 130              		.thumb_set OTG_FS_IRQHandler,Default_Handler
+ 131              		.weak	OTG_FS_WKUP_IRQHandler
+ 132              		.thumb_set OTG_FS_WKUP_IRQHandler,Default_Handler
+ 133              		.weak	OTG_FS_EP1_IN_IRQHandler
+ 134              		.thumb_set OTG_FS_EP1_IN_IRQHandler,Default_Handler
+ 135              		.weak	OTG_FS_EP1_OUT_IRQHandler
+ 136              		.thumb_set OTG_FS_EP1_OUT_IRQHandler,Default_Handler
+ 137              		.weak	SPDIF_RX_IRQHandler
+ 138              		.thumb_set SPDIF_RX_IRQHandler,Default_Handler
+ 139              		.weak	I2C4_ER_IRQHandler
+ 140              		.thumb_set I2C4_ER_IRQHandler,Default_Handler
+ 141              		.weak	I2C4_EV_IRQHandler
+ 142              		.thumb_set I2C4_EV_IRQHandler,Default_Handler
+ 143              		.weak	CEC_IRQHandler
+ 144              		.thumb_set CEC_IRQHandler,Default_Handler
+ 145              		.weak	LPTIM1_IRQHandler
+ 146              		.thumb_set LPTIM1_IRQHandler,Default_Handler
+ 147              		.weak	QUADSPI_IRQHandler
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 31
+
+
+ 148              		.thumb_set QUADSPI_IRQHandler,Default_Handler
+ 149              		.weak	SAI2_IRQHandler
+ 150              		.thumb_set SAI2_IRQHandler,Default_Handler
+ 151              		.weak	DMA2D_IRQHandler
+ 152              		.thumb_set DMA2D_IRQHandler,Default_Handler
+ 153              		.weak	LTDC_ER_IRQHandler
+ 154              		.thumb_set LTDC_ER_IRQHandler,Default_Handler
+ 155              		.weak	LTDC_IRQHandler
+ 156              		.thumb_set LTDC_IRQHandler,Default_Handler
+ 157              		.weak	SAI1_IRQHandler
+ 158              		.thumb_set SAI1_IRQHandler,Default_Handler
+ 159              		.weak	SPI6_IRQHandler
+ 160              		.thumb_set SPI6_IRQHandler,Default_Handler
+ 161              		.weak	SPI5_IRQHandler
+ 162              		.thumb_set SPI5_IRQHandler,Default_Handler
+ 163              		.weak	SPI4_IRQHandler
+ 164              		.thumb_set SPI4_IRQHandler,Default_Handler
+ 165              		.weak	UART8_IRQHandler
+ 166              		.thumb_set UART8_IRQHandler,Default_Handler
+ 167              		.weak	UART7_IRQHandler
+ 168              		.thumb_set UART7_IRQHandler,Default_Handler
+ 169              		.weak	FPU_IRQHandler
+ 170              		.thumb_set FPU_IRQHandler,Default_Handler
+ 171              		.weak	HASH_RNG_IRQHandler
+ 172              		.thumb_set HASH_RNG_IRQHandler,Default_Handler
+ 173              		.weak	CRYP_IRQHandler
+ 174              		.thumb_set CRYP_IRQHandler,Default_Handler
+ 175              		.weak	DCMI_IRQHandler
+ 176              		.thumb_set DCMI_IRQHandler,Default_Handler
+ 177              		.weak	OTG_HS_IRQHandler
+ 178              		.thumb_set OTG_HS_IRQHandler,Default_Handler
+ 179              		.weak	OTG_HS_WKUP_IRQHandler
+ 180              		.thumb_set OTG_HS_WKUP_IRQHandler,Default_Handler
+ 181              		.weak	OTG_HS_EP1_IN_IRQHandler
+ 182              		.thumb_set OTG_HS_EP1_IN_IRQHandler,Default_Handler
+ 183              		.weak	OTG_HS_EP1_OUT_IRQHandler
+ 184              		.thumb_set OTG_HS_EP1_OUT_IRQHandler,Default_Handler
+ 185              		.weak	I2C3_ER_IRQHandler
+ 186              		.thumb_set I2C3_ER_IRQHandler,Default_Handler
+ 187              		.weak	I2C3_EV_IRQHandler
+ 188              		.thumb_set I2C3_EV_IRQHandler,Default_Handler
+ 189              		.weak	USART6_IRQHandler
+ 190              		.thumb_set USART6_IRQHandler,Default_Handler
+ 191              		.weak	DMA2_Stream7_IRQHandler
+ 192              		.thumb_set DMA2_Stream7_IRQHandler,Default_Handler
+ 193              		.weak	DMA2_Stream6_IRQHandler
+ 194              		.thumb_set DMA2_Stream6_IRQHandler,Default_Handler
+ 195              		.weak	DMA2_Stream5_IRQHandler
+ 196              		.thumb_set DMA2_Stream5_IRQHandler,Default_Handler
+ 197              		.weak	FDCAN_CAL_IRQHandler
+ 198              		.thumb_set FDCAN_CAL_IRQHandler,Default_Handler
+ 199              		.weak	ETH_WKUP_IRQHandler
+ 200              		.thumb_set ETH_WKUP_IRQHandler,Default_Handler
+ 201              		.weak	ETH_IRQHandler
+ 202              		.thumb_set ETH_IRQHandler,Default_Handler
+ 203              		.weak	DMA2_Stream4_IRQHandler
+ 204              		.thumb_set DMA2_Stream4_IRQHandler,Default_Handler
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 32
+
+
+ 205              		.weak	DMA2_Stream3_IRQHandler
+ 206              		.thumb_set DMA2_Stream3_IRQHandler,Default_Handler
+ 207              		.weak	DMA2_Stream2_IRQHandler
+ 208              		.thumb_set DMA2_Stream2_IRQHandler,Default_Handler
+ 209              		.weak	DMA2_Stream1_IRQHandler
+ 210              		.thumb_set DMA2_Stream1_IRQHandler,Default_Handler
+ 211              		.weak	DMA2_Stream0_IRQHandler
+ 212              		.thumb_set DMA2_Stream0_IRQHandler,Default_Handler
+ 213              		.weak	TIM7_IRQHandler
+ 214              		.thumb_set TIM7_IRQHandler,Default_Handler
+ 215              		.weak	TIM6_DAC_IRQHandler
+ 216              		.thumb_set TIM6_DAC_IRQHandler,Default_Handler
+ 217              		.weak	UART5_IRQHandler
+ 218              		.thumb_set UART5_IRQHandler,Default_Handler
+ 219              		.weak	UART4_IRQHandler
+ 220              		.thumb_set UART4_IRQHandler,Default_Handler
+ 221              		.weak	SPI3_IRQHandler
+ 222              		.thumb_set SPI3_IRQHandler,Default_Handler
+ 223              		.weak	TIM5_IRQHandler
+ 224              		.thumb_set TIM5_IRQHandler,Default_Handler
+ 225              		.weak	SDMMC1_IRQHandler
+ 226              		.thumb_set SDMMC1_IRQHandler,Default_Handler
+ 227              		.weak	FMC_IRQHandler
+ 228              		.thumb_set FMC_IRQHandler,Default_Handler
+ 229              		.weak	DMA1_Stream7_IRQHandler
+ 230              		.thumb_set DMA1_Stream7_IRQHandler,Default_Handler
+ 231              		.weak	TIM8_CC_IRQHandler
+ 232              		.thumb_set TIM8_CC_IRQHandler,Default_Handler
+ 233              		.weak	TIM8_TRG_COM_TIM14_IRQHandler
+ 234              		.thumb_set TIM8_TRG_COM_TIM14_IRQHandler,Default_Handler
+ 235              		.weak	TIM8_UP_TIM13_IRQHandler
+ 236              		.thumb_set TIM8_UP_TIM13_IRQHandler,Default_Handler
+ 237              		.weak	TIM8_BRK_TIM12_IRQHandler
+ 238              		.thumb_set TIM8_BRK_TIM12_IRQHandler,Default_Handler
+ 239              		.weak	RTC_Alarm_IRQHandler
+ 240              		.thumb_set RTC_Alarm_IRQHandler,Default_Handler
+ 241              		.weak	EXTI15_10_IRQHandler
+ 242              		.thumb_set EXTI15_10_IRQHandler,Default_Handler
+ 243              		.weak	USART3_IRQHandler
+ 244              		.thumb_set USART3_IRQHandler,Default_Handler
+ 245              		.weak	USART2_IRQHandler
+ 246              		.thumb_set USART2_IRQHandler,Default_Handler
+ 247              		.weak	USART1_IRQHandler
+ 248              		.thumb_set USART1_IRQHandler,Default_Handler
+ 249              		.weak	SPI2_IRQHandler
+ 250              		.thumb_set SPI2_IRQHandler,Default_Handler
+ 251              		.weak	SPI1_IRQHandler
+ 252              		.thumb_set SPI1_IRQHandler,Default_Handler
+ 253              		.weak	I2C2_ER_IRQHandler
+ 254              		.thumb_set I2C2_ER_IRQHandler,Default_Handler
+ 255              		.weak	I2C2_EV_IRQHandler
+ 256              		.thumb_set I2C2_EV_IRQHandler,Default_Handler
+ 257              		.weak	I2C1_ER_IRQHandler
+ 258              		.thumb_set I2C1_ER_IRQHandler,Default_Handler
+ 259              		.weak	I2C1_EV_IRQHandler
+ 260              		.thumb_set I2C1_EV_IRQHandler,Default_Handler
+ 261              		.weak	TIM4_IRQHandler
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 33
+
+
+ 262              		.thumb_set TIM4_IRQHandler,Default_Handler
+ 263              		.weak	TIM3_IRQHandler
+ 264              		.thumb_set TIM3_IRQHandler,Default_Handler
+ 265              		.weak	TIM2_IRQHandler
+ 266              		.thumb_set TIM2_IRQHandler,Default_Handler
+ 267              		.weak	TIM1_CC_IRQHandler
+ 268              		.thumb_set TIM1_CC_IRQHandler,Default_Handler
+ 269              		.weak	TIM1_TRG_COM_IRQHandler
+ 270              		.thumb_set TIM1_TRG_COM_IRQHandler,Default_Handler
+ 271              		.weak	TIM1_UP_IRQHandler
+ 272              		.thumb_set TIM1_UP_IRQHandler,Default_Handler
+ 273              		.weak	TIM1_BRK_IRQHandler
+ 274              		.thumb_set TIM1_BRK_IRQHandler,Default_Handler
+ 275              		.weak	EXTI9_5_IRQHandler
+ 276              		.thumb_set EXTI9_5_IRQHandler,Default_Handler
+ 277              		.weak	FDCAN2_IT1_IRQHandler
+ 278              		.thumb_set FDCAN2_IT1_IRQHandler,Default_Handler
+ 279              		.weak	FDCAN1_IT1_IRQHandler
+ 280              		.thumb_set FDCAN1_IT1_IRQHandler,Default_Handler
+ 281              		.weak	FDCAN2_IT0_IRQHandler
+ 282              		.thumb_set FDCAN2_IT0_IRQHandler,Default_Handler
+ 283              		.weak	FDCAN1_IT0_IRQHandler
+ 284              		.thumb_set FDCAN1_IT0_IRQHandler,Default_Handler
+ 285              		.weak	ADC_IRQHandler
+ 286              		.thumb_set ADC_IRQHandler,Default_Handler
+ 287              		.weak	DMA1_Stream6_IRQHandler
+ 288              		.thumb_set DMA1_Stream6_IRQHandler,Default_Handler
+ 289              		.weak	DMA1_Stream5_IRQHandler
+ 290              		.thumb_set DMA1_Stream5_IRQHandler,Default_Handler
+ 291              		.weak	DMA1_Stream4_IRQHandler
+ 292              		.thumb_set DMA1_Stream4_IRQHandler,Default_Handler
+ 293              		.weak	DMA1_Stream3_IRQHandler
+ 294              		.thumb_set DMA1_Stream3_IRQHandler,Default_Handler
+ 295              		.weak	DMA1_Stream2_IRQHandler
+ 296              		.thumb_set DMA1_Stream2_IRQHandler,Default_Handler
+ 297              		.weak	DMA1_Stream1_IRQHandler
+ 298              		.thumb_set DMA1_Stream1_IRQHandler,Default_Handler
+ 299              		.weak	DMA1_Stream0_IRQHandler
+ 300              		.thumb_set DMA1_Stream0_IRQHandler,Default_Handler
+ 301              		.weak	EXTI4_IRQHandler
+ 302              		.thumb_set EXTI4_IRQHandler,Default_Handler
+ 303              		.weak	EXTI3_IRQHandler
+ 304              		.thumb_set EXTI3_IRQHandler,Default_Handler
+ 305              		.weak	EXTI2_IRQHandler
+ 306              		.thumb_set EXTI2_IRQHandler,Default_Handler
+ 307              		.weak	EXTI1_IRQHandler
+ 308              		.thumb_set EXTI1_IRQHandler,Default_Handler
+ 309              		.weak	EXTI0_IRQHandler
+ 310              		.thumb_set EXTI0_IRQHandler,Default_Handler
+ 311              		.weak	RCC_IRQHandler
+ 312              		.thumb_set RCC_IRQHandler,Default_Handler
+ 313              		.weak	FLASH_IRQHandler
+ 314              		.thumb_set FLASH_IRQHandler,Default_Handler
+ 315              		.weak	RTC_WKUP_IRQHandler
+ 316              		.thumb_set RTC_WKUP_IRQHandler,Default_Handler
+ 317              		.weak	TAMP_STAMP_IRQHandler
+ 318              		.thumb_set TAMP_STAMP_IRQHandler,Default_Handler
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 34
+
+
+ 319              		.weak	PVD_AVD_IRQHandler
+ 320              		.thumb_set PVD_AVD_IRQHandler,Default_Handler
+ 321              		.weak	WWDG_IRQHandler
+ 322              		.thumb_set WWDG_IRQHandler,Default_Handler
+ 323              		.weak	SysTick_Handler
+ 324              		.thumb_set SysTick_Handler,Default_Handler
+ 325              		.weak	PendSV_Handler
+ 326              		.thumb_set PendSV_Handler,Default_Handler
+ 327              		.weak	DebugMon_Handler
+ 328              		.thumb_set DebugMon_Handler,Default_Handler
+ 329              		.weak	SVC_Handler
+ 330              		.thumb_set SVC_Handler,Default_Handler
+ 331              		.weak	UsageFault_Handler
+ 332              		.thumb_set UsageFault_Handler,Default_Handler
+ 333              		.weak	BusFault_Handler
+ 334              		.thumb_set BusFault_Handler,Default_Handler
+ 335              		.weak	MemManage_Handler
+ 336              		.thumb_set MemManage_Handler,Default_Handler
+ 337              		.weak	HardFault_Handler
+ 338              		.thumb_set HardFault_Handler,Default_Handler
+ 339              		.weak	NMI_Handler
+ 340              		.thumb_set NMI_Handler,Default_Handler
+ 341 0002 00BF     		.section	.text.Reset_Handler,"ax",%progbits
+ 342              		.align	1
+ 343              		.p2align 2,,3
+ 344              		.global	Reset_Handler
+ 345              		.syntax unified
+ 346              		.thumb
+ 347              		.thumb_func
+ 348              		.fpu fpv5-d16
+ 350              	Reset_Handler:
+ 351              	.LFB320:
+1536:libDaisy/core/startup_stm32h750xx.c **** 	//Normally the CPU should will setup the based on the value from the first entry in the vector tab
+ 352              		.loc 1 1536 1 view -0
+ 353              		.cfi_startproc
+ 354              		@ Naked Function: prologue and epilogue provided by programmer.
+ 355              		@ Volatile: function does not return.
+ 356              		@ args = 0, pretend = 0, frame = 0
+ 357              		@ frame_needed = 0, uses_anonymous_args = 0
+1543:libDaisy/core/startup_stm32h750xx.c **** 	for (pSource = &_sidata, pDest = &_sdata; pDest != &_edata; pSource++, pDest++)
+ 358              		.loc 1 1543 2 view .LVU5
+1544:libDaisy/core/startup_stm32h750xx.c **** 		*pDest = *pSource;
+ 359              		.loc 1 1544 2 view .LVU6
+ 360              	.LVL0:
+1544:libDaisy/core/startup_stm32h750xx.c **** 		*pDest = *pSource;
+ 361              		.loc 1 1544 44 view .LVU7
+1544:libDaisy/core/startup_stm32h750xx.c **** 		*pDest = *pSource;
+ 362              		.loc 1 1544 2 is_stmt 0 view .LVU8
+ 363 0000 0B48     		ldr	r0, .L8
+ 364 0002 0C4A     		ldr	r2, .L8+4
+ 365 0004 9042     		cmp	r0, r2
+ 366 0006 03D0     		beq	.L5
+1545:libDaisy/core/startup_stm32h750xx.c **** 
+ 367              		.loc 1 1545 10 view .LVU9
+ 368 0008 121A     		subs	r2, r2, r0
+ 369 000a 0B49     		ldr	r1, .L8+8
+ 370 000c FFF7FEFF 		bl	memcpy
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 35
+
+
+ 371              	.LVL1:
+ 372              	.L5:
+1547:libDaisy/core/startup_stm32h750xx.c **** 		*pDest = 0;
+ 373              		.loc 1 1547 23 is_stmt 1 view .LVU10
+1547:libDaisy/core/startup_stm32h750xx.c **** 		*pDest = 0;
+ 374              		.loc 1 1547 2 is_stmt 0 view .LVU11
+ 375 0010 0A48     		ldr	r0, .L8+12
+ 376 0012 0B4A     		ldr	r2, .L8+16
+ 377 0014 9042     		cmp	r0, r2
+ 378 0016 03D0     		beq	.L6
+1548:libDaisy/core/startup_stm32h750xx.c **** 
+ 379              		.loc 1 1548 10 view .LVU12
+ 380 0018 121A     		subs	r2, r2, r0
+ 381 001a 0021     		movs	r1, #0
+ 382 001c FFF7FEFF 		bl	memset
+ 383              	.LVL2:
+ 384              	.L6:
+1551:libDaisy/core/startup_stm32h750xx.c **** 	#endif
+ 385              		.loc 1 1551 2 is_stmt 1 view .LVU13
+ 386 0020 FFF7FEFF 		bl	SystemInit
+ 387              	.LVL3:
+1553:libDaisy/core/startup_stm32h750xx.c **** 
+ 388              		.loc 1 1553 2 view .LVU14
+ 389 0024 FFF7FEFF 		bl	__libc_init_array
+ 390              	.LVL4:
+1556:libDaisy/core/startup_stm32h750xx.c **** 	for (;;) ;
+ 391              		.loc 1 1556 2 view .LVU15
+1556:libDaisy/core/startup_stm32h750xx.c **** 	for (;;) ;
+ 392              		.loc 1 1556 8 is_stmt 0 view .LVU16
+ 393 0028 FFF7FEFF 		bl	main
+ 394              	.LVL5:
+ 395              	.L7:
+1557:libDaisy/core/startup_stm32h750xx.c **** }
+ 396              		.loc 1 1557 2 is_stmt 1 discriminator 1 view .LVU17
+1557:libDaisy/core/startup_stm32h750xx.c **** }
+ 397              		.loc 1 1557 11 discriminator 1 view .LVU18
+1557:libDaisy/core/startup_stm32h750xx.c **** }
+ 398              		.loc 1 1557 8 discriminator 1 view .LVU19
+1557:libDaisy/core/startup_stm32h750xx.c **** }
+ 399              		.loc 1 1557 2 discriminator 1 view .LVU20
+1557:libDaisy/core/startup_stm32h750xx.c **** }
+ 400              		.loc 1 1557 11 discriminator 1 view .LVU21
+1557:libDaisy/core/startup_stm32h750xx.c **** }
+ 401              		.loc 1 1557 8 discriminator 1 view .LVU22
+ 402 002c FEE7     		b	.L7
+ 403              	.L9:
+ 404 002e 00BF     		.align	2
+ 405              	.L8:
+ 406 0030 00000000 		.word	_sdata
+ 407 0034 00000000 		.word	_edata
+ 408 0038 00000000 		.word	_sidata
+ 409 003c 00000000 		.word	_sbss
+ 410 0040 00000000 		.word	_ebss
+ 411              		.cfi_endproc
+ 412              	.LFE320:
+ 414              		.global	g_pfnVectors
+ 415              		.section	.isr_vector,"aw"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 36
+
+
+ 416              		.align	2
+ 419              	g_pfnVectors:
+ 420 0000 00000000 		.word	_estack
+ 421 0004 00000000 		.word	Reset_Handler
+ 422 0008 00000000 		.word	NMI_Handler
+ 423 000c 00000000 		.word	HardFault_Handler
+ 424 0010 00000000 		.word	MemManage_Handler
+ 425 0014 00000000 		.word	BusFault_Handler
+ 426 0018 00000000 		.word	UsageFault_Handler
+ 427 001c 00000000 		.word	0
+ 428 0020 00000000 		.word	0
+ 429 0024 00000000 		.word	0
+ 430 0028 00000000 		.word	0
+ 431 002c 00000000 		.word	SVC_Handler
+ 432 0030 00000000 		.word	DebugMon_Handler
+ 433 0034 00000000 		.word	0
+ 434 0038 00000000 		.word	PendSV_Handler
+ 435 003c 00000000 		.word	SysTick_Handler
+ 436 0040 00000000 		.word	WWDG_IRQHandler
+ 437 0044 00000000 		.word	PVD_AVD_IRQHandler
+ 438 0048 00000000 		.word	TAMP_STAMP_IRQHandler
+ 439 004c 00000000 		.word	RTC_WKUP_IRQHandler
+ 440 0050 00000000 		.word	FLASH_IRQHandler
+ 441 0054 00000000 		.word	RCC_IRQHandler
+ 442 0058 00000000 		.word	EXTI0_IRQHandler
+ 443 005c 00000000 		.word	EXTI1_IRQHandler
+ 444 0060 00000000 		.word	EXTI2_IRQHandler
+ 445 0064 00000000 		.word	EXTI3_IRQHandler
+ 446 0068 00000000 		.word	EXTI4_IRQHandler
+ 447 006c 00000000 		.word	DMA1_Stream0_IRQHandler
+ 448 0070 00000000 		.word	DMA1_Stream1_IRQHandler
+ 449 0074 00000000 		.word	DMA1_Stream2_IRQHandler
+ 450 0078 00000000 		.word	DMA1_Stream3_IRQHandler
+ 451 007c 00000000 		.word	DMA1_Stream4_IRQHandler
+ 452 0080 00000000 		.word	DMA1_Stream5_IRQHandler
+ 453 0084 00000000 		.word	DMA1_Stream6_IRQHandler
+ 454 0088 00000000 		.word	ADC_IRQHandler
+ 455 008c 00000000 		.word	FDCAN1_IT0_IRQHandler
+ 456 0090 00000000 		.word	FDCAN2_IT0_IRQHandler
+ 457 0094 00000000 		.word	FDCAN1_IT1_IRQHandler
+ 458 0098 00000000 		.word	FDCAN2_IT1_IRQHandler
+ 459 009c 00000000 		.word	EXTI9_5_IRQHandler
+ 460 00a0 00000000 		.word	TIM1_BRK_IRQHandler
+ 461 00a4 00000000 		.word	TIM1_UP_IRQHandler
+ 462 00a8 00000000 		.word	TIM1_TRG_COM_IRQHandler
+ 463 00ac 00000000 		.word	TIM1_CC_IRQHandler
+ 464 00b0 00000000 		.word	TIM2_IRQHandler
+ 465 00b4 00000000 		.word	TIM3_IRQHandler
+ 466 00b8 00000000 		.word	TIM4_IRQHandler
+ 467 00bc 00000000 		.word	I2C1_EV_IRQHandler
+ 468 00c0 00000000 		.word	I2C1_ER_IRQHandler
+ 469 00c4 00000000 		.word	I2C2_EV_IRQHandler
+ 470 00c8 00000000 		.word	I2C2_ER_IRQHandler
+ 471 00cc 00000000 		.word	SPI1_IRQHandler
+ 472 00d0 00000000 		.word	SPI2_IRQHandler
+ 473 00d4 00000000 		.word	USART1_IRQHandler
+ 474 00d8 00000000 		.word	USART2_IRQHandler
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 37
+
+
+ 475 00dc 00000000 		.word	USART3_IRQHandler
+ 476 00e0 00000000 		.word	EXTI15_10_IRQHandler
+ 477 00e4 00000000 		.word	RTC_Alarm_IRQHandler
+ 478 00e8 00000000 		.word	0
+ 479 00ec 00000000 		.word	TIM8_BRK_TIM12_IRQHandler
+ 480 00f0 00000000 		.word	TIM8_UP_TIM13_IRQHandler
+ 481 00f4 00000000 		.word	TIM8_TRG_COM_TIM14_IRQHandler
+ 482 00f8 00000000 		.word	TIM8_CC_IRQHandler
+ 483 00fc 00000000 		.word	DMA1_Stream7_IRQHandler
+ 484 0100 00000000 		.word	FMC_IRQHandler
+ 485 0104 00000000 		.word	SDMMC1_IRQHandler
+ 486 0108 00000000 		.word	TIM5_IRQHandler
+ 487 010c 00000000 		.word	SPI3_IRQHandler
+ 488 0110 00000000 		.word	UART4_IRQHandler
+ 489 0114 00000000 		.word	UART5_IRQHandler
+ 490 0118 00000000 		.word	TIM6_DAC_IRQHandler
+ 491 011c 00000000 		.word	TIM7_IRQHandler
+ 492 0120 00000000 		.word	DMA2_Stream0_IRQHandler
+ 493 0124 00000000 		.word	DMA2_Stream1_IRQHandler
+ 494 0128 00000000 		.word	DMA2_Stream2_IRQHandler
+ 495 012c 00000000 		.word	DMA2_Stream3_IRQHandler
+ 496 0130 00000000 		.word	DMA2_Stream4_IRQHandler
+ 497 0134 00000000 		.word	ETH_IRQHandler
+ 498 0138 00000000 		.word	ETH_WKUP_IRQHandler
+ 499 013c 00000000 		.word	FDCAN_CAL_IRQHandler
+ 500 0140 00000000 		.word	0
+ 501 0144 00000000 		.word	0
+ 502 0148 00000000 		.word	0
+ 503 014c 00000000 		.word	0
+ 504 0150 00000000 		.word	DMA2_Stream5_IRQHandler
+ 505 0154 00000000 		.word	DMA2_Stream6_IRQHandler
+ 506 0158 00000000 		.word	DMA2_Stream7_IRQHandler
+ 507 015c 00000000 		.word	USART6_IRQHandler
+ 508 0160 00000000 		.word	I2C3_EV_IRQHandler
+ 509 0164 00000000 		.word	I2C3_ER_IRQHandler
+ 510 0168 00000000 		.word	OTG_HS_EP1_OUT_IRQHandler
+ 511 016c 00000000 		.word	OTG_HS_EP1_IN_IRQHandler
+ 512 0170 00000000 		.word	OTG_HS_WKUP_IRQHandler
+ 513 0174 00000000 		.word	OTG_HS_IRQHandler
+ 514 0178 00000000 		.word	DCMI_IRQHandler
+ 515 017c 00000000 		.word	CRYP_IRQHandler
+ 516 0180 00000000 		.word	HASH_RNG_IRQHandler
+ 517 0184 00000000 		.word	FPU_IRQHandler
+ 518 0188 00000000 		.word	UART7_IRQHandler
+ 519 018c 00000000 		.word	UART8_IRQHandler
+ 520 0190 00000000 		.word	SPI4_IRQHandler
+ 521 0194 00000000 		.word	SPI5_IRQHandler
+ 522 0198 00000000 		.word	SPI6_IRQHandler
+ 523 019c 00000000 		.word	SAI1_IRQHandler
+ 524 01a0 00000000 		.word	LTDC_IRQHandler
+ 525 01a4 00000000 		.word	LTDC_ER_IRQHandler
+ 526 01a8 00000000 		.word	DMA2D_IRQHandler
+ 527 01ac 00000000 		.word	SAI2_IRQHandler
+ 528 01b0 00000000 		.word	QUADSPI_IRQHandler
+ 529 01b4 00000000 		.word	LPTIM1_IRQHandler
+ 530 01b8 00000000 		.word	CEC_IRQHandler
+ 531 01bc 00000000 		.word	I2C4_EV_IRQHandler
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 38
+
+
+ 532 01c0 00000000 		.word	I2C4_ER_IRQHandler
+ 533 01c4 00000000 		.word	SPDIF_RX_IRQHandler
+ 534 01c8 00000000 		.word	OTG_FS_EP1_OUT_IRQHandler
+ 535 01cc 00000000 		.word	OTG_FS_EP1_IN_IRQHandler
+ 536 01d0 00000000 		.word	OTG_FS_WKUP_IRQHandler
+ 537 01d4 00000000 		.word	OTG_FS_IRQHandler
+ 538 01d8 00000000 		.word	DMAMUX1_OVR_IRQHandler
+ 539 01dc 00000000 		.word	HRTIM1_Master_IRQHandler
+ 540 01e0 00000000 		.word	HRTIM1_TIMA_IRQHandler
+ 541 01e4 00000000 		.word	HRTIM1_TIMB_IRQHandler
+ 542 01e8 00000000 		.word	HRTIM1_TIMC_IRQHandler
+ 543 01ec 00000000 		.word	HRTIM1_TIMD_IRQHandler
+ 544 01f0 00000000 		.word	HRTIM1_TIME_IRQHandler
+ 545 01f4 00000000 		.word	HRTIM1_FLT_IRQHandler
+ 546 01f8 00000000 		.word	DFSDM1_FLT0_IRQHandler
+ 547 01fc 00000000 		.word	DFSDM1_FLT1_IRQHandler
+ 548 0200 00000000 		.word	DFSDM1_FLT2_IRQHandler
+ 549 0204 00000000 		.word	DFSDM1_FLT3_IRQHandler
+ 550 0208 00000000 		.word	SAI3_IRQHandler
+ 551 020c 00000000 		.word	SWPMI1_IRQHandler
+ 552 0210 00000000 		.word	TIM15_IRQHandler
+ 553 0214 00000000 		.word	TIM16_IRQHandler
+ 554 0218 00000000 		.word	TIM17_IRQHandler
+ 555 021c 00000000 		.word	MDIOS_WKUP_IRQHandler
+ 556 0220 00000000 		.word	MDIOS_IRQHandler
+ 557 0224 00000000 		.word	JPEG_IRQHandler
+ 558 0228 00000000 		.word	MDMA_IRQHandler
+ 559 022c 00000000 		.word	0
+ 560 0230 00000000 		.word	SDMMC2_IRQHandler
+ 561 0234 00000000 		.word	HSEM1_IRQHandler
+ 562 0238 00000000 		.word	0
+ 563 023c 00000000 		.word	ADC3_IRQHandler
+ 564 0240 00000000 		.word	DMAMUX2_OVR_IRQHandler
+ 565 0244 00000000 		.word	BDMA_Channel0_IRQHandler
+ 566 0248 00000000 		.word	BDMA_Channel1_IRQHandler
+ 567 024c 00000000 		.word	BDMA_Channel2_IRQHandler
+ 568 0250 00000000 		.word	BDMA_Channel3_IRQHandler
+ 569 0254 00000000 		.word	BDMA_Channel4_IRQHandler
+ 570 0258 00000000 		.word	BDMA_Channel5_IRQHandler
+ 571 025c 00000000 		.word	BDMA_Channel6_IRQHandler
+ 572 0260 00000000 		.word	BDMA_Channel7_IRQHandler
+ 573 0264 00000000 		.word	COMP1_IRQHandler
+ 574 0268 00000000 		.word	LPTIM2_IRQHandler
+ 575 026c 00000000 		.word	LPTIM3_IRQHandler
+ 576 0270 00000000 		.word	LPTIM4_IRQHandler
+ 577 0274 00000000 		.word	LPTIM5_IRQHandler
+ 578 0278 00000000 		.word	LPUART1_IRQHandler
+ 579 027c 00000000 		.word	0
+ 580 0280 00000000 		.word	CRS_IRQHandler
+ 581 0284 00000000 		.word	ECC_IRQHandler
+ 582 0288 00000000 		.word	SAI4_IRQHandler
+ 583 028c 00000000 		.word	0
+ 584 0290 00000000 		.word	0
+ 585 0294 00000000 		.word	WAKEUP_PIN_IRQHandler
+ 586              		.text
+ 587              	.Letext0:
+ 588              		.file 2 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\machine\\_de
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 39
+
+
+ 589              		.file 3 "c:\\users\\pedro\\desktop\\dev\\daisytools\\windows\\arm-none-eabi\\include\\sys\\_stdint
+ 590              		.file 4 "<built-in>"
+ 591              		.file 5 "libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h"
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 40
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 startup_stm32h750xx.c
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:17     .text.Default_Handler:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 Default_Handler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 WAKEUP_PIN_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SAI4_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 ECC_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 CRS_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 LPUART1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 LPTIM5_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 LPTIM4_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 LPTIM3_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 LPTIM2_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 COMP1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 BDMA_Channel7_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 BDMA_Channel6_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 BDMA_Channel5_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 BDMA_Channel4_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 BDMA_Channel3_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 BDMA_Channel2_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 BDMA_Channel1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 BDMA_Channel0_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMAMUX2_OVR_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 ADC3_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 HSEM1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SDMMC2_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 MDMA_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 JPEG_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 MDIOS_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 MDIOS_WKUP_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM17_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM16_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM15_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SWPMI1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SAI3_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DFSDM1_FLT3_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DFSDM1_FLT2_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DFSDM1_FLT1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DFSDM1_FLT0_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 HRTIM1_FLT_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 HRTIM1_TIME_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 HRTIM1_TIMD_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 HRTIM1_TIMC_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 HRTIM1_TIMB_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 HRTIM1_TIMA_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 HRTIM1_Master_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMAMUX1_OVR_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 OTG_FS_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 OTG_FS_WKUP_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 OTG_FS_EP1_IN_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 OTG_FS_EP1_OUT_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SPDIF_RX_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 I2C4_ER_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 I2C4_EV_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 CEC_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 LPTIM1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 QUADSPI_IRQHandler
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 41
+
+
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SAI2_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA2D_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 LTDC_ER_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 LTDC_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SAI1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SPI6_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SPI5_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SPI4_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 UART8_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 UART7_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 FPU_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 HASH_RNG_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 CRYP_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DCMI_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 OTG_HS_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 OTG_HS_WKUP_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 OTG_HS_EP1_IN_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 OTG_HS_EP1_OUT_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 I2C3_ER_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 I2C3_EV_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 USART6_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA2_Stream7_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA2_Stream6_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA2_Stream5_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 FDCAN_CAL_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 ETH_WKUP_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 ETH_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA2_Stream4_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA2_Stream3_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA2_Stream2_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA2_Stream1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA2_Stream0_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM7_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM6_DAC_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 UART5_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 UART4_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SPI3_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM5_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SDMMC1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 FMC_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA1_Stream7_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM8_CC_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM8_TRG_COM_TIM14_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM8_UP_TIM13_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM8_BRK_TIM12_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 RTC_Alarm_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 EXTI15_10_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 USART3_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 USART2_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 USART1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SPI2_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SPI1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 I2C2_ER_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 I2C2_EV_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 I2C1_ER_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 I2C1_EV_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM4_IRQHandler
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 42
+
+
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM3_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM2_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM1_CC_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM1_TRG_COM_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM1_UP_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TIM1_BRK_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 EXTI9_5_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 FDCAN2_IT1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 FDCAN1_IT1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 FDCAN2_IT0_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 FDCAN1_IT0_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 ADC_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA1_Stream6_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA1_Stream5_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA1_Stream4_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA1_Stream3_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA1_Stream2_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA1_Stream1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DMA1_Stream0_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 EXTI4_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 EXTI3_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 EXTI2_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 EXTI1_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 EXTI0_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 RCC_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 FLASH_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 RTC_WKUP_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 TAMP_STAMP_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 PVD_AVD_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 WWDG_IRQHandler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SysTick_Handler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 PendSV_Handler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 DebugMon_Handler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 SVC_Handler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 UsageFault_Handler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 BusFault_Handler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 MemManage_Handler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 HardFault_Handler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:26     .text.Default_Handler:00000000 NMI_Handler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:342    .text.Reset_Handler:00000000 $t
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:350    .text.Reset_Handler:00000000 Reset_Handler
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:406    .text.Reset_Handler:00000030 $d
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:419    .isr_vector:00000000 g_pfnVectors
+C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s:416    .isr_vector:00000000 $d
+
+UNDEFINED SYMBOLS
+memcpy
+memset
+SystemInit
+__libc_init_array
+main
+_sdata
+_edata
+_sidata
+_sbss
+_ebss
+_estack
+ARM GAS  C:\Users\pedro\AppData\Local\Temp\ccCaxTwg.s 			page 43
+
+

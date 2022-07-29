@@ -1,0 +1,18 @@
+[submodule "LOM PRAN - REVERB/DaisySP"]
+	path = LOM PRAN - REVERB/DaisySP
+	url = https://github.com/electro-smith/DaisySP
+[submodule "LOM PRAN - REVERB/libdaisy"]
+	path = LOM PRAN - REVERB/libdaisy
+	url = https://github.com/electro-smith/libdaisy
+[submodule "LOM PRAN - REVERB/eurorack"]
+	path = LOM PRAN - REVERB/eurorack
+	url = https://github.com/pichenettes/eurorack
+[submodule "DaisySP"]
+	path = LOM PRAN - REVERB/DaisySP
+	url = https://github.com/electro-smith/DaisySP
+[submodule "LOM PRAN - REVERB/parasites"]
+	path = LOM PRAN - REVERB/parasites
+	url = https://github.com/mqtthiqs/parasites
+[submodule "LOM PRAN - REVERB/mi-custom"]
+	path = LOM PRAN - REVERB/mi-custom
+	url = https://github.com/musicdevghost/mi-custom
