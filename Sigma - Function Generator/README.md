@@ -9,6 +9,8 @@ Features:
 * Bipolar, DC and AC outputs
 * EOC (End of cycle) outputs and logic NOT EOC output
 
+Demos: TBD
+
 ## Build Instructions
 * You can easiliy order all needed compoenents from [Tayda](https://www.taydaelectronics.com) online shop simply by uploading the ["Tayda Auto Order"](./Tayda%20Auto%20Order.csv) CSV file at https://www.taydaelectronics.com/quick-order/
 * Print out the BOM file
