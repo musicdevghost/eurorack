@@ -15,7 +15,10 @@ Used with permission from Thomas White, the author of the core design that this 
 Demos: https://www.youtube.com/watch?v=gdqPUZgIWGM&ab_channel=Voxmachina
 
 ## Build Instructions
-* You can easiliy order all needed compoenents from [Tayda](https://www.taydaelectronics.com) online shop simply by uploading the ["Tayda Auto Order"](./Tayda%20Auto%20Order.csv) CSV file at https://www.taydaelectronics.com/quick-order/
+
+For this module you will need to use Vactrols, these are not easily accessible these days, although at the time of this writing I've managed to get mine from [Thonk](https://www.thonk.co.uk/), or you can also build your own vactrols as seen on this video for example: https://youtu.be/8BOnvSQpoGY
+
+* You can easiliy order all the other needed components from [Tayda](https://www.taydaelectronics.com) online shop simply by uploading the ["Tayda Auto Order"](./Tayda%20Auto%20Order.csv) CSV file at https://www.taydaelectronics.com/quick-order/
 * Print out the BOM file
 * Follow the build instructions video at: https://youtu.be/-vEFokdSwIU
 

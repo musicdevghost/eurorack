@@ -8,7 +8,7 @@ Square core low frequency oscillator with four waveform outputs and two cv input
 Demos: https://www.youtube.com/watch?v=-pCzQHZPQRY&t=0s
 
 ## Build Instructions
-* You can easiliy order all needed compoenents from [Tayda](https://www.taydaelectronics.com) online shop simply by uploading the ["Tayda Auto Order"](./Tayda%20Auto%20Order.csv) CSV file at https://www.taydaelectronics.com/quick-order/
+* You can easiliy order all needed components from [Tayda](https://www.taydaelectronics.com) online shop simply by uploading the ["Tayda Auto Order"](./Tayda%20Auto%20Order.csv) CSV file at https://www.taydaelectronics.com/quick-order/
 * Print out the BOM file
 * Please keep in mind that also the frontpanel should be produced in FR4 material when ordering it and not in aluminium (Just use the same material to build the PCBs and Front Panel) since the lightning effect only works with the FR4 material
 * Follow the build instructions video at: https://www.youtube.com/watch?v=DsVzbcYWhuM&t=0s
