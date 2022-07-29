@@ -3,6 +3,7 @@
 <img src="./Images/panel_preview.png" height="400px">
 
 Features:
+
 Square core low frequency oscillator with four waveform outputs and two cv inputs for FM, and RESET modulation
 
 Demos: https://www.youtube.com/watch?v=-pCzQHZPQRY&t=0s

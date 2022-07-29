@@ -3,6 +3,7 @@
 <img src="./Images/3d_faceplate.png" height="400px">
 
 Features:
+
 A resonant low pass gate at is core, though it can function in three different modes, as a VCA, a LPG or a VCF (Low Pass).
 
 * It has two modulation inputs, one unipolar and other bipolar.
