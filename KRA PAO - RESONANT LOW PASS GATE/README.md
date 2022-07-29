@@ -5,9 +5,12 @@
 Features:
 A resonant low pass gate at is core, though it can function in three different modes, as a VCA, a LPG or a VCF (Low Pass).
 
-It has two modulation inputs, one unipolar and other bipolar.
+* It has two modulation inputs, one unipolar and other bipolar.
+* An extra dampening control
+* A toggle switch to switch operation from LPG, VCA and VCF
+* On its own the module can resonate, it won't follow v/oct standard but it can be played.
 
-On its own the module can resonate, it won't follow v/oct standard but it can be played.
+Used with permission from Thomas White, the author of the core design that this module is based.
 
 Demos: https://www.youtube.com/watch?v=gdqPUZgIWGM&ab_channel=Voxmachina
 
