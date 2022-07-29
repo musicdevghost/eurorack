@@ -25,19 +25,27 @@ Switch toggle;
 void AudioCallback(AudioHandle::InputBuffer  in, AudioHandle::OutputBuffer out, size_t size) {
     patch.ProcessAnalogControls();
 
+    // Knob values
     float cvOneValue = patch.GetAdcValue(CV_1);
     float cvTwoValue = patch.GetAdcValue(CV_2);
     float cvThreeValue = patch.GetAdcValue(CV_3);
     float cvFourValue = patch.GetAdcValue(CV_4);
+    
+    // Input values
+    cvOneValue += patch.GetAdcValue(CV_5);
+    cvTwoValue += patch.GetAdcValue(CV_6);
+    cvThreeValue += patch.GetAdcValue(CV_7);
+    cvFourValue += patch.GetAdcValue(CV_8);
 
+    // Follow that envelope
     float amplitude_envelope, brightness_envelope;
     CONSTRAIN(amplitude_envelope, 0.0f, 5.0f);
 
+    // Apply effect
     float reverb_amount = cvOneValue * 0.95f;
     reverb_amount += (cvTwoValue / 2.0f) * (2.0f - cvTwoValue);
     CONSTRAIN(reverb_amount, 0.0f, 1.0f);
 
-    // Reverb 
     vox_verb.set_amount(reverb_amount * 0.54f);
     vox_verb.set_delay_time(fmap(cvTwoValue, 2680.0f, 4680.0f));
     vox_verb.set_time(0.35f + 0.63f * reverb_amount);
@@ -53,11 +61,11 @@ void AudioCallback(AudioHandle::InputBuffer  in, AudioHandle::OutputBuffer out, 
         // CV Envelope follower of dry sound
         float max = IN_L[i] > IN_R[i] ? IN_L[i] : IN_R[i];
         follower_.Process(max, &amplitude_envelope, &brightness_envelope);
-        patch.WriteCvOut(CV_OUT_1, amplitude_envelope);
         float amp = fmap(amplitude_envelope, 0.0f, 5.0f, daisysp::Mapping::LINEAR);
+        patch.WriteCvOut(CV_OUT_1, amp);
         patch.WriteCvOut(CV_OUT_2, amp);
         
-        // Add Reverb
+        // Add effect
         vox_verb.Process(in_out, 1);
 
         // Output
