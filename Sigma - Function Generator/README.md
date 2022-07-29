@@ -1,4 +1,4 @@
-# Sigma - Function Generator
+# Sigma - Function/Slope Generator
 
 <img src="./Images/panel_overview.png" height="400px">
 
