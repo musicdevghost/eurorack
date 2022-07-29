@@ -17,7 +17,7 @@ You can fork this repository, work on your own improvements, adjustments and hop
 You can use [EasyEDA](https://easyeda.com/) to open all project files and import into your own workspace by importing the files located inside the "EasyEDA" folder, from the application you can make your adjustments, and update the schematics PDF files and Gerber files where available and update the repository with your changes.
 
 ## Panel Skeleton Overview
-![panel](./Images/3d_faceplate.png)
+![panel](./Images/3d_supply.png)
 
 ## Specs
 
