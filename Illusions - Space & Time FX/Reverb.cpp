@@ -49,7 +49,7 @@ void AudioCallback(AudioHandle::InputBuffer  in, AudioHandle::OutputBuffer out, 
     vox_verb.set_amount(reverb_amount * 0.54f);
     vox_verb.set_delay_time(fmap(cvTwoValue, 2680.0f, 4680.0f));
     vox_verb.set_time(0.35f + 0.63f * reverb_amount);
-    vox_verb.set_diffusion(fmap(cvThreeValue, 0.3f, 0.9f));
+    vox_verb.set_diffusion(fmap(cvThreeValue, 0.1f, 0.9f));
     vox_verb.set_input_gain(0.2f);
     vox_verb.set_lp(0.6f + 0.37f * cvFourValue);
 
@@ -61,7 +61,7 @@ void AudioCallback(AudioHandle::InputBuffer  in, AudioHandle::OutputBuffer out, 
         // CV Envelope follower of dry sound
         float max = IN_L[i] > IN_R[i] ? IN_L[i] : IN_R[i];
         follower_.Process(max, &amplitude_envelope, &brightness_envelope);
-        float amp = fmap(amplitude_envelope, 0.0f, 5.0f, daisysp::Mapping::LINEAR);
+        float amp = fmap(amplitude_envelope, 0.0f, 5.0f, daisysp::Mapping::LINEAR); // 0 to 5v range
         patch.WriteCvOut(CV_OUT_1, amp);
         patch.WriteCvOut(CV_OUT_2, amp);
         
