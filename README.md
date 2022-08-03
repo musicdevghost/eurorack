@@ -16,7 +16,7 @@ You might notice that there are and will be a couple of branches from the main o
 | ------------- | ------------- |
 | [Illusions](https://github.com/musicdevghost/eurorack/tree/fx-dsp-space-time/Illusions%20-%20Space%20%26%20Time%20FX)  | DSP Space & Time FX Unit  |
 | [Mak Mak](https://github.com/musicdevghost/eurorack/tree/mak-mak/Mak%20Mak%20-%20QUAD%20VCA-ATT-MIXER)  | Quad VCA/Attenuator or 3 Channel mixer  |
-| [Leo Leo - The Matrix Programmer](https://github.com/musicdevghost/eurorack/tree/leo-leo) | Serge inspired Programmer on steroids  |
+| [Leo Leo - The Matrix Programmer](https://github.com/musicdevghost/eurorack/tree/leo-leo/LEO%20LEO%20-%20MATRIX%20STAGE%20PROGRAMMER) | Serge inspired Programmer on steroids  |
 | [Sigma](https://github.com/musicdevghost/eurorack/tree/sigma/Sigma%20-%20Function%20Generator) | Function/Slope Generator with V/OCT tracking  |
 
 ## Contributing
