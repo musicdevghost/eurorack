@@ -51,7 +51,17 @@ void AudioCallback(AudioHandle::InputBuffer  in, AudioHandle::OutputBuffer out, 
     vox_verb.set_time(0.35f + 0.63f * reverb_amount);
     vox_verb.set_diffusion(fmap(cvThreeValue, 0.1f, 0.9f));
     vox_verb.set_input_gain(0.2f);
-    vox_verb.set_lp(0.6f + 0.37f * cvFourValue);
+
+    // Filtering the verb grains
+    float filterValue = fmap(cvFourValue, 0.0f, 1.0f);   
+    if (filterValue < 0.5) {
+        vox_verb.set_hp(0.0f);
+        vox_verb.set_lp(0.6f + 0.37f * (cvFourValue + 0.5f));
+    } else {
+        vox_verb.set_lp(1.0f);
+        vox_verb.set_hp(1.0f - (0.6f + 0.37f * cvFourValue));
+    }
+
 
     for(size_t i = 0; i < size; i++) {
         // Read Inputs
