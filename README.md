@@ -16,7 +16,6 @@ You might notice that there are and will be a couple of branches from the main o
 | ------------- | ------------- |
 | [Illusions](https://github.com/musicdevghost/eurorack/tree/fx-dsp-space-time/Illusions%20-%20Space%20%26%20Time%20FX)  | DSP Space & Time FX Unit  |
 | [Mak Mak](https://github.com/musicdevghost/eurorack/tree/mak-mak/Mak%20Mak%20-%20QUAD%20VCA-ATT-MIXER)  | Quad VCA/Attenuator or 3 Channel mixer  |
-| [Kra Pao - Resonant Low Pass Gate](https://github.com/musicdevghost/eurorack/tree/main/KRA%20PAO%20-%20RESONANT%20LOW%20PASS%20GATE)  | Buttery resonant LPG/VCA/VCF based on the original design from Thomas White, core design used with permission  |
 | [Leo Leo - The Matrix Programmer](https://github.com/musicdevghost/eurorack/tree/leo-leo) | Serge inspired Programmer on steroids  |
 | [Sigma](https://github.com/musicdevghost/eurorack/tree/sigma/Sigma%20-%20Function%20Generator) | Function/Slope Generator with V/OCT tracking  |
 
