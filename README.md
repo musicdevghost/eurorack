@@ -1,6 +1,19 @@
 # Eurorack DIY
 
 ## Open Source Eurorack Modules
+
+### Quick Build Guide
+
+*Every project shares Gerber files (PCB files), EasyEDA project files (Design files) apart from other kinds of information and instructions, so that you can truly make each module your own, you can change the front panel for example and add your own twist to it, or change the PCB itself and the circuit if you wish so.*
+
+1. Download the Gerber zip files from the module in question, example: [Download Kra Pao Gerber Files](https://github.com/musicdevghost/eurorack/tree/main/KRA%20PAO%20-%20RESONANT%20LOW%20PASS%20GATE/Gerber%20Files)
+2. Browse to your online local PCB manufacturer and upload each zip file one by one, I happen to use https://cart.jlcpcb.com/
+    - Don't forget to check the "Remove Order Number" option just for the front panels
+3. At the same time make your component order, each project has a **BOM.xls** file where you can see details for every component including a reference link to what component exactly I'm using for my builds, example: [Kra Pao BOM File](https://github.com/musicdevghost/eurorack/blob/main/KRA%20PAO%20-%20RESONANT%20LOW%20PASS%20GATE/BOM.xlsx)
+4. If you happen to use [Tayda](https://www.taydaelectronics.com/) I have also an auto cart (CSV file) that you can just upload and checkout for all needed components, example: [Download Kra Pao Tayda Cart CSV File](https://github.com/musicdevghost/eurorack/blob/main/KRA%20PAO%20-%20RESONANT%20LOW%20PASS%20GATE/Tayda%20Auto%20Order.csv) then just upload it at https://www.taydaelectronics.com/quick-order/
+    - Some modules wil require components not easily available like Vactrols for the Kra Pao module, tipically anything that I cannot find on Tayda I will order from [Thonk UK](https://www.thonk.co.uk/), but I would say that 90% of all module components are easily reachable on Tayda/Mouser online stores
+5. Time to build! On every project there's always video instructions step by step on how to build your new module, enjoy!
+
 ### Production ready
 All these modules have been built and fully tested in a live environment, documentation and build instructions are available for every module, alongside a detailed BOM file with links to all mentioned components and an auto cart file ready for [Tayda online shop](https://www.taydaelectronics.com/).
 | Module  | Description |
