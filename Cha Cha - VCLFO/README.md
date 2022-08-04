@@ -26,7 +26,7 @@ If you want to improve on the design and contribute you'll first need to import 
 
 You can fork this repository, work on your own improvements, adjustments and hopefuly you would submit a PR for your changes to be merged into this main repository, thus sharing with everyone your updates as well, after of course sharing review of the changes and testing.
 
-You can use [EasyEDA](https://easyeda.com/) to open all project files and import into your own workspace by importing the files located inside the "EasyEDA" folder, from the application you can make your adjustments, and update the schematics PDF files and Gerber files where available and update the repository with your changes.
+You can use [EasyEDA](https://easyeda.com/) to open all project files and import into your own workspace by importing the files located inside the [EasyEDA](https://github.com/musicdevghost/eurorack/tree/main/Cha%20Cha%20-%20VCLFO/EasyEDA) folder, from the application you can make your adjustments, and update the schematics PDF files and Gerber files where available and update the repository with your changes.
 
 ## Panel Skeleton Overview
 ![panel](./Images/panel_preview.png)
