@@ -19,6 +19,9 @@ Demos: https://www.youtube.com/watch?v=gdqPUZgIWGM&ab_channel=Voxmachina
 
 For this module you will need to use Vactrols, these are not easily accessible these days, although at the time of this writing I've managed to get mine from [Thonk](https://www.thonk.co.uk/), or you can also build your own vactrols as seen on this video for example: https://youtu.be/8BOnvSQpoGY
 
+* Download the Gerber zip files inside the [Gerber Files](https://github.com/musicdevghost/eurorack/tree/main/KRA%20PAO%20-%20RESONANT%20LOW%20PASS%20GATE/Gerber%20Files) folder
+* Browse to your online local PCB manufacturer and upload each zip file one by one, I happen to use https://cart.jlcpcb.com/
+    - Don't forget to check the "Remove Order Number" option just for the front panels
 * You can easiliy order all the other needed components from [Tayda](https://www.taydaelectronics.com) online shop simply by uploading the ["Tayda Auto Order"](./Tayda%20Auto%20Order.csv) CSV file at https://www.taydaelectronics.com/quick-order/
 * Print out the BOM file
 * Follow the build instructions video at: https://youtu.be/-vEFokdSwIU
