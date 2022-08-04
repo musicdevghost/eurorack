@@ -12,9 +12,16 @@ Features:
 Demos: TBD
 
 ## Build Instructions
+
+
+*Every project shares Gerber files (PCB files), EasyEDA project files (Design files) apart from other kinds of information and instructions, so that you can truly make each module your own, you can change the front panel for example and add your own twist to it, or change the PCB itself and the circuit if you wish so.*
+
+* Download the Gerber zip files inside the [Gerber Files](./Gerber%20Files/) folder
+* Browse to your online local PCB manufacturer and upload each zip file one by one, I happen to use https://cart.jlcpcb.com/
+    - Don't forget to check the "Remove Order Number" option just for the front panels
+    - Please keep in mind that also the frontpanel should be produced in FR4 material when ordering it and not in aluminium (Just use the same material to build the PCBs and Front Panel) since the lightning effect only works with the FR4 material
 * You can easiliy order all needed compoenents from [Tayda](https://www.taydaelectronics.com) online shop simply by uploading the ["Tayda Auto Order"](./Tayda%20Auto%20Order.csv) CSV file at https://www.taydaelectronics.com/quick-order/
 * Print out the BOM file
-* Please keep in mind that also the frontpanel should be produced in FR4 material when ordering it and not in aluminium (Just use the same material to build the PCBs and Front Panel) since the lightning effect only works with the FR4 material
 * Follow the build instructions video at: TBD
 * Follow the calibration instructions video at: TBD
 
