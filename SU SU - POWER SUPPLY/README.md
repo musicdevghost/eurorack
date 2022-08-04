@@ -7,7 +7,10 @@ Provides 1A of +12 and -12v.
 ## Build Instructions
 This is a good beginner build, it has a very small amount of components and should be easy to understand.
 
-Print out the BOM file and solder the components, make sure you test it before connecting anything to it.
+1. Download the Gerber zip files inside the [Gerber Files folder](https://github.com/musicdevghost/eurorack/tree/main/Cha%20Cha%20-%20VCLFO/Gerber%20Files)
+2. Browse to your online local PCB manufacturer and upload each zip file one by one, I happen to use https://cart.jlcpcb.com/
+3. You can easiliy order all needed components from [Tayda](https://www.taydaelectronics.com) online shop or similar
+4. Print out the BOM file and solder the components, make sure you test it before connecting anything to it.
 
 ## Developing
 If you want to improve on the design and contribute you'll first need to import the project files into your workspace, I used EasyEDA for all my projects, but if you're using something else I believe by now these projects can be imported from a couple of platforms, I use EasyEDA because it's simpler to me, I can just order the PCB directly from the application and it just works (I am by no means sponsored or supported from the company in any way, just sharing what works for me).
