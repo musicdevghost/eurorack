@@ -13,6 +13,12 @@ The sync input, unlike most sync inputs, accepts any kind of signal, LFO, audio 
 Demos: https://www.youtube.com/watch?v=9EASDBu1MWQ
 
 ## Build Instructions
+
+*Every project shares Gerber files (PCB files), EasyEDA project files (Design files) apart from other kinds of information and instructions, so that you can truly make each module your own, you can change the front panel for example and add your own twist to it, or change the PCB itself and the circuit if you wish so.*
+
+* Download the Gerber zip files inside the [Gerber Files](https://github.com/musicdevghost/eurorack/tree/main/TOM%20YUM%20-%20VCO/Gerber%20Files) folder
+* Browse to your online local PCB manufacturer and upload each zip file one by one, I happen to use https://cart.jlcpcb.com/
+    - Don't forget to check the "Remove Order Number" option just for the front panels
 * You can easiliy order all the other needed components from [Tayda](https://www.taydaelectronics.com) online shop simply by uploading the ["Tayda Auto Order"](./Tayda%20Auto%20Order.csv) CSV file at https://www.taydaelectronics.com/quick-order/
 * Print out the BOM file
 * Follow the build instructions video at: https://youtu.be/wPKJjtM3lCI
