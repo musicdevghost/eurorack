@@ -17,6 +17,8 @@ Demos: https://www.youtube.com/watch?v=gdqPUZgIWGM&ab_channel=Voxmachina
 
 ## Build Instructions
 
+*Every project shares Gerber files (PCB files), EasyEDA project files (Design files) apart from other kinds of information and instructions, so that you can truly make each module your own, you can change the front panel for example and add your own twist to it, or change the PCB itself and the circuit if you wish so.*
+
 For this module you will need to use Vactrols, these are not easily accessible these days, although at the time of this writing I've managed to get mine from [Thonk](https://www.thonk.co.uk/), or you can also build your own vactrols as seen on this video for example: https://youtu.be/8BOnvSQpoGY
 
 * Download the Gerber zip files inside the [Gerber Files](https://github.com/musicdevghost/eurorack/tree/main/KRA%20PAO%20-%20RESONANT%20LOW%20PASS%20GATE/Gerber%20Files) folder
