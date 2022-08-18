@@ -23,13 +23,13 @@ All these modules have been built and fully tested in a live environment, docume
 | [Kra Pao - Resonant Low Pass Gate](https://github.com/musicdevghost/eurorack/tree/main/KRA%20PAO%20-%20RESONANT%20LOW%20PASS%20GATE)  | Buttery resonant LPG/VCA/VCF based on the original design from Thomas White, core design used with permission  |
 | [Cha Cha - VCLFO](https://github.com/musicdevghost/eurorack/tree/main/Cha%20Cha%20-%20VCLFO) | 6HP Voltage Controlled LFO with 4 wave outputs and reset input  |
 | [Sigma](https://github.com/musicdevghost/eurorack/tree/main/Sigma%20-%20Function%20Generator) | Function/Slope Generator with V/OCT tracking  |
+| [Mak Mak](https://github.com/musicdevghost/eurorack/tree/main/Mak%20Mak%20-%20QUAD%20VCA-ATT-MIXER)  | Quad VCA/Attenuator or 3 Channel mixer  |
 
 ### Work in progress
 You might notice that there are and will be a couple of branches from the main one, these represent ongoing work and development and considered not ready for production mode just yet, so if you intend to build one of the mentioned designs keep in mind it might have bugs or not work at all, the ones in the main branch have been all tested and are ready for production.
 | Module  | Description |
 | ------------- | ------------- |
 | [Illusions](https://github.com/musicdevghost/eurorack/tree/fx-dsp-space-time/Illusions%20-%20Space%20%26%20Time%20FX)  | DSP Space & Time FX Unit  |
-| [Mak Mak](https://github.com/musicdevghost/eurorack/tree/mak-mak/Mak%20Mak%20-%20QUAD%20VCA-ATT-MIXER)  | Quad VCA/Attenuator or 3 Channel mixer  |
 | [Leo Leo - The Matrix Programmer](https://github.com/musicdevghost/eurorack/tree/leo-leo/LEO%20LEO%20-%20MATRIX%20STAGE%20PROGRAMMER) | Serge inspired Programmer on steroids  |
 
 ## Contributing
