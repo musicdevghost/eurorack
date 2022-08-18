@@ -11,15 +11,14 @@ Four chanels, each channel can act as:
 
 When used as Mixer, the fourth channel acts as the master gain controller and output, includes peak detection.
 
-Demos: TBD
+Demos: https://youtu.be/tNxoTxA4IaY
 
 ## Build Instructions
 
 * You can easiliy order all the other needed components from [Tayda](https://www.taydaelectronics.com) online shop simply by uploading the ["Tayda Auto Order"](./Tayda%20Auto%20Order.csv) CSV file at https://www.taydaelectronics.com/quick-order/
 * Print out the BOM file
 * Please keep in mind that also the frontpanel should be produced in FR4 material when ordering it and not in aluminium (Just use the same material to build the PCBs and Front Panel) since the lightning effect only works with the FR4 material
-* Follow the build instructions video at: TBD
-* Follow the calibration instructions video at: TBD
+* Follow the build and calibration instructions video at: https://youtu.be/4MFS2j51I08
 
 ## Developing
 If you want to improve on the design and contribute you'll first need to import the project files into your workspace, I used EasyEDA for all my projects, but if you're using something else I believe by now these projects can be imported from a couple of platforms, I use EasyEDA because it's simpler to me, I can just order the PCB directly from the application and it just works (I am by no means sponsored or supported from the company in any way, just sharing what works for me).
