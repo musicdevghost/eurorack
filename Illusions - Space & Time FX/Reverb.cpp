@@ -53,17 +53,19 @@ void AudioCallback(AudioHandle::InputBuffer  in, AudioHandle::OutputBuffer out, 
     vox_verb.set_input_gain(0.2f);
 
     // Filtering the verb grains
-    float filterValue = fmap(cvFourValue, 0.0f, 1.0f);
+    float filterValue = fmap(cvFourValue, 0.1f, 0.9f);
 
-    // Set low pass filter
-    float lp_amount = 0.3f + filterValue * 2;
-    CONSTRAIN(lp_amount, 0.1f, 0.9f);
-    vox_verb.set_lp(0.6f + 0.37f * lp_amount);
+    vox_verb.set_lp(0.6f + 0.37f * filterValue);
 
-    // Set High pass filter
-    float hp_amount = (0.5 * filterValue) / 0.5f;
-    CONSTRAIN(hp_amount, 0.1f, 0.9f);
-    vox_verb.set_hp(1.0f - (0.6f + 0.37f * hp_amount));
+    // // Set low pass filter
+    // float lp_amount = 0.3f + filterValue * 2;
+    // CONSTRAIN(lp_amount, 0.1f, 0.9f);
+    // vox_verb.set_lp(lp_amount);
+
+    // // Set High pass filter
+    // float hp_amount = (0.5 * filterValue) / 0.5f;
+    // CONSTRAIN(hp_amount, 0.1f, 0.9f);
+    // vox_verb.set_hp(1.0f - hp_amount);
 
     for(size_t i = 0; i < size; i++) {
         // Read Inputs
