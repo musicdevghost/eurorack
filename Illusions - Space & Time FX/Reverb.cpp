@@ -53,15 +53,17 @@ void AudioCallback(AudioHandle::InputBuffer  in, AudioHandle::OutputBuffer out, 
     vox_verb.set_input_gain(0.2f);
 
     // Filtering the verb grains
-    float filterValue = fmap(cvFourValue, 0.0f, 1.0f);   
-    if (filterValue < 0.5) {
-        vox_verb.set_hp(0.0f);
-        vox_verb.set_lp(0.6f + 0.37f * (cvFourValue + 0.5f));
-    } else {
-        vox_verb.set_lp(1.0f);
-        vox_verb.set_hp(1.0f - (0.6f + 0.37f * cvFourValue));
-    }
+    float filterValue = fmap(cvFourValue, 0.0f, 1.0f);
 
+    // Set low pass filter
+    float lp_amount = 0.3f + filterValue * 2;
+    CONSTRAIN(lp_amount, 0.1f, 0.9f);
+    vox_verb.set_lp(0.6f + 0.37f * lp_amount);
+
+    // Set High pass filter
+    float hp_amount = (0.5 * filterValue) / 0.5f;
+    CONSTRAIN(hp_amount, 0.1f, 0.9f);
+    vox_verb.set_hp(1.0f - (0.6f + 0.37f * hp_amount));
 
     for(size_t i = 0; i < size; i++) {
         // Read Inputs
@@ -71,7 +73,7 @@ void AudioCallback(AudioHandle::InputBuffer  in, AudioHandle::OutputBuffer out, 
         // CV Envelope follower of dry sound
         float max = IN_L[i] > IN_R[i] ? IN_L[i] : IN_R[i];
         follower_.Process(max, &amplitude_envelope, &brightness_envelope);
-        float amp = fmap(amplitude_envelope, 0.0f, 5.0f, daisysp::Mapping::LINEAR); // 0 to 5v range
+        float amp = fmap(amplitude_envelope, 0.0f, 8.0f, daisysp::Mapping::LINEAR); // 0 to 8v range
         patch.WriteCvOut(CV_OUT_1, amp);
         patch.WriteCvOut(CV_OUT_2, amp);
         
