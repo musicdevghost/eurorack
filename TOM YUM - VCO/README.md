@@ -12,6 +12,8 @@ The sync input, unlike most sync inputs, accepts any kind of signal, LFO, audio 
 
 Demos: https://www.youtube.com/watch?v=9EASDBu1MWQ
 
+*Note: Previously I was using PDF files for instructions, but I've found it better to do it through dedicated videos, so on older build you might hear me mentioning about an "Instructions PDF File" you can ignore that and just follow the instructional videos mentioned below.*
+
 ## Build Instructions
 
 *Every project shares Gerber files (PCB files), EasyEDA project files (Design files) apart from other kinds of information and instructions, so that you can truly make each module your own, you can change the front panel for example and add your own twist to it, or change the PCB itself and the circuit if you wish so.*
