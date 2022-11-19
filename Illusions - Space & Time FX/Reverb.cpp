@@ -5,7 +5,7 @@
 
 using namespace daisy;
 using namespace daisysp;
-using namespace patch_sm; 
+using namespace patch_sm;
 
 #include "clouds/dsp/fx/fx_engine.h"
 #include "clouds/dsp/frame.h"
@@ -35,7 +35,7 @@ void AudioCallback(AudioHandle::InputBuffer  in, AudioHandle::OutputBuffer out, 
     cvOneValue += patch.GetAdcValue(CV_5);
     cvTwoValue += patch.GetAdcValue(CV_6);
     cvThreeValue += patch.GetAdcValue(CV_7);
-    cvFourValue += patch.GetAdcValue(CV_8);
+    cvFourValue += patch.GetAdcValue(CV_8);  
 
     // Follow that envelope
     float amplitude_envelope, brightness_envelope;
@@ -52,20 +52,23 @@ void AudioCallback(AudioHandle::InputBuffer  in, AudioHandle::OutputBuffer out, 
     vox_verb.set_diffusion(fmap(cvThreeValue, 0.1f, 0.9f));
     vox_verb.set_input_gain(0.2f);
 
+
+    // vox_verb.set_delay_time(fmap(cvThreeValue, 0.1f, 0.9f) * 1000.0f);
+
     // Filtering the verb grains
     float filterValue = fmap(cvFourValue, 0.1f, 0.9f);
 
     vox_verb.set_lp(0.6f + 0.37f * filterValue);
 
-    // // Set low pass filter
-    // float lp_amount = 0.3f + filterValue * 2;
-    // CONSTRAIN(lp_amount, 0.1f, 0.9f);
-    // vox_verb.set_lp(lp_amount);
+    // Set low pass filter
+    float lp_amount = 0.3f + filterValue * 2;
+    CONSTRAIN(lp_amount, 0.1f, 0.9f);
+    vox_verb.set_lp(lp_amount);
 
-    // // Set High pass filter
-    // float hp_amount = (0.5 * filterValue) / 0.5f;
-    // CONSTRAIN(hp_amount, 0.1f, 0.9f);
-    // vox_verb.set_hp(1.0f - hp_amount);
+    // Set High pass filter
+    float hp_amount = (0.5 * filterValue) / 0.5f;
+    CONSTRAIN(hp_amount, 0.1f, 0.9f);
+    vox_verb.set_hp(1.0f - hp_amount);
 
     for(size_t i = 0; i < size; i++) {
         // Read Inputs

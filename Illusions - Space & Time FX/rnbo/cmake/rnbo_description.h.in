@@ -1,0 +1,7 @@
+#pragma once
+
+#include <json/json.hpp>
+
+namespace RNBO {
+	const nlohmann::json patcher_description = R"( @PATCHER_DESCRIPTION_JSON@ )";
+}

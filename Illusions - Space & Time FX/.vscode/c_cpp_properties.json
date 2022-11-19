@@ -13,7 +13,9 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/libDaisy/**",
                 "${workspaceFolder}/DaisySP/**",
-                "${workspaceFolder}/mi-custom/**"
+                "${workspaceFolder}/mi-custom/**",
+                "${workspaceFolder}/rnbo",
+                "${workspaceFolder}/rnbo/common"
             ],
             "name": "Win32",
             "windowsSdkVersion": "10.0.17763.0",
@@ -32,7 +34,8 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/libDaisy/**",
                 "${workspaceFolder}/DaisySP/**",
-                "${workspaceFolder}/mi-custom/**"
+                "${workspaceFolder}/mi-custom/**",
+                "${workspaceFolder}/rnbo/**"
             ],
             "name": "macOS"
         }

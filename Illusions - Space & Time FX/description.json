@@ -1,0 +1,46 @@
+{
+  "parameters": [],
+  "numParameters": 0,
+  "numSignalInParameters": 0,
+  "numSignalOutParameters": 0,
+  "numInputChannels": 1,
+  "numOutputChannels": 1,
+  "numMidiInputPorts": 0,
+  "numMidiOutputPorts": 0,
+  "externalDataRefs": [],
+  "patcherSerial": 0,
+  "inports": [],
+  "outports": [],
+  "inlets": [
+    {
+      "type": "signal",
+      "index": 1,
+      "tag": "in1",
+      "meta": ""
+    }
+  ],
+  "outlets": [
+    {
+      "type": "signal",
+      "index": 1,
+      "tag": "out1",
+      "meta": ""
+    }
+  ],
+  "paramConversion": {
+    "applyStepsToNormalizedParameterValue": "function applyStepsToNormalizedParameterValue(normalizedValue, steps) {\r\n    if (steps == 1) {\r\n        if (normalizedValue > 0) {\r\n            normalizedValue = 1.;\r\n        }\r\n    } else {\r\n        let oneStep = 1. / (steps - 1);\r\n        let numberOfSteps = rnbo_fround(normalizedValue / oneStep * 1 / 1) * 1;\r\n        normalizedValue = numberOfSteps * oneStep;\r\n    }\r\n\r\n    return normalizedValue;\r\n}",
+    "convertToNormalizedParameterValue": "function convertToNormalizedParameterValue(index, value) {\r\n    switch (index) {\r\n    default:\r\n        return value;\r\n    }\r\n}",
+    "convertFromNormalizedParameterValue": "function convertFromNormalizedParameterValue(index, value) {\r\n    value = (value < 0 ? 0 : (value > 1 ? 1 : value));\r\n\r\n    switch (index) {\r\n    default:\r\n        return value;\r\n    }\r\n}",
+    "getNumParameters": "function getNumParameters() {\r\n    return 0;\r\n}",
+    "constrainParameterValue": "function constrainParameterValue(index, value) {\r\n    var v = value;\r\n\r\n    switch (index) {\r\n    default:\r\n        return value;\r\n    }\r\n}",
+    "subpatches": {},
+    "isPolyphonic": false
+  },
+  "presetid": "rnbo",
+  "meta": {
+    "architecture": "x64",
+    "filename": "grainz.maxpat",
+    "maxversion": "8.5.0",
+    "rnboversion": "1.0.0"
+  }
+}
