@@ -21,7 +21,7 @@ Demos: Coming soon!
 * Follow the build instructions documentation PDF
 
 ## Panel Skeleton Overview
-![panel](./Images/panel_preview.png)
+![panel](./Images/frontpanel_preview.png)
 
 ## Specs
 
