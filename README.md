@@ -24,7 +24,7 @@ All these modules have been built and fully tested in a live environment, docume
 | [Cha Cha - VCLFO](https://github.com/musicdevghost/eurorack/tree/main/Cha%20Cha%20-%20VCLFO) | 6HP Voltage Controlled LFO with 4 wave outputs and reset input  |
 | [Sigma](https://github.com/musicdevghost/eurorack/tree/main/Sigma%20-%20Function%20Generator) | Function/Slope Generator with V/OCT tracking  |
 | [Mak Mak](https://github.com/musicdevghost/eurorack/tree/main/Mak%20Mak%20-%20QUAD%20VCA-ATT-MIXER)  | Quad VCA/Attenuator or 3 Channel mixer  |
-| [Leo Leo - The Matrix Programmer](https://github.com/musicdevghost/eurorack/tree/leo-leo/LEO%20LEO%20-%20MATRIX%20STAGE%20PROGRAMMER) | Serge inspired Programmer on steroids  |
+| [Leo Leo - The Matrix Programmer](https://github.com/musicdevghost/eurorack/tree/main/LEO%20LEO%20-%20MATRIX%20STAGE%20PROGRAMMER) | Serge inspired Programmer on steroids  |
 
 
 ### Work in progress
