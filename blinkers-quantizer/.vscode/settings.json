@@ -30,6 +30,7 @@
         "internal-adc.h": "c",
         "gpio.h": "c",
         "queue.h": "c",
-        "isr.h": "c"
+        "isr.h": "c",
+        "esp_adc_cal.h": "c"
     }
 }

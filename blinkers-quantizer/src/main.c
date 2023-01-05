@@ -5,6 +5,7 @@
 // IOs
 #define DEBUG_LED 4
 #define GATE_IN 34
+#define PITCH_IN ADC1_CHANNEL_4
 
 // LOG tag name
 const char *MAIN_TAG = "MAIN";
@@ -23,6 +24,8 @@ static void IRAM_ATTR gpio_isr_handler(void* arg) {
  * 
  */
 void process_gate_trigger_input() {
+    int raw_in = get_adc1_channel_raw(PITCH_IN);
+    ESP_LOGI(MAIN_TAG, "RAW ADC VALUE: %d", raw_in);
     gpio_set_level(DEBUG_LED, 1);
     vTaskDelay(10 / portTICK_PERIOD_MS);
     gpio_set_level(DEBUG_LED, 0);
@@ -65,16 +68,20 @@ void init_gpio_queue() {
  * 
  */
 void app_main(void) {
-    // Configure DEBUG LED as output
-    gpio_pad_select_gpio(DEBUG_LED);
-    gpio_set_direction(DEBUG_LED, GPIO_MODE_OUTPUT);
-    // / DEBUG
+    // Calibrate ADCs
+    adc_calibration_init();
+
+    // Config GPIOs
+    config_gate_trigger_input(GATE_IN);
+    config_adc1_channel_with_defaults(PITCH_IN);
 
     // Install global ISR Service
     install_isr_service();
 
-    // Config GPIOs
-    config_gate_trigger_input(GATE_IN);
+    // Configure DEBUG LED as output
+    gpio_pad_select_gpio(DEBUG_LED);
+    gpio_set_direction(DEBUG_LED, GPIO_MODE_OUTPUT);
+    // / DEBUG
 
     // Config GPIO Event Queue
     init_gpio_queue();
